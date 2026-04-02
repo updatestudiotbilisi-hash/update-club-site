@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UPDATE — Recovery for Teams</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Science+Gothic&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@a79f046353fd2872719eba7840b7d8c442b6f360/background/background-small.webp" fetchpriority="high">
 <style>
 :root{
   --bg:#070707;
@@ -25,7 +26,7 @@
   --w2:rgba(255,255,255,.14);
   --blur:blur(26px) saturate(1.6);
   --blurs:blur(14px) saturate(1.3);
-  --tf:'Syne',sans-serif;
+  --tf:'Science Gothic',sans-serif;
   --bf:'DM Sans',sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -36,6 +37,7 @@ body{background:var(--bg);color:var(--w);font-family:var(--bf);overflow-x:hidden
 #scene{
   position:fixed;inset:0;z-index:0;
   background-color:#0b0b0b;
+  background-image:url('https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@a79f046353fd2872719eba7840b7d8c442b6f360/background/background-small.webp');
   background-size:cover;
   background-position:center center;
   background-repeat:no-repeat;
@@ -101,7 +103,7 @@ nav{
   border-bottom:1px solid var(--gbr);
 }
 .logo{text-decoration:none}
-.logo-main{font-family:var(--tf);font-size:13px;font-weight:700;color:var(--w);letter-spacing:.12em;display:block}
+.logo-main{font-family:var(--tf);font-size:13px;font-weight:560;color:var(--w);letter-spacing:.12em;display:block}
 .logo-sub{font-size:10px;font-weight:400;color:var(--w4);letter-spacing:.18em;text-transform:uppercase;display:block;margin-top:1px}
 .nl{display:flex;gap:22px;list-style:none}
 .nl a{font-size:13px;color:var(--w6);text-decoration:none;transition:color .2s}
@@ -110,7 +112,7 @@ nav{
   display:inline-flex;align-items:center;gap:8px;
   background:var(--sand-g);border:1px solid var(--sand-b);
   color:var(--w);padding:10px 22px;border-radius:100px;
-  font-size:13px;font-weight:600;font-family:var(--tf);
+  font-size:13px;font-weight:480;font-family:var(--tf);
   text-decoration:none;transition:all .2s;letter-spacing:.04em;
 }
 .nbtn:hover{background:rgba(200,168,120,.28);border-color:rgba(200,168,120,.45)}
@@ -140,7 +142,7 @@ nav{
 .hh{
   font-family:var(--tf);
   font-size:clamp(60px,9.5vw,124px);
-  font-weight:800;
+  font-weight:760;
   line-height:.9;
   letter-spacing:-.04em;
   color:var(--w);
@@ -166,7 +168,7 @@ nav{
 .hbtns{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
 .btn{
   display:inline-flex;align-items:center;gap:8px;
-  padding:14px 28px;border-radius:100px;font-size:14px;font-weight:600;
+  padding:14px 28px;border-radius:100px;font-size:14px;font-weight:480;
   text-decoration:none;transition:all .2s;font-family:var(--tf);letter-spacing:.03em
 }
 .btn-s{background:var(--sand-g);border:1px solid var(--sand-b);color:var(--w)}
@@ -180,7 +182,7 @@ nav{
   border:1px solid var(--sand-b);
   color:var(--w);
   font-size:18px;
-  font-weight:700;
+  font-weight:520;
 }
 .btn-g{background:var(--g2);border:1px solid var(--gbr2);color:var(--w)}
 .btn-g:hover{background:var(--g3)}
@@ -329,7 +331,7 @@ nav{
   margin-bottom:24px;text-transform:uppercase;
 }
 .chip::before{content:'•';font-size:14px}
-.BT{font-family:var(--tf);font-size:clamp(36px,5vw,64px);font-weight:800;line-height:1.0;letter-spacing:-.03em;color:var(--w)}
+.BT{font-family:var(--tf);font-size:clamp(36px,5vw,64px);font-weight:640;line-height:1.0;letter-spacing:-.03em;color:var(--w)}
 .BT em{font-style:normal;color:var(--sand)}
 .BT-xl{font-size:clamp(52px,7vw,90px)}
 
@@ -340,7 +342,7 @@ nav{
 .ab-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
 .ab-p strong{
   color:var(--w);
-  font-weight:600;
+  font-weight:500;
 }
 .ab-ttl{
   max-width:none;
@@ -416,12 +418,12 @@ nav{
   backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);
   transition:all .3s;
 }
-.ac-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.75) brightness(.7);transition:transform .5s,filter .4s;display:block}
-.ac:hover .ac-img{transform:scale(1.06);filter:saturate(.95) brightness(.75)}
-.ac::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(6,13,7,.94) 0%,rgba(6,13,7,.1) 55%,transparent 100%)}
+.ac-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.8) brightness(.8);transition:transform .5s,filter .4s;display:block}
+.ac:hover .ac-img{transform:scale(1.06);filter:saturate(.98) brightness(.84)}
+.ac::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(6,13,7,.56) 0%,rgba(6,13,7,.08) 48%,transparent 100%)}
 .ac-body{position:absolute;bottom:0;left:0;right:0;padding:20px;z-index:2}
 .ac:hover{border-color:rgba(200,168,120,.4)!important;}
-.ac-h{font-family:var(--tf);font-size:15px;font-weight:700;color:var(--w);margin-bottom:5px;line-height:1.2}
+.ac-h{font-family:var(--tf);font-size:15px;font-weight:430;color:var(--w);margin-bottom:5px;line-height:1.2}
 .ac-p{font-size:12px;font-weight:300;color:var(--w6);line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 
 /* ── FORMATS ── */
@@ -498,12 +500,12 @@ nav{
   border:1px solid var(--gbr);
 }
 .dc:hover,.dc.hot{border-color:rgba(200,168,120,.4)!important;background:rgba(200,168,120,.07)!important}
-.dc-d{font-family:var(--tf);font-size:20px;font-weight:800;color:var(--w);margin-bottom:4px;line-height:1.1}
+.dc-d{font-family:var(--tf);font-size:20px;font-weight:620;color:var(--w);margin-bottom:4px;line-height:1.1}
 .dc-v{font-size:10px;font-weight:700;color:var(--sand);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
 .dc-dur{font-size:13px;font-weight:300;color:var(--w6);margin-bottom:12px}
 .dc-dl{font-size:11px;color:var(--w4);background:var(--g2);padding:6px 14px;border-radius:100px;display:inline-block;margin-bottom:16px}
 .dc.hot .dc-dl{background:rgba(200,168,120,.12);color:var(--sand);border:1px solid rgba(200,168,120,.25)}
-.dc-btn{display:block;text-align:center;background:rgba(200,168,120,.16);border:1px solid rgba(200,168,120,.32);color:var(--w);padding:11px;border-radius:100px;font-size:12px;font-weight:700;text-decoration:none;transition:all .2s;font-family:var(--tf);letter-spacing:.04em}
+.dc-btn{display:block;text-align:center;background:rgba(200,168,120,.16);border:1px solid rgba(200,168,120,.32);color:var(--w);padding:11px;border-radius:100px;font-size:12px;font-weight:470;text-decoration:none;transition:all .2s;font-family:var(--tf);letter-spacing:.04em}
 .dc-btn:hover{background:rgba(200,168,120,.28)}
 
 /* ── TEAM ── */
@@ -516,7 +518,7 @@ nav{
 .tc img{width:100%;height:140px;object-fit:cover;object-position:top;filter:grayscale(20%);display:block;transition:filter .3s}
 .tc:hover img{filter:grayscale(0)}
 .tc-bd{padding:12px}
-.tc-name{font-family:var(--tf);font-size:12px;font-weight:700;color:var(--w);line-height:1.2;margin-bottom:2px}
+.tc-name{font-family:var(--tf);font-size:12px;font-weight:440;color:var(--w);line-height:1.2;margin-bottom:2px}
 .tc-role{font-size:10px;color:var(--sand);font-weight:600;margin-bottom:3px}
 .tc-bio{font-size:10px;color:var(--w4);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
@@ -525,7 +527,7 @@ nav{
 .pg{padding:40px 34px;border-radius:20px;transition:all .3s;background:var(--g1);backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);border:1px solid var(--gbr);display:flex;flex-direction:column}
 .pg:hover{border-color:rgba(200,168,120,.4)!important;background:rgba(200,168,120,.07)!important;transform:translateY(-4px)}
 .pg-tag{display:inline-block;background:rgba(200,168,120,.1);border:1px solid rgba(200,168,120,.2);color:var(--sand);padding:5px 14px;border-radius:100px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px;width:fit-content}
-.pg-h{font-family:var(--tf);font-size:22px;font-weight:800;color:var(--w);margin-bottom:16px;line-height:1.15}
+.pg-h{font-family:var(--tf);font-size:22px;font-weight:630;color:var(--w);margin-bottom:16px;line-height:1.15}
 .pg-p{font-size:14px;font-weight:300;color:var(--w6);line-height:1.75;margin-bottom:20px;flex:1}
 .pg-ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
 .pg-ul li{font-size:13px;color:var(--w6);display:flex;gap:10px;align-items:flex-start;line-height:1.5}
@@ -542,8 +544,8 @@ nav{
   border:1px solid var(--gbr);display:flex;flex-direction:column;
 }
 .bi:hover{border-color:rgba(200,168,120,.3);transform:translateY(-4px)}
-.bi-n{font-family:var(--tf);font-size:44px;font-weight:800;color:rgba(200,168,120,.28);line-height:1;margin-bottom:18px}
-.bi-h{font-family:var(--tf);font-size:24px;font-weight:700;margin-bottom:12px;color:var(--w);letter-spacing:-.02em}
+.bi-n{font-family:var(--tf);font-size:44px;font-weight:650;color:rgba(200,168,120,.28);line-height:1;margin-bottom:18px}
+.bi-h{font-family:var(--tf);font-size:24px;font-weight:590;margin-bottom:12px;color:var(--w);letter-spacing:-.02em}
 .bi-p{font-size:14px;font-weight:300;color:var(--w6);line-height:1.75;margin-bottom:16px}
 .bi-ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:auto}
 .bi-ul li{font-size:13px;color:var(--w4);display:flex;gap:10px;line-height:1.55}
@@ -551,7 +553,7 @@ nav{
 
 /* ── CLIENTS ── */
 .clients-s{position:relative;z-index:10;padding:80px 48px;text-align:center}
-.clients-lbl{font-family:var(--tf);font-size:14px;font-weight:700;letter-spacing:.28em;color:rgba(255,255,255,.55);text-transform:uppercase;margin-bottom:52px;display:flex;align-items:center;justify-content:center;gap:20px}
+.clients-lbl{font-family:var(--tf);font-size:14px;font-weight:500;letter-spacing:.28em;color:rgba(255,255,255,.55);text-transform:uppercase;margin-bottom:52px;display:flex;align-items:center;justify-content:center;gap:20px}
 .clients-lbl::before,.clients-lbl::after{content:'';flex:1;max-width:120px;height:1px;background:rgba(255,255,255,.12)}
 .clients-row{display:flex;gap:56px;align-items:center;justify-content:center;flex-wrap:wrap}
 .clog{height:24px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.45;transition:all .3s;display:block}
@@ -594,13 +596,13 @@ nav{
   justify-content:center;
   font-family:var(--tf);
   font-size:22px;
-  font-weight:800;
+  font-weight:620;
   color:var(--sand);
   margin-bottom:24px;
   transition:all .3s;
 }
 .hw:hover .hsc{background:rgba(200,168,120,.12);border-color:rgba(200,168,120,.35)}
-.hsh{font-family:var(--tf);font-size:16px;font-weight:700;margin-bottom:10px;color:var(--w)}
+.hsh{font-family:var(--tf);font-size:16px;font-weight:520;margin-bottom:10px;color:var(--w)}
 .hsd{font-size:13px;font-weight:300;color:var(--w6);line-height:1.7}
 @media (max-width: 900px){
   .how-steps{
@@ -621,7 +623,7 @@ nav{
 .flist{display:flex;flex-direction:column}
 .fi{border-bottom:1px solid var(--gbr)}
 .fi:first-child{border-top:1px solid var(--gbr)}
-.fq{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;font-family:var(--tf);font-size:15px;font-weight:600;color:var(--w);gap:16px;transition:color .2s}
+.fq{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;font-family:var(--tf);font-size:15px;font-weight:500;color:var(--w);gap:16px;transition:color .2s}
 .fq:hover{color:var(--sand)}
 .farr{width:30px;height:30px;border-radius:50%;background:rgba(200,168,120,.1);border:1px solid rgba(200,168,120,.2);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--sand);flex-shrink:0;transition:all .3s}
 .fi.open .farr{background:rgba(200,168,120,.2);color:var(--w);transform:rotate(45deg)}
@@ -638,7 +640,7 @@ nav{
 .fct-t{font-size:14px;color:var(--w);font-weight:500}
 .fct-s{font-size:12px;color:var(--w4)}
 .fbox{padding:36px;border-radius:24px}
-.fbox h3{font-family:var(--tf);font-size:22px;font-weight:800;margin-bottom:24px;color:var(--w)}
+.fbox h3{font-family:var(--tf);font-size:22px;font-weight:620;margin-bottom:24px;color:var(--w)}
 .fg{margin-bottom:14px}
 .fl{font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--w4);margin-bottom:6px;display:block;text-transform:uppercase}
 .fi2{
@@ -653,17 +655,17 @@ nav{
 select.fi2{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(200,168,120,.8)' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;cursor:pointer}
 select.fi2 option{background:#0a150c;color:var(--w)}
 textarea.fi2{resize:vertical;min-height:80px}
-.fsub{width:100%;padding:16px;background:rgba(200,168,120,.18);border:1px solid rgba(200,168,120,.38);color:var(--w);font-family:var(--tf);font-size:15px;font-weight:700;cursor:pointer;border-radius:100px;transition:all .2s;letter-spacing:.04em}
+.fsub{width:100%;padding:16px;background:rgba(200,168,120,.18);border:1px solid rgba(200,168,120,.38);color:var(--w);font-family:var(--tf);font-size:15px;font-weight:500;cursor:pointer;border-radius:100px;transition:all .2s;letter-spacing:.04em}
 .fsub:hover{background:rgba(200,168,120,.3);transform:scale(1.02)}
 .fn{text-align:center;margin-top:10px;font-size:12px;color:var(--w4)}
 
 /* ── FOOTER ── */
 footer{position:relative;z-index:10;padding:60px 48px 36px;border-top:1px solid var(--gbr);background:rgba(8,8,8,.72);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur)}
 .ftop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
-.flog{font-family:var(--tf);font-size:13px;font-weight:700;color:var(--w6);text-decoration:none;display:block;margin-bottom:3px;letter-spacing:.1em}
+.flog{font-family:var(--tf);font-size:13px;font-weight:500;color:var(--w6);text-decoration:none;display:block;margin-bottom:3px;letter-spacing:.1em}
 .flog-sub{font-size:10px;color:var(--w4);letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;display:block}
 .fbp{font-size:13px;color:var(--w4);line-height:1.7;max-width:240px}
-.fcol h4{font-family:var(--tf);font-size:10px;font-weight:700;letter-spacing:.22em;color:var(--sand);margin-bottom:14px;text-transform:uppercase}
+.fcol h4{font-family:var(--tf);font-size:10px;font-weight:460;letter-spacing:.22em;color:var(--sand);margin-bottom:14px;text-transform:uppercase}
 .fcol ul{list-style:none;display:flex;flex-direction:column;gap:8px}
 .fcol ul a{font-size:13px;color:var(--w4);text-decoration:none;transition:color .2s}
 .fcol ul a:hover{color:var(--w)}
@@ -724,7 +726,7 @@ function toggleMenu(){
 
   /* Carousels */
   .vc{flex:0 0 84vw}
-  .ac{flex:0 0 72vw}
+  .ac{flex:0 0 58vw}
   .tc{flex:0 0 56vw;height:260px}
 
   /* Modal */
@@ -747,8 +749,8 @@ function toggleMenu(){
 .hglass{background:var(--g1)!important;backdrop-filter:var(--blurs)!important;-webkit-backdrop-filter:var(--blurs)!important;border:1px solid var(--gbr)!important;border-radius:20px!important}
 .ac,.vc,.fc,.ic,.pg,.dc,.fbox,.glass,.glass-sm,.glass-dk{box-shadow:none}
 .ac{background:rgba(8,8,8,.24)}
-.ac-img{filter:saturate(.92) brightness(.78)}
-.ac:hover .ac-img{filter:saturate(1) brightness(.82)}
+.ac-img{filter:saturate(.96) brightness(.84)}
+.ac:hover .ac-img{filter:saturate(1) brightness(.88)}
 .vc-cover img{filter:saturate(.95) brightness(.88)}
 .vc:hover .vc-cover img{filter:saturate(1) brightness(.92)}
 .team-scroll{gap:14px}
@@ -850,6 +852,28 @@ img{max-width:100%}
   }
 }
 
+
+/* ── GEORGIA BLOCK ── */
+.georgia-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+.gc{padding:28px 24px;border-radius:20px;transition:all .3s;background:var(--g1);backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);border:1px solid var(--gbr)}
+.gc:hover{border-color:rgba(200,168,120,.4)!important;background:rgba(200,168,120,.07)!important;transform:translateY(-4px)}
+.gc-h{font-family:var(--tf);font-size:17px;font-weight:700;color:var(--w);margin-bottom:8px;line-height:1.25}
+.gc-p{font-size:13px;font-weight:300;color:var(--w6);line-height:1.7}
+.gc-tag{display:inline-block;margin-top:12px;padding:4px 12px;border-radius:100px;background:rgba(200,168,120,.1);border:1px solid rgba(200,168,120,.2);color:var(--sand);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+/* ── HOW+FORM combined ── */
+.how-form-wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:48px}
+.how-steps-compact{display:flex;flex-direction:column;gap:0}
+.hwc{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid var(--gbr)}
+.hwc:last-child{border-bottom:none}
+.hwc-num{width:40px;height:40px;border-radius:50%;background:var(--g2);backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);border:1px solid var(--gbr);display:flex;align-items:center;justify-content:center;font-family:var(--tf);font-size:16px;font-weight:800;color:var(--sand);flex-shrink:0;transition:all .3s}
+.hwc:hover .hwc-num{background:rgba(200,168,120,.12);border-color:rgba(200,168,120,.35)}
+.hwc-h{font-family:var(--tf);font-size:15px;font-weight:700;color:var(--w);margin-bottom:4px}
+.hwc-d{font-size:13px;font-weight:300;color:var(--w6);line-height:1.6}
+@media(max-width:960px){
+  .georgia-grid{grid-template-columns:1fr 1fr}
+  .how-form-wrap{grid-template-columns:1fr;gap:40px}
+}
+@media(max-width:600px){.georgia-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -915,12 +939,12 @@ img{max-width:100%}
         <div class="hglass glass hero-mainbox" style="display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center">
           <!-- LEFT: text + reasons -->
           <div>
-            <p class="hd" style="margin-bottom:20px">Выездные wellness-ретриты в горах Грузии — не просто отдых, а <strong>перезагрузка, восстановление и связь внутри команды</strong>.</p>
+            <p class="hd" style="margin-bottom:20px;font-size:24px;line-height:1.5;color:var(--w8);font-family:var(--tf);font-weight:620">Отдых, который подстраивается под вашу команду.</p>
             <div class="hero-reasons" style="display:grid;grid-template-columns:1fr 1fr;gap:8px 28px">
-              <div style="display:flex;align-items:center;gap:9px;font-size:13px;color:var(--w6)"><span style="color:var(--sand);flex-shrink:0">—</span>Русскоязычная среда и персонал</div>
-              <div style="display:flex;align-items:center;gap:9px;font-size:13px;color:var(--w6)"><span style="color:var(--sand);flex-shrink:0">—</span>Прямые рейсы с Кипра, из Лондона и ОАЭ</div>
-              <div style="display:flex;align-items:center;gap:9px;font-size:13px;color:var(--w6)"><span style="color:var(--sand);flex-shrink:0">—</span>Горы и тишина в 80 км от Тбилиси</div>
-              <div style="display:flex;align-items:center;gap:9px;font-size:13px;color:var(--w6)"><span style="color:var(--sand);flex-shrink:0">—</span>Медицина и чекап дешевле, чем в Европе</div>
+              <div style="display:flex;align-items:center;gap:9px;font-size:13px;color:var(--w6)"><span style="color:var(--sand);flex-shrink:0">—</span>Индивидуальная программа под задачу вашей команды</div>
+              <div style="display:flex;align-items:center;gap:9px;font-size:13px;color:var(--w6)"><span style="color:var(--sand);flex-shrink:0">—</span>Формат под любой состав группы и пожелания</div>
+              <div style="display:flex;align-items:center;gap:9px;font-size:13px;color:var(--w6)"><span style="color:var(--sand);flex-shrink:0">—</span>Все под ключ: площадка, логистика и активности</div>
+              <div style="display:flex;align-items:center;gap:9px;font-size:13px;color:var(--w6)"><span style="color:var(--sand);flex-shrink:0">—</span>Ритм поездки собираем под ваш запрос</div>
             </div>
           </div>
           <!-- RIGHT: buttons stacked -->
@@ -934,31 +958,6 @@ img{max-width:100%}
   </section>
 
 
-<!-- ABOUT — full width -->
-<section class="s" id="about">
-  <div class="rv ab-inner">
-    <div class="ab-grid">
-      <div class="ab-ttl">
-        <div class="chip">наш подход</div>
-        <h2 class="BT">Отдых,<br>который подстраивается<br>под <em>вашу команду</em></h2>
-      </div>
-      <div class="ab-copy">
-        <div class="ab-copybox">
-          <p class="ab-p"><strong>Никаких жёстких рамок.</strong> Вы приходите с задачей, составом группы и пожеланиями, а мы собираем <strong>индивидуальную программу</strong> именно под ваш формат.</p>
-          <p class="ab-p">Это может быть <strong>тимбилдинг для команды</strong>, <strong>премиальный C-level ретрит</strong>, <strong>семейный выезд с детьми</strong> или спокойный восстановительный формат. <strong>Всё под ключ</strong> — от площадки и логистики до активностей, восстановления и общего ритма поездки.</p>
-          <div class="ab-tags">
-            <span class="atag">Тимбилдинг</span>
-            <span class="atag">C-Level ретрит</span>
-            <span class="atag">Семейный выезд</span>
-            <span class="atag">Медицинский кэмп</span>
-            <span class="atag">Лагерь для взрослых</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ACTIVITIES -->
 <section class="s" id="activities">
   <div class="act-hd rv">
@@ -969,23 +968,113 @@ img{max-width:100%}
     <p>Собираем программу из любого набора активностей под запрос вашей группы — вот <em>некоторые из них</em>.</p>
   </div>
   <div class="act-scroll rv">
-    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-offroad-jeeps.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Офроад на джипах</div><div class="ac-p">По крутому горному маршруту. При желании дадут порулить.</div></div></div>
-    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-hiking.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Хайкинг</div><div class="ac-p">Групповой подъём с гидом. Потрясающие виды на Малый Кавказ.</div></div></div>
-    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-outdoor-massage.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Массажи на свежем воздухе</div><div class="ac-p">Звуки природы вы будете слушать не из колонки — они будут вас окружать.</div></div></div>
-    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/sauna.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Баня и сауна</div><div class="ac-p">Групповое парение и банные процедуры.</div></div></div>
-    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-body-therapy.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Телесная терапия</div><div class="ac-p">Работа с напряжением, связь тела и эмоций.</div></div></div>
-    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-barbecue.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Барбекю</div><div class="ac-p">Много разного мяса, бирпонг и музыка.</div></div></div>
-    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-manual-therapy.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Мануальная терапия</div><div class="ac-p">Диагностика, тейпирование, лечебный массаж.</div></div></div>
-    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-group-workout.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Зарядки и тренировки</div><div class="ac-p">Программа под вашу группу — от лёгкой до функциональной.</div></div></div>
-    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/winetrip.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Вайн-трип</div><div class="ac-p">Едем по винодельням — дегустации и общение с виноделами.</div></div></div>
-    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/masterclass.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Мастер-классы</div><div class="ac-p">Гончарство, виноделие, грузинская кухня.</div></div></div>
-    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/poker.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Покерный турнир</div><div class="ac-p">Как на деньги, если участники захотят, так и на ценный приз для команды.</div></div></div>
-    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/movie.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Кино на свежем воздухе</div><div class="ac-p">Проектор, пледы, авторские фильмы без телефонов.</div></div></div>
-    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/picnic.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Пикник</div><div class="ac-p">Выезд на природу с едой и видами на горы.</div></div></div>
-    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-horse-riding.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Прогулка на лошадях</div><div class="ac-p">Верховая прогулка по горным маршрутам.</div></div></div>
-    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-barbecue.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Вечер у костра</div><div class="ac-p">Песни под гитару, истории, звёздное небо.</div></div></div>
-    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/pool.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Бассейн</div><div class="ac-p">Открытый подогреваемый с видом на каньон.</div></div></div>
-    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/fireplace.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Вечер у камина</div><div class="ac-p">Тёплая атмосфера и живые разговоры команды.</div></div></div>
+    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@e92dd2f58b053ab70df24c2196288f5c2c614677/activity/Off-road.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Off-road</div></div></div>
+    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-barbecue.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Барбекю</div></div></div>
+    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-outdoor-massage.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Массажи на свежем воздухе</div></div></div>
+    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/winetrip.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Винный тур</div></div></div>
+    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/pool.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Бассейн</div></div></div>
+    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-hiking.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Хайкинг</div></div></div>
+    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/sauna.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Баня и сауна</div></div></div>
+    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-body-therapy.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Телесная терапия</div></div></div>
+    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-manual-therapy.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Мануальная терапия</div></div></div>
+    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-group-workout.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Зарядки и тренировки</div></div></div>
+    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/masterclass.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Мастер-классы</div></div></div>
+    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/poker.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Покерный турнир</div></div></div>
+    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/movie.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Кино на свежем воздухе</div></div></div>
+    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/picnic.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Пикник</div></div></div>
+    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-horse-riding.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Прогулка на лошадях</div></div></div>
+    <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/fireplace.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Вечер у костра</div></div></div>
+  </div>
+</section>
+
+<!-- WHY GEORGIA -->
+<section class="s" id="georgia">
+  <div class="rv sec-hd">
+    <div>
+      <div class="chip">почему Грузия</div>
+      <h2 class="BT">Почему именно <em>Грузия</em></h2>
+    </div>
+    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">Грузия — не просто красиво. Это один из немногих регионов, где русскоязычная среда, природа, медицина и логистика работают в пользу вашей команды.</p>
+  </div>
+  <div class="georgia-grid rv">
+    <div class="gc">
+      <div class="gc-h">Прямые рейсы отовсюду</div>
+      <p class="gc-p">Прямые рейсы из Кипра (2 ч), Израиля (3 ч), ОАЭ (4 ч), Армении (1 ч), Турции (2 ч). Из России — рейсы через Ереван или Стамбул. Для IT-команд из Европы — удобные стыковки через Стамбул или Дубай.</p>
+      <span class="gc-tag">Кипр · ОАЭ · Израиль · Армения</span>
+    </div>
+    <div class="gc">
+      <div class="gc-h">Русскоязычная среда</div>
+      <p class="gc-p">Врачи, специалисты, персонал баз — все говорят на русском. Никаких языковых барьеров для команды из СНГ, Кипра или Израиля. Упрощает организацию и снижает стресс участников.</p>
+      <span class="gc-tag">Русский язык везде</span>
+    </div>
+    <div class="gc">
+      <div class="gc-h">Медицина дешевле Европы</div>
+      <p class="gc-p">Полноценный чекап — анализы, ЭКГ, консультации — в 2–4 раза дешевле, чем в Европе или ОАЭ. Партнёрство с <a href="https://a-clinic.ge/ru" target="_blank" style="color:var(--sand);text-decoration:none">A-Clinic</a> — доказательный подход, русскоязычные врачи.</p>
+      <span class="gc-tag">Чекап от $80</span>
+    </div>
+    <div class="gc">
+      <div class="gc-h">Горы в 80 км от столицы</div>
+      <p class="gc-p">Природа Малого Кавказа — полтора часа от Тбилиси. Каньоны, нагорья на 1500–2000 м, чистый воздух, тишина. Природная среда сама по себе работает как антистресс.</p>
+      <span class="gc-tag">1500 м н.у.м.</span>
+    </div>
+    <div class="gc">
+      <div class="gc-h">Дешевле Европы в 2–3 раза</div>
+      <p class="gc-p">Тот же уровень природы, сервиса и команды специалистов — но бюджет вдвое меньше, чем в Австрии, Испании или Черногории. Для компании это ощутимая экономия без потери в качестве.</p>
+      <span class="gc-tag">Выгоднее аналогов в Европе</span>
+    </div>
+    <div class="gc">
+      <div class="gc-h">Грузинское вино и культура</div>
+      <p class="gc-p">Кахетия с виноградниками, квеври и дегустациями прямо на винодельне — уникальный опыт, который невозможно повторить нигде ещё. Отдельная ценность для C-level команд.</p>
+      <span class="gc-tag">8000 лет виноделия</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- VENUES -->
+<section class="s" id="venues">
+  <div class="rv sec-hd">
+    <div><div class="chip">площадки</div><h2 class="BT">Партнёрские<br><em>локации</em></h2></div>
+    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">Мы отбираем интересные локации и адаптируем для вашего отдыха. Каждое место — с характером.</p>
+  </div>
+  <div class="ven-scroll rv">
+    <div class="vc" onclick="openM('edis')">
+      <div class="vc-cover"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/retreat-exterior-overview-01.webp" alt="" loading="lazy"><div class="vc-badge">9.8 Booking</div></div>
+      <div class="vc-body"><div class="vc-loc">Цалка · Квемо-Картли</div><div class="vc-name">Edis Dacha</div><div class="vc-desc">Отреставрированная дача на краю каньона Дашбаши. Деревянные интерьеры, открытый бассейн, сауна, тишина на 1500 м.</div><div class="vc-tags"><span class="vtag">8 номеров</span><span class="vtag">Сауна</span><span class="vtag">Бассейн</span><span class="vtag">Каньон</span></div><div class="vc-more">Подробнее →</div></div>
+    </div>
+    <div class="vc" onclick="openM('qvev')">
+      <div class="vc-cover"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Hotel_Qvevrebi/retreat-dome-houses-vineyard-view.webp" alt="" loading="lazy"><div class="vc-badge">Кахетия</div></div>
+      <div class="vc-body"><div class="vc-loc">Телави · Кахетия</div><div class="vc-name">Hotel Qvevrebi</div><div class="vc-desc">Номера в форме квеври — традиционных кувшинов для вина. Бассейн, сауна, виды на горы и виноградники.</div><div class="vc-tags"><span class="vtag">Квеври-номера</span><span class="vtag">Бассейн</span><span class="vtag">Вино</span></div><div class="vc-more">Подробнее →</div></div>
+    </div>
+    <div class="vc" onclick="openM('vaz')">
+      <div class="vc-cover"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Vazisubani_Estate/retreat-villa-exterior-classic-white.webp" alt="" loading="lazy"><div class="vc-badge">Кахетия</div></div>
+      <div class="vc-body"><div class="vc-loc">Кахетия · Грузия</div><div class="vc-name">Vazisubani Estate</div><div class="vc-desc">Аутентичная усадьба среди виноградников. Инфинити-бассейн, конюшня, йога на террасе, виды на Кавказ.</div><div class="vc-tags"><span class="vtag">Усадьба</span><span class="vtag">Инфинити-пул</span><span class="vtag">Кони</span></div><div class="vc-more">Подробнее →</div></div>
+    </div>
+    <div class="vc" onclick="openM('lopota')">
+      <div class="vc-cover"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Lopota_Lake/retreat-lakeside-resort-mountain-view.webp" alt="" loading="lazy"><div class="vc-badge">5★ Курорт</div></div>
+      <div class="vc-body"><div class="vc-loc">Напареули · Кахетия</div><div class="vc-name">Lopota Lake Resort & Spa</div><div class="vc-desc">Премиальный курорт на берегу озера. 231 номер, 5 ресторанов, SPA, кони, лодки, ATV.</div><div class="vc-tags"><span class="vtag">5★</span><span class="vtag">SPA</span><span class="vtag">Озеро</span><span class="vtag">231 номер</span></div><div class="vc-more">Подробнее →</div></div>
+    </div>
+    <div class="vc" onclick="openM('pab')">
+      <div class="vc-cover"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Pabellon_Hotel/retreat-pink-resort-terrace-exterior.webp" alt="" loading="lazy"><div class="vc-badge">Бутик</div></div>
+      <div class="vc-body"><div class="vc-loc">Грузия</div><div class="vc-name">Pabellon Hotel</div><div class="vc-desc">Бутик-отель с двумя бассейнами, сауной, биллиардом, рестораном и детской комнатой.</div><div class="vc-tags"><span class="vtag">Бутик</span><span class="vtag">2 бассейна</span><span class="vtag">Ресторан</span></div><div class="vc-more">Подробнее →</div></div>
+    </div>
+  </div>
+</section>
+<!-- MODALS -->
+<div class="mover" id="m-edis" onclick="closeM('edis')"><div class="modal" onclick="event.stopPropagation()"><div class="mcls" onclick="closeM('edis')">✕</div><div class="mgal"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/retreat-exterior-overview-01.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/pool.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/retreat-room-loft-sunlight-01.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/retreat-common-area-bar-01.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/retreat-bathroom-bathtub-01.webp" alt=""></div><div class="mbody"><div class="mloc">Цалка · Квемо-Картли · 1500 м н.у.м. · 9.8 на Booking</div><div class="mname">Edis Dacha</div><div class="mdesc">Отреставрированная историческая дача на краю каньона Дашбаши. Деревянные номера с видом на горы, открытый бассейн, сауна, ресторан из местных продуктов. Семейная атмосфера и профессиональный сервис. Закрытый формат — только ваша команда.</div><div class="mfeats"><div class="mf">8 номеров разного класса</div><div class="mf">Открытый подогреваемый бассейн</div><div class="mf">Сауна с выходом к каньону</div><div class="mf">Ресторан и бар</div><div class="mf">Вид на каньон Дашбаши</div><div class="mf">102 км от Тбилиси (1.5 ч)</div></div><a href="#form" class="btn btn-s" onclick="closeM('edis')">Забронировать →</a></div></div></div>
+<div class="mover" id="m-qvev" onclick="closeM('qvev')"><div class="modal" onclick="event.stopPropagation()"><div class="mcls" onclick="closeM('qvev')">✕</div><div class="mgal"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Hotel_Qvevrebi/retreat-dome-houses-vineyard-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Hotel_Qvevrebi/retreat-pool-mountain-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Hotel_Qvevrebi/retreat-bedroom-terrace-mountain-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Hotel_Qvevrebi/retreat-sauna-with-pool-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Hotel_Qvevrebi/retreat-vineyard-harvest-view.webp" alt=""></div><div class="mbody"><div class="mloc">Телави · Кахетия · Грузия</div><div class="mname">Hotel Qvevrebi</div><div class="mdesc">Уникальный отель в сердце грузинского винного региона с номерами в форме квеври. Открытый бассейн, сауна, 3 ресторана, виды на Кавказ и виноградники.</div><div class="mfeats"><div class="mf">Квеври-номера</div><div class="mf">Открытый бассейн</div><div class="mf">Сауна</div><div class="mf">3 ресторана</div><div class="mf">Дегустации вин</div><div class="mf">90 км от Тбилиси</div></div><a href="#form" class="btn btn-s" onclick="closeM('qvev')">Забронировать →</a></div></div></div>
+<div class="mover" id="m-vaz" onclick="closeM('vaz')"><div class="modal" onclick="event.stopPropagation()"><div class="mcls" onclick="closeM('vaz')">✕</div><div class="mgal"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Vazisubani_Estate/retreat-infinity-pool-vineyard-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Vazisubani_Estate/retreat-terrace-evening-mountain-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Vazisubani_Estate/retreat-bedroom-floral-balcony-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Vazisubani_Estate/retreat-yoga-outdoor-back-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Vazisubani_Estate/retreat-horse-stables.webp" alt=""></div><div class="mbody"><div class="mloc">Кахетия · Грузия</div><div class="mname">Vazisubani Estate</div><div class="mdesc">Аутентичная грузинская усадьба в Кахетии среди виноградников. Инфинити-бассейн с видом на долину, конюшня, йога на террасе, ужин в виноградниках.</div><div class="mfeats"><div class="mf">Инфинити-бассейн</div><div class="mf">Конные прогулки</div><div class="mf">Ужин в виноградниках</div><div class="mf">Йога на террасе</div><div class="mf">Бадминтон</div><div class="mf">Панорамные виды</div></div><a href="#form" class="btn btn-s" onclick="closeM('vaz')">Забронировать →</a></div></div></div>
+<div class="mover" id="m-lopota" onclick="closeM('lopota')"><div class="modal" onclick="event.stopPropagation()"><div class="mcls" onclick="closeM('lopota')">✕</div><div class="mgal"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Lopota_Lake/retreat-castle-pool-mountain-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Lopota_Lake/retreat-lake-mountain-reflection.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Lopota_Lake/retreat-indoor-spa-pool.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Lopota_Lake/retreat-atv-mountain-trail.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Lopota_Lake/retreat-wine-cellar-brick-hall.webp" alt=""></div><div class="mbody"><div class="mloc">Напареули · Кахетия · 5★</div><div class="mname">Lopota Lake Resort & Spa</div><div class="mdesc">Пятизвёздочный курорт на берегу горного озера. 231 номер, 5 ресторанов, полноценный SPA, ATV, конные прогулки, рыбалка, лодки, теннис, собственная винная пещера.</div><div class="mfeats"><div class="mf">231 номер</div><div class="mf">5 ресторанов</div><div class="mf">SPA-центр</div><div class="mf">ATV и кони</div><div class="mf">Рыбалка и лодки</div><div class="mf">Винная пещера</div></div><a href="#form" class="btn btn-s" onclick="closeM('lopota')">Забронировать →</a></div></div></div>
+<div class="mover" id="m-pab" onclick="closeM('pab')"><div class="modal" onclick="event.stopPropagation()"><div class="mcls" onclick="closeM('pab')">✕</div><div class="mgal"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Pabellon_Hotel/retreat-outdoor-pool-pink-facade.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Pabellon_Hotel/retreat-indoor-pool-red-loungers.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Pabellon_Hotel/retreat-bedroom-wood-headboard.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Pabellon_Hotel/retreat-sauna-light-wood-interior.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Pabellon_Hotel/retreat-restaurant-dining-hall.webp" alt=""></div><div class="mbody"><div class="mloc">Грузия</div><div class="mname">Pabellon Hotel</div><div class="mdesc">Современный бутик-отель с закрытым и открытым бассейнами, сауной, паровой, биллиардом, рестораном и детской комнатой.</div><div class="mfeats"><div class="mf">Закрытый + открытый бассейн</div><div class="mf">Сауна и паровая</div><div class="mf">Биллиардный зал</div><div class="mf">Ресторан</div><div class="mf">Детская комната</div><div class="mf">Лофт-номера</div></div><a href="#form" class="btn btn-s" onclick="closeM('pab')">Забронировать →</a></div></div></div>
+
+<!-- DATES -->
+<section class="s" id="dates">
+  <div class="rv"><div class="chip">ближайшие даты</div><h2 class="BT">Доступные <em>слоты</em></h2></div>
+  <div class="dates-grid">
+    <div class="dc hot rv d1"><div class="dc-d">15–20 мая</div><div class="dc-v">Edis Dacha</div><div class="dc-dur">Пятница — среда · 5 дней</div><div class="dc-dl">Предоплата до 16 апреля</div><a href="#form" class="dc-btn">Выбрать слот →</a></div>
+    <div class="dc rv d2"><div class="dc-d">22–26 мая</div><div class="dc-v">Edis Dacha</div><div class="dc-dur">Суббота — вторник · 4 дня</div><div class="dc-dl">Предоплата до 23 апреля</div><a href="#form" class="dc-btn">Выбрать слот →</a></div>
+    <div class="dc rv d3"><div class="dc-d">29 мая — 2 июня</div><div class="dc-v">Hotel Qvevrebi</div><div class="dc-dur">Среда — воскресенье · 5 дней</div><div class="dc-dl">Предоплата до 15 мая</div><a href="#form" class="dc-btn">Выбрать слот →</a></div>
+    <div class="dc rv d4"><div class="dc-d">5–10 июня</div><div class="dc-v">Edis Dacha</div><div class="dc-dur">Суббота — среда · 5 дней</div><div class="dc-dl">Предоплата до 6 мая</div><a href="#form" class="dc-btn">Выбрать слот →</a></div>
   </div>
 </section>
 
@@ -1020,79 +1109,6 @@ img{max-width:100%}
   </div>
 </section>
 
-<!-- IMPACT -->
-<section class="s" id="impact">
-  <div class="rv sec-hd" style="margin-bottom:48px">
-    <div><div class="chip">данные исследований</div><h2 class="BT">Цифры,<br>которые <em>говорят</em></h2></div>
-    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">Реальные данные крупных исследований — влияя на эти показатели, можно напрямую влиять на продуктивность и устойчивость команды.</p>
-  </div>
-  <div class="imp-grid">
-    <div class="ic glass rv d1">
-      <div class="icn">28%</div>
-      <div class="ict">снижение уровня кортизола (гормона стресса) у сотрудников после выездного группового ретрита на природе по сравнению с городской рабочей средой</div>
-      <div class="ics">Hunter et al., «Urban Nature Experiences Reduce Stress», Frontiers in Psychology, 2019</div>
-    </div>
-    <div class="ic glass rv d2">
-      <div class="icn">×50</div>
-      <div class="ict">живые встречи эффективнее цифровой коммуникации для построения командного доверия</div>
-      <div class="ics">MIT Human Dynamics Lab, Alex «Sandy» Pentland, исследование командной динамики, 2012</div>
-    </div>
-    <div class="ic glass rv d3">
-      <div class="icn">87%</div>
-      <div class="ict">сотрудников, чьи работодатели инвестируют в wellbeing, более вовлечены и реже меняют работу</div>
-      <div class="ics">APA Work and Well-Being Survey, 2022 / Deloitte Global Wellbeing Report, 2023</div>
-    </div>
-  </div>
-</section>
-
-<!-- VENUES -->
-<section class="s" id="venues">
-  <div class="rv sec-hd">
-    <div><div class="chip">площадки</div><h2 class="BT">Партнёрские<br><em>локации</em></h2></div>
-    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">Мы отбираем интересные локации и адаптируем для вашего отдыха. Каждое место — с характером.</p>
-  </div>
-  <div class="ven-scroll rv">
-    <div class="vc" onclick="openM('edis')">
-      <div class="vc-cover"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/retreat-exterior-overview-01.webp" alt="" loading="lazy"><div class="vc-badge">9.8 Booking</div></div>
-      <div class="vc-body"><div class="vc-loc">Цалка · Квемо-Картли</div><div class="vc-name">Edis Dacha</div><div class="vc-desc">Отреставрированная дача на краю каньона Дашбаши. Деревянные интерьеры, открытый бассейн, сауна, тишина на 1500 м.</div><div class="vc-tags"><span class="vtag">8 номеров</span><span class="vtag">Сауна</span><span class="vtag">Бассейн</span><span class="vtag">Каньон</span></div><div class="vc-more">Подробнее →</div></div>
-    </div>
-    <div class="vc" onclick="openM('qvev')">
-      <div class="vc-cover"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Hotel_Qvevrebi/retreat-dome-houses-vineyard-view.webp" alt="" loading="lazy"><div class="vc-badge">Кахетия</div></div>
-      <div class="vc-body"><div class="vc-loc">Телави · Кахетия</div><div class="vc-name">Hotel Qvevrebi</div><div class="vc-desc">Номера в форме квеври — традиционных кувшинов для вина. Бассейн, сауна, виды на горы и виноградники.</div><div class="vc-tags"><span class="vtag">Квеври-номера</span><span class="vtag">Бассейн</span><span class="vtag">Вино</span></div><div class="vc-more">Подробнее →</div></div>
-    </div>
-    <div class="vc" onclick="openM('vaz')">
-      <div class="vc-cover"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Vazisubani_Estate/retreat-villa-exterior-classic-white.webp" alt="" loading="lazy"><div class="vc-badge">Кахетия</div></div>
-      <div class="vc-body"><div class="vc-loc">Кахетия · Грузия</div><div class="vc-name">Vazisubani Estate</div><div class="vc-desc">Аутентичная усадьба среди виноградников. Инфинити-бассейн, конюшня, йога на террасе, виды на Кавказ.</div><div class="vc-tags"><span class="vtag">Усадьба</span><span class="vtag">Инфинити-пул</span><span class="vtag">Кони</span></div><div class="vc-more">Подробнее →</div></div>
-    </div>
-    <div class="vc" onclick="openM('lopota')">
-      <div class="vc-cover"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Lopota_Lake/retreat-lakeside-resort-mountain-view.webp" alt="" loading="lazy"><div class="vc-badge">5★ Курорт</div></div>
-      <div class="vc-body"><div class="vc-loc">Напареули · Кахетия</div><div class="vc-name">Lopota Lake Resort & Spa</div><div class="vc-desc">Премиальный курорт на берегу озера. 231 номер, 5 ресторанов, SPA, кони, лодки, ATV.</div><div class="vc-tags"><span class="vtag">5★</span><span class="vtag">SPA</span><span class="vtag">Озеро</span><span class="vtag">231 номер</span></div><div class="vc-more">Подробнее →</div></div>
-    </div>
-    <div class="vc" onclick="openM('pab')">
-      <div class="vc-cover"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Pabellon_Hotel/retreat-pink-resort-terrace-exterior.webp" alt="" loading="lazy"><div class="vc-badge">Бутик</div></div>
-      <div class="vc-body"><div class="vc-loc">Грузия</div><div class="vc-name">Pabellon Hotel</div><div class="vc-desc">Бутик-отель с двумя бассейнами, сауной, биллиардом, рестораном и детской комнатой.</div><div class="vc-tags"><span class="vtag">Бутик</span><span class="vtag">2 бассейна</span><span class="vtag">Ресторан</span></div><div class="vc-more">Подробнее →</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- MODALS -->
-<div class="mover" id="m-edis" onclick="closeM('edis')"><div class="modal" onclick="event.stopPropagation()"><div class="mcls" onclick="closeM('edis')">✕</div><div class="mgal"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/retreat-exterior-overview-01.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/pool.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/retreat-room-loft-sunlight-01.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/retreat-common-area-bar-01.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/retreat-bathroom-bathtub-01.webp" alt=""></div><div class="mbody"><div class="mloc">Цалка · Квемо-Картли · 1500 м н.у.м. · 9.8 на Booking</div><div class="mname">Edis Dacha</div><div class="mdesc">Отреставрированная историческая дача на краю каньона Дашбаши. Деревянные номера с видом на горы, открытый бассейн, сауна, ресторан из местных продуктов. Семейная атмосфера и профессиональный сервис. Закрытый формат — только ваша команда.</div><div class="mfeats"><div class="mf">8 номеров разного класса</div><div class="mf">Открытый подогреваемый бассейн</div><div class="mf">Сауна с выходом к каньону</div><div class="mf">Ресторан и бар</div><div class="mf">Вид на каньон Дашбаши</div><div class="mf">102 км от Тбилиси (1.5 ч)</div></div><a href="#form" class="btn btn-s" onclick="closeM('edis')">Забронировать →</a></div></div></div>
-<div class="mover" id="m-qvev" onclick="closeM('qvev')"><div class="modal" onclick="event.stopPropagation()"><div class="mcls" onclick="closeM('qvev')">✕</div><div class="mgal"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Hotel_Qvevrebi/retreat-dome-houses-vineyard-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Hotel_Qvevrebi/retreat-pool-mountain-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Hotel_Qvevrebi/retreat-bedroom-terrace-mountain-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Hotel_Qvevrebi/retreat-sauna-with-pool-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Hotel_Qvevrebi/retreat-vineyard-harvest-view.webp" alt=""></div><div class="mbody"><div class="mloc">Телави · Кахетия · Грузия</div><div class="mname">Hotel Qvevrebi</div><div class="mdesc">Уникальный отель в сердце грузинского винного региона с номерами в форме квеври. Открытый бассейн, сауна, 3 ресторана, виды на Кавказ и виноградники.</div><div class="mfeats"><div class="mf">Квеври-номера</div><div class="mf">Открытый бассейн</div><div class="mf">Сауна</div><div class="mf">3 ресторана</div><div class="mf">Дегустации вин</div><div class="mf">90 км от Тбилиси</div></div><a href="#form" class="btn btn-s" onclick="closeM('qvev')">Забронировать →</a></div></div></div>
-<div class="mover" id="m-vaz" onclick="closeM('vaz')"><div class="modal" onclick="event.stopPropagation()"><div class="mcls" onclick="closeM('vaz')">✕</div><div class="mgal"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Vazisubani_Estate/retreat-infinity-pool-vineyard-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Vazisubani_Estate/retreat-terrace-evening-mountain-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Vazisubani_Estate/retreat-bedroom-floral-balcony-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Vazisubani_Estate/retreat-yoga-outdoor-back-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Vazisubani_Estate/retreat-horse-stables.webp" alt=""></div><div class="mbody"><div class="mloc">Кахетия · Грузия</div><div class="mname">Vazisubani Estate</div><div class="mdesc">Аутентичная грузинская усадьба в Кахетии среди виноградников. Инфинити-бассейн с видом на долину, конюшня, йога на террасе, ужин в виноградниках.</div><div class="mfeats"><div class="mf">Инфинити-бассейн</div><div class="mf">Конные прогулки</div><div class="mf">Ужин в виноградниках</div><div class="mf">Йога на террасе</div><div class="mf">Бадминтон</div><div class="mf">Панорамные виды</div></div><a href="#form" class="btn btn-s" onclick="closeM('vaz')">Забронировать →</a></div></div></div>
-<div class="mover" id="m-lopota" onclick="closeM('lopota')"><div class="modal" onclick="event.stopPropagation()"><div class="mcls" onclick="closeM('lopota')">✕</div><div class="mgal"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Lopota_Lake/retreat-castle-pool-mountain-view.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Lopota_Lake/retreat-lake-mountain-reflection.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Lopota_Lake/retreat-indoor-spa-pool.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Lopota_Lake/retreat-atv-mountain-trail.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Lopota_Lake/retreat-wine-cellar-brick-hall.webp" alt=""></div><div class="mbody"><div class="mloc">Напареули · Кахетия · 5★</div><div class="mname">Lopota Lake Resort & Spa</div><div class="mdesc">Пятизвёздочный курорт на берегу горного озера. 231 номер, 5 ресторанов, полноценный SPA, ATV, конные прогулки, рыбалка, лодки, теннис, собственная винная пещера.</div><div class="mfeats"><div class="mf">231 номер</div><div class="mf">5 ресторанов</div><div class="mf">SPA-центр</div><div class="mf">ATV и кони</div><div class="mf">Рыбалка и лодки</div><div class="mf">Винная пещера</div></div><a href="#form" class="btn btn-s" onclick="closeM('lopota')">Забронировать →</a></div></div></div>
-<div class="mover" id="m-pab" onclick="closeM('pab')"><div class="modal" onclick="event.stopPropagation()"><div class="mcls" onclick="closeM('pab')">✕</div><div class="mgal"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Pabellon_Hotel/retreat-outdoor-pool-pink-facade.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Pabellon_Hotel/retreat-indoor-pool-red-loungers.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Pabellon_Hotel/retreat-bedroom-wood-headboard.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Pabellon_Hotel/retreat-sauna-light-wood-interior.webp" alt=""><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Pabellon_Hotel/retreat-restaurant-dining-hall.webp" alt=""></div><div class="mbody"><div class="mloc">Грузия</div><div class="mname">Pabellon Hotel</div><div class="mdesc">Современный бутик-отель с закрытым и открытым бассейнами, сауной, паровой, биллиардом, рестораном и детской комнатой.</div><div class="mfeats"><div class="mf">Закрытый + открытый бассейн</div><div class="mf">Сауна и паровая</div><div class="mf">Биллиардный зал</div><div class="mf">Ресторан</div><div class="mf">Детская комната</div><div class="mf">Лофт-номера</div></div><a href="#form" class="btn btn-s" onclick="closeM('pab')">Забронировать →</a></div></div></div>
-
-<!-- DATES -->
-<section class="s" id="dates">
-  <div class="rv"><div class="chip">ближайшие даты</div><h2 class="BT">Доступные <em>слоты</em></h2></div>
-  <div class="dates-grid">
-    <div class="dc hot rv d1"><div class="dc-d">15–20 мая</div><div class="dc-v">Edis Dacha</div><div class="dc-dur">Пятница — среда · 5 дней</div><div class="dc-dl">Предоплата до 16 апреля</div><a href="#form" class="dc-btn">Выбрать слот →</a></div>
-    <div class="dc rv d2"><div class="dc-d">23–26 мая</div><div class="dc-v">Edis Dacha</div><div class="dc-dur">Суббота — вторник · 4 дня</div><div class="dc-dl">Предоплата до 23 апреля</div><a href="#form" class="dc-btn">Выбрать слот →</a></div>
-    <div class="dc rv d3"><div class="dc-d">28 мая — 1 июня</div><div class="dc-v">Hotel Qvevrebi</div><div class="dc-dur">Среда — воскресенье · 5 дней</div><div class="dc-dl">Предоплата до 15 мая</div><a href="#form" class="dc-btn">Выбрать слот →</a></div>
-    <div class="dc rv d4"><div class="dc-d">6–10 июня</div><div class="dc-v">Edis Dacha</div><div class="dc-dur">Суббота — среда · 5 дней</div><div class="dc-dl">Предоплата до 6 мая</div><a href="#form" class="dc-btn">Выбрать слот →</a></div>
-  </div>
-</section>
-
 <!-- TEAM -->
 <section class="s" id="team">
   <div class="rv sec-hd">
@@ -1109,63 +1125,6 @@ img{max-width:100%}
   </div>
 </section>
 
-<!-- PROGRAMS -->
-<section class="s" id="programs">
-  <div class="rv"><div class="chip">программы под ключ</div><h2 class="BT">Готовые <em>форматы</em></h2></div>
-  <div class="prog-grid rv">
-    <div class="pg">
-      <a class="pg-tag" href="https://a-clinic.ge/ru" target="_blank" rel="noopener noreferrer">UPDATE × A-Clinic</a>
-      <div class="pg-h">Медицинский ретрит</div>
-      <p class="pg-p">Совместно с <a href="https://a-clinic.ge/ru" target="_blank" rel="noopener noreferrer" class="inline-link">A-Clinic</a> мы собрали программу чекап-кэмпа. Анкетирование и онлайн-консультация до поездки. В первый день — минимально необходимый чекап (анализы, ЭКГ, осмотр). Отдых на базе с индивидуальными рекомендациями. В Грузии это дешевле, все говорят на русском.</p>
-      <ul class="pg-ul"><li>Анкетирование и консультация до поездки</li><li>Чекап: анализы, ЭКГ, осмотр терапевта</li><li>Индивидуальный план на весь ретрит</li><li>Мануальный терапевт и ЛФК на базе</li></ul>
-      <div class="pg-pills"><a class="ppill" href="https://a-clinic.ge/ru" target="_blank" rel="noopener noreferrer">A-Clinic</a><span class="ppill">Чекап</span><span class="ppill">Анализы</span><span class="ppill">Мануальный врач</span><span class="ppill">Персональный план</span></div>
-    </div>
-    <div class="pg">
-      <div class="pg-tag">Семьи с детьми</div>
-      <div class="pg-h">Семейный отпуск</div>
-      <p class="pg-p">Здесь вы и отдыхаете, и по-настоящему проводите время с детьми — без спешки и без организационного стресса. Пока взрослые на массаже или хайкинге, дети с аниматором и тренером на свежем воздухе. Вечером все вместе: общий стол, костёр, живые разговоры. <strong>Продуктивное и тёплое совместное время — без ощущения, что вы постоянно кого-то контролируете.</strong></p>
-      <ul class="pg-ul"><li>Параллельные программы: взрослые / дети</li><li>Профессиональный аниматор весь день</li><li>Массажи и практики для взрослых</li><li>Совместные вечерние активности</li></ul>
-      <div class="pg-pills"><span class="ppill">Аниматор</span><span class="ppill">Детская программа</span><span class="ppill">Совместный вечер</span><span class="ppill">Свежий воздух</span></div>
-    </div>
-    <div class="pg">
-      <div class="pg-tag">Баланс кутежа и восстановления</div>
-      <div class="pg-h">Лагерь для взрослых</div>
-      <p class="pg-p">Ежедневные массажи, барбекю с бирпонгом, баня с бассейном, песни под гитару у костра, хайкинг по нагорью, поездки офроад, зарядки и дыхательные упражнения в горах. Всего понемногу — и всего достаточно.</p>
-      <ul class="pg-ul"><li>Ежедневные массажи + телесные практики</li><li>Хайкинг и офроад на джипах</li><li>Баня + бассейн + барбекю</li><li>Песни под гитару у костра</li></ul>
-      <div class="pg-pills"><span class="ppill">Массаж</span><span class="ppill">Хайкинг</span><span class="ppill">Баня</span><span class="ppill">Барбекю</span><span class="ppill">Офроад</span><span class="ppill">Зарядка</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- BIZ EFFECT -->
-<section class="s" id="biz">
-  <div class="rv">
-    <div class="chip">зачем это бизнесу</div>
-    <h2 class="BT">Какой бизнес получает <em>эффект</em></h2>
-    <p class="biz-intro">Здесь покупают не просто отдых, а сильную среду, в которой команда возвращает ресурс, доверие и контакт. Поэтому блок работает как продолжение остального сайта — спокойно, премиально и без визуального перегруза.</p>
-  </div>
-  <div class="biz-grid">
-    <div class="bi rv d1">
-      <div class="bi-n" style="color:var(--sand)">01</div>
-      <div class="bi-h">Лояльность</div>
-      <p class="bi-p">Компания показывает реальную заботу о команде, а не формальный бонус в корпоративном пакете.</p>
-      <ul class="bi-ul"><li>Сильный сигнал для удержания сотрудников</li><li>Ощущение ценности со стороны работодателя</li></ul>
-    </div>
-    <div class="bi rv d2">
-      <div class="bi-n" style="color:var(--sand)">02</div>
-      <div class="bi-h">Связь</div>
-      <p class="bi-p">Удалённые и гибридные команды знакомятся по-настоящему, а не только через созвоны и рабочие чаты.</p>
-      <ul class="bi-ul"><li>Глубже понимают роли друг друга</li><li>Быстрее восстанавливают доверие внутри команды</li></ul>
-    </div>
-    <div class="bi rv d3">
-      <div class="bi-n" style="color:var(--sand)">03</div>
-      <div class="bi-h">Ясность</div>
-      <p class="bi-p">У руководителей появляется тихое пространство для сложных разговоров, решений и стратегических обсуждений.</p>
-      <ul class="bi-ul"><li>Без лишнего шума и отвлекающей среды</li><li>В обстановке, где действительно можно думать спокойно</li></ul>
-    </div>
-  </div>
-</section>
-
 <!-- CLIENTS -->
 <div class="clients-s rv">
   <div class="clients-lbl">С нами уже работают</div>
@@ -1178,40 +1137,27 @@ img{max-width:100%}
   </div>
 </div>
 
-<!-- HOW -->
-<section class="s" id="how">
-  <div class="rv">
-    <div class="chip">как работаем</div>
-    <h2 class="BT">Четыре шага до <em>результата</em></h2>
+<!-- IMPACT -->
+<section class="s" id="impact">
+  <div class="rv sec-hd" style="margin-bottom:48px">
+    <div><div class="chip">данные исследований</div><h2 class="BT">Цифры,<br>которые <em>говорят</em></h2></div>
+    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">Реальные данные крупных исследований — влияя на эти показатели, можно напрямую влиять на продуктивность и устойчивость команды.</p>
   </div>
-  <div class="how-steps">
-    <div class="hw rv d1">
-      <div class="hsc">1</div>
-      <div class="hw-text">
-        <div class="hsh">Консультация и бриф</div>
-        <div class="hsd">Обсуждаем цели, размер группы, даты и формат.</div>
-      </div>
+  <div class="imp-grid">
+    <div class="ic glass rv d1">
+      <div class="icn">28%</div>
+      <div class="ict">снижение уровня кортизола (гормона стресса) у сотрудников после выездного выезда на природу по сравнению с городской рабочей средой</div>
+      <div class="ics">Hunter et al., «Urban Nature Experiences Reduce Stress», Frontiers in Psychology, 2019</div>
     </div>
-    <div class="hw rv d2">
-      <div class="hsc">2</div>
-      <div class="hw-text">
-        <div class="hsh">Разработка программы</div>
-        <div class="hsd">Формируем состав специалистов, расписание, активности. Рассчитываем стоимость.</div>
-      </div>
+    <div class="ic glass rv d2">
+      <div class="icn">×50</div>
+      <div class="ict">живые встречи эффективнее цифровой коммуникации для построения командного доверия</div>
+      <div class="ics">MIT Human Dynamics Lab, Alex «Sandy» Pentland, исследование командной динамики, 2012</div>
     </div>
-    <div class="hw rv d3">
-      <div class="hsc">3</div>
-      <div class="hw-text">
-        <div class="hsh">Ретрит «под ключ»</div>
-        <div class="hsd">Трансфер, питание, база, программа — всё на нас. Куратор сопровождает группу.</div>
-      </div>
-    </div>
-    <div class="hw rv d4">
-      <div class="hsc">4</div>
-      <div class="hw-text">
-        <div class="hsh">Отчёт и план</div>
-        <div class="hsd">Каждый участник получает план восстановления. Собираем NPS, предлагаем следующий шаг.</div>
-      </div>
+    <div class="ic glass rv d3">
+      <div class="icn">87%</div>
+      <div class="ict">сотрудников, чьи работодатели инвестируют в wellbeing, более вовлечены и реже меняют работу</div>
+      <div class="ics">APA Work and Well-Being Survey, 2022 / Deloitte Global Wellbeing Report, 2023</div>
     </div>
   </div>
 </section>
@@ -1231,54 +1177,67 @@ img{max-width:100%}
       <div class="fi"><div class="fq" onclick="tf(this)">Кто оплачивает — компания или сотрудники?<span class="farr">+</span></div><div class="fa">Оба варианта. Компания может оплатить полностью или субсидировать. При группе от 5 — скидка. Выставляем счёт на юрлицо.</div></div>
       <div class="fi"><div class="fq" onclick="tf(this)">Откуда вылетают участники?<span class="farr">+</span></div><div class="fa">Работаем с командами из Кипра, Лондона, ОАЭ, Израиля и других городов. Перелёт в стоимость не включён, но мы поможем подобрать удобный рейс, чтобы максимально удобно спланировать программу и трансфер.</div></div>
       <div class="fi"><div class="fq" onclick="tf(this)">Есть ли медицинская составляющая?<span class="farr">+</span></div><div class="fa">Да, это опционально. Мы работаем с <a href="https://a-clinic.ge/ru" target="_blank" rel="noopener noreferrer" class="inline-link">A-Clinic</a> — чекап, анализы, консультации на русском языке и значительно дешевле, чем в Европе. Можно подключить для части участников: они вылетают заранее, до общей программы. Мы берём на себя всё — трансфер, расписание и специальную программу в Тбилиси.</div></div>
-      <div class="fi"><div class="fq" onclick="tf(this)">Можно поехать семьями с детьми?<span class="farr">+</span></div><div class="fa">Конечно. Семейный ретрит с аниматором для детей. Взрослые отдыхают — дети под присмотром и в активной программе.</div></div>
+      <div class="fi"><div class="fq" onclick="tf(this)">Можно поехать семьями с детьми?<span class="farr">+</span></div><div class="fa">Конечно. Семейный выезд с аниматором для детей. Взрослые отдыхают — дети под присмотром и в активной программе.</div></div>
       <div class="fi"><div class="fq" onclick="tf(this)">Как забронировать?<span class="farr">+</span></div><div class="fa">Предоплата 30% фиксирует дату. Остаток — за 21 день. Выставляем счёт на юрлицо или принимаем перевод. Рекомендуем бронировать за 6–8 недель.</div></div>
     </div>
   </div>
 </section>
 
-<!-- FORM -->
-
-
-<section class="s" id="form">
-  <div class="form-grid">
-    <div class="rv">
-      <div class="chip">заявка</div>
-      <h2 class="BT" style="margin-bottom:0">Обсудим<br>ваш <em>ретрит</em></h2>
-      <p class="fs-p">Напишите нам — проконсультируем, обсудим цели и соберём программу именно под вас.</p>
-      <div class="fcts">
-        <a href="https://t.me/updatestudio" class="fct" target="_blank"><div class="fcti">✈</div><div><div class="fct-t">Telegram</div><div class="fct-s">@updatestudio</div></div></a>
-        <a href="https://instagram.com/update.tbilisi" class="fct" target="_blank"><div class="fcti">◎</div><div><div class="fct-t">Instagram</div><div class="fct-s">@update.tbilisi</div></div></a>
-        <a href="/cdn-cgi/l/email-protection#2d44434b426d585d494c5948004e41584f034e4240" class="fct"><div class="fcti">@</div><div><div class="fct-t">Email</div><div class="fct-s"><span class="__cf_email__" data-cfemail="dbb2b5bdb49baeabbfbaafbef6b8b7aeb9f5b8b4b6">[email&#160;protected]</span></div></div></a>
+<!-- HOW + FORM -->
+<section class="s" id="how">
+  <div class="rv sec-hd">
+    <div>
+      <div class="chip">как работаем</div>
+      <h2 class="BT">Четыре шага до <em>результата</em></h2>
+    </div>
+    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">Мы берём на себя всю организацию — от первого звонка до отчёта после поездки.</p>
+  </div>
+  <div class="how-form-wrap">
+    <div class="how-steps-compact rv">
+      <div class="hwc rv d1">
+        <div class="hwc-num">1</div>
+        <div><div class="hwc-h">Консультация и бриф</div><div class="hwc-d">Обсуждаем цели, размер группы, даты и формат.</div></div>
+      </div>
+      <div class="hwc rv d2">
+        <div class="hwc-num">2</div>
+        <div><div class="hwc-h">Разработка программы</div><div class="hwc-d">Формируем состав специалистов, расписание, активности. Рассчитываем стоимость.</div></div>
+      </div>
+      <div class="hwc rv d3">
+        <div class="hwc-num">3</div>
+        <div><div class="hwc-h">Ретрит «под ключ»</div><div class="hwc-d">Трансфер, питание, база, программа — всё на нас. Куратор сопровождает группу.</div></div>
+      </div>
+      <div class="hwc rv d4">
+        <div class="hwc-num">4</div>
+        <div><div class="hwc-h">Отчёт и план</div><div class="hwc-d">Каждый участник получает план восстановления. Собираем NPS, предлагаем следующий шаг.</div></div>
       </div>
     </div>
-    <form class="fbox glass rv d2" id="retreatLeadForm">
+    <div id="form">
+<form class="fbox glass rv d2" id="retreatLeadForm">
       <h3>Расскажите о команде</h3>
       <div class="fg"><label class="fl" for="lead_name">Имя</label><input id="lead_name" name="name" type="text" class="fi2" placeholder="Ваше имя" required></div>
       <div class="fg"><label class="fl" for="lead_company">Компания</label><input id="lead_company" name="company" type="text" class="fi2" placeholder="Название" required></div>
       <div class="fg"><label class="fl" for="lead_contact">Telegram или Email</label><input id="lead_contact" name="contact" type="text" class="fi2" placeholder="@username или email@..." required></div>
       <div class="fg"><label class="fl" for="lead_group_size">Размер группы</label><select id="lead_group_size" name="group_size" class="fi2" required><option value="">Выберите...</option><option>до 5 человек</option><option>5–10 человек</option><option>10–20 человек</option><option>больше 20 — обсудим</option></select></div>
-      <div class="fg"><label class="fl" for="lead_format">Формат</label><select id="lead_format" name="format" class="fi2" required><option value="">Выберите...</option><option>Корпоративный выезд</option><option>C-Level ретрит</option><option>Семейный отдых</option><option>Медицинский ретрит</option><option>Лагерь для взрослых</option><option>Нужна консультация</option></select></div>
+      <div class="fg"><label class="fl" for="lead_format">Формат</label><select id="lead_format" name="format" class="fi2" required><option value="">Выберите...</option><option>Корпоративный выезд</option><option>C-Level выезд</option><option>Семейный отдых</option><option>Медицинский выезд</option><option>Лагерь для взрослых</option><option>Нужна консультация</option></select></div>
       <div class="fg"><label class="fl" for="lead_location">Площадка</label><select id="lead_location" name="location" class="fi2"><option value="">Любая (поможем выбрать)</option><option>Edis Dacha — Цалка</option><option>Hotel Qvevrebi — Телави</option><option>Vazisubani Estate</option><option>Lopota Lake Resort</option><option>Pabellon Hotel</option></select></div>
       <div class="fg"><label class="fl" for="lead_comment">Комментарий</label><textarea id="lead_comment" name="comment" class="fi2" placeholder="Цели, пожелания, особые запросы..."></textarea></div>
       <button type="submit" class="fsub" id="leadSubmitBtn">Отправить заявку →</button>
       <p class="fn" id="leadFormStatus">Ответим в течение дня и предложим несколько вариантов под ваш запрос.</p>
     </form>
+    </div>
   </div>
 </section>
-
-
 
 <footer>
   <div class="ftop">
     <div class="fbrand">
       <a href="https://update-club.com" target="_blank" class="flog">UPDATE</a>
       <span class="flog-sub">Recovery for teams</span>
-      <p class="fbp">Корпоративные wellness-ретриты в Грузии. Программа под ваш запрос, всё под ключ.</p>
+      <p class="fbp">Корпоративные выезды в Грузии. Программа под ваш запрос, всё под ключ.</p>
       <a href="https://update-club.com" target="_blank" style="display:inline-block;margin-top:16px;font-size:12px;color:var(--sand);text-decoration:none;border-bottom:1px solid rgba(200,168,120,.35);letter-spacing:.05em;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--sand)'">update-club.com →</a>
     </div>
     <div class="fcol"><h4>Навигация</h4><ul><li><a href="#about">О нас</a></li><li><a href="#formats">Форматы</a></li><li><a href="#activities">Активности</a></li><li><a href="#venues">Площадки</a></li><li><a href="#dates">Даты</a></li></ul></div>
-    <div class="fcol"><h4>Программы</h4><ul><li><a href="#programs">Медицинский ретрит</a></li><li><a href="#programs">Семейный отпуск</a></li><li><a href="#programs">Лагерь для взрослых</a></li><li><a href="#team">Команда</a></li></ul></div>
+    <div class="fcol"><h4>Программы</h4><ul><li><a href="#programs">Медицинский выезд</a></li><li><a href="#programs">Семейный отпуск</a></li><li><a href="#programs">Лагерь для взрослых</a></li><li><a href="#team">Команда</a></li></ul></div>
     <div class="fcol"><h4>Контакты</h4><ul><li><a href="https://t.me/updatestudio" target="_blank">Telegram</a></li><li><a href="https://instagram.com/update.tbilisi" target="_blank">Instagram</a></li><li><a href="/cdn-cgi/l/email-protection#422b2c242d023732262336276f212e37206c212d2f">Email</a></li></ul></div>
   </div>
   <div class="fbot"><span>© 2025 UPDATE Studio · Tbilisi, Georgia</span><span>Recovery for teams</span></div>
@@ -1290,7 +1249,7 @@ img{max-width:100%}
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ── BACKGROUND: try multiple sources, JS-driven ── */
-const BGSRCS=['https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@3fb6c09db5ed39b3b110f5e8ad7bc3317b3317b3/background/background.webp'];
+const BGSRCS=['https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@a79f046353fd2872719eba7840b7d8c442b6f360/background/background-small.webp'];
 (function loadBG(idx){
   if(idx>=BGSRCS.length)return;
   const img=new Image();
