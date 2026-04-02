@@ -533,6 +533,9 @@ nav{
 .pg-ul li{font-size:13px;color:var(--w6);display:flex;gap:10px;align-items:flex-start;line-height:1.5}
 .pg-ul li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--sand);flex-shrink:0;margin-top:7px}
 .pg-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.pg-price{margin-top:20px;padding-top:16px;border-top:1px solid var(--gbr);display:flex;flex-direction:column;gap:3px}
+.pg-price-val{font-family:var(--tf);font-size:15px;font-weight:600;color:var(--w);line-height:1.3}
+.pg-price-note{font-size:11px;font-weight:300;color:var(--w4);letter-spacing:.03em}
 .ppill{font-size:11px;padding:5px 13px;background:rgba(255,255,255,.05);border:1px solid var(--gbr2);color:var(--w6);border-radius:100px}
 
 /* ── BIZ EFFECT ── */
@@ -790,27 +793,26 @@ img{max-width:100%}
 .mob-menu ul{list-style:none;display:flex;flex-direction:column;gap:4px}
 .mob-menu ul li a{font-family:var(--tf);font-size:24px;font-weight:700;color:var(--w6);text-decoration:none;display:block;padding:12px 0;border-bottom:1px solid var(--gbr);transition:color .2s;letter-spacing:-.01em}
 .mob-menu ul li a:hover{color:var(--w)}
-/* Mobile CTA button — fixed at bottom */
+/* Fixed bottom CTA */
 .mob-cta-fixed{
-  display:none;
+  display:block;
   position:fixed;bottom:0;left:0;right:0;z-index:140;
-  padding:12px 20px 24px;
-  background:linear-gradient(to top, rgba(6,8,6,.95) 60%, transparent 100%);
+  padding:12px 14px 14px;
+  background:linear-gradient(to top, rgba(6,8,6,.94) 72%, transparent 100%);
 }
 .mob-cta-fixed a{
-  display:block;text-align:center;
+  display:block;text-align:center;width:100%;
   background:var(--sand-g);border:1px solid var(--sand-b);
-  color:var(--w);padding:16px;border-radius:100px;
-  font-family:var(--tf);font-size:15px;font-weight:700;
+  color:var(--w);padding:18px 20px;border-radius:999px;
+  font-family:var(--tf);font-size:15px;font-weight:500;
   text-decoration:none;letter-spacing:.04em;
 }
+body{padding-bottom:88px}
 
 @media(max-width:960px){
   /* Burger visible, desktop nav hidden */
   .burger{display:flex}
   .nav-cta-desktop{display:none}
-  /* Fixed bottom CTA */
-  .mob-cta-fixed{display:block}
   /* Hero: push content down so logo visible, add bottom padding for fixed CTA */
   .hero{padding-bottom:100px}
   .h-tags{margin-bottom:20px}
@@ -824,6 +826,8 @@ img{max-width:100%}
   .hw:last-child{border-bottom:none}
   .hsc{flex-shrink:0;margin-bottom:0;width:52px;height:52px;font-size:17px}
   .hw-text{flex:1}
+  .mob-cta-fixed{padding:12px 14px calc(14px + env(safe-area-inset-bottom))}
+  .mob-cta-fixed a{padding:18px 20px}
 }
 
 
@@ -914,6 +918,9 @@ img{max-width:100%}
     </ul>
     <a href="#form" class="nbtn" style="width:100%;text-align:center;justify-content:center" onclick="toggleMenu()">Оставить заявку</a>
   </div>
+</div>
+<div class="mob-cta-fixed">
+  <a href="#form">Оставить заявку</a>
 </div>
 <!-- HERO -->
 <section class="hero">
@@ -1125,6 +1132,37 @@ img{max-width:100%}
   </div>
 </section>
 
+<!-- PROGRAMS -->
+<section class="s" id="programs">
+  <div class="rv"><div class="chip">программы под ключ</div><h2 class="BT">Готовые <em>программы</em></h2></div>
+  <div class="prog-grid rv">
+    <div class="pg">
+      <a class="pg-tag" href="https://a-clinic.ge/ru" target="_blank" rel="noopener noreferrer">UPDATE × A-Clinic</a>
+      <div class="pg-h">Медицинский выезд</div>
+      <p class="pg-p">Совместно с <a href="https://a-clinic.ge/ru" target="_blank" rel="noopener noreferrer" class="inline-link">A-Clinic</a> мы собрали программу чекап-кэмпа. Анкетирование и онлайн-консультация до поездки. В первый день — минимально необходимый чекап (анализы, ЭКГ, осмотр). Отдых на базе с индивидуальными рекомендациями. В Грузии это дешевле, все говорят на русском.</p>
+      <ul class="pg-ul"><li>Анкетирование и консультация до поездки</li><li>Чекап: анализы, ЭКГ, осмотр терапевта</li><li>Индивидуальный план на весь выезд</li><li>Мануальный терапевт и ЛФК на базе</li></ul>
+      <div class="pg-pills"><a class="ppill" href="https://a-clinic.ge/ru" target="_blank" rel="noopener noreferrer">A-Clinic</a><span class="ppill">Чекап</span><span class="ppill">Анализы</span><span class="ppill">Мануальный врач</span><span class="ppill">Персональный план</span></div>
+      <div class="pg-price"><div class="pg-price-val">от $2 000 / чел.</div><div class="pg-price-note">группа от 10 человек · 4 дня</div></div>
+    </div>
+    <div class="pg">
+      <div class="pg-tag">Семьи с детьми</div>
+      <div class="pg-h">Семейный отпуск</div>
+      <p class="pg-p">Здесь вы и отдыхаете, и по-настоящему проводите время с детьми — без спешки и без организационного стресса. Пока взрослые на массаже или хайкинге, дети с аниматором и тренером на свежем воздухе. Вечером все вместе: общий стол, костёр, живые разговоры. <strong>Продуктивное и тёплое совместное время — без ощущения, что вы постоянно кого-то контролируете.</strong></p>
+      <ul class="pg-ul"><li>Параллельные программы: взрослые / дети</li><li>Профессиональный аниматор весь день</li><li>Массажи и практики для взрослых</li><li>Совместные вечерние активности</li></ul>
+      <div class="pg-pills"><span class="ppill">Аниматор</span><span class="ppill">Детская программа</span><span class="ppill">Совместный вечер</span><span class="ppill">Свежий воздух</span></div>
+      <div class="pg-price"><div class="pg-price-val">взрослый от $1 500</div><div class="pg-price-val">ребёнок от $1 200</div><div class="pg-price-note">3–4 семьи с детьми · 4 дня</div></div>
+    </div>
+    <div class="pg">
+      <div class="pg-tag">Баланс кутежа и восстановления</div>
+      <div class="pg-h">Лагерь для взрослых</div>
+      <p class="pg-p">Ежедневные массажи, барбекю с бирпонгом, баня с бассейном, песни под гитару у костра, хайкинг по нагорью, пикники в горах, зарядки и дыхательные упражнения в горах. Всего понемногу — и всего достаточно.</p>
+      <ul class="pg-ul"><li>Ежедневные массажи и зарядки</li><li>Хайкинг и пикники в горах</li><li>Баня + бассейн + барбекю</li><li>Песни под гитару у костра</li></ul>
+      <div class="pg-pills"><span class="ppill">Массаж</span><span class="ppill">Хайкинг</span><span class="ppill">Баня</span><span class="ppill">Барбекю</span><span class="ppill">Зарядка</span></div>
+      <div class="pg-price"><div class="pg-price-val">от $1 500 / чел.</div><div class="pg-price-note">группа от 10 человек · 4 дня</div></div>
+    </div>
+  </div>
+</section>
+
 <!-- CLIENTS -->
 <div class="clients-s rv">
   <div class="clients-lbl">С нами уже работают</div>
@@ -1242,9 +1280,6 @@ img{max-width:100%}
   </div>
   <div class="fbot"><span>© 2025 UPDATE Studio · Tbilisi, Georgia</span><span>Recovery for teams</span></div>
 </footer>
-<div class="mob-cta-fixed">
-  <a href="#form">Оставить заявку →</a>
-</div>
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
