@@ -1,0 +1,2351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phystech Retreat — 5–10 июня</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@a79f046353fd2872719eba7840b7d8c442b6f360/background/background-small.webp" fetchpriority="high">
+<style>
+:root{
+  --bg:#071120;
+  --sand:#1771F1;
+  --sand2:#7BB5FF;
+  --sand-g:rgba(23,113,241,.16);
+  --sand-b:rgba(123,181,255,.28);
+  --g1:rgba(11,24,46,.40);
+  --g2:rgba(17,39,74,.52);
+  --g3:rgba(26,55,100,.72);
+  --gbr:rgba(139,182,255,.16);
+  --gbr2:rgba(139,182,255,.3);
+  --w:#ffffff;
+  --w8:rgba(255,255,255,.8);
+  --w6:rgba(255,255,255,.55);
+  --w4:rgba(255,255,255,.32);
+  --w2:rgba(255,255,255,.14);
+  --blur:blur(26px) saturate(1.6);
+  --blurs:blur(14px) saturate(1.3);
+  --tf:'Unbounded',sans-serif;
+  --bf:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--w);font-family:var(--bf);overflow-x:hidden;font-size:16px;line-height:1.6}
+
+/* ── SCENE ── */
+#scene{
+  position:fixed;inset:0;z-index:0;
+  background-color:#06101f;
+  background-image:url('https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@a79f046353fd2872719eba7840b7d8c442b6f360/background/background-small.webp');
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  transition:opacity .6s ease;
+  filter:saturate(1.02) brightness(.34);
+}
+#scov{
+  position:fixed;inset:0;z-index:1;
+  background:
+    radial-gradient(circle at top right, rgba(23,113,241,.18), transparent 32%),
+    linear-gradient(to bottom, rgba(4,9,18,.52) 0%, rgba(5,12,25,.26) 38%, rgba(4,10,20,.84) 100%);
+}
+.wrap{position:relative;z-index:1;overflow-x:clip}
+nav{z-index:9999}
+.hero-ticker{z-index:20}
+#scene,#scov{z-index:0}
+.hero .hgrid,
+.hero-ticker-window,
+.s > *{
+  width:min(1440px, calc(100vw - 96px));
+  max-width:1440px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.hero .hgrid{
+  position:relative;
+  z-index:5;
+}
+.s{
+  z-index:1;
+}
+@media (max-width:960px){
+  .hero .hgrid,
+  .hero-ticker-window,
+  .s > *{
+    width:min(1440px, calc(100vw - 40px));
+  }
+}
+
+/* ── GLASS ── */
+.glass{
+  background:var(--g1);
+  backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  border:1px solid var(--gbr);border-radius:28px;
+}
+.glass-sm{
+  background:var(--g2);
+  backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);
+  border:1px solid var(--gbr2);border-radius:14px;
+}
+.glass-dk{
+  background:rgba(10,10,10,.45);
+  backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);
+  border:1px solid var(--gbr);border-radius:20px;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;
+  padding:16px 48px;
+  background:rgba(8,8,8,.52);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--gbr);
+}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0;flex-shrink:1}
+.logo-mark{width:34px;height:34px;object-fit:contain;filter:drop-shadow(0 0 12px rgba(23,113,241,.22))}
+.logo-main{font-family:var(--tf);font-size:13px;font-weight:560;color:var(--w);letter-spacing:.08em;display:block}
+.logo-sub{font-size:10px;font-weight:400;color:var(--w4);letter-spacing:.18em;text-transform:uppercase;display:block;margin-top:1px}
+.nl{display:flex;gap:clamp(12px,1.6vw,22px);list-style:none;flex:1;justify-content:center;min-width:0}
+.nl a{font-size:13px;color:var(--w6);text-decoration:none;transition:color .2s}
+.nl a{white-space:nowrap}
+.nl a:hover{color:var(--w)}
+.nbtn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--sand-g);border:1px solid var(--sand-b);
+  color:var(--w);padding:10px 22px;border-radius:100px;
+  font-size:13px;font-weight:480;font-family:var(--tf);
+  text-decoration:none;transition:all .2s;letter-spacing:.04em;
+  flex-shrink:0;
+}
+.nbtn:hover{background:rgba(23,113,241,.28);border-color:rgba(123,181,255,.45)}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:112px 48px 56px
+}
+.h-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.ht{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--g2);backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);
+  border:1px solid var(--gbr2);color:var(--w8);
+  padding:8px 18px;border-radius:100px;font-size:12px;letter-spacing:.04em;
+}
+.htd{width:5px;height:5px;border-radius:50%;background:var(--sand);flex-shrink:0}
+.hgrid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:56px;
+  align-items:start;
+}
+.hh{
+  font-family:var(--tf);
+  font-size:clamp(60px,9.5vw,124px);
+  font-weight:560;
+  line-height:.9;
+  letter-spacing:-.04em;
+  color:var(--w);
+  opacity:0;
+  animation:fu .9s .2s forwards;
+  transform:translateY(28px);
+  margin-top:-26px;
+}
+.hh .ac{color:var(--sand)}
+.hh .accent-blue{color:var(--sand)}
+.hright{
+  opacity:0;
+  animation:fu .8s .5s forwards;
+  transform:translateY(22px);
+}
+.hglass{padding:28px 32px;border-radius:20px}
+.hd{
+  font-size:16px;
+  font-weight:300;
+  color:var(--w6);
+  line-height:1.8;
+  margin-bottom:22px
+}
+.hbtns{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 28px;border-radius:100px;font-size:14px;font-weight:480;
+  text-decoration:none;transition:all .2s;font-family:var(--tf);letter-spacing:.03em
+}
+.btn-s{background:var(--sand-g);border:1px solid var(--sand-b);color:var(--w)}
+.btn-s:hover{background:rgba(23,113,241,.28);border-color:rgba(123,181,255,.5)}
+.date-card .btn-s{
+  width:100%;
+  justify-content:center;
+  min-height:84px;
+  border-radius:999px;
+  background:var(--sand-g);
+  border:1px solid var(--sand-b);
+  color:var(--w);
+  font-size:18px;
+  font-weight:520;
+}
+.btn-g{background:var(--g2);border:1px solid var(--gbr2);color:var(--w)}
+.btn-g:hover{background:var(--g3)}
+
+@keyframes fu{to{opacity:1;transform:none}}
+
+.hero-top{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(300px,420px);
+  gap:48px;
+  align-items:start;
+}
+.hero-copy{
+  width:100%;
+  max-width:860px;
+}
+.hero-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:18px;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--sand2);
+}
+.hero-kicker::before{
+  content:'';
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--sand);
+  box-shadow:0 0 16px rgba(123,181,255,.5);
+}
+.hero-sub{
+  margin-top:22px;
+  max-width:760px;
+  font-size:clamp(18px,1.55vw,22px);
+  line-height:1.65;
+  color:var(--w8);
+  font-weight:300;
+}
+.hh{
+  max-width:10.8ch;
+  font-size:clamp(52px,6.4vw,96px);
+  line-height:.95;
+  letter-spacing:-.05em;
+  text-wrap:pretty;
+  overflow-wrap:normal;
+  word-break:normal;
+}
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:28px;
+}
+.hero-meta{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  justify-content:flex-start;
+  align-items:flex-start;
+  width:100%;
+  margin-top:-12px;
+}
+.hero-meta-card{
+  width:min(100%, 390px);
+  padding:26px 28px;
+  border-radius:28px;
+  background:linear-gradient(180deg, rgba(17,39,74,.48), rgba(9,21,41,.72));
+  border:1px solid rgba(123,181,255,.24);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  box-shadow:0 24px 80px rgba(0,0,0,.22);
+}
+.hero-meta-date{
+  font-family:var(--tf);
+  font-size:11px;
+  line-height:1.4;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--sand2);
+  margin-bottom:12px;
+}
+.hero-meta-place{
+  font-family:var(--tf);
+  font-size:clamp(24px,2.6vw,34px);
+  line-height:1.12;
+  letter-spacing:-.03em;
+  color:var(--w);
+  margin-bottom:14px;
+}
+.hero-meta-text{
+  font-size:14px;
+  line-height:1.75;
+  color:var(--w6);
+}
+.hero-checkup{
+  width:min(100%, 390px);
+  display:block;
+  padding:18px 22px;
+  border-radius:22px;
+  text-decoration:none;
+  background:linear-gradient(180deg, rgba(11,24,46,.52), rgba(8,18,34,.74));
+  border:1px solid rgba(123,181,255,.22);
+  color:var(--w);
+  transition:all .2s;
+}
+.hero-checkup:hover{
+  transform:translateY(-2px);
+  border-color:rgba(123,181,255,.42);
+  background:linear-gradient(180deg, rgba(17,39,74,.62), rgba(10,23,44,.82));
+}
+.hero-checkup-kicker{
+  display:block;
+  margin-bottom:6px;
+  font-size:10px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--sand2);
+}
+.hero-checkup-title{
+  display:block;
+  font-family:var(--tf);
+  font-size:18px;
+  line-height:1.2;
+  color:var(--w);
+}
+.hero-checkup-note{
+  display:block;
+  margin-top:6px;
+  font-size:13px;
+  line-height:1.55;
+  color:var(--w6);
+}
+.hero-meta-list{
+  list-style:none;
+  display:grid;
+  gap:10px;
+  margin-top:18px;
+}
+.hero-meta-list li{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  font-size:13px;
+  line-height:1.65;
+  color:var(--w8);
+}
+.hero-meta-list li::before{
+  content:'';
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--sand);
+  flex-shrink:0;
+  margin-top:8px;
+}
+.hero-phrases{
+  position:relative;
+  min-height:220px;
+  display:flex;
+  align-items:flex-start;
+}
+.hero-phrases-list{
+  position:relative;
+  width:100%;
+  min-height:220px;
+  padding:28px 30px;
+  overflow:hidden;
+}
+.hero-phrase{
+  position:absolute;
+  inset:28px 30px 28px 30px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  font-family:var(--tf);
+  font-size:clamp(28px,3.1vw,44px);
+  font-weight:700;
+  line-height:1.03;
+  letter-spacing:-.03em;
+  color:var(--w);
+  opacity:0;
+  transform:translateY(52px);
+  filter:blur(10px);
+  text-wrap:balance;
+  z-index:1;
+  visibility:hidden;
+  transition:opacity .55s ease, transform .55s ease, filter .55s ease, visibility .55s ease;
+  will-change:opacity,transform,filter;
+  backface-visibility:hidden;
+}
+.hero-phrase.is-active{
+  opacity:1;
+  transform:translateY(0);
+  filter:blur(0);
+  visibility:visible;
+}
+.hero-phrase.is-exit{
+  opacity:0;
+  transform:translateY(-24px);
+  filter:blur(10px);
+  visibility:hidden;
+}
+  8%{
+    opacity:1;
+    transform:translateY(0);
+    filter:blur(0);
+    visibility:visible;
+  }
+  58%{
+    opacity:1;
+    transform:translateY(0);
+    filter:blur(0);
+    visibility:visible;
+  }
+  74%{
+    opacity:0;
+    transform:translateY(-24px);
+    filter:blur(10px);
+    visibility:hidden;
+  }
+  100%{
+    opacity:0;
+    transform:translateY(-24px);
+    filter:blur(10px);
+    visibility:hidden;
+  }
+}
+
+.hero-bottom{
+  margin-top:26px;
+}
+.hero-bottom .hglass{
+  width:100%;
+}
+.hero-summary{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.hero-summary-item{
+  padding:18px 20px;
+  border-radius:20px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(123,181,255,.16);
+}
+.hero-summary-label{
+  display:block;
+  margin-bottom:8px;
+  font-size:10px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--sand2);
+}
+.hero-summary-value{
+  font-size:14px;
+  line-height:1.65;
+  color:var(--w8);
+}
+
+@media (max-width:1100px){
+  .hero,.s{padding-left:32px;padding-right:32px}
+  .hgrid,.hero-top{gap:34px}
+  .hero-phrase{font-size:clamp(24px,2.8vw,34px)}
+  .hh{font-size:clamp(48px,7vw,84px);max-width:10ch}
+  .hero-top{grid-template-columns:minmax(0,1fr) minmax(260px,360px)}
+  .hero-summary{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+  .hero{
+    min-height:auto;
+    padding:120px 20px 48px;
+    justify-content:flex-start;
+  }
+  .hgrid,.hero-top{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+  .hh{
+    margin-top:0;
+    max-width:none;
+    font-size:clamp(40px,10.5vw,62px);
+  }
+  .hero-meta{
+    justify-content:flex-start;
+    margin-top:0;
+  }
+  .hero-meta-card{
+    width:100%;
+    padding:22px 20px;
+  }
+  .hero-checkup{
+    width:100%;
+  }
+  .hero-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .hero-actions .btn{
+    justify-content:center;
+  }
+  .hero-summary{
+    grid-template-columns:1fr;
+  }
+  .hero-phrases,
+  .hero-phrases-list{
+    min-height:124px;
+  }
+  .hero-phrases-list{
+    padding:18px 18px;
+  }
+  .hero-phrase{
+    inset:18px 18px 18px 18px;
+    font-size:24px;
+  }
+  .hero-bottom{
+    margin-top:18px;
+  }
+  .hglass{
+    padding:22px 20px;
+  }
+  .date-card{
+    padding:22px;
+  }
+  .date-card .btn-s{
+    min-height:72px;
+    font-size:16px;
+  }
+}
+
+/* ── SECTIONS ── */
+.s{padding:100px 48px;position:relative;z-index:10}
+
+/* ── CHIP ── */
+.chip{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(23,113,241,.12);border:1px solid rgba(123,181,255,.25);
+  color:var(--sand);padding:7px 18px;border-radius:100px;
+  font-size:11px;font-weight:700;letter-spacing:.1em;
+  margin-bottom:24px;text-transform:uppercase;
+}
+.chip::before{content:'•';font-size:14px}
+.BT{font-family:var(--tf);font-size:clamp(36px,5vw,64px);font-weight:640;line-height:1.0;letter-spacing:-.03em;color:var(--w)}
+.BT em{font-style:normal;color:var(--sand)}
+.BT-xl{font-size:clamp(52px,7vw,90px)}
+
+/* ── ABOUT — full width ── */
+.ab-inner{padding:0}
+.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.ab-p{font-size:16px;font-weight:300;color:var(--w6);line-height:1.85;margin-bottom:16px}
+.ab-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.ab-p strong{
+  color:var(--w);
+  font-weight:500;
+}
+.ab-ttl{
+  max-width:none;
+}
+.ab-copybox{
+  width:100%;
+  padding:36px;
+  border-radius:20px;
+  background:var(--g1);
+  border:1px solid var(--gbr);
+  backdrop-filter:var(--blurs);
+  -webkit-backdrop-filter:var(--blur);
+}
+.ab-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:26px;
+}
+@media (max-width: 1100px){
+  .ab-grid{gap:22px}
+}
+@media (max-width: 900px){
+  .ab-copybox{
+    padding:22px 20px;
+    border-radius:22px;
+  }
+}
+
+.pill-soft{
+  display:inline-flex;
+  align-items:center;
+  min-height:48px;
+  padding:12px 24px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  color:rgba(255,255,255,.68);
+  font-size:14px;
+  font-weight:600;
+  backdrop-filter:var(--blur);
+  -webkit-backdrop-filter:var(--blur);
+}
+.atag{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:9px 20px;
+  border-radius:999px;
+  background:rgba(15,10,5,.55);
+  border:1px solid rgba(123,181,255,.32);
+  color:var(--sand);
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.06em;
+  line-height:1;
+  white-space:nowrap;
+  text-transform:uppercase;
+}
+.atag:hover{background:rgba(23,113,241,.18);border-color:rgba(123,181,255,.55);color:var(--w)}
+
+/* ── PROGRAM DAYS ── */
+.itinerary-grid{
+  display:grid;
+  gap:14px;
+  margin-top:40px;
+}
+.day-card{
+  display:grid;
+  grid-template-columns:220px minmax(0,1fr);
+  gap:28px;
+  padding:28px;
+  border-radius:24px;
+  background:var(--g1);
+  border:1px solid var(--gbr);
+  backdrop-filter:var(--blurs);
+  -webkit-backdrop-filter:var(--blurs);
+  transition:all .3s;
+}
+.day-card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(123,181,255,.42)!important;
+  background:rgba(23,113,241,.08)!important;
+}
+.day-side{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  align-self:start;
+}
+.day-eyebrow{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--sand);
+}
+.day-date{
+  font-family:var(--tf);
+  font-size:clamp(28px,3vw,42px);
+  line-height:1.02;
+  letter-spacing:-.04em;
+  color:var(--w);
+}
+.day-weekday{
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--w4);
+}
+.day-body{
+  padding-left:28px;
+  border-left:1px solid var(--gbr);
+}
+.day-title{
+  font-family:var(--tf);
+  font-size:20px;
+  font-weight:620;
+  line-height:1.18;
+  color:var(--w);
+  margin-bottom:14px;
+}
+.day-flow{
+  list-style:none;
+  display:grid;
+  gap:10px;
+}
+.day-flow li{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  font-size:14px;
+  line-height:1.75;
+  color:var(--w8);
+}
+.day-flow li::before{
+  content:'';
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--sand);
+  box-shadow:0 0 16px rgba(123,181,255,.48);
+  flex-shrink:0;
+  margin-top:9px;
+}
+.day-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+}
+.day-pill{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 13px;
+  border-radius:999px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(123,181,255,.22);
+  color:var(--w6);
+  font-size:11px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.program-gallery{
+  margin-top:28px;
+}
+.program-gallery-title{
+  font-family:var(--tf);
+  font-size:12px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--w4);
+  margin-bottom:18px;
+}
+
+/* ── ACTIVITIES ── */
+.act-hd{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:48px}
+.act-hd p{font-size:15px;font-weight:300;color:var(--w6);line-height:1.8}
+.act-scroll{display:flex;gap:18px;overflow-x:auto;padding-bottom:16px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
+.act-scroll::-webkit-scrollbar{height:3px}
+.act-scroll::-webkit-scrollbar-track{background:var(--gbr);border-radius:2px}
+.act-scroll::-webkit-scrollbar-thumb{background:rgba(123,181,255,.4);border-radius:2px}
+.ac{
+  flex:0 0 260px;border-radius:20px;overflow:hidden;position:relative;
+  aspect-ratio:3/4;scroll-snap-align:start;
+  background:var(--g1);border:1px solid var(--gbr);
+  backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);
+  transition:all .3s;
+}
+.ac-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.8) brightness(.8);transition:transform .5s,filter .4s;display:block}
+.ac:hover .ac-img{transform:scale(1.06);filter:saturate(.98) brightness(.84)}
+.ac::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(6,13,7,.56) 0%,rgba(6,13,7,.08) 48%,transparent 100%)}
+.ac-body{position:absolute;bottom:0;left:0;right:0;padding:20px;z-index:2}
+.ac:hover{border-color:rgba(123,181,255,.4)!important;}
+.ac-h{font-family:var(--tf);font-size:15px;font-weight:430;color:var(--w);margin-bottom:5px;line-height:1.2}
+.ac-p{font-size:12px;font-weight:300;color:var(--w6);line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+/* ── FORMATS ── */
+.fmt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+.fc{padding:36px 30px;border-radius:20px;transition:all .3s;position:relative;overflow:hidden;background:var(--g1);backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);border:1px solid var(--gbr)}
+.fc:hover{border-color:rgba(123,181,255,.4)!important;background:rgba(23,113,241,.08)!important;transform:translateY(-4px)}
+.fcn{font-size:10px;font-weight:700;letter-spacing:.25em;color:var(--w2);margin-bottom:18px;text-transform:uppercase}
+.fcl{display:inline-block;padding:5px 14px;border-radius:100px;background:rgba(23,113,241,.1);border:1px solid rgba(123,181,255,.2);color:var(--sand);font-size:10px;font-weight:700;letter-spacing:.1em;margin-bottom:14px;text-transform:uppercase}
+.fch{font-family:var(--tf);font-size:19px;font-weight:700;margin-bottom:12px;line-height:1.25;color:var(--w)}
+.fcp{font-size:13px;font-weight:300;color:var(--w6);line-height:1.75;margin-bottom:18px}
+.fcul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.fcul li{font-size:13px;color:var(--w6);display:flex;gap:10px;align-items:flex-start;line-height:1.5}
+.fcul li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--sand);flex-shrink:0;margin-top:7px}
+
+/* ── IMPACT ── */
+.imp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ic{padding:40px 34px;border-radius:20px;transition:all .3s;background:var(--g1);backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);border:1px solid var(--gbr)}
+.ic:hover{border-color:rgba(123,181,255,.4)!important;background:rgba(23,113,241,.08)!important;transform:translateY(-3px)}
+.icn{font-family:var(--tf);font-size:clamp(52px,6vw,68px);font-weight:800;color:var(--w);line-height:1;margin-bottom:10px}
+.ict{font-size:14px;color:var(--w6);line-height:1.65}
+.ics{font-size:11px;color:var(--w4);font-style:italic;margin-top:10px;line-height:1.5;padding-top:10px;border-top:1px solid var(--gbr)}
+
+/* ── VENUES ── */
+.ven-scroll{display:flex;gap:14px;overflow-x:auto;padding-bottom:16px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;margin-top:48px}
+.ven-scroll::-webkit-scrollbar{height:3px}
+.ven-scroll::-webkit-scrollbar-track{background:var(--gbr);border-radius:2px}
+.ven-scroll::-webkit-scrollbar-thumb{background:rgba(123,181,255,.4);border-radius:2px}
+.vc{
+  flex:0 0 320px;border-radius:20px;overflow:hidden;cursor:pointer;
+  transition:all .3s;scroll-snap-align:start;
+  background:var(--g1);border:1px solid var(--gbr);
+  backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);
+}
+.vc:hover{transform:translateY(-5px);border-color:rgba(123,181,255,.4)!important;background:rgba(23,113,241,.08)!important;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.vc-cover{height:210px;overflow:hidden;position:relative}
+.vc-cover img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) brightness(.85);transition:transform .5s,filter .3s;display:block}
+.vc:hover .vc-cover img{transform:scale(1.07);filter:saturate(1) brightness(.9)}
+.vc-badge{position:absolute;top:12px;left:12px;background:rgba(12,12,12,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;color:var(--sand);border:1px solid rgba(123,181,255,.25)}
+.vc-body{padding:22px}
+.vc-loc{font-size:10px;font-weight:700;letter-spacing:.12em;color:rgba(123,181,255,.66);text-transform:uppercase;margin-bottom:7px}
+.vc-name{font-family:var(--tf);font-size:19px;font-weight:700;margin-bottom:8px;color:var(--w)}
+.vc-desc{font-size:12px;font-weight:300;color:var(--w6);line-height:1.6;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.vc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.vtag{font-size:10px;padding:4px 11px;background:rgba(23,113,241,.08);border:1px solid rgba(123,181,255,.2);color:var(--sand);border-radius:100px}
+.vc-more{font-size:12px;font-weight:600;color:var(--sand)}
+
+/* ── STAY ── */
+.stay-wrap{
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+  gap:20px;
+  margin-top:40px;
+}
+.stay-main{
+  padding:28px;
+}
+.stay-kicker{
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--sand);
+  margin-bottom:10px;
+}
+.stay-title{
+  font-family:var(--tf);
+  font-size:clamp(28px,3.2vw,42px);
+  line-height:1.05;
+  margin-bottom:16px;
+}
+.stay-text{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--w6);
+  margin-bottom:18px;
+}
+.stay-gallery{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin-top:18px;
+}
+.stay-gallery.is-expanded{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  align-items:stretch;
+}
+.stay-gallery img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  object-position:center center;
+  border-radius:16px;
+  display:block;
+  border:1px solid rgba(123,181,255,.28);
+}
+.stay-gallery.is-expanded img:first-child,
+.stay-gallery.is-expanded img:nth-child(4){
+  grid-column:span 2;
+}
+.stay-gallery.is-expanded img:nth-child(5),
+.stay-gallery.is-expanded img:nth-child(6){
+  aspect-ratio:16/10;
+}
+.stay-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.stay-pill{
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid var(--gbr2);
+  background:var(--g2);
+  color:var(--w8);
+  font-size:12px;
+}
+.room-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin-top:20px;
+}
+.room-card{
+  overflow:hidden;
+  border-radius:22px;
+  border:1px solid rgba(123,181,255,.28);
+  background:var(--g1);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);
+}
+.room-gallery{
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+  gap:8px;
+  padding:8px;
+  background:rgba(7,17,32,.82);
+  border-bottom:1px solid rgba(123,181,255,.18);
+}
+.room-gallery.is-single{
+  grid-template-columns:1fr;
+}
+.room-shot{
+  position:relative;
+  min-height:210px;
+  overflow:hidden;
+  border-radius:18px;
+  border:1px solid rgba(123,181,255,.24);
+  background:
+    radial-gradient(circle at top right, rgba(123,181,255,.18), transparent 36%),
+    linear-gradient(135deg, rgba(17,39,74,.82), rgba(9,21,41,.94));
+}
+.room-shot img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  display:block;
+}
+.room-shot.placeholder{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--w4);
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:20px;
+  text-align:center;
+}
+.room-status{
+  position:absolute;
+  top:12px;
+  left:12px;
+  z-index:2;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:7px 12px;
+  border-radius:999px;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+.room-status.available{
+  background:rgba(17,39,74,.72);
+  border:1px solid rgba(123,181,255,.34);
+  color:#d9e9ff;
+}
+.room-body{
+  padding:18px 18px 20px;
+}
+.room-name{
+  font-family:var(--tf);
+  font-size:15px;
+  line-height:1.3;
+  margin-bottom:8px;
+}
+.room-meta{
+  font-size:12px;
+  color:var(--sand);
+  margin-bottom:10px;
+}
+.room-note{
+  font-size:13px;
+  color:var(--w6);
+  line-height:1.6;
+}
+.room-price{
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid var(--gbr);
+  font-size:12px;
+  color:var(--w4);
+}
+.room-section-title{
+  font-family:var(--tf);
+  font-size:clamp(24px,2.8vw,34px);
+  line-height:1.08;
+  color:var(--w);
+  margin-top:34px;
+}
+.room-card.compact-single .room-gallery{
+  padding:18px;
+}
+.room-card.compact-single .room-shot{
+  min-height:140px;
+  max-width:62%;
+  margin:0 auto;
+}
+
+/* ── MODAL ── */
+.mover{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(10,10,10,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.mover.open{display:flex}
+.modal{
+  width:100%;max-width:800px;max-height:90vh;overflow-y:auto;position:relative;
+  background:rgba(12,12,12,.94);backdrop-filter:blur(30px) saturate(1.6);-webkit-backdrop-filter:blur(30px) saturate(1.6);
+  border:1px solid var(--gbr2);border-radius:26px;
+}
+.mgal{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;height:280px;border-radius:26px 26px 0 0;overflow:hidden}
+.mgal img{width:100%;height:100%;object-fit:cover;filter:saturate(.9);display:block;transition:filter .3s}
+.mgal img:hover{filter:saturate(1)}
+.mgal img:first-child{grid-column:span 2}
+.mbody{padding:36px}
+.mloc{font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--sand);text-transform:uppercase;margin-bottom:8px}
+.mname{font-family:var(--tf);font-size:28px;font-weight:800;margin-bottom:16px;color:var(--w)}
+.mdesc{font-size:15px;font-weight:300;color:var(--w6);line-height:1.8;margin-bottom:22px}
+.mfeats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:28px}
+.mf{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--w6)}
+.mf::before{content:'✓';color:var(--sand);font-weight:700;flex-shrink:0}
+.mcls{position:absolute;top:16px;right:16px;width:36px;height:36px;background:rgba(12,12,12,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--gbr2);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;color:var(--w);z-index:10;transition:background .2s}
+.mcls:hover{background:rgba(123,181,255,.2)}
+
+/* ── DATES ── */
+.dates-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.dc{
+  padding:28px;border-radius:20px;transition:all .3s;
+  background:var(--g1);backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);
+  border:1px solid var(--gbr);
+}
+.dc:hover,.dc.hot{border-color:rgba(123,181,255,.4)!important;background:rgba(23,113,241,.08)!important}
+.dc-d{font-family:var(--tf);font-size:20px;font-weight:620;color:var(--w);margin-bottom:4px;line-height:1.1}
+.dc-v{font-size:10px;font-weight:700;color:var(--sand);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.dc-dur{font-size:13px;font-weight:400;color:var(--w8);margin-bottom:12px}
+.dc-dur{font-family:var(--bf);line-height:1.7}
+.dc-dl{font-family:var(--bf);font-size:11px;color:var(--w4);background:var(--g2);padding:6px 14px;border-radius:100px;display:inline-block;margin-bottom:16px}
+.dc.hot .dc-dl{background:rgba(23,113,241,.12);color:var(--sand);border:1px solid rgba(123,181,255,.25)}
+.dc-btn{display:block;text-align:center;background:rgba(23,113,241,.16);border:1px solid rgba(123,181,255,.32);color:var(--w);padding:11px;border-radius:100px;font-size:12px;font-weight:470;text-decoration:none;transition:all .2s;font-family:var(--tf);letter-spacing:.04em}
+.dc-btn:hover{background:rgba(23,113,241,.28)}
+.dc.wide{grid-column:span 2}
+.checkup-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:16px;
+}
+.checkup-brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.checkup-logo{
+  width:138px;
+  max-width:42%;
+  height:auto;
+  object-fit:contain;
+}
+.checkup-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:32px;
+  padding:7px 12px;
+  border-radius:999px;
+  border:1px solid rgba(123,181,255,.28);
+  background:rgba(23,113,241,.12);
+  color:var(--w);
+  text-decoration:none;
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-family:var(--tf);
+  transition:all .2s;
+  position:relative;
+  top:-3px;
+}
+.checkup-link:hover{
+  background:rgba(23,113,241,.22);
+  border-color:rgba(123,181,255,.44);
+}
+.checkup-price{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:4px;
+}
+.checkup-price-label{
+  font-size:10px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--sand2);
+}
+.checkup-price-value{
+  font-family:var(--tf);
+  font-size:28px;
+  line-height:1;
+  color:var(--w);
+}
+.dc-list{
+  list-style:none;
+  display:grid;
+  gap:10px;
+  margin-top:16px;
+}
+.dc-list.compact{
+  margin-top:10px;
+}
+.dc-list li{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  font-family:var(--bf);
+  font-size:13px;
+  line-height:1.65;
+  color:var(--w8);
+}
+.dc-list li::before{
+  content:'';
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--sand);
+  flex-shrink:0;
+  margin-top:7px;
+}
+
+/* ── TEAM ── */
+.maker-card{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+  margin-top:34px;
+}
+.maker-person,
+.maker-brand{
+  height:100%;
+  min-height:320px;
+  padding:22px;
+  border-radius:24px;
+  border:1px solid rgba(123,181,255,.24);
+  background:var(--g1);
+  backdrop-filter:var(--blurs);
+  -webkit-backdrop-filter:var(--blurs);
+}
+.maker-person{
+  display:grid;
+  grid-template-columns:minmax(220px,280px) minmax(0,1fr);
+  gap:22px;
+  align-items:stretch;
+}
+.maker-photo{
+  width:100%;
+  min-height:276px;
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid rgba(123,181,255,.24);
+}
+.maker-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+.maker-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.maker-name{
+  font-family:var(--tf);
+  font-size:clamp(20px,2.2vw,28px);
+  line-height:1.12;
+  color:var(--w);
+  margin-bottom:14px;
+}
+.maker-title{
+  font-family:var(--tf);
+  font-size:clamp(26px,3vw,34px);
+  line-height:1.08;
+  color:var(--w);
+  margin-bottom:16px;
+}
+.maker-text{
+  max-width:760px;
+  font-family:var(--bf);
+  font-size:16px;
+  line-height:1.8;
+  color:var(--w8);
+}
+.maker-brand{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.maker-brand img{
+  width:100%;
+  max-width:440px;
+  height:auto;
+  object-fit:contain;
+  display:block;
+  margin:0 auto 18px;
+}
+.maker-brand-text{
+  font-family:var(--bf);
+  font-size:16px;
+  line-height:1.75;
+  color:var(--w8);
+  max-width:340px;
+}
+.team-scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:12px;margin-top:40px;-webkit-overflow-scrolling:touch}
+.team-scroll::-webkit-scrollbar{height:3px}
+.team-scroll::-webkit-scrollbar-track{background:var(--gbr);border-radius:2px}
+.team-scroll::-webkit-scrollbar-thumb{background:rgba(123,181,255,.35);border-radius:2px}
+.tc{flex:0 0 160px;border-radius:20px;overflow:hidden;background:var(--g1);backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);border:1px solid var(--gbr);transition:all .25s}
+.tc:hover{border-color:rgba(123,181,255,.4)!important;background:rgba(23,113,241,.08)!important;transform:translateY(-3px)}
+.tc img{width:100%;height:140px;object-fit:cover;object-position:top;filter:grayscale(20%);display:block;transition:filter .3s}
+.tc:hover img{filter:grayscale(0)}
+.tc-bd{padding:12px}
+.tc-name{font-family:var(--tf);font-size:12px;font-weight:440;color:var(--w);line-height:1.2;margin-bottom:2px}
+.tc-role{font-size:10px;color:var(--sand);font-weight:600;margin-bottom:3px}
+.tc-bio{font-size:10px;color:var(--w4);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* ── PROGRAMS ── */
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+.pg{padding:40px 34px;border-radius:20px;transition:all .3s;background:var(--g1);backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);border:1px solid var(--gbr);display:flex;flex-direction:column}
+.pg:hover{border-color:rgba(123,181,255,.4)!important;background:rgba(23,113,241,.08)!important;transform:translateY(-4px)}
+.pg-tag{display:inline-block;background:rgba(23,113,241,.1);border:1px solid rgba(123,181,255,.2);color:var(--sand);padding:5px 14px;border-radius:100px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px;width:fit-content}
+.pg-h{font-family:var(--tf);font-size:22px;font-weight:630;color:var(--w);margin-bottom:16px;line-height:1.15}
+.pg-p{font-size:14px;font-weight:300;color:var(--w6);line-height:1.75;margin-bottom:20px;flex:1}
+.pg-ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+.pg-ul li{font-size:13px;color:var(--w6);display:flex;gap:10px;align-items:flex-start;line-height:1.5}
+.pg-ul li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--sand);flex-shrink:0;margin-top:7px}
+.pg-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.pg-price{margin-top:20px;padding-top:16px;border-top:1px solid var(--gbr);display:flex;flex-direction:column;gap:3px}
+.pg-price-val{font-family:var(--tf);font-size:15px;font-weight:600;color:var(--w);line-height:1.3}
+.pg-price-note{font-size:11px;font-weight:300;color:var(--w4);letter-spacing:.03em}
+.ppill{font-size:11px;padding:5px 13px;background:rgba(255,255,255,.05);border:1px solid var(--gbr2);color:var(--w6);border-radius:100px}
+
+/* ── BIZ EFFECT ── */
+.biz-intro{font-size:15px;font-weight:300;color:var(--w6);line-height:1.8;max-width:720px;margin-top:18px}
+.biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+.bi{
+  padding:40px 34px;border-radius:24px;transition:all .3s;
+  background:var(--g1);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  border:1px solid var(--gbr);display:flex;flex-direction:column;
+}
+.bi:hover{border-color:rgba(123,181,255,.3);transform:translateY(-4px)}
+.bi-n{font-family:var(--tf);font-size:44px;font-weight:650;color:rgba(23,113,241,.28);line-height:1;margin-bottom:18px}
+.bi-h{font-family:var(--tf);font-size:24px;font-weight:590;margin-bottom:12px;color:var(--w);letter-spacing:-.02em}
+.bi-p{font-size:14px;font-weight:300;color:var(--w6);line-height:1.75;margin-bottom:16px}
+.bi-ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:auto}
+.bi-ul li{font-size:13px;color:var(--w4);display:flex;gap:10px;line-height:1.55}
+.bi-ul li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--sand);flex-shrink:0;margin-top:8px}
+
+/* ── CLIENTS ── */
+.clients-s{position:relative;z-index:10;padding:80px 48px;text-align:center}
+.clients-lbl{font-family:var(--tf);font-size:14px;font-weight:500;letter-spacing:.28em;color:rgba(255,255,255,.55);text-transform:uppercase;margin-bottom:52px;display:flex;align-items:center;justify-content:center;gap:20px}
+.clients-lbl::before,.clients-lbl::after{content:'';flex:1;max-width:120px;height:1px;background:rgba(255,255,255,.12)}
+.clients-row{display:flex;gap:56px;align-items:center;justify-content:center;flex-wrap:wrap}
+.clog{height:24px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.45;transition:all .3s;display:block}
+.clog:hover{opacity:1;filter:brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(5deg)}
+
+/* ── HOW ── */
+.how-steps{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0, 1fr));
+  gap:20px;
+  margin-top:48px;
+  position:relative;
+  align-items:start;
+}
+.how-steps::before{
+  content:'';
+  position:absolute;
+  top:36px;
+  left:0;
+  right:0;
+  height:1px;
+  border-top:1px dashed var(--gbr);
+  z-index:0;
+}
+.hw{
+  position:relative;
+  z-index:1;
+  padding-right:12px;
+}
+.hsc{
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  background:var(--g1);
+  backdrop-filter:var(--blurs);
+  -webkit-backdrop-filter:var(--blurs);
+  border:1px solid var(--gbr);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--tf);
+  font-size:22px;
+  font-weight:620;
+  color:var(--sand);
+  margin-bottom:24px;
+  transition:all .3s;
+}
+.hw:hover .hsc{background:rgba(23,113,241,.12);border-color:rgba(123,181,255,.35)}
+.hsh{font-family:var(--tf);font-size:16px;font-weight:520;margin-bottom:10px;color:var(--w)}
+.hsd{font-size:13px;font-weight:300;color:var(--w6);line-height:1.7}
+@media (max-width: 900px){
+  .how-steps{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+  .how-steps::before{
+    display:none;
+  }
+  .hw{
+    padding-right:0;
+  }
+}
+
+/* ── FAQ ── */
+.faq-grid{display:grid;grid-template-columns:380px 1fr;gap:80px}
+.fql p{font-size:15px;font-weight:300;color:var(--w6);line-height:1.8;margin-bottom:32px;margin-top:16px}
+.flist{display:flex;flex-direction:column}
+.fi{border-bottom:1px solid var(--gbr)}
+.fi:first-child{border-top:1px solid var(--gbr)}
+.fq{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;font-family:var(--tf);font-size:15px;font-weight:500;color:var(--w);gap:16px;transition:color .2s}
+.fq:hover{color:var(--sand)}
+.farr{width:30px;height:30px;border-radius:50%;background:rgba(23,113,241,.1);border:1px solid rgba(123,181,255,.2);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--sand);flex-shrink:0;transition:all .3s}
+.fi.open .farr{background:rgba(123,181,255,.2);color:var(--w);transform:rotate(45deg)}
+.fa{font-size:14px;font-weight:300;color:var(--w6);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.fi.open .fa{max-height:260px;padding-bottom:20px}
+
+/* ── FORM ── */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.fs-p{font-size:15px;font-weight:300;color:var(--w6);line-height:1.8;margin-bottom:32px;margin-top:16px}
+.fcts{display:flex;flex-direction:column;gap:14px}
+.fct{display:flex;align-items:center;gap:14px;text-decoration:none;transition:all .2s}
+.fcti{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid var(--gbr2);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--w);transition:background .2s;flex-shrink:0;font-style:normal}
+.fct:hover .fcti{background:rgba(23,113,241,.15);border-color:rgba(123,181,255,.3)}
+.fct-t{font-size:14px;color:var(--w);font-weight:500}
+.fct-s{font-size:12px;color:var(--w4)}
+.fbox{padding:36px;border-radius:24px}
+.fbox h3{font-family:var(--tf);font-size:22px;font-weight:620;margin-bottom:24px;color:var(--w)}
+.fg{margin-bottom:14px}
+.fl{font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--w4);margin-bottom:6px;display:block;text-transform:uppercase}
+.fi2{
+  width:100%;padding:13px 16px;
+  background:rgba(255,255,255,.06);backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);
+  border:1px solid var(--gbr);color:var(--w);
+  font-family:var(--bf);font-size:14px;outline:none;border-radius:12px;
+  transition:border-color .2s;appearance:none;
+}
+.fi2:focus{border-color:rgba(123,181,255,.45)}
+.fi2::placeholder{color:var(--w4)}
+select.fi2{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(123,181,255,.8)' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;cursor:pointer}
+select.fi2 option{background:#0a150c;color:var(--w)}
+textarea.fi2{resize:vertical;min-height:80px}
+.fsub{width:100%;padding:16px;background:rgba(23,113,241,.18);border:1px solid rgba(123,181,255,.38);color:var(--w);font-family:var(--tf);font-size:15px;font-weight:500;cursor:pointer;border-radius:100px;transition:all .2s;letter-spacing:.04em}
+.fsub:hover{background:rgba(123,181,255,.3);transform:scale(1.02)}
+.fn{text-align:center;margin-top:10px;font-size:12px;color:var(--w4)}
+
+/* ── FOOTER ── */
+footer{position:relative;z-index:10;padding:60px 48px 36px;border-top:1px solid var(--gbr);background:rgba(8,8,8,.72);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur)}
+.ftop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.flog{font-family:var(--tf);font-size:13px;font-weight:500;color:var(--w6);text-decoration:none;display:block;margin-bottom:3px;letter-spacing:.1em}
+.flog-sub{font-size:10px;color:var(--w4);letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;display:block}
+.fbp{font-size:13px;color:var(--w4);line-height:1.7;max-width:240px}
+.fcol h4{font-family:var(--tf);font-size:10px;font-weight:460;letter-spacing:.22em;color:var(--sand);margin-bottom:14px;text-transform:uppercase}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.fcol ul a{font-size:13px;color:var(--w4);text-decoration:none;transition:color .2s}
+.fcol ul a:hover{color:var(--w)}
+.fbot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--gbr);padding-top:24px;font-size:12px;color:var(--w4)}
+
+function toggleMenu(){
+  const m=document.getElementById('mobMenu');
+  const b=document.querySelector('.burger');
+  m.classList.toggle('open');
+  b.classList.toggle('open');
+  document.body.style.overflow=m.classList.contains('open')?'hidden':'';
+}
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.rv.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+@media(max-width:960px){
+  nav{padding:14px 20px}.nl{display:none}
+  .s{padding:64px 20px}
+  .hero{padding:0 20px 48px;min-height:90vh}
+
+  /* Section headers — prevent title overflow on mobile */
+  .BT,.BT-xl{font-size:clamp(28px,8vw,42px);letter-spacing:-.02em;word-break:keep-all;overflow-wrap:normal}
+  .hh{font-size:clamp(42px,14vw,68px);line-height:.92;letter-spacing:-.04em}
+
+  /* All 2-col grids → 1-col */
+  .hgrid,.ab-grid,.act-hd,.faq-grid,.form-grid,.stay-wrap{grid-template-columns:1fr;gap:28px}
+  .fmt-grid,.imp-grid,.prog-grid,.dates-grid{grid-template-columns:1fr}
+  .day-card{grid-template-columns:1fr;gap:18px;padding:22px}
+  .day-body{padding-left:0;padding-top:18px;border-left:none;border-top:1px solid var(--gbr)}
+  .day-date{font-size:32px}
+
+  /* Section header rows (title + desc side by side) — stack */
+  .s>[style*="grid-template-columns:1fr 1fr"]{display:flex!important;flex-direction:column!important;gap:16px!important}
+
+  /* Biz */
+  .biz-items-row{grid-template-columns:1fr}
+  .bi{border-right:none;border-bottom:1px solid var(--gbr)}
+  .bi:last-child{border-bottom:none}
+  .bi-n{font-size:32px;margin-bottom:12px}
+  .bi-h{font-size:20px}
+  .biz-content{padding:56px 20px}
+  .biz-big{font-size:clamp(44px,14vw,64px)}
+
+  /* How steps */
+  .how-steps{grid-template-columns:1fr 1fr;gap:20px}.how-steps::before{display:none}
+  .hsc{width:56px;height:56px;font-size:18px;margin-bottom:16px}
+
+  /* Hero bottom glass — stack vertically */
+  .hero-mainbox[style*="grid-template-columns"]{
+    display:flex!important;flex-direction:column!important;gap:20px!important
+  }
+  .hero-mainbox [style*="grid-template-columns:1fr 1fr"]{
+    display:flex!important;flex-direction:column!important;gap:8px!important
+  }
+  .hero-mainbox [style*="flex-direction:column"]{
+    flex-direction:row!important;flex-wrap:wrap!important;gap:10px!important
+  }
+  .hbtns{justify-content:flex-start!important}
+
+  /* Carousels */
+  .vc{flex:0 0 84vw}
+  .ac{flex:0 0 58vw}
+  .tc{flex:0 0 56vw;height:260px}
+
+  /* Modal */
+  .mgal{grid-template-columns:1fr 1fr;height:200px}
+  .mgal img:first-child{grid-column:span 2}
+  .mfeats{grid-template-columns:1fr}
+
+  /* Cards padding */
+  .hglass{padding:22px 20px}
+  .vc-body,.fc,.ic,.pg,.dc,.fbox,.mbody{padding-left:20px;padding-right:20px}
+  .ab-inner{padding:0}
+
+  /* Footer */
+  .ftop{grid-template-columns:1fr 1fr;gap:32px}
+  .fbot{flex-direction:column;gap:8px;text-align:center}
+}
+
+.inline-link{color:var(--sand);text-decoration:none;border-bottom:1px solid rgba(123,181,255,.35)}
+.inline-link:hover{color:var(--w);border-bottom-color:rgba(255,255,255,.4)}
+.hglass{background:var(--g1)!important;backdrop-filter:var(--blurs)!important;-webkit-backdrop-filter:var(--blurs)!important;border:1px solid var(--gbr)!important;border-radius:20px!important}
+.ac,.vc,.fc,.ic,.pg,.dc,.fbox,.glass,.glass-sm,.glass-dk{box-shadow:none}
+.ac{background:rgba(8,8,8,.24)}
+.ac-img{filter:saturate(.96) brightness(.84)}
+.ac:hover .ac-img{filter:saturate(1) brightness(.88)}
+.vc-cover img{filter:saturate(.95) brightness(.88)}
+.vc:hover .vc-cover img{filter:saturate(1) brightness(.92)}
+.team-scroll{gap:14px}
+.tc{flex:0 0 200px;height:280px;position:relative;padding:0;border-radius:18px;overflow:hidden;background:rgba(10,10,10,.25)}
+.tc img{width:100%;height:100%;object-fit:cover;object-position:center 18%;filter:none}
+.tc::after{content:'';position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.82) 0%, rgba(0,0,0,.28) 42%, rgba(0,0,0,.06) 70%, transparent 100%);pointer-events:none}
+.tc-bd{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:14px 14px 12px;background:none}
+.tc-name,.tc-role,.tc-bio{text-shadow:0 2px 12px rgba(0,0,0,.45)}
+.tc-role{color:#d7b58a}
+.tc-bio{color:rgba(255,255,255,.78)}
+img{max-width:100%}
+.BT,.BT-xl,.hh,.vc-name,.pg-h,.mname,.bi-h,.fch,.dc-d,.tc-name,.faq-grid,.hd,.ac-h,.ac-p,.vc-desc,.mdesc,.ict,.bi-p,.fs-p,.fct-t,.fct-s,.hsh,.hsd{overflow-wrap:anywhere;word-break:normal}
+.clients-row a{display:inline-flex;align-items:center}
+
+
+/* Section header 2-col → 1-col on mobile */
+.sec-hd{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:0}
+@media(max-width:960px){
+  .sec-hd{grid-template-columns:1fr;gap:16px}
+  .hero-reasons{grid-template-columns:1fr!important;gap:8px!important}
+}
+
+/* ── BURGER + MOBILE MENU ── */
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:300}
+.burger span{display:block;width:22px;height:2px;background:var(--w);border-radius:2px;transition:all .3s}
+.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mob-menu{
+  position:fixed;inset:0;z-index:150;
+  background:rgba(6,8,6,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  display:none;flex-direction:column;justify-content:center;align-items:center;
+  padding:80px 32px 40px;
+}
+.mob-menu.open{display:flex}
+.mob-menu-inner{display:flex;flex-direction:column;gap:24px;width:100%;max-width:320px;align-items:stretch}
+.mob-menu ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.mob-menu ul li a{font-family:var(--tf);font-size:24px;font-weight:700;color:var(--w6);text-decoration:none;display:block;padding:12px 0;border-bottom:1px solid var(--gbr);transition:color .2s;letter-spacing:-.01em}
+.mob-menu ul li a:hover{color:var(--w)}
+/* Fixed bottom CTA */
+.mob-cta-fixed{
+  display:block;
+  position:fixed;bottom:0;left:0;right:0;z-index:140;
+  padding:12px 14px 14px;
+  background:linear-gradient(to top, rgba(6,8,6,.94) 72%, transparent 100%);
+}
+.mob-cta-fixed a{
+  display:block;text-align:center;width:100%;
+  background:var(--sand-g);border:1px solid var(--sand-b);
+  color:var(--w);padding:18px 20px;border-radius:999px;
+  font-family:var(--tf);font-size:15px;font-weight:500;
+  text-decoration:none;letter-spacing:.04em;
+}
+body{padding-bottom:88px}
+
+@media(max-width:960px){
+  /* Burger visible, desktop nav hidden */
+  .burger{display:flex}
+  .nav-cta-desktop{display:none}
+  /* Hero: push content down so logo visible, add bottom padding for fixed CTA */
+  .hero{padding-bottom:100px}
+  .h-tags{margin-bottom:20px}
+  /* Biz: cards stacked 1-col */
+  .biz-items-row{display:flex;flex-direction:column;gap:0}
+  .bi-h{font-size:22px;letter-spacing:-.01em}
+  /* How steps: 1-col */
+  .how-steps{grid-template-columns:1fr!important;gap:0}
+  .how-steps::before{display:none}
+  .hw{padding-right:0;display:flex;align-items:flex-start;gap:20px;padding:20px 0;border-bottom:1px solid var(--gbr)}
+  .hw:last-child{border-bottom:none}
+  .hsc{flex-shrink:0;margin-bottom:0;width:52px;height:52px;font-size:17px}
+  .hw-text{flex:1}
+  .mob-cta-fixed{padding:12px 14px calc(14px + env(safe-area-inset-bottom))}
+  .mob-cta-fixed a{padding:18px 20px}
+}
+
+
+@media (max-width:900px){
+  .hero{
+    padding-top:150px !important;
+  }
+  .hero-top{
+    margin-top:18px;
+  }
+  .hh{
+    position:relative;
+    z-index:2;
+  }
+  .biz-grid{
+    grid-template-columns:1fr !important;
+    gap:16px !important;
+  }
+  .bi{
+    padding:28px 22px !important;
+  }
+  .bi-h{
+    font-size:22px !important;
+    word-break:normal;
+    overflow-wrap:break-word;
+  }
+}
+
+
+/* ── GEORGIA BLOCK ── */
+.georgia-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+.gc{padding:28px 24px;border-radius:20px;transition:all .3s;background:var(--g1);backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);border:1px solid var(--gbr)}
+.gc:hover{border-color:rgba(123,181,255,.4)!important;background:rgba(23,113,241,.08)!important;transform:translateY(-4px)}
+.gc-h{font-family:var(--tf);font-size:17px;font-weight:700;color:var(--w);margin-bottom:8px;line-height:1.25}
+.gc-p{font-size:13px;font-weight:300;color:var(--w6);line-height:1.7}
+.gc-tag{display:inline-block;margin-top:12px;padding:4px 12px;border-radius:100px;background:rgba(23,113,241,.1);border:1px solid rgba(123,181,255,.2);color:var(--sand);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+/* ── HOW+FORM combined ── */
+.how-form-wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:48px}
+.how-steps-compact{display:flex;flex-direction:column;gap:0}
+.hwc{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid var(--gbr)}
+.hwc:last-child{border-bottom:none}
+.hwc-num{width:40px;height:40px;border-radius:50%;background:var(--g2);backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);border:1px solid var(--gbr);display:flex;align-items:center;justify-content:center;font-family:var(--tf);font-size:16px;font-weight:800;color:var(--sand);flex-shrink:0;transition:all .3s}
+.hwc:hover .hwc-num{background:rgba(23,113,241,.12);border-color:rgba(123,181,255,.35)}
+.hwc-h{font-family:var(--tf);font-size:15px;font-weight:700;color:var(--w);margin-bottom:4px}
+.hwc-d{font-size:13px;font-weight:300;color:var(--w6);line-height:1.6}
+@media(max-width:960px){
+  .georgia-grid{grid-template-columns:1fr 1fr}
+  .how-form-wrap{grid-template-columns:1fr;gap:40px}
+  .stay-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stay-gallery.is-expanded{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stay-gallery.is-expanded img:first-child,
+  .stay-gallery.is-expanded img:nth-child(4){grid-column:span 1}
+  .dc.wide{grid-column:span 1}
+  .checkup-head{flex-direction:column;align-items:flex-start}
+  .checkup-brand{align-items:flex-start}
+  .checkup-price{align-items:flex-start}
+  .room-card.compact-single .room-shot{max-width:100%}
+  .maker-card{grid-template-columns:1fr}
+  .maker-person{grid-template-columns:1fr}
+  .maker-photo{min-height:280px}
+}
+@media(max-width:600px){.georgia-grid{grid-template-columns:1fr}}
+@media(max-width:700px){
+  .room-grid{grid-template-columns:1fr}
+  .stay-gallery{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div id="scene"></div>
+<div id="scov"></div>
+<div class="wrap">
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <img src="./assets/phystech-emblem.png" alt="Эмблема МФТИ" class="logo-mark">
+    <span>
+      <span class="logo-main">PHYSTECH RETREAT</span>
+      <span class="logo-sub">Update x выпускники МФТИ</span>
+    </span>
+  </a>
+  <ul class="nl">
+    <li><a href="#formats">Сценарий</a></li>
+    <li><a href="#activities">Программа</a></li>
+    <li><a href="#venues">Проживание</a></li>
+    <li><a href="#dates">Чекап</a></li>
+    <li><a href="#team">Команда</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#form" class="nbtn nav-cta-desktop">Хочу поехать</a>
+  <button class="burger" onclick="toggleMenu()" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <div class="mob-menu-inner">
+    <ul>
+      <li><a href="#formats" onclick="toggleMenu()">Сценарий</a></li>
+      <li><a href="#activities" onclick="toggleMenu()">Программа</a></li>
+      <li><a href="#venues" onclick="toggleMenu()">Проживание</a></li>
+      <li><a href="#dates" onclick="toggleMenu()">Чекап</a></li>
+      <li><a href="#team" onclick="toggleMenu()">Команда</a></li>
+      <li><a href="#faq" onclick="toggleMenu()">FAQ</a></li>
+    </ul>
+    <a href="#form" class="nbtn" style="width:100%;text-align:center;justify-content:center" onclick="toggleMenu()">Хочу поехать</a>
+  </div>
+</div>
+<div class="mob-cta-fixed">
+  <a href="#form">Хочу поехать</a>
+</div>
+<!-- HERO -->
+<section class="hero">
+    <div class="hgrid">
+      <div class="hero-top" style="grid-column:1/-1">
+        <div class="hero-copy">
+          <h1 class="hh">Камерный выезд в горы Грузии для <span class="accent-blue">физтехов</span> и их близких</h1>
+          <p class="hero-sub">Отдых в бутик-отеле небольшой группой, массажами, баней, оффроудом, хайкингом, бассейном и возможностью добавить чекап.</p>
+          <div class="hero-actions">
+            <a href="#activities" class="btn btn-g">Посмотреть программу</a>
+            <a href="#form" class="btn btn-s">Оставить заявку</a>
+          </div>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-card">
+            <div class="hero-meta-date">Формат поездки</div>
+            <div class="hero-meta-place">Не массовый тур, а аккуратно собранный выезд для своих</div>
+            <p class="hero-meta-text">Отель в старинном доме 1936 года, небольшая группа, приватная атмосфера и программа, в которой есть и общие активности, и пространство выдохнуть без посторонних вокруг.</p>
+          </div>
+          <a class="hero-checkup" href="#dates">
+            <span class="hero-checkup-kicker">Опция поездки</span>
+            <span class="hero-checkup-title">Чекап в A-clinic</span>
+            <span class="hero-checkup-note">индивидуально</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- PROGRAM -->
+<section class="s" id="activities">
+  <div class="rv sec-hd">
+    <div>
+      <h2 class="BT">Как пройдёт<br><em>заезд</em></h2>
+    </div>
+  </div>
+  <div class="itinerary-grid rv">
+    <article class="day-card">
+      <div class="day-side">
+        <div class="day-eyebrow">день 01</div>
+        <div class="day-date">5 июня</div>
+        <div class="day-weekday">пятница</div>
+      </div>
+      <div class="day-body">
+        <div class="day-title">Собираемся в Тбилиси</div>
+        <ul class="day-flow">
+          <li>Встречаем всех в аэропорту и размещаем в Hilton.</li>
+          <li>Обед или ужин подстраиваем под время прилёта, чтобы всем было удобно войти в поездку.</li>
+          <li>Если к вечеру уже все в сборе, идём на прогулку по Тбилиси.</li>
+        </ul>
+        <div class="day-tags">
+          <span class="day-pill">встреча в аэропорту</span>
+          <span class="day-pill">Hilton</span>
+          <span class="day-pill">первый вечер в городе</span>
+        </div>
+      </div>
+    </article>
+    <article class="day-card">
+      <div class="day-side">
+        <div class="day-eyebrow">день 02</div>
+        <div class="day-date">6 июня</div>
+        <div class="day-weekday">суббота</div>
+      </div>
+      <div class="day-body">
+        <div class="day-title">Забота о себе, потом дорога в горы</div>
+        <ul class="day-flow">
+          <li>Начинаем день с массажных процедур или анализов и обследований, если вы выбрали формат check-up.</li>
+          <li>Как только заканчиваем с городским блоком, выдвигаемся на локацию по живописной горной дороге.</li>
+          <li>На месте обедаем и отдыхаем, а вечером собираемся на сауну, бассейн и барбекю у костра.</li>
+        </ul>
+        <div class="day-tags">
+          <span class="day-pill">check-up по желанию</span>
+          <span class="day-pill">переезд на локацию</span>
+          <span class="day-pill">сауна и бассейн</span>
+        </div>
+      </div>
+    </article>
+    <article class="day-card">
+      <div class="day-side">
+        <div class="day-eyebrow">день 03</div>
+        <div class="day-date">7 июня</div>
+        <div class="day-weekday">воскресенье</div>
+      </div>
+      <div class="day-body">
+        <div class="day-title">Off-road, пикник и длинный вечер</div>
+        <ul class="day-flow">
+          <li>Утро начинаем с зарядки на свежем воздухе с видом на каньон, потом спокойно завтракаем.</li>
+          <li>Дальше идём в off-road: каждый сможет попробовать себя за рулём и прожить этот день не только как пассажир.</li>
+          <li>После пикника с видом на горы возвращаемся на массажи, а вечером добавляем сауну, бассейн, настолки, ужин и гитару у костра на закате.</li>
+        </ul>
+        <div class="day-tags">
+          <span class="day-pill">зарядка</span>
+          <span class="day-pill">off-road</span>
+          <span class="day-pill">пикник и костёр</span>
+        </div>
+      </div>
+    </article>
+    <article class="day-card">
+      <div class="day-side">
+        <div class="day-eyebrow">день 04</div>
+        <div class="day-date">8 июня</div>
+        <div class="day-weekday">понедельник</div>
+      </div>
+      <div class="day-body">
+        <div class="day-title">Окрестности базы и вечерний клуб</div>
+        <ul class="day-flow">
+          <li>По желанию делаем утреннюю зарядку, а после завтрака едем изучать каньон, древние храмы и другие сильные места рядом с базой.</li>
+          <li>По возвращении оставляем время на массажи и восстановление уже на нашей локации.</li>
+          <li>Ближе к вечеру собираемся либо на турнир по покеру, либо на кино-клуб под открытым небом.</li>
+        </ul>
+        <div class="day-tags">
+          <span class="day-pill">выезд по окрестностям</span>
+          <span class="day-pill">массажи</span>
+          <span class="day-pill">покер или кино-клуб</span>
+        </div>
+      </div>
+    </article>
+    <article class="day-card">
+      <div class="day-side">
+        <div class="day-eyebrow">день 05</div>
+        <div class="day-date">9 июня</div>
+        <div class="day-weekday">вторник</div>
+      </div>
+      <div class="day-body">
+        <div class="day-title">Хайк, дегустация и финальный аккорд</div>
+        <ul class="day-flow">
+          <li>После завтрака собираемся в небольшой хайк по другой стороне ущелья и берём с собой только необходимое.</li>
+          <li>В нужной точке нас уже будет ждать готовый и вкусный обед, чтобы день ощущался как приключение, а не как марш-бросок.</li>
+          <li>Возвращаемся, идём в сауну, а после неё устраиваем винную дегустацию и проводим финальный вечер у костра в высокогорье.</li>
+        </ul>
+        <div class="day-tags">
+          <span class="day-pill">хайк</span>
+          <span class="day-pill">обед на маршруте</span>
+          <span class="day-pill">винная дегустация</span>
+        </div>
+      </div>
+    </article>
+    <article class="day-card">
+      <div class="day-side">
+        <div class="day-eyebrow">день 06</div>
+        <div class="day-date">10 июня</div>
+        <div class="day-weekday">среда</div>
+      </div>
+      <div class="day-body">
+        <div class="day-title">Финишируем без спешки</div>
+        <ul class="day-flow">
+          <li>После завтрака и сборов организуем трансфер до аэропорта или обратно в Тбилиси, в зависимости от ваших планов.</li>
+          <li>Если по времени всё хорошо складывается, остановимся по дороге на обед.</li>
+          <li>Прощаемся до следующего раза.</li>
+        </ul>
+        <div class="day-tags">
+          <span class="day-pill">трансфер</span>
+          <span class="day-pill">гибкий финиш</span>
+          <span class="day-pill">до следующего раза</span>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="program-gallery rv">
+    <div class="program-gallery-title">Внутри этой программы</div>
+    <div class="act-scroll">
+      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-outdoor-massage.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Массажи на свежем воздухе</div></div></div>
+      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@e92dd2f58b053ab70df24c2196288f5c2c614677/activity/Off-road.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Offroad</div></div></div>
+      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/pool.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Бассейн у края каньона</div></div></div>
+      <div class="ac"><img class="ac-img" src="./assets/sauna_1.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Сауна в скале</div></div></div>
+      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-barbecue.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Шашлыки</div></div></div>
+      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-hiking.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Лёгкий хайкинг</div></div></div>
+      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-group-workout.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Зарядка на природе</div></div></div>
+      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/poker.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Покерный вечер</div></div></div>
+      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/movie.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Кино клуб</div></div></div>
+      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/picnic.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Пикник с видом на горы</div></div></div>
+      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/winetrip.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Винная дегустация</div></div></div>
+      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/fireplace.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Вечер у костра</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY GEORGIA -->
+<section class="s" id="georgia">
+  <div class="rv sec-hd">
+    <div>
+      <h2 class="BT">Почему это <em>зайдёт</em></h2>
+    </div>
+  </div>
+  <div class="georgia-grid rv">
+    <div class="gc">
+      <div class="gc-h">Лёгкая логистика</div>
+      <p class="gc-p">Есть прямые рейсы до Тбилиси из многих городов, а все перемещения по Грузии мы берём на себя. Вам не нужно отдельно думать про трансферы, стыковки и то, как всё между собой связать.</p>
+      <span class="gc-tag">рейсы и трансферы собраны</span>
+    </div>
+    <div class="gc">
+      <div class="gc-h">Без посторонних</div>
+      <p class="gc-p">Мы занимаем весь отель целиком. На территории, в сауне и в бассейне будет только наша компания, так что атмосфера останется камерной, своей и без случайных соседей.</p>
+      <span class="gc-tag">весь отель наш</span>
+    </div>
+    <div class="gc">
+      <div class="gc-h">Обязательная программа с возможностью выбора</div>
+      <p class="gc-p">Да, у нас есть активности, которые мы очень хотим прожить вместе. Но это не армейский тайминг: внутри программы остаётся выбор, и никто никого не будет загонять в расписание через силу.</p>
+      <span class="gc-tag">ритм есть, давления нет</span>
+    </div>
+    <div class="gc">
+      <div class="gc-h">Check-up у партнёров</div>
+      <p class="gc-p">Мы предлагаем формат check-up в клинике наших партнёров. В условиях сложной медицины в Европе это удобный шанс встроить обследование прямо в поездку и всё успеть без отдельного стресса.</p>
+      <span class="gc-tag">обследование в рамках выезда</span>
+    </div>
+    <div class="gc">
+      <div class="gc-h">Баланс отдыха и активности</div>
+      <p class="gc-p">Мы не сидим на месте, много общаемся, ходим на массажи, выезжаем в горы и при этом не перегружаем поездку. Возвращаться хочется с новым зарядом энергии, а не с ощущением, что нужен ещё один отпуск.</p>
+      <span class="gc-tag">перезагрузка с эффектом</span>
+    </div>
+    <div class="gc">
+      <div class="gc-h">Горы</div>
+      <p class="gc-p">Это место, где по вечерам видно звёзды. Иногда этого аргумента уже достаточно, чтобы понять, зачем вообще ехать.</p>
+      <span class="gc-tag">высокогорье и тишина</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- VENUES -->
+<section class="s" id="venues">
+  <div class="rv sec-hd">
+    <div>
+      <h2 class="BT">Где <em>живём</em></h2>
+      <div class="stay-title" style="margin-top:22px;margin-bottom:14px">Edis Dacha</div>
+      <p class="stay-text" style="max-width:920px;margin-bottom:0">Бутик-отель в горах Грузии в двух часах от Тбилиси. Максимально комфортное количество гостей здесь — 14 человек: хватает и пространства для компании, и ощущения, что место остаётся камерным.</p>
+    </div>
+  </div>
+  <div class="stay-main glass rv" style="margin-top:32px">
+    <div class="stay-gallery is-expanded" style="margin-top:0">
+      <img src="./assets/the_house.webp" alt="Edis Dacha exterior">
+      <img src="./assets/sauna_2.webp" alt="Сауна">
+      <img src="./assets/pool.webp" alt="Бассейн">
+      <img src="./assets/IMG_7179 2.webp" alt="Общее пространство">
+      <img src="./assets/bar_1.webp" alt="Бар">
+      <img src="./assets/territory_view_2.webp" alt="Вид с территории">
+    </div>
+  </div>
+  <div class="rv">
+    <div class="room-section-title">Номера</div>
+  </div>
+  <div class="room-grid rv">
+    <div class="room-card">
+      <div class="room-gallery">
+        <div class="room-shot">
+          <span class="room-status available">доступно 2 из 2</span>
+          <img src="./assets/panorama_1.webp" alt="Panorama">
+        </div>
+        <div class="room-shot">
+          <img src="./assets/panorama_2.webp" alt="Panorama second photo">
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-name">Panorama</div>
+        <div class="room-meta">2 идентичных номера · отдельное здание · идеально для пары</div>
+        <div class="room-note">Эти два номера находятся в отдельном здании, дают лучший вид и внутри имеют свою ванную комнату.</div>
+        <div class="room-price">Цена будет добавлена позже</div>
+      </div>
+    </div>
+    <div class="room-card">
+      <div class="room-gallery">
+        <div class="room-shot">
+          <span class="room-status available">доступно 2 из 2</span>
+          <img src="./assets/old_money_double_king_1.webp" alt="Old Money Double King">
+        </div>
+        <div class="room-shot">
+          <img src="./assets/old_money_double_king_2.webp" alt="Old Money Double King second photo">
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-name">Old money double King</div>
+        <div class="room-meta">2 идентичных номера · дом 1936 года · идеально для двух парней или девушек</div>
+        <div class="room-note">Двухъярусный номер в старинном доме. У каждого номера полноценный санузел и свой балкон.</div>
+        <div class="room-price">Цена будет добавлена позже</div>
+      </div>
+    </div>
+    <div class="room-card">
+      <div class="room-gallery">
+        <div class="room-shot">
+          <span class="room-status available">доступно 1 из 1</span>
+          <img src="./assets/old_money_twin.webp" alt="Old Money Twin">
+        </div>
+        <div class="room-shot">
+          <img src="./assets/old_money_bath.webp" alt="Old Money bathroom">
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-name">Old money Twin</div>
+        <div class="room-meta">1 номер · дом 1936 года · twin / double on request</div>
+        <div class="room-note">Для пары можем совместить две кровати. Для друзей оставляем раздельными. В номере есть полноценный санузел и свой балкон.</div>
+        <div class="room-price">Цена будет добавлена позже</div>
+      </div>
+    </div>
+    <div class="room-card">
+      <div class="room-gallery">
+        <div class="room-shot">
+          <span class="room-status available">доступно 1 из 1</span>
+          <img src="./assets/old_money_king_1.webp" alt="Old Money King">
+        </div>
+        <div class="room-shot">
+          <img src="./assets/old_money_king_2.webp" alt="Old Money King second photo">
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-name">Old money King</div>
+        <div class="room-meta">1 номер · дом 1936 года · king / twin setup</div>
+        <div class="room-note">Для пары можем совместить две кровати. Для друзей оставляем раздельными. Этот номер тоже находится в старинном доме, со своим санузлом и балконом.</div>
+        <div class="room-price">Цена будет добавлена позже</div>
+      </div>
+    </div>
+    <div class="room-card compact-single">
+      <div class="room-gallery is-single">
+        <div class="room-shot">
+          <span class="room-status available">доступно 1 из 1</span>
+          <img src="./assets/standart.webp" alt="Standart Twin">
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-name">Standart Twin</div>
+        <div class="room-meta">1 номер · новый дом · twin / double on request</div>
+        <div class="room-note">Номер находится в доме новой постройки рядом с основным. Для пары можем совместить две кровати, для друзей оставляем раздельными. Также со своим санузлом.</div>
+        <div class="room-price">Цена будет добавлена позже</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATES -->
+<section class="s" id="dates">
+  <div class="rv"><h2 class="BT">Чекап в <em>A-clinic</em></h2></div>
+  <div class="dates-grid">
+    <div class="dc hot wide rv d1">
+      <div class="checkup-head">
+        <div class="checkup-brand">
+          <img src="./assets/aclinic_logo.png" alt="A-clinic" class="checkup-logo">
+          <a href="https://a-clinic.ge/ru" target="_blank" rel="noreferrer" class="checkup-link">Сайт клиники</a>
+        </div>
+        <div class="checkup-price">
+          <div class="checkup-price-label">Стоимость</div>
+          <div class="checkup-price-value">180$</div>
+        </div>
+      </div>
+      <div class="dc-d">Что входит</div>
+      <ul class="dc-list">
+        <li>2 консультации терапевта по 30 минут: первая до приезда онлайн, вторая в конце программы онлайн или очно.</li>
+        <li>Доктора клиники остаются на связи после консультаций.</li>
+        <li>Клинический анализ крови: CBC + WBC differential + ESR.</li>
+        <li>Липидный профиль: total cholesterol, HDL, LDL, triglycerides.</li>
+        <li>Гликированный гемоглобин: HbA1c.</li>
+      </ul>
+      <div class="dc-d" style="margin-top:20px">Что не входит</div>
+      <ul class="dc-list compact">
+        <li>Дополнительные обследования.</li>
+        <li>Инструментальная диагностика.</li>
+        <li>Консультации профильных специалистов.</li>
+      </ul>
+    </div>
+    <div class="dc rv d2">
+      <div class="dc-d">Как это происходит</div>
+      <div class="dc-v">консультации терапевта</div>
+      <div class="dc-dur">Первая встреча проходит до поездки: сбор анамнеза, оценка рисков, рекомендации перед кэмпом и первичное решение, нужно ли расширять обследование по показаниям.</div>
+      <div class="dc-dl">30 минут · онлайн</div>
+      <div class="dc-dur">По итогам первой консультации терапевт формирует список нужных врачей, и при первом посещении клиники мы стараемся пройти их всех за один визит.</div>
+      <div class="dc-dur">Вторая встреча проходит в конце программы: оценка состояния, разбор анализов, рекомендации по итогам и, при необходимости, назначение дополнительных обследований по договорённости.</div>
+      <div class="dc-dl">30 минут · онлайн или очно</div>
+    </div>
+    <div class="dc rv d3">
+      <div class="dc-d">Почему именно такой набор</div>
+      <div class="dc-v">без лишних обследований</div>
+      <ul class="dc-list">
+        <li>Позволяет увидеть скрытую анемию или воспалительные изменения.</li>
+        <li>Помогает оценить углеводный обмен и исключить предиабет или диабет.</li>
+        <li>Даёт базовое понимание сердечно-сосудистого риска.</li>
+        <li>Анализы можно сдавать не строго натощак, но при готовности лучше сделать это для максимальной точности.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATS -->
+<section class="s" id="formats">
+  <div class="rv sec-hd">
+    <div><div class="chip">сценарий поездки</div><h2 class="BT">Зачем сюда<br>вообще <em>ехать</em></h2></div>
+    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">Ниже коротко и по делу: за чем хочется выехать 5–10 июня и почему этот заезд хорошо собран.</p>
+  </div>
+  <div class="fmt-grid">
+    <div class="fc glass rv d1">
+      <div class="fcn">01 /</div>
+      <span class="fcl">Перезагрузка</span>
+      <h3 class="fch">Выдохнуть без чувства вины</h3>
+      <p class="fcp">Не надо оправдывать себе отдых полезностью. Просто уехать в хорошее место, перевести голову из режима “надо успеть” в режим “я наконец здесь”.</p>
+      <ul class="fcul"><li>Горы, воздух и другой темп дня</li><li>Бассейн, баня, терраса, вечерние разговоры</li><li>Время на себя без жёсткого расписания</li><li>Нормальная пауза после длинной весны</li></ul>
+    </div>
+    <div class="fc glass rv d2">
+      <div class="fcn">02 /</div>
+      <span class="fcl">Компания</span>
+      <h3 class="fch">Побыть со своими по-человечески</h3>
+      <p class="fcp">То, что на созвонах и в чатах размывается, вживую снова становится простым: быстро познакомиться, легко разговориться, вспомнить старые истории и нагенерить новые.</p>
+      <ul class="fcul"><li>Физтехи и друзья без формального официоза</li><li>Можно ехать одному и не чувствовать себя “лишним”</li><li>Можно собрать свой мини-экипаж</li><li>Внутренние шутки идут в комплекте</li></ul>
+    </div>
+    <div class="fc glass rv d3">
+      <div class="fcn">03 /</div>
+      <span class="fcl">Место</span>
+      <h3 class="fch">Локация, которая делает половину истории</h3>
+      <p class="fcp">Бутик-отель в горах Грузии уже сам по себе сильный аргумент: виды, бассейн, тёплый свет вечером и ощущение, что выехал именно туда, куда надо.</p>
+      <ul class="fcul"><li>Горы и живописный каньон рядом</li><li>Место с характером, а не стандартный отель</li><li>Есть пространство и для активности, и для тишины</li><li>Красиво, но не ради одной картинки</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- MAKER -->
+<section class="s" id="maker">
+  <div class="rv">
+    <h2 class="BT">Чьих рук <em>дело</em></h2>
+  </div>
+  <div class="maker-card rv">
+    <div class="maker-person">
+      <div class="maker-photo">
+        <img src="./assets/product_owner.webp" alt="Product owner">
+      </div>
+      <div class="maker-copy">
+        <div class="maker-name">Ушаков Никита</div>
+        <div class="maker-text">Выпуск ПФПЭ 2019, 3+ года живу в Грузии, обожаю местную природу и знаю, где найти в Тбилиси хороший сервис. Менеджерю в IT и в свободное время от проектов решил с партнёрами из Update причинить людям счастье в горах.</div>
+      </div>
+    </div>
+    <div class="maker-brand">
+      <img src="./assets/update_logo.png" alt="Update">
+      <div class="maker-brand-text">Update — лучшая wellness студия в Тбилиси.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="s" id="team">
+  <div class="rv sec-hd">
+    <div><h2 class="BT">Кто с <em>нами</em></h2></div>
+    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">На месте у нас не “анимация ради галочки”, а люди, которые реально умеют собрать мягкий, спокойный и качественный ритм поездки.</p>
+  </div>
+  <div class="team-scroll">
+    <div class="tc"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/photo/team/Anastasia-Kalashnikova.webp" alt="" loading="lazy"><div class="tc-bd"><div class="tc-name">Анастасия Калашникова</div><div class="tc-role">Массажист</div><div class="tc-bio">Внимательный специалист, тонко чувствует состояние клиента</div></div></div>
+    <div class="tc"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/photo/team/Evgeniy-Tarakanov.webp" alt="" loading="lazy"><div class="tc-bd"><div class="tc-name">Евгений Тараканов</div><div class="tc-role">Массажист · Восстановление</div><div class="tc-bio">Спина, шея, поясница, триггерные точки</div></div></div>
+    <div class="tc"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/photo/team/Ia-Darakhvelidze.webp" alt="" loading="lazy"><div class="tc-bd"><div class="tc-name">Ия Дарахвелидзе</div><div class="tc-role">Массажист · Пасс. гимнастика</div><div class="tc-bio">Мягко, с опорой на состояние в моменте</div></div></div>
+    <div class="tc"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/photo/team/Nata-Solnechnaya.webp" alt="" loading="lazy"><div class="tc-bd"><div class="tc-name">Ната Солнечная</div><div class="tc-role">Телесный терапевт</div><div class="tc-bio">Тело, эмоции, внутреннее состояние</div></div></div>
+    <div class="tc"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/photo/team/Nikolai-Dadygin.webp" alt="" loading="lazy"><div class="tc-bd"><div class="tc-name">Николай Дадыгин</div><div class="tc-role">Врач · Мануальный терапевт</div><div class="tc-bio">Диагностика, причины, а не симптомы</div></div></div>
+    <div class="tc"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/photo/team/Ruslan-Jijelava.webp" alt="" loading="lazy"><div class="tc-bd"><div class="tc-name">Руслан Джижелава</div><div class="tc-role">Массажист</div><div class="tc-bio">Индивидуальный подход и доверие</div></div></div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="s" id="programs">
+  <div class="rv"><div class="chip">как может выглядеть поездка</div><h2 class="BT">Три слоя этого <em>сценария</em></h2></div>
+  <div class="prog-grid rv">
+    <div class="pg">
+      <div class="pg-tag">Днём</div>
+      <div class="pg-h">Природа и движение</div>
+      <p class="pg-p">Хайкинг, off-road, прогулки, воздух и длинный горизонт. Всё, что помогает телу и голове наконец перестроиться из режима “по задачам” в режим “я здесь”.</p>
+      <ul class="pg-ul"><li>Хайкинг и прогулки по окрестностям</li><li>Off-road и небольшие выезды</li><li>Время у бассейна и на солнце</li><li>Много пространства без городской плотности</li></ul>
+      <div class="pg-pills"><span class="ppill">Каньон</span><span class="ppill">Хайкинг</span><span class="ppill">Off-road</span><span class="ppill">Бассейн</span></div>
+      <div class="pg-price"><div class="pg-price-val">Ритм собираем под группу</div><div class="pg-price-note">без гонки за “успеть всё”</div></div>
+    </div>
+    <div class="pg">
+      <div class="pg-tag">Вечером</div>
+      <div class="pg-h">Компания и длинные разговоры</div>
+      <p class="pg-p">Здесь начинается то, ради чего обычно и едут: общий стол, баня, гитара, разговоры до ночи, внутренние шутки и ощущение, что ты снова поймал нужную волну.</p>
+      <ul class="pg-ul"><li>Баня и тёплый бассейн</li><li>Барбекю, ужины и вечерние посиделки</li><li>Пространство для разговоров без суеты</li><li>Можно быть в центре, можно тихо рядом</li></ul>
+      <div class="pg-pills"><span class="ppill">Баня</span><span class="ppill">Бассейн</span><span class="ppill">Барбекю</span><span class="ppill">Гитара</span></div>
+      <div class="pg-price"><div class="pg-price-val">Самая сильная часть — люди</div><div class="pg-price-note">место только помогает</div></div>
+    </div>
+    <div class="pg">
+      <div class="pg-tag">По желанию</div>
+      <div class="pg-h">Мягкое восстановление</div>
+      <p class="pg-p">Если хочется не только смены картинки, но и чуть глубже позаботиться о себе, можно докрутить поездку массажами, телесными практиками и более спокойным личным ритмом.</p>
+      <ul class="pg-ul"><li>Массажи и телесная терапия</li><li>Спокойные утренние практики</li><li>Возможность не бежать за компанией 24/7</li><li>Своя степень включённости для каждого</li></ul>
+      <div class="pg-pills"><span class="ppill">Массаж</span><span class="ppill">Тело</span><span class="ppill">Восстановление</span><span class="ppill">Тишина</span></div>
+      <div class="pg-price"><div class="pg-price-val">Можно ехать и за движем, и за выдохом</div><div class="pg-price-note">одно другому не мешает</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<div class="clients-s rv">
+  <div class="clients-lbl">Отдыхаем по взрослому</div>
+  <div class="clients-row">
+    <span class="pill-soft">5–10 июня</span>
+    <span class="pill-soft">горы Грузии</span>
+    <span class="pill-soft">живописный каньон</span>
+    <span class="pill-soft">физтехи и друзья</span>
+  </div>
+</div>
+
+<!-- IMPACT -->
+<section class="s" id="impact">
+  <div class="rv sec-hd" style="margin-bottom:48px">
+    <div><div class="chip">почему хочется поехать</div><h2 class="BT">Три простых<br><em>аргумента</em></h2></div>
+    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">Три причины, почему этот заезд звучит как хорошая идея уже сейчас.</p>
+  </div>
+  <div class="imp-grid">
+    <div class="ic glass rv d1">
+      <div class="icn">6</div>
+      <div class="ict">дней, чтобы вынырнуть из повседневного ритма и снова почувствовать, что жизнь состоит не только из дедлайнов, созвонов и бесконечных вкладок</div>
+      <div class="ics">5 ночей в горах работают лучше, чем ещё один “нормально бы отдохнуть потом”</div>
+    </div>
+    <div class="ic glass rv d2">
+      <div class="icn">1</div>
+      <div class="ict">понятная компания, где не нужно долго раскачиваться. Приезжаешь, и уже на первой общей точке чувствуешь, что разговор пойдёт сам</div>
+      <div class="ics">Внутренние шутки, старая оптика и новые люди в одном кадре</div>
+    </div>
+    <div class="ic glass rv d3">
+      <div class="icn">0</div>
+      <div class="ict">процентов случайного хаоса. Программа собирается заранее и держит идеальный баланс между активностями, общими точками и отдыхом</div>
+      <div class="ics">Это и делает такие поездки по-настоящему живыми</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="s" id="faq">
+  <div class="faq-grid">
+    <div class="fql rv">
+      <div class="chip">FAQ</div>
+      <h2 class="BT" style="margin-bottom:0">Частые<br>вопросы</h2>
+      <p>Если чего-то не хватает, оставляйте контакт ниже. Напишем без робота и без “ваша заявка очень важна для нас”.</p>
+      <a href="#form" class="btn btn-s" style="display:inline-flex">Задать вопрос →</a>
+    </div>
+    <div class="flist rv d2">
+      <div class="fi open"><div class="fq" onclick="tf(this)">Кто может поехать?<span class="farr">+</span></div><div class="fa">Этот заезд собираем для физтехов и друзей. Можно ехать выпускником, студентом, преподавателем, человеком “через своих” или просто близким по духу +1.</div></div>
+      <div class="fi"><div class="fq" onclick="tf(this)">Можно ехать одному?<span class="farr">+</span></div><div class="fa">Да, и это нормальный сценарий. Страница специально написана не как “собери команду из 12 человек”, а как приглашение в уже понятную компанию, куда можно вписаться и одному.</div></div>
+      <div class="fi"><div class="fq" onclick="tf(this)">Где это и как добираться?<span class="farr">+</span></div><div class="fa">Заезд проходит в бутик-отеле в горах Грузии рядом с живописным каньоном. Обычно маршрут такой: прилёт в Тбилиси, дальше трансфер до локации. После заявки отдельно отправим понятную логистику.</div></div>
+      <div class="fi"><div class="fq" onclick="tf(this)">Что по программе?<span class="farr">+</span></div><div class="fa">Программа насыщенная и собирается заранее. Внутри есть выбор и воздух, но по ощущению это цельный, продуманный заезд с правильным балансом активностей и отдыха.</div></div>
+      <div class="fi"><div class="fq" onclick="tf(this)">Есть ли проживание, баня, бассейн и всё вот это?<span class="farr">+</span></div><div class="fa">Да. Проживание, баня, бассейн, террасы, ресторан и несколько типов номеров уже заложены в структуру страницы. Фото и цены по каждому варианту добавим следующим проходом.</div></div>
+      <div class="fi"><div class="fq" onclick="tf(this)">Когда лучше вписываться?<span class="farr">+</span></div><div class="fa">Чем раньше, тем лучше. Заезд привязан к датам 5–10 июня 2026, поэтому хочется заранее понять состав и спокойно собрать размещение.</div></div>
+      <div class="fi"><div class="fq" onclick="tf(this)">Как оставить интерес и получить детали?<span class="farr">+</span></div><div class="fa">Оставляете форму ниже. В ответ мы лично присылаем детали по стоимости, логистике, размещению и тому, как лучше встроиться в этот заезд.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW + FORM -->
+<section class="s" id="how">
+  <div class="rv sec-hd">
+    <div>
+      <div class="chip">как присоединиться</div>
+      <h2 class="BT">Четыре шага до <em>поездки</em></h2>
+    </div>
+    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">Без длинных воронок и лишней бюрократии. Оставляете контакт, а дальше уже спокойно добираем детали вживую.</p>
+  </div>
+  <div class="how-form-wrap">
+    <div class="how-steps-compact rv">
+      <div class="hwc rv d1">
+        <div class="hwc-num">1</div>
+        <div><div class="hwc-h">Оставляете контакт</div><div class="hwc-d">Пишете имя, Telegram и пару вводных о себе или своей компании друзей.</div></div>
+      </div>
+      <div class="hwc rv d2">
+        <div class="hwc-num">2</div>
+        <div><div class="hwc-h">Получаете детали</div><div class="hwc-d">Мы отправляем стоимость, логиcтику, бытовые детали и отвечаем на вопросы без шаблонных сообщений.</div></div>
+      </div>
+      <div class="hwc rv d3">
+        <div class="hwc-num">3</div>
+        <div><div class="hwc-h">Фиксируете участие</div><div class="hwc-d">Подтверждаем состав, проживание и понимаем, кто едет один, с +1 или своей мини-компанией.</div></div>
+      </div>
+      <div class="hwc rv d4">
+        <div class="hwc-num">4</div>
+        <div><div class="hwc-h">Встречаемся 5 июня</div><div class="hwc-d">Прилетаем, доезжаем до бутик-отеля в горах Грузии и дальше просто хорошо проживаем эту неделю.</div></div>
+      </div>
+    </div>
+    <div id="form">
+<form class="fbox glass rv d2" id="retreatLeadForm">
+      <h3>Вписаться в заезд</h3>
+      <div class="fg"><label class="fl" for="lead_name">Имя</label><input id="lead_name" name="name" type="text" class="fi2" placeholder="Как к вам обращаться" required></div>
+      <div class="fg"><label class="fl" for="lead_company">Физтех-контекст</label><input id="lead_company" name="company" type="text" class="fi2" placeholder="Факультет, выпуск, лаборатория или “иду через друзей”" required></div>
+      <div class="fg"><label class="fl" for="lead_contact">Telegram или Email</label><input id="lead_contact" name="contact" type="text" class="fi2" placeholder="@username или email@..." required></div>
+      <div class="fg"><label class="fl" for="lead_group_size">С кем едете</label><select id="lead_group_size" name="group_size" class="fi2" required><option value="">Выберите...</option><option>Пока один / одна</option><option>С +1</option><option>Нас 3–4 человека</option><option>Хочу собрать мини-компанию</option></select></div>
+      <div class="fg"><label class="fl" for="lead_format">Что важно сейчас</label><select id="lead_format" name="format" class="fi2" required><option value="">Выберите...</option><option>Хочу поехать 5–10 июня</option><option>Хочу сначала понять стоимость</option><option>Нужна логистика и бытовые детали</option><option>Интересно, если будет второй заезд</option><option>Хочу просто задать вопрос</option></select></div>
+      <div class="fg"><label class="fl" for="lead_location">Локация</label><select id="lead_location" name="location" class="fi2"><option>Бутик-отель в горах Грузии · 5–10 июня</option></select></div>
+      <div class="fg"><label class="fl" for="lead_comment">Комментарий</label><textarea id="lead_comment" name="comment" class="fi2" placeholder="С кем едете, что хотите уточнить, нужен ли +1, есть ли пожелания по проживанию..."></textarea></div>
+      <button type="submit" class="fsub" id="leadSubmitBtn">Отправить →</button>
+      <p class="fn" id="leadFormStatus">Напишем лично и пришлём детали по стоимости, логистике и формату.</p>
+    </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ftop">
+    <div class="fbrand">
+      <a href="https://update-club.com" target="_blank" class="flog">PHYSTECH RETREAT</a>
+      <span class="flog-sub">Update x МФТИ community</span>
+      <p class="fbp">Заезд 5–10 июня для физтехов и их близких. Горы, сильная программа, компания своих и правильный баланс активностей и отдыха.</p>
+      <a href="https://update-club.com" target="_blank" style="display:inline-block;margin-top:16px;font-size:12px;color:var(--sand);text-decoration:none;border-bottom:1px solid rgba(123,181,255,.35);letter-spacing:.05em;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--sand)'">update-club.com →</a>
+    </div>
+    <div class="fcol"><h4>Навигация</h4><ul><li><a href="#formats">Сценарий</a></li><li><a href="#activities">Программа</a></li><li><a href="#venues">Проживание</a></li><li><a href="#dates">Чекап</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+    <div class="fcol"><h4>Поездка</h4><ul><li><a href="#programs">Как это будет</a></li><li><a href="#team">Команда</a></li><li><a href="#impact">Почему ехать</a></li><li><a href="#form">Оставить интерес</a></li></ul></div>
+    <div class="fcol"><h4>Контакты</h4><ul><li><a href="https://t.me/updatestudio" target="_blank">Telegram</a></li><li><a href="https://instagram.com/update.tbilisi" target="_blank">Instagram</a></li><li><a href="/cdn-cgi/l/email-protection#422b2c242d023732262336276f212e37206c212d2f">Email</a></li></ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Update Studio · Tbilisi, Georgia</span><span>Phystech Retreat · 5–10 июня</span></div>
+</footer>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ── BACKGROUND: try multiple sources, JS-driven ── */
+const BGSRCS=['https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@a79f046353fd2872719eba7840b7d8c442b6f360/background/background-small.webp'];
+(function loadBG(idx){
+  if(idx>=BGSRCS.length)return;
+  const img=new Image();
+  img.crossOrigin='anonymous';
+  img.onload=function(){
+    const el=document.getElementById('scene');
+    el.style.backgroundImage='url('+BGSRCS[idx]+')';
+    el.style.opacity='1';
+  };
+  img.onerror=function(){loadBG(idx+1)};
+  img.src=BGSRCS[idx];
+})(0);
+
+/* ── FAQ ── */
+function tf(el){
+  const it=el.parentElement;
+  document.querySelectorAll('.fi').forEach(i=>i!==it&&i.classList.remove('open'));
+  it.classList.toggle('open');
+}
+
+/* ── MODALS ── */
+function openM(id){document.getElementById('m-'+id).classList.add('open');document.body.style.overflow='hidden'}
+function closeM(id){document.getElementById('m-'+id).classList.remove('open');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){document.querySelectorAll('.mover.open').forEach(m=>m.classList.remove('open'));document.body.style.overflow=''}
+});
+
+/* ── FORM ── */
+function sb(btn){btn.textContent='Отправляем...';setTimeout(()=>{btn.textContent='Заявка отправлена ✓'},1400)}
+
+function toggleMenu(){
+  const m=document.getElementById('mobMenu');
+  const b=document.querySelector('.burger');
+  m.classList.toggle('open');
+  b.classList.toggle('open');
+  document.body.style.overflow=m.classList.contains('open')?'hidden':'';
+}
+/* ── REVEAL ── */
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on')}),{threshold:.06});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+
+<script>
+(function(){
+  const phrases = Array.from(document.querySelectorAll('.hero-phrase'));
+  if (!phrases.length) return;
+
+  let index = 0;
+  const showMs = 2200;
+  const fadeMs = 550;
+
+  phrases.forEach((el, i) => {
+    el.classList.remove('is-active', 'is-exit');
+    if (i === 0) el.classList.add('is-active');
+  });
+
+  setInterval(() => {
+    const current = phrases[index];
+    current.classList.remove('is-active');
+    current.classList.add('is-exit');
+
+    setTimeout(() => {
+      current.classList.remove('is-exit');
+    }, fadeMs);
+
+    index = (index + 1) % phrases.length;
+    const next = phrases[index];
+    next.classList.remove('is-exit');
+    // force reflow so transition always applies
+    void next.offsetWidth;
+    next.classList.add('is-active');
+  }, showMs);
+})();
+</script>
+
+
+
+<script>
+const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbyYjxBn6AcwheYHlcx_AGC1xaPT0TXj_pr5qkwH5ethtHVNRuctxfm3Ly15uuNt_GD-/exec";
+
+(function () {
+  const form = document.getElementById("retreatLeadForm");
+  const submitBtn = document.getElementById("leadSubmitBtn");
+  const statusBox = document.getElementById("leadFormStatus");
+
+  if (!form || !submitBtn || !statusBox) return;
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const payload = new URLSearchParams();
+
+    payload.append("date", new Date().toLocaleString("ru-RU"));
+    payload.append("name", formData.get("name") || "");
+    payload.append("company", formData.get("company") || "");
+    payload.append("contact", formData.get("contact") || "");
+    payload.append("group_size", formData.get("group_size") || "");
+    payload.append("format", formData.get("format") || "");
+    payload.append("location", formData.get("location") || "");
+    payload.append("comment", formData.get("comment") || "");
+    payload.append("page", window.location.href);
+    payload.append("source", "PHYSTECH RETREAT");
+    payload.append("submitted_at", new Date().toISOString());
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Отправляем...";
+    statusBox.textContent = "Отправляем заявку...";
+    statusBox.style.color = "rgba(255,255,255,.72)";
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+        },
+        body: payload.toString()
+      });
+
+      const text = await response.text();
+
+      if (!response.ok) {
+        throw new Error(text || "Ошибка отправки");
+      }
+
+      statusBox.textContent = "Спасибо! Заявка отправлена. Мы скоро свяжемся с вами.";
+      statusBox.style.color = "#7bb5ff";
+      form.reset();
+    } catch (error) {
+      statusBox.textContent = "Не удалось отправить заявку. Попробуйте ещё раз или напи
