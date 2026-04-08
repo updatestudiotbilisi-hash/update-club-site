@@ -755,6 +755,45 @@ nav{
 .fcul li{font-size:13px;color:var(--w6);display:flex;gap:10px;align-items:flex-start;line-height:1.5}
 .fcul li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--sand);flex-shrink:0;margin-top:7px}
 
+.sunrise-card{
+  position:relative;
+  overflow:hidden;
+  min-height:520px;
+  border-radius:32px;
+}
+.sunrise-card img{
+  width:100%;
+  height:100%;
+  min-height:520px;
+  object-fit:cover;
+  object-position:center center;
+  display:block;
+  filter:saturate(.92) brightness(.88);
+}
+.sunrise-card::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(5,12,24,.82) 0%, rgba(5,12,24,.18) 40%, rgba(5,12,24,.06) 100%);
+}
+.sunrise-copy{
+  position:absolute;
+  left:34px;
+  bottom:30px;
+  z-index:2;
+  max-width:760px;
+}
+.sunrise-caption{
+  font-family:var(--tf);
+  font-size:clamp(34px,4.4vw,58px);
+  line-height:1.02;
+  letter-spacing:-.04em;
+  color:var(--w);
+}
+.sunrise-caption .accent-blue{
+  color:var(--sand);
+}
+
 /* ── IMPACT ── */
 .imp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .ic{padding:40px 34px;border-radius:20px;transition:all .3s;background:var(--g1);backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);border:1px solid var(--gbr)}
@@ -762,6 +801,156 @@ nav{
 .icn{font-family:var(--tf);font-size:clamp(52px,6vw,68px);font-weight:800;color:var(--w);line-height:1;margin-bottom:10px}
 .ict{font-size:14px;color:var(--w6);line-height:1.65}
 .ics{font-size:11px;color:var(--w4);font-style:italic;margin-top:10px;line-height:1.5;padding-top:10px;border-top:1px solid var(--gbr)}
+
+.offer-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+.offer-card{
+  padding:30px;
+  border-radius:24px;
+  background:var(--g1);
+  border:1px solid var(--gbr);
+  backdrop-filter:var(--blurs);
+  -webkit-backdrop-filter:var(--blurs);
+}
+.offer-card.wide{
+  grid-column:1 / -1;
+}
+.offer-title{
+  font-family:var(--tf);
+  font-size:clamp(24px,2.5vw,34px);
+  line-height:1.08;
+  color:var(--w);
+  margin-bottom:18px;
+}
+.offer-text{
+  font-size:15px;
+  line-height:1.75;
+  color:var(--w6);
+}
+.offer-list{
+  list-style:none;
+  display:grid;
+  gap:12px;
+}
+.offer-list li{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  font-size:15px;
+  line-height:1.75;
+  color:var(--w8);
+}
+.offer-list li::before{
+  content:'';
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--sand);
+  flex-shrink:0;
+  margin-top:10px;
+}
+.calc-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  gap:18px;
+  align-items:start;
+}
+.calc-panel{
+  display:grid;
+  gap:14px;
+}
+.calc-label{
+  display:block;
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--sand2);
+  margin-bottom:8px;
+}
+.calc-select{
+  width:100%;
+  padding:16px 18px;
+  border-radius:16px;
+  border:1px solid var(--gbr2);
+  background:rgba(17,39,74,.5);
+  color:var(--w);
+  font-family:var(--bf);
+  font-size:15px;
+  outline:none;
+  appearance:none;
+}
+.calc-check{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:16px 18px;
+  border-radius:18px;
+  border:1px solid var(--gbr2);
+  background:rgba(17,39,74,.38);
+  color:var(--w8);
+}
+.calc-check input{
+  width:18px;
+  height:18px;
+  accent-color:var(--sand);
+  flex-shrink:0;
+}
+.calc-check-main{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.calc-check-price{
+  font-family:var(--tf);
+  font-size:14px;
+  color:var(--w);
+  white-space:nowrap;
+}
+.calc-result{
+  padding:24px;
+  border-radius:20px;
+  border:1px solid rgba(123,181,255,.22);
+  background:linear-gradient(180deg, rgba(17,39,74,.56), rgba(10,20,38,.72));
+}
+.calc-row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:10px 0;
+  border-bottom:1px solid rgba(123,181,255,.12);
+  color:var(--w6);
+  font-size:14px;
+}
+.calc-row:last-child{
+  border-bottom:none;
+}
+.calc-row strong{
+  color:var(--w);
+  font-family:var(--bf);
+  font-weight:500;
+  text-align:right;
+}
+.calc-row.total{
+  margin-top:6px;
+  padding-top:18px;
+  color:var(--w);
+  font-family:var(--tf);
+  font-size:16px;
+}
+.calc-row.total strong{
+  font-family:var(--tf);
+  font-size:18px;
+}
+.calc-foot{
+  margin-top:12px;
+  font-size:13px;
+  line-height:1.7;
+  color:var(--w4);
+}
 
 /* ── VENUES ── */
 .ven-scroll{display:flex;gap:14px;overflow-x:auto;padding-bottom:16px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;margin-top:48px}
@@ -1171,7 +1360,7 @@ nav{
 }
 .maker-brand img{
   width:100%;
-  max-width:440px;
+  max-width:620px;
   height:auto;
   object-fit:contain;
   display:block;
@@ -1179,7 +1368,7 @@ nav{
 }
 .maker-brand-text{
   font-family:var(--bf);
-  font-size:16px;
+  font-size:18px;
   line-height:1.75;
   color:var(--w8);
   max-width:340px;
@@ -1372,10 +1561,14 @@ function toggleMenu(){
 
   /* All 2-col grids → 1-col */
   .hgrid,.ab-grid,.act-hd,.faq-grid,.form-grid,.stay-wrap{grid-template-columns:1fr;gap:28px}
-  .fmt-grid,.imp-grid,.prog-grid,.dates-grid{grid-template-columns:1fr}
+  .fmt-grid,.imp-grid,.prog-grid,.dates-grid,.offer-grid,.calc-grid{grid-template-columns:1fr}
   .day-card{grid-template-columns:1fr;gap:18px;padding:22px}
   .day-body{padding-left:0;padding-top:18px;border-left:none;border-top:1px solid var(--gbr)}
   .day-date{font-size:32px}
+  .sunrise-card,
+  .sunrise-card img{min-height:360px}
+  .sunrise-copy{left:22px;right:22px;bottom:22px}
+  .sunrise-caption{font-size:clamp(28px,9vw,42px)}
 
   /* Section header rows (title + desc side by side) — stack */
   .s>[style*="grid-template-columns:1fr 1fr"]{display:flex!important;flex-direction:column!important;gap:16px!important}
@@ -1875,7 +2068,7 @@ body{padding-bottom:88px}
         <div class="room-name">Panorama</div>
         <div class="room-meta">2 идентичных номера · отдельное здание · идеально для пары</div>
         <div class="room-note">Эти два номера находятся в отдельном здании, дают лучший вид и внутри имеют свою ванную комнату.</div>
-        <div class="room-price">Цена будет добавлена позже</div>
+        <div class="room-price">1900$ за человека</div>
       </div>
     </div>
     <div class="room-card">
@@ -1892,7 +2085,7 @@ body{padding-bottom:88px}
         <div class="room-name">Old money double King</div>
         <div class="room-meta">2 идентичных номера · дом 1936 года · идеально для двух парней или девушек</div>
         <div class="room-note">Двухъярусный номер в старинном доме. У каждого номера полноценный санузел и свой балкон.</div>
-        <div class="room-price">Цена будет добавлена позже</div>
+        <div class="room-price">1700$ за человека</div>
       </div>
     </div>
     <div class="room-card">
@@ -1909,7 +2102,7 @@ body{padding-bottom:88px}
         <div class="room-name">Old money Twin</div>
         <div class="room-meta">1 номер · дом 1936 года · twin / double on request</div>
         <div class="room-note">Для пары можем совместить две кровати. Для друзей оставляем раздельными. В номере есть полноценный санузел и свой балкон.</div>
-        <div class="room-price">Цена будет добавлена позже</div>
+        <div class="room-price">1600$ за человека</div>
       </div>
     </div>
     <div class="room-card">
@@ -1926,7 +2119,7 @@ body{padding-bottom:88px}
         <div class="room-name">Old money King</div>
         <div class="room-meta">1 номер · дом 1936 года · king / twin setup</div>
         <div class="room-note">Для пары можем совместить две кровати. Для друзей оставляем раздельными. Этот номер тоже находится в старинном доме, со своим санузлом и балконом.</div>
-        <div class="room-price">Цена будет добавлена позже</div>
+        <div class="room-price">1600$ за человека</div>
       </div>
     </div>
     <div class="room-card compact-single">
@@ -1940,7 +2133,7 @@ body{padding-bottom:88px}
         <div class="room-name">Standart Twin</div>
         <div class="room-meta">1 номер · новый дом · twin / double on request</div>
         <div class="room-note">Номер находится в доме новой постройки рядом с основным. Для пары можем совместить две кровати, для друзей оставляем раздельными. Также со своим санузлом.</div>
-        <div class="room-price">Цена будет добавлена позже</div>
+        <div class="room-price">1500$ за человека</div>
       </div>
     </div>
   </div>
@@ -2000,31 +2193,10 @@ body{padding-bottom:88px}
 
 <!-- FORMATS -->
 <section class="s" id="formats">
-  <div class="rv sec-hd">
-    <div><div class="chip">сценарий поездки</div><h2 class="BT">Зачем сюда<br>вообще <em>ехать</em></h2></div>
-    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">Ниже коротко и по делу: за чем хочется выехать 5–10 июня и почему этот заезд хорошо собран.</p>
-  </div>
-  <div class="fmt-grid">
-    <div class="fc glass rv d1">
-      <div class="fcn">01 /</div>
-      <span class="fcl">Перезагрузка</span>
-      <h3 class="fch">Выдохнуть без чувства вины</h3>
-      <p class="fcp">Не надо оправдывать себе отдых полезностью. Просто уехать в хорошее место, перевести голову из режима “надо успеть” в режим “я наконец здесь”.</p>
-      <ul class="fcul"><li>Горы, воздух и другой темп дня</li><li>Бассейн, баня, терраса, вечерние разговоры</li><li>Время на себя без жёсткого расписания</li><li>Нормальная пауза после длинной весны</li></ul>
-    </div>
-    <div class="fc glass rv d2">
-      <div class="fcn">02 /</div>
-      <span class="fcl">Компания</span>
-      <h3 class="fch">Побыть со своими по-человечески</h3>
-      <p class="fcp">То, что на созвонах и в чатах размывается, вживую снова становится простым: быстро познакомиться, легко разговориться, вспомнить старые истории и нагенерить новые.</p>
-      <ul class="fcul"><li>Физтехи и друзья без формального официоза</li><li>Можно ехать одному и не чувствовать себя “лишним”</li><li>Можно собрать свой мини-экипаж</li><li>Внутренние шутки идут в комплекте</li></ul>
-    </div>
-    <div class="fc glass rv d3">
-      <div class="fcn">03 /</div>
-      <span class="fcl">Место</span>
-      <h3 class="fch">Локация, которая делает половину истории</h3>
-      <p class="fcp">Бутик-отель в горах Грузии уже сам по себе сильный аргумент: виды, бассейн, тёплый свет вечером и ощущение, что выехал именно туда, куда надо.</p>
-      <ul class="fcul"><li>Горы и живописный каньон рядом</li><li>Место с характером, а не стандартный отель</li><li>Есть пространство и для активности, и для тишины</li><li>Красиво, но не ради одной картинки</li></ul>
+  <div class="sunrise-card glass rv">
+    <img src="./assets/sun_rise.webp" alt="Восход в горах">
+    <div class="sunrise-copy">
+      <div class="sunrise-caption">Вот такие здесь <span class="accent-blue">восходы</span></div>
     </div>
   </div>
 </section>
@@ -2041,7 +2213,7 @@ body{padding-bottom:88px}
       </div>
       <div class="maker-copy">
         <div class="maker-name">Ушаков Никита</div>
-        <div class="maker-text">Выпуск ПФПЭ 2019, 3+ года живу в Грузии, обожаю местную природу и знаю, где найти в Тбилиси хороший сервис. Менеджерю в IT и в свободное время от проектов решил с партнёрами из Update причинить людям счастье в горах.</div>
+        <div class="maker-text">ФПФЭ, больше трех лет живу в Грузии, обожаю местную природу и знаю, где найти в Тбилиси хороший сервис. Запускаю IT продукты и не только. Это не только вылилось в партнерство с Update, где мы твердо решили причинить людям счастье в горах.</div>
       </div>
     </div>
     <div class="maker-brand">
@@ -2055,7 +2227,6 @@ body{padding-bottom:88px}
 <section class="s" id="team">
   <div class="rv sec-hd">
     <div><h2 class="BT">Кто с <em>нами</em></h2></div>
-    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">На месте у нас не “анимация ради галочки”, а люди, которые реально умеют собрать мягкий, спокойный и качественный ритм поездки.</p>
   </div>
   <div class="team-scroll">
     <div class="tc"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/photo/team/Anastasia-Kalashnikova.webp" alt="" loading="lazy"><div class="tc-bd"><div class="tc-name">Анастасия Калашникова</div><div class="tc-role">Массажист</div><div class="tc-bio">Внимательный специалист, тонко чувствует состояние клиента</div></div></div>
@@ -2069,7 +2240,7 @@ body{padding-bottom:88px}
 
 <!-- PROGRAMS -->
 <section class="s" id="programs">
-  <div class="rv"><div class="chip">как может выглядеть поездка</div><h2 class="BT">Три слоя этого <em>сценария</em></h2></div>
+  <div class="rv"><h2 class="BT">Три слоя этого <em>сценария</em></h2></div>
   <div class="prog-grid rv">
     <div class="pg">
       <div class="pg-tag">Днём</div>
@@ -2088,12 +2259,12 @@ body{padding-bottom:88px}
       <div class="pg-price"><div class="pg-price-val">Самая сильная часть — люди</div><div class="pg-price-note">место только помогает</div></div>
     </div>
     <div class="pg">
-      <div class="pg-tag">По желанию</div>
+      <div class="pg-tag">Внутри поездки</div>
       <div class="pg-h">Мягкое восстановление</div>
-      <p class="pg-p">Если хочется не только смены картинки, но и чуть глубже позаботиться о себе, можно докрутить поездку массажами, телесными практиками и более спокойным личным ритмом.</p>
-      <ul class="pg-ul"><li>Массажи и телесная терапия</li><li>Спокойные утренние практики</li><li>Возможность не бежать за компанией 24/7</li><li>Своя степень включённости для каждого</li></ul>
+      <p class="pg-p">Массажи уже встроены в эти дни и дают то самое полное расслабление после дороги, активностей и длинных вечеров. Это не дополнительный слой, а важная часть общего ритма поездки.</p>
+      <ul class="pg-ul"><li>Ежедневные массажи на локации</li><li>Полное расслабление после активного дня</li><li>Баня и бассейн усиливают эффект восстановления</li><li>Есть пространство выдохнуть и не спешить</li></ul>
       <div class="pg-pills"><span class="ppill">Массаж</span><span class="ppill">Тело</span><span class="ppill">Восстановление</span><span class="ppill">Тишина</span></div>
-      <div class="pg-price"><div class="pg-price-val">Можно ехать и за движем, и за выдохом</div><div class="pg-price-note">одно другому не мешает</div></div>
+      <div class="pg-price"><div class="pg-price-val">Расслабление здесь встроено в программу</div><div class="pg-price-note">а не вынесено в факультатив</div></div>
     </div>
   </div>
 </section>
@@ -2112,24 +2283,58 @@ body{padding-bottom:88px}
 <!-- IMPACT -->
 <section class="s" id="impact">
   <div class="rv sec-hd" style="margin-bottom:48px">
-    <div><div class="chip">почему хочется поехать</div><h2 class="BT">Три простых<br><em>аргумента</em></h2></div>
-    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">Три причины, почему этот заезд звучит как хорошая идея уже сейчас.</p>
+    <div><h2 class="BT">Что входит в <em>программу</em></h2></div>
+    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">Финальную калькуляцию по размещению мы ещё докручиваем, но уже сейчас можно собрать логику итоговой суммы и понять, что входит в поездку, а что считается отдельно.</p>
   </div>
-  <div class="imp-grid">
-    <div class="ic glass rv d1">
-      <div class="icn">6</div>
-      <div class="ict">дней, чтобы вынырнуть из повседневного ритма и снова почувствовать, что жизнь состоит не только из дедлайнов, созвонов и бесконечных вкладок</div>
-      <div class="ics">5 ночей в горах работают лучше, чем ещё один “нормально бы отдохнуть потом”</div>
+  <div class="offer-grid rv">
+    <div class="offer-card d1">
+      <div class="offer-title">Что входит</div>
+      <ul class="offer-list">
+        <li>Трансферы по маршруту Тбилиси — локация — Тбилиси и вся наземная логистика по Грузии.</li>
+        <li>Питание на протяжении поездки: общие завтраки, обеды и ужины по собранному сценарию выезда.</li>
+        <li>Собранная программа по дням: off-road, хайкинг, пикники, вечерние активности и общие выезды.</li>
+        <li>Массажи на локации, сауна, бассейн и доступ ко всем общим пространствам отеля.</li>
+        <li>Сопровождение и организационная часть: мы собираем ритм поездки, а не оставляем вас один на один с логистикой.</li>
+      </ul>
     </div>
-    <div class="ic glass rv d2">
-      <div class="icn">1</div>
-      <div class="ict">понятная компания, где не нужно долго раскачиваться. Приезжаешь, и уже на первой общей точке чувствуешь, что разговор пойдёт сам</div>
-      <div class="ics">Внутренние шутки, старая оптика и новые люди в одном кадре</div>
+    <div class="offer-card d2">
+      <div class="offer-title">Что не входит</div>
+      <ul class="offer-list">
+        <li>Перелёт до Тбилиси и личные расходы в городе.</li>
+        <li>Страховка на время поездки.</li>
+        <li>Чекап в A-clinic, если хотите встроить его в поездку.</li>
+      </ul>
     </div>
-    <div class="ic glass rv d3">
-      <div class="icn">0</div>
-      <div class="ict">процентов случайного хаоса. Программа собирается заранее и держит идеальный баланс между активностями, общими точками и отдыхом</div>
-      <div class="ics">Это и делает такие поездки по-настоящему живыми</div>
+    <div class="offer-card wide d3">
+      <div class="offer-title">Калькулятор стоимости</div>
+      <div class="calc-grid">
+        <div class="calc-panel">
+          <div>
+            <label class="calc-label" for="calcRoom">Категория номера</label>
+            <select class="calc-select" id="calcRoom">
+              <option value="">Выберите номер</option>
+              <option value="Panorama" data-price="1900">Panorama</option>
+              <option value="Old money double King" data-price="1700">Old money double King</option>
+              <option value="Old money Twin" data-price="1600">Old money Twin</option>
+              <option value="Old money King" data-price="1600">Old money King</option>
+              <option value="Standart Twin" data-price="1500">Standart Twin</option>
+            </select>
+          </div>
+          <label class="calc-check" for="calcCheckup">
+            <div class="calc-check-main">
+              <input type="checkbox" id="calcCheckup">
+              <span>Добавить чекап в A-clinic</span>
+            </div>
+            <span class="calc-check-price">+180$</span>
+          </label>
+        </div>
+        <div class="calc-result">
+          <div class="calc-row"><span>Размещение</span><strong id="calcRoomValue">выберите номер</strong></div>
+          <div class="calc-row"><span>Чекап</span><strong id="calcCheckupValue">0$</strong></div>
+          <div class="calc-row total"><span>Итог</span><strong id="calcTotalValue">выберите номер</strong></div>
+          <div class="calc-foot">Все цены указаны за человека. Чекап считается как отдельная фиксированная опция +180$.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -2209,7 +2414,7 @@ body{padding-bottom:88px}
       <a href="https://update-club.com" target="_blank" style="display:inline-block;margin-top:16px;font-size:12px;color:var(--sand);text-decoration:none;border-bottom:1px solid rgba(123,181,255,.35);letter-spacing:.05em;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--sand)'">update-club.com →</a>
     </div>
     <div class="fcol"><h4>Навигация</h4><ul><li><a href="#formats">Сценарий</a></li><li><a href="#activities">Программа</a></li><li><a href="#venues">Проживание</a></li><li><a href="#dates">Чекап</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-    <div class="fcol"><h4>Поездка</h4><ul><li><a href="#programs">Как это будет</a></li><li><a href="#team">Команда</a></li><li><a href="#impact">Почему ехать</a></li><li><a href="#form">Оставить интерес</a></li></ul></div>
+    <div class="fcol"><h4>Поездка</h4><ul><li><a href="#programs">Как это будет</a></li><li><a href="#team">Команда</a></li><li><a href="#impact">Что входит</a></li><li><a href="#form">Оставить интерес</a></li></ul></div>
     <div class="fcol"><h4>Контакты</h4><ul><li><a href="https://t.me/updatestudio" target="_blank">Telegram</a></li><li><a href="https://instagram.com/update.tbilisi" target="_blank">Instagram</a></li><li><a href="/cdn-cgi/l/email-protection#422b2c242d023732262336276f212e37206c212d2f">Email</a></li></ul></div>
   </div>
   <div class="fbot"><span>© 2026 Update Studio · Tbilisi, Georgia</span><span>Phystech Retreat · 5–10 июня</span></div>
@@ -2259,6 +2464,33 @@ function toggleMenu(){
 /* ── REVEAL ── */
 const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on')}),{threshold:.06});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+
+<script>
+(function(){
+  const room = document.getElementById('calcRoom');
+  const checkup = document.getElementById('calcCheckup');
+  const roomValue = document.getElementById('calcRoomValue');
+  const checkupValue = document.getElementById('calcCheckupValue');
+  const totalValue = document.getElementById('calcTotalValue');
+
+  if(!room || !checkup || !roomValue || !checkupValue || !totalValue) return;
+
+  function updateCalc(){
+    const selected = room.options[room.selectedIndex];
+    const roomPrice = selected && selected.dataset.price ? Number(selected.dataset.price) : 0;
+    const checkupPrice = checkup.checked ? 180 : 0;
+    const total = roomPrice + checkupPrice;
+
+    roomValue.textContent = roomPrice ? roomPrice + '$' : 'выберите номер';
+    checkupValue.textContent = checkupPrice ? checkupPrice + '$' : '0$';
+    totalValue.textContent = total ? total + '$' : 'выберите номер';
+  }
+
+  room.addEventListener('change', updateCalc);
+  checkup.addEventListener('change', updateCalc);
+  updateCalc();
+})();
 </script>
 
 <script>
