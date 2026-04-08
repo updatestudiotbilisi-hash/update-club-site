@@ -1538,6 +1538,19 @@ textarea.fi2{resize:vertical;min-height:80px}
   opacity:.5;
   pointer-events:none;
 }
+.waterfall-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:30px;
+  border:1px solid var(--gbr);
+  background:rgba(8,17,31,.72);
+}
+.waterfall-card img{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  display:block;
+}
 
 /* ── FOOTER ── */
 footer{position:relative;z-index:10;padding:60px 48px 36px;border-top:1px solid var(--gbr);background:rgba(8,8,8,.72);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur)}
@@ -2314,6 +2327,12 @@ body{padding-bottom:88px}
               <option value="Standart Twin" data-price="1500">Standart Twin</option>
             </select>
           </div>
+          <div>
+            <label class="calc-label" for="calcGuests">Сколько человек</label>
+            <select class="calc-select" id="calcGuests" disabled>
+              <option value="">Сначала выберите номер</option>
+            </select>
+          </div>
           <label class="calc-check" for="calcCheckup">
             <div class="calc-check-main">
               <input type="checkbox" id="calcCheckup">
@@ -2323,10 +2342,11 @@ body{padding-bottom:88px}
           </label>
         </div>
         <div class="calc-result">
+          <div class="calc-row"><span>Гостей</span><strong id="calcGuestsValue">—</strong></div>
           <div class="calc-row"><span>Размещение</span><strong id="calcRoomValue">выберите номер</strong></div>
           <div class="calc-row"><span>Чекап</span><strong id="calcCheckupValue">0$</strong></div>
           <div class="calc-row total"><span>Итог</span><strong id="calcTotalValue">выберите номер</strong></div>
-          <div class="calc-foot">Все цены указаны за человека. Чекап считается как отдельная фиксированная опция +180$.</div>
+          <div class="calc-foot">Размещение считается по выбранному составу. Чекап добавляется отдельно как фиксированная опция +180$.</div>
           <a id="calcTelegramBtn" class="btn btn-s calc-action is-disabled" href="https://t.me/Kopperfild" target="_blank" rel="noreferrer">Выберите номер</a>
         </div>
       </div>
@@ -2359,41 +2379,39 @@ body{padding-bottom:88px}
 <section class="s" id="form">
   <div class="rv sec-hd">
     <div>
-      <div class="chip">как присоединиться</div>
-      <h2 class="BT">Написать Никите в <em>Telegram</em></h2>
+      <h2 class="BT">Если вы с <em>нами</em>, пишите</h2>
     </div>
-    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">Без формы и лишнего шага. Можно просто открыть Telegram внизу, а ещё лучше сначала выбрать номер и чекап в калькуляторе выше, чтобы сообщение уже пришло с деталями.</p>
   </div>
   <div class="form-grid">
     <div class="how-steps-compact rv">
       <div class="hwc rv d1">
         <div class="hwc-num">1</div>
-        <div><div class="hwc-h">Выбираете номер</div><div class="hwc-d">Смотрите категории размещения и отмечаете вариант, который вам ближе.</div></div>
+        <div><div class="hwc-h">Выбираете номер</div><div class="hwc-d">И, если нужно, отмечаете чекап.</div></div>
       </div>
       <div class="hwc rv d2">
         <div class="hwc-num">2</div>
-        <div><div class="hwc-h">Отмечаете чекап</div><div class="hwc-d">Если хотите встроить check-up в поездку, включаете его в калькуляторе.</div></div>
+        <div><div class="hwc-h">Смотрите сумму</div><div class="hwc-d">Калькулятор сразу собирает итог.</div></div>
       </div>
       <div class="hwc rv d3">
         <div class="hwc-num">3</div>
-        <div><div class="hwc-h">Переходите в Telegram</div><div class="hwc-d">Кнопка откроет диалог уже с выбранным номером, чекапом и итоговой суммой.</div></div>
-      </div>
-      <div class="hwc rv d4">
-        <div class="hwc-num">4</div>
-        <div><div class="hwc-h">Добираем детали лично</div><div class="hwc-d">Я отвечаю в Telegram, подтверждаю размещение и помогаю с логистикой дальше.</div></div>
+        <div><div class="hwc-h">Пишите мне</div><div class="hwc-d">Telegram откроется уже с деталями.</div></div>
       </div>
     </div>
     <div class="fbox glass rv d2 telegram-card">
-      <h3>Связь напрямую</h3>
-      <p class="fs-p" style="margin-top:0;margin-bottom:0">Если уже всё понятно, можно сразу написать мне в Telegram. Если сначала хотите прикинуть стоимость, используйте кнопку из калькулятора выше: она сама добавит номер и чекап в сообщение.</p>
-      <ul class="telegram-points">
-        <li>Пишете напрямую без формы и без ожидания письма.</li>
-        <li>Можно сразу задать вопрос по логистике, размещению или чекапу.</li>
-        <li>Если едете не один, просто допишите это в сообщении.</li>
-      </ul>
+      <h3>Telegram</h3>
+      <p class="fs-p" style="margin-top:0;margin-bottom:18px">Кнопка из калькулятора выше уже подставит номер, состав и чекап. Если всё понятно, можно написать сразу.</p>
       <a class="btn btn-s" href="https://t.me/Kopperfild?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4%20Phystech%20Retreat." target="_blank" rel="noreferrer" style="justify-content:center">Открыть Telegram</a>
       <p class="fn">Telegram: @Kopperfild</p>
     </div>
+  </div>
+</section>
+
+<section class="s" id="waterfall">
+  <div class="rv sec-hd" style="margin-bottom:28px">
+    <div><h2 class="BT">И такую красоту мы тоже <em>увидим</em></h2></div>
+  </div>
+  <div class="waterfall-card rv d2">
+    <img src="./assets/water_fall.webp" alt="Водопад в горах Грузии" loading="lazy" decoding="async">
   </div>
 </section>
 
@@ -2462,26 +2480,103 @@ if (window.matchMedia('(max-width: 960px)').matches || window.matchMedia('(prefe
 <script>
 (function(){
   const room = document.getElementById('calcRoom');
+  const guests = document.getElementById('calcGuests');
   const checkup = document.getElementById('calcCheckup');
+  const guestsValue = document.getElementById('calcGuestsValue');
   const roomValue = document.getElementById('calcRoomValue');
   const checkupValue = document.getElementById('calcCheckupValue');
   const totalValue = document.getElementById('calcTotalValue');
   const telegramBtn = document.getElementById('calcTelegramBtn');
 
-  if(!room || !checkup || !roomValue || !checkupValue || !totalValue || !telegramBtn) return;
+  if(!room || !guests || !checkup || !guestsValue || !roomValue || !checkupValue || !totalValue || !telegramBtn) return;
+
+  const roomConfigs = {
+    'Panorama': {
+      defaultGuests: 2,
+      options: [
+        { value: '1', label: '1 человек' },
+        { value: '2', label: '2 человека' }
+      ]
+    },
+    'Old money double King': {
+      defaultGuests: 2,
+      options: [
+        { value: '2', label: '2 человека' },
+        { value: '3', label: 'семья + ребенок' }
+      ]
+    },
+    'Old money Twin': {
+      defaultGuests: 1,
+      options: [
+        { value: '1', label: '1 человек' },
+        { value: '2', label: '2 человека' }
+      ]
+    },
+    'Old money King': {
+      defaultGuests: 2,
+      options: [
+        { value: '1', label: '1 человек' },
+        { value: '2', label: '2 человека' }
+      ]
+    },
+    'Standart Twin': {
+      defaultGuests: 1,
+      options: [
+        { value: '1', label: '1 человек' },
+        { value: '2', label: '2 человека' }
+      ]
+    }
+  };
+
+  function setGuestOptions(roomName){
+    const config = roomConfigs[roomName];
+    guests.innerHTML = '';
+
+    if (!config) {
+      guests.disabled = true;
+      guests.innerHTML = '<option value="">Сначала выберите номер</option>';
+      return;
+    }
+
+    config.options.forEach(option => {
+      const el = document.createElement('option');
+      el.value = option.value;
+      el.textContent = option.label;
+      if (Number(option.value) === config.defaultGuests) {
+        el.selected = true;
+      }
+      guests.appendChild(el);
+    });
+
+    guests.disabled = false;
+  }
 
   function updateCalc(){
     const selected = room.options[room.selectedIndex];
     const roomPrice = selected && selected.dataset.price ? Number(selected.dataset.price) : 0;
     const roomName = selected && selected.value ? selected.value : '';
-    const checkupPrice = checkup.checked ? 180 : 0;
-    const total = roomPrice + checkupPrice;
+    const currentConfig = roomConfigs[roomName];
 
-    roomValue.textContent = roomPrice ? roomPrice + '$' : 'выберите номер';
+    if (roomName && currentConfig) {
+      const validValues = currentConfig.options.map(option => option.value);
+      if (!validValues.includes(guests.value)) {
+        setGuestOptions(roomName);
+      }
+    } else if (!roomName) {
+      setGuestOptions('');
+    }
+
+    const guestCount = guests.value ? Number(guests.value) : 0;
+    const roomTotal = roomPrice && guestCount ? roomPrice * guestCount : 0;
+    const checkupPrice = checkup.checked ? 180 : 0;
+    const total = roomTotal + checkupPrice;
+
+    guestsValue.textContent = guestCount ? guestCount + (guestCount === 1 ? ' человек' : guestCount < 5 ? ' человека' : ' человек') : '—';
+    roomValue.textContent = roomTotal ? roomTotal + '$' : 'выберите номер';
     checkupValue.textContent = checkupPrice ? checkupPrice + '$' : '0$';
     totalValue.textContent = total ? total + '$' : 'выберите номер';
 
-    if (!roomName || !roomPrice) {
+    if (!roomName || !roomPrice || !guestCount) {
       telegramBtn.classList.add('is-disabled');
       telegramBtn.textContent = 'Выберите номер';
       telegramBtn.href = 'https://t.me/Kopperfild';
@@ -2489,11 +2584,14 @@ if (window.matchMedia('(max-width: 960px)').matches || window.matchMedia('(prefe
     }
 
     const checkupText = checkup.checked ? 'нужен (+180$)' : 'не нужен';
+    const guestLabel = guests.options[guests.selectedIndex] ? guests.options[guests.selectedIndex].textContent : guestCount + ' человек';
     const message = [
       'Привет! Хочу обсудить выезд Phystech Retreat.',
-      'Номер: ' + roomName + ' — ' + roomPrice + '$ за человека.',
+      'Номер: ' + roomName + '.',
+      'Состав: ' + guestLabel + '.',
+      'Размещение: ' + roomTotal + '$.',
       'Чекап: ' + checkupText + '.',
-      'Итог по калькулятору: ' + total + '$ за человека.'
+      'Итог по калькулятору: ' + total + '$.'
     ].join('\n');
 
     telegramBtn.classList.remove('is-disabled');
@@ -2501,8 +2599,13 @@ if (window.matchMedia('(max-width: 960px)').matches || window.matchMedia('(prefe
     telegramBtn.href = 'https://t.me/Kopperfild?text=' + encodeURIComponent(message);
   }
 
-  room.addEventListener('change', updateCalc);
+  room.addEventListener('change', () => {
+    setGuestOptions(room.value);
+    updateCalc();
+  });
+  guests.addEventListener('change', updateCalc);
   checkup.addEventListener('change', updateCalc);
+  setGuestOptions(room.value);
   updateCalc();
 })();
 </script>
