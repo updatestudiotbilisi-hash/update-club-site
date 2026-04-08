@@ -1501,6 +1501,43 @@ textarea.fi2{resize:vertical;min-height:80px}
 .fsub{width:100%;padding:16px;background:rgba(23,113,241,.18);border:1px solid rgba(123,181,255,.38);color:var(--w);font-family:var(--tf);font-size:15px;font-weight:500;cursor:pointer;border-radius:100px;transition:all .2s;letter-spacing:.04em}
 .fsub:hover{background:rgba(123,181,255,.3);transform:scale(1.02)}
 .fn{text-align:center;margin-top:10px;font-size:12px;color:var(--w4)}
+.telegram-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.telegram-points{
+  list-style:none;
+  display:grid;
+  gap:10px;
+  margin:18px 0 26px;
+}
+.telegram-points li{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  font-size:14px;
+  line-height:1.75;
+  color:var(--w8);
+}
+.telegram-points li::before{
+  content:'';
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--sand);
+  flex-shrink:0;
+  margin-top:10px;
+}
+.calc-action{
+  width:100%;
+  justify-content:center;
+  margin-top:18px;
+}
+.calc-action.is-disabled{
+  opacity:.5;
+  pointer-events:none;
+}
 
 /* ── FOOTER ── */
 footer{position:relative;z-index:10;padding:60px 48px 36px;border-top:1px solid var(--gbr);background:rgba(8,8,8,.72);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur)}
@@ -1820,7 +1857,7 @@ body{padding-bottom:88px}
           <p class="hero-sub">Отдых в бутик-отеле небольшой группой, массажами, баней, оффроудом, хайкингом, бассейном и возможностью добавить чекап.</p>
           <div class="hero-actions">
             <a href="#activities" class="btn btn-g">Посмотреть программу</a>
-            <a href="#form" class="btn btn-s">Оставить заявку</a>
+            <a href="#form" class="btn btn-s">Написать в Telegram</a>
           </div>
         </div>
         <div class="hero-meta">
@@ -2290,6 +2327,7 @@ body{padding-bottom:88px}
           <div class="calc-row"><span>Чекап</span><strong id="calcCheckupValue">0$</strong></div>
           <div class="calc-row total"><span>Итог</span><strong id="calcTotalValue">выберите номер</strong></div>
           <div class="calc-foot">Все цены указаны за человека. Чекап считается как отдельная фиксированная опция +180$.</div>
+          <a id="calcTelegramBtn" class="btn btn-s calc-action is-disabled" href="https://t.me/Kopperfild" target="_blank" rel="noreferrer">Выберите номер</a>
         </div>
       </div>
     </div>
@@ -2302,62 +2340,59 @@ body{padding-bottom:88px}
     <div class="fql rv">
       <div class="chip">FAQ</div>
       <h2 class="BT" style="margin-bottom:0">Частые<br>вопросы</h2>
-      <p>Если чего-то не хватает, оставляйте контакт ниже. Напишем без робота и без “ваша заявка очень важна для нас”.</p>
-      <a href="#form" class="btn btn-s" style="display:inline-flex">Задать вопрос →</a>
+      <p>Если чего-то не хватает, напишите мне в Telegram. Отвечу лично, без робота и без “ваша заявка очень важна для нас”.</p>
+      <a href="#form" class="btn btn-s" style="display:inline-flex">Написать в Telegram →</a>
     </div>
     <div class="flist rv d2">
       <div class="fi open"><div class="fq" onclick="tf(this)">Кто может поехать?<span class="farr">+</span></div><div class="fa">Этот заезд собираем для физтехов и друзей. Можно ехать выпускником, студентом, преподавателем, человеком “через своих” или просто близким по духу +1.</div></div>
       <div class="fi"><div class="fq" onclick="tf(this)">Можно ехать одному?<span class="farr">+</span></div><div class="fa">Да, и это нормальный сценарий. Страница специально написана не как “собери команду из 12 человек”, а как приглашение в уже понятную компанию, куда можно вписаться и одному.</div></div>
-      <div class="fi"><div class="fq" onclick="tf(this)">Где это и как добираться?<span class="farr">+</span></div><div class="fa">Заезд проходит в бутик-отеле в горах Грузии рядом с живописным каньоном. Обычно маршрут такой: прилёт в Тбилиси, дальше трансфер до локации. После заявки отдельно отправим понятную логистику.</div></div>
+      <div class="fi"><div class="fq" onclick="tf(this)">Где это и как добираться?<span class="farr">+</span></div><div class="fa">Заезд проходит в бутик-отеле в горах Грузии рядом с живописным каньоном. Обычно маршрут такой: прилёт в Тбилиси, дальше трансфер до локации. После сообщения отдельно отправлю понятную логистику.</div></div>
       <div class="fi"><div class="fq" onclick="tf(this)">Что по программе?<span class="farr">+</span></div><div class="fa">Программа насыщенная и собирается заранее. Внутри есть выбор и воздух, но по ощущению это цельный, продуманный заезд с правильным балансом активностей и отдыха.</div></div>
       <div class="fi"><div class="fq" onclick="tf(this)">Есть ли проживание, баня, бассейн и всё вот это?<span class="farr">+</span></div><div class="fa">Да. Проживание, баня, бассейн, террасы, ресторан и несколько типов номеров уже заложены в структуру страницы. Фото и цены по каждому варианту добавим следующим проходом.</div></div>
       <div class="fi"><div class="fq" onclick="tf(this)">Когда лучше вписываться?<span class="farr">+</span></div><div class="fa">Чем раньше, тем лучше. Заезд привязан к датам 5–10 июня 2026, поэтому хочется заранее понять состав и спокойно собрать размещение.</div></div>
-      <div class="fi"><div class="fq" onclick="tf(this)">Как оставить интерес и получить детали?<span class="farr">+</span></div><div class="fa">Оставляете форму ниже. В ответ мы лично присылаем детали по стоимости, логистике, размещению и тому, как лучше встроиться в этот заезд.</div></div>
+      <div class="fi"><div class="fq" onclick="tf(this)">Как оставить интерес и получить детали?<span class="farr">+</span></div><div class="fa">Выбираете номер и при желании чекап, после чего переходите в Telegram с уже собранным сообщением. Дальше я лично присылаю детали по стоимости, логистике и размещению.</div></div>
     </div>
   </div>
 </section>
 
-<!-- HOW + FORM -->
-<section class="s" id="how">
+<!-- HOW + TELEGRAM -->
+<section class="s" id="form">
   <div class="rv sec-hd">
     <div>
       <div class="chip">как присоединиться</div>
-      <h2 class="BT">Четыре шага до <em>поездки</em></h2>
+      <h2 class="BT">Написать Никите в <em>Telegram</em></h2>
     </div>
-    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">Без длинных воронок и лишней бюрократии. Оставляете контакт, а дальше уже спокойно добираем детали вживую.</p>
+    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">Без формы и лишнего шага. Можно просто открыть Telegram внизу, а ещё лучше сначала выбрать номер и чекап в калькуляторе выше, чтобы сообщение уже пришло с деталями.</p>
   </div>
-  <div class="how-form-wrap">
+  <div class="form-grid">
     <div class="how-steps-compact rv">
       <div class="hwc rv d1">
         <div class="hwc-num">1</div>
-        <div><div class="hwc-h">Оставляете контакт</div><div class="hwc-d">Пишете имя, Telegram и пару вводных о себе или своей компании друзей.</div></div>
+        <div><div class="hwc-h">Выбираете номер</div><div class="hwc-d">Смотрите категории размещения и отмечаете вариант, который вам ближе.</div></div>
       </div>
       <div class="hwc rv d2">
         <div class="hwc-num">2</div>
-        <div><div class="hwc-h">Получаете детали</div><div class="hwc-d">Мы отправляем стоимость, логиcтику, бытовые детали и отвечаем на вопросы без шаблонных сообщений.</div></div>
+        <div><div class="hwc-h">Отмечаете чекап</div><div class="hwc-d">Если хотите встроить check-up в поездку, включаете его в калькуляторе.</div></div>
       </div>
       <div class="hwc rv d3">
         <div class="hwc-num">3</div>
-        <div><div class="hwc-h">Фиксируете участие</div><div class="hwc-d">Подтверждаем состав, проживание и понимаем, кто едет один, с +1 или своей мини-компанией.</div></div>
+        <div><div class="hwc-h">Переходите в Telegram</div><div class="hwc-d">Кнопка откроет диалог уже с выбранным номером, чекапом и итоговой суммой.</div></div>
       </div>
       <div class="hwc rv d4">
         <div class="hwc-num">4</div>
-        <div><div class="hwc-h">Встречаемся 5 июня</div><div class="hwc-d">Прилетаем, доезжаем до бутик-отеля в горах Грузии и дальше просто хорошо проживаем эту неделю.</div></div>
+        <div><div class="hwc-h">Добираем детали лично</div><div class="hwc-d">Я отвечаю в Telegram, подтверждаю размещение и помогаю с логистикой дальше.</div></div>
       </div>
     </div>
-    <div id="form">
-<form class="fbox glass rv d2" id="retreatLeadForm">
-      <h3>Вписаться в заезд</h3>
-      <div class="fg"><label class="fl" for="lead_name">Имя</label><input id="lead_name" name="name" type="text" class="fi2" placeholder="Как к вам обращаться" required></div>
-      <div class="fg"><label class="fl" for="lead_company">Физтех-контекст</label><input id="lead_company" name="company" type="text" class="fi2" placeholder="Факультет, выпуск, лаборатория или “иду через друзей”" required></div>
-      <div class="fg"><label class="fl" for="lead_contact">Telegram или Email</label><input id="lead_contact" name="contact" type="text" class="fi2" placeholder="@username или email@..." required></div>
-      <div class="fg"><label class="fl" for="lead_group_size">С кем едете</label><select id="lead_group_size" name="group_size" class="fi2" required><option value="">Выберите...</option><option>Пока один / одна</option><option>С +1</option><option>Нас 3–4 человека</option><option>Хочу собрать мини-компанию</option></select></div>
-      <div class="fg"><label class="fl" for="lead_format">Что важно сейчас</label><select id="lead_format" name="format" class="fi2" required><option value="">Выберите...</option><option>Хочу поехать 5–10 июня</option><option>Хочу сначала понять стоимость</option><option>Нужна логистика и бытовые детали</option><option>Интересно, если будет второй заезд</option><option>Хочу просто задать вопрос</option></select></div>
-      <div class="fg"><label class="fl" for="lead_location">Локация</label><select id="lead_location" name="location" class="fi2"><option>Бутик-отель в горах Грузии · 5–10 июня</option></select></div>
-      <div class="fg"><label class="fl" for="lead_comment">Комментарий</label><textarea id="lead_comment" name="comment" class="fi2" placeholder="С кем едете, что хотите уточнить, нужен ли +1, есть ли пожелания по проживанию..."></textarea></div>
-      <button type="submit" class="fsub" id="leadSubmitBtn">Отправить →</button>
-      <p class="fn" id="leadFormStatus">Напишем лично и пришлём детали по стоимости, логистике и формату.</p>
-    </form>
+    <div class="fbox glass rv d2 telegram-card">
+      <h3>Связь напрямую</h3>
+      <p class="fs-p" style="margin-top:0;margin-bottom:0">Если уже всё понятно, можно сразу написать мне в Telegram. Если сначала хотите прикинуть стоимость, используйте кнопку из калькулятора выше: она сама добавит номер и чекап в сообщение.</p>
+      <ul class="telegram-points">
+        <li>Пишете напрямую без формы и без ожидания письма.</li>
+        <li>Можно сразу задать вопрос по логистике, размещению или чекапу.</li>
+        <li>Если едете не один, просто допишите это в сообщении.</li>
+      </ul>
+      <a class="btn btn-s" href="https://t.me/Kopperfild?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4%20Phystech%20Retreat." target="_blank" rel="noreferrer" style="justify-content:center">Открыть Telegram</a>
+      <p class="fn">Telegram: @Kopperfild</p>
     </div>
   </div>
 </section>
@@ -2371,8 +2406,8 @@ body{padding-bottom:88px}
       <a href="https://update-club.com" target="_blank" style="display:inline-block;margin-top:16px;font-size:12px;color:var(--sand);text-decoration:none;border-bottom:1px solid rgba(123,181,255,.35);letter-spacing:.05em;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--sand)'">update-club.com →</a>
     </div>
     <div class="fcol"><h4>Навигация</h4><ul><li><a href="#formats">Сценарий</a></li><li><a href="#activities">Программа</a></li><li><a href="#venues">Проживание</a></li><li><a href="#dates">Чекап</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-    <div class="fcol"><h4>Поездка</h4><ul><li><a href="#team">Команда</a></li><li><a href="#impact">Что входит</a></li><li><a href="#form">Оставить интерес</a></li></ul></div>
-    <div class="fcol"><h4>Контакты</h4><ul><li><a href="https://t.me/updatestudio" target="_blank">Telegram</a></li><li><a href="https://instagram.com/update.tbilisi" target="_blank">Instagram</a></li><li><a href="/cdn-cgi/l/email-protection#422b2c242d023732262336276f212e37206c212d2f">Email</a></li></ul></div>
+    <div class="fcol"><h4>Поездка</h4><ul><li><a href="#team">Команда</a></li><li><a href="#impact">Что входит</a></li><li><a href="#form">Написать Никите</a></li></ul></div>
+    <div class="fcol"><h4>Контакты</h4><ul><li><a href="https://t.me/Kopperfild" target="_blank">Telegram</a></li><li><a href="https://instagram.com/update.tbilisi" target="_blank">Instagram</a></li><li><a href="/cdn-cgi/l/email-protection#422b2c242d023732262336276f212e37206c212d2f">Email</a></li></ul></div>
   </div>
   <div class="fbot"><span>© 2026 Update Studio · Tbilisi, Georgia</span><span>Phystech Retreat · 5–10 июня</span></div>
 </footer>
@@ -2408,9 +2443,6 @@ document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){document.querySelectorAll('.mover.open').forEach(m=>m.classList.remove('open'));document.body.style.overflow=''}
 });
 
-/* ── FORM ── */
-function sb(btn){btn.textContent='Отправляем...';setTimeout(()=>{btn.textContent='Заявка отправлена ✓'},1400)}
-
 function toggleMenu(){
   const m=document.getElementById('mobMenu');
   const b=document.querySelector('.burger');
@@ -2434,18 +2466,39 @@ if (window.matchMedia('(max-width: 960px)').matches || window.matchMedia('(prefe
   const roomValue = document.getElementById('calcRoomValue');
   const checkupValue = document.getElementById('calcCheckupValue');
   const totalValue = document.getElementById('calcTotalValue');
+  const telegramBtn = document.getElementById('calcTelegramBtn');
 
-  if(!room || !checkup || !roomValue || !checkupValue || !totalValue) return;
+  if(!room || !checkup || !roomValue || !checkupValue || !totalValue || !telegramBtn) return;
 
   function updateCalc(){
     const selected = room.options[room.selectedIndex];
     const roomPrice = selected && selected.dataset.price ? Number(selected.dataset.price) : 0;
+    const roomName = selected && selected.value ? selected.value : '';
     const checkupPrice = checkup.checked ? 180 : 0;
     const total = roomPrice + checkupPrice;
 
     roomValue.textContent = roomPrice ? roomPrice + '$' : 'выберите номер';
     checkupValue.textContent = checkupPrice ? checkupPrice + '$' : '0$';
     totalValue.textContent = total ? total + '$' : 'выберите номер';
+
+    if (!roomName || !roomPrice) {
+      telegramBtn.classList.add('is-disabled');
+      telegramBtn.textContent = 'Выберите номер';
+      telegramBtn.href = 'https://t.me/Kopperfild';
+      return;
+    }
+
+    const checkupText = checkup.checked ? 'нужен (+180$)' : 'не нужен';
+    const message = [
+      'Привет! Хочу обсудить выезд Phystech Retreat.',
+      'Номер: ' + roomName + ' — ' + roomPrice + '$ за человека.',
+      'Чекап: ' + checkupText + '.',
+      'Итог по калькулятору: ' + total + '$ за человека.'
+    ].join('\n');
+
+    telegramBtn.classList.remove('is-disabled');
+    telegramBtn.textContent = 'Написать Никите в Telegram';
+    telegramBtn.href = 'https://t.me/Kopperfild?text=' + encodeURIComponent(message);
   }
 
   room.addEventListener('change', updateCalc);
@@ -2487,58 +2540,5 @@ if (window.matchMedia('(max-width: 960px)').matches || window.matchMedia('(prefe
 })();
 </script>
 
-
-
-<script>
-const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbyYjxBn6AcwheYHlcx_AGC1xaPT0TXj_pr5qkwH5ethtHVNRuctxfm3Ly15uuNt_GD-/exec";
-
-(function () {
-  const form = document.getElementById("retreatLeadForm");
-  const submitBtn = document.getElementById("leadSubmitBtn");
-  const statusBox = document.getElementById("leadFormStatus");
-
-  if (!form || !submitBtn || !statusBox) return;
-
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    const formData = new FormData(form);
-    const payload = new URLSearchParams();
-
-    payload.append("date", new Date().toLocaleString("ru-RU"));
-    payload.append("name", formData.get("name") || "");
-    payload.append("company", formData.get("company") || "");
-    payload.append("contact", formData.get("contact") || "");
-    payload.append("group_size", formData.get("group_size") || "");
-    payload.append("format", formData.get("format") || "");
-    payload.append("location", formData.get("location") || "");
-    payload.append("comment", formData.get("comment") || "");
-    payload.append("page", window.location.href);
-    payload.append("source", "PHYSTECH RETREAT");
-    payload.append("submitted_at", new Date().toISOString());
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Отправляем...";
-    statusBox.textContent = "Отправляем заявку...";
-    statusBox.style.color = "rgba(255,255,255,.72)";
-
-    try {
-      const response = await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-        },
-        body: payload.toString()
-      });
-
-      const text = await response.text();
-
-      if (!response.ok) {
-        throw new Error(text || "Ошибка отправки");
-      }
-
-      statusBox.textContent = "Спасибо! Заявка отправлена. Мы скоро свяжемся с вами.";
-      statusBox.style.color = "#7bb5ff";
-      form.reset();
-    } catch (error) {
-      statusBox.textContent = "Не удалось отправить заявку. Попробуйте ещё раз или напи
+</body>
+</html>
