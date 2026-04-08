@@ -6,7 +6,7 @@
 <title>Phystech Retreat — 5–10 июня</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@a79f046353fd2872719eba7840b7d8c442b6f360/background/background-small.webp" fetchpriority="high">
+<link rel="preload" as="image" href="./assets/hero-bg.webp" fetchpriority="high">
 <style>
 :root{
   --bg:#071120;
@@ -37,7 +37,7 @@ body{background:var(--bg);color:var(--w);font-family:var(--bf);overflow-x:hidden
 #scene{
   position:fixed;inset:0;z-index:0;
   background-color:#06101f;
-  background-image:url('https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@a79f046353fd2872719eba7840b7d8c442b6f360/background/background-small.webp');
+  background-image:url('./assets/hero-bg.webp');
   background-size:cover;
   background-position:center center;
   background-repeat:no-repeat;
@@ -1554,6 +1554,29 @@ function toggleMenu(){
   nav{padding:14px 20px}.nl{display:none}
   .s{padding:64px 20px}
   .hero{padding:0 20px 48px;min-height:90vh}
+  .glass,
+  .glass-sm,
+  .glass-dk,
+  .hglass,
+  .gc,
+  .pg,
+  .tc,
+  .fc,
+  .ic,
+  .offer-card,
+  .room-card,
+  .dc,
+  .stay-main,
+  .maker-person,
+  .maker-brand,
+  .hero-meta-card,
+  .hero-checkup,
+  nav,
+  footer{
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+  }
+  #scene{filter:brightness(.34)}
 
   /* Section headers — prevent title overflow on mobile */
   .BT,.BT-xl{font-size:clamp(28px,8vw,42px);letter-spacing:-.02em;word-break:keep-all;overflow-wrap:normal}
@@ -1817,7 +1840,7 @@ body{padding-bottom:88px}
     <div class="hgrid">
       <div class="hero-top" style="grid-column:1/-1">
         <div class="hero-copy">
-          <h1 class="hh">Камерный выезд в горы Грузии для <span class="accent-blue">физтехов</span> и их близких</h1>
+          <h1 class="hh">Выезд в горы Грузии для <span class="accent-blue">физтехов</span> и друзей</h1>
           <p class="hero-sub">Отдых в бутик-отеле небольшой группой, массажами, баней, оффроудом, хайкингом, бассейном и возможностью добавить чекап.</p>
           <div class="hero-actions">
             <a href="#activities" class="btn btn-g">Посмотреть программу</a>
@@ -1973,18 +1996,18 @@ body{padding-bottom:88px}
   <div class="program-gallery rv">
     <div class="program-gallery-title">Внутри этой программы</div>
     <div class="act-scroll">
-      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-outdoor-massage.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Массажи на свежем воздухе</div></div></div>
-      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@e92dd2f58b053ab70df24c2196288f5c2c614677/activity/Off-road.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Offroad</div></div></div>
-      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/pool.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Бассейн у края каньона</div></div></div>
-      <div class="ac"><img class="ac-img" src="./assets/sauna_1.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Сауна в скале</div></div></div>
-      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-barbecue.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Шашлыки</div></div></div>
-      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-hiking.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Лёгкий хайкинг</div></div></div>
-      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-group-workout.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Зарядка на природе</div></div></div>
-      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/poker.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Покерный вечер</div></div></div>
-      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/movie.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Кино клуб</div></div></div>
-      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/picnic.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Пикник с видом на горы</div></div></div>
-      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/winetrip.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Винная дегустация</div></div></div>
-      <div class="ac"><img class="ac-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/fireplace.webp" alt="" loading="lazy"><div class="ac-body"><div class="ac-h">Вечер у костра</div></div></div>
+      <div class="ac"><img class="ac-img" src="./assets/activity-massage.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Массажи на свежем воздухе</div></div></div>
+      <div class="ac"><img class="ac-img" src="./assets/activity-offroad.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Offroad</div></div></div>
+      <div class="ac"><img class="ac-img" src="./assets/activity-pool.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Бассейн у края каньона</div></div></div>
+      <div class="ac"><img class="ac-img" src="./assets/sauna_1.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Сауна в скале</div></div></div>
+      <div class="ac"><img class="ac-img" src="./assets/activity-barbecue.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Шашлыки</div></div></div>
+      <div class="ac"><img class="ac-img" src="./assets/activity-hiking.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Лёгкий хайкинг</div></div></div>
+      <div class="ac"><img class="ac-img" src="./assets/activity-workout.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Зарядка на природе</div></div></div>
+      <div class="ac"><img class="ac-img" src="./assets/activity-poker.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Покерный вечер</div></div></div>
+      <div class="ac"><img class="ac-img" src="./assets/activity-movie.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Кино клуб</div></div></div>
+      <div class="ac"><img class="ac-img" src="./assets/activity-picnic.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Пикник с видом на горы</div></div></div>
+      <div class="ac"><img class="ac-img" src="./assets/activity-wine.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Винная дегустация</div></div></div>
+      <div class="ac"><img class="ac-img" src="./assets/activity-fireplace.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Вечер у костра</div></div></div>
     </div>
   </div>
 </section>
@@ -2042,12 +2065,12 @@ body{padding-bottom:88px}
   </div>
   <div class="stay-main glass rv" style="margin-top:32px">
     <div class="stay-gallery is-expanded" style="margin-top:0">
-      <img src="./assets/the_house.webp" alt="Edis Dacha exterior">
-      <img src="./assets/sauna_2.webp" alt="Сауна">
-      <img src="./assets/pool.webp" alt="Бассейн">
-      <img src="./assets/IMG_7179 2.webp" alt="Общее пространство">
-      <img src="./assets/bar_1.webp" alt="Бар">
-      <img src="./assets/territory_view_2.webp" alt="Вид с территории">
+      <img src="./assets/the_house.webp" alt="Edis Dacha exterior" loading="lazy" decoding="async">
+      <img src="./assets/sauna_2.webp" alt="Сауна" loading="lazy" decoding="async">
+      <img src="./assets/pool.webp" alt="Бассейн" loading="lazy" decoding="async">
+      <img src="./assets/IMG_7179 2.webp" alt="Общее пространство" loading="lazy" decoding="async">
+      <img src="./assets/bar_1.webp" alt="Бар" loading="lazy" decoding="async">
+      <img src="./assets/territory_view_2.webp" alt="Вид с территории" loading="lazy" decoding="async">
     </div>
   </div>
   <div class="rv">
@@ -2058,10 +2081,10 @@ body{padding-bottom:88px}
       <div class="room-gallery">
         <div class="room-shot">
           <span class="room-status available">доступно 2 из 2</span>
-          <img src="./assets/panorama_1.webp" alt="Panorama">
+          <img src="./assets/panorama_1.webp" alt="Panorama" loading="lazy" decoding="async">
         </div>
         <div class="room-shot">
-          <img src="./assets/panorama_2.webp" alt="Panorama second photo">
+          <img src="./assets/panorama_2.webp" alt="Panorama second photo" loading="lazy" decoding="async">
         </div>
       </div>
       <div class="room-body">
@@ -2075,10 +2098,10 @@ body{padding-bottom:88px}
       <div class="room-gallery">
         <div class="room-shot">
           <span class="room-status available">доступно 2 из 2</span>
-          <img src="./assets/old_money_double_king_1.webp" alt="Old Money Double King">
+          <img src="./assets/old_money_double_king_1.webp" alt="Old Money Double King" loading="lazy" decoding="async">
         </div>
         <div class="room-shot">
-          <img src="./assets/old_money_double_king_2.webp" alt="Old Money Double King second photo">
+          <img src="./assets/old_money_double_king_2.webp" alt="Old Money Double King second photo" loading="lazy" decoding="async">
         </div>
       </div>
       <div class="room-body">
@@ -2092,10 +2115,10 @@ body{padding-bottom:88px}
       <div class="room-gallery">
         <div class="room-shot">
           <span class="room-status available">доступно 1 из 1</span>
-          <img src="./assets/old_money_twin.webp" alt="Old Money Twin">
+          <img src="./assets/old_money_twin.webp" alt="Old Money Twin" loading="lazy" decoding="async">
         </div>
         <div class="room-shot">
-          <img src="./assets/old_money_bath.webp" alt="Old Money bathroom">
+          <img src="./assets/old_money_bath.webp" alt="Old Money bathroom" loading="lazy" decoding="async">
         </div>
       </div>
       <div class="room-body">
@@ -2109,10 +2132,10 @@ body{padding-bottom:88px}
       <div class="room-gallery">
         <div class="room-shot">
           <span class="room-status available">доступно 1 из 1</span>
-          <img src="./assets/old_money_king_1.webp" alt="Old Money King">
+          <img src="./assets/old_money_king_1.webp" alt="Old Money King" loading="lazy" decoding="async">
         </div>
         <div class="room-shot">
-          <img src="./assets/old_money_king_2.webp" alt="Old Money King second photo">
+          <img src="./assets/old_money_king_2.webp" alt="Old Money King second photo" loading="lazy" decoding="async">
         </div>
       </div>
       <div class="room-body">
@@ -2126,7 +2149,7 @@ body{padding-bottom:88px}
       <div class="room-gallery is-single">
         <div class="room-shot">
           <span class="room-status available">доступно 1 из 1</span>
-          <img src="./assets/standart.webp" alt="Standart Twin">
+          <img src="./assets/standart.webp" alt="Standart Twin" loading="lazy" decoding="async">
         </div>
       </div>
       <div class="room-body">
@@ -2146,7 +2169,7 @@ body{padding-bottom:88px}
     <div class="dc hot wide rv d1">
       <div class="checkup-head">
         <div class="checkup-brand">
-          <img src="./assets/aclinic_logo.png" alt="A-clinic" class="checkup-logo">
+          <img src="./assets/aclinic_logo.webp" alt="A-clinic" class="checkup-logo" loading="lazy" decoding="async">
           <a href="https://a-clinic.ge/ru" target="_blank" rel="noreferrer" class="checkup-link">Сайт клиники</a>
         </div>
         <div class="checkup-price">
@@ -2194,7 +2217,7 @@ body{padding-bottom:88px}
 <!-- FORMATS -->
 <section class="s" id="formats">
   <div class="sunrise-card glass rv">
-    <img src="./assets/sun_rise.webp" alt="Восход в горах">
+    <img src="./assets/sun_rise.webp" alt="Восход в горах" loading="lazy" decoding="async">
     <div class="sunrise-copy">
       <div class="sunrise-caption">Вот такие здесь <span class="accent-blue">восходы</span></div>
     </div>
@@ -2209,7 +2232,7 @@ body{padding-bottom:88px}
   <div class="maker-card rv">
     <div class="maker-person">
       <div class="maker-photo">
-        <img src="./assets/product_owner.webp" alt="Product owner">
+        <img src="./assets/product_owner.webp" alt="Product owner" loading="lazy" decoding="async">
       </div>
       <div class="maker-copy">
         <div class="maker-name">Ушаков Никита</div>
@@ -2217,7 +2240,7 @@ body{padding-bottom:88px}
       </div>
     </div>
     <div class="maker-brand">
-      <img src="./assets/update_logo.png" alt="Update">
+      <img src="./assets/update_logo.png" alt="Update" loading="lazy" decoding="async">
       <div class="maker-brand-text">Update — лучшая wellness студия в Тбилиси.</div>
     </div>
   </div>
@@ -2229,12 +2252,12 @@ body{padding-bottom:88px}
     <div><h2 class="BT">Кто с <em>нами</em></h2></div>
   </div>
   <div class="team-scroll">
-    <div class="tc"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/photo/team/Anastasia-Kalashnikova.webp" alt="" loading="lazy"><div class="tc-bd"><div class="tc-name">Анастасия Калашникова</div><div class="tc-role">Массажист</div><div class="tc-bio">Внимательный специалист, тонко чувствует состояние клиента</div></div></div>
-    <div class="tc"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/photo/team/Evgeniy-Tarakanov.webp" alt="" loading="lazy"><div class="tc-bd"><div class="tc-name">Евгений Тараканов</div><div class="tc-role">Массажист · Восстановление</div><div class="tc-bio">Спина, шея, поясница, триггерные точки</div></div></div>
-    <div class="tc"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/photo/team/Ia-Darakhvelidze.webp" alt="" loading="lazy"><div class="tc-bd"><div class="tc-name">Ия Дарахвелидзе</div><div class="tc-role">Массажист · Пасс. гимнастика</div><div class="tc-bio">Мягко, с опорой на состояние в моменте</div></div></div>
-    <div class="tc"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/photo/team/Nata-Solnechnaya.webp" alt="" loading="lazy"><div class="tc-bd"><div class="tc-name">Ната Солнечная</div><div class="tc-role">Телесный терапевт</div><div class="tc-bio">Тело, эмоции, внутреннее состояние</div></div></div>
-    <div class="tc"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/photo/team/Nikolai-Dadygin.webp" alt="" loading="lazy"><div class="tc-bd"><div class="tc-name">Николай Дадыгин</div><div class="tc-role">Врач · Мануальный терапевт</div><div class="tc-bio">Диагностика, причины, а не симптомы</div></div></div>
-    <div class="tc"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/photo/team/Ruslan-Jijelava.webp" alt="" loading="lazy"><div class="tc-bd"><div class="tc-name">Руслан Джижелава</div><div class="tc-role">Массажист</div><div class="tc-bio">Индивидуальный подход и доверие</div></div></div>
+    <div class="tc"><img src="../photo/team/Anastasia-Kalashnikova.webp" alt="" loading="lazy" decoding="async"><div class="tc-bd"><div class="tc-name">Анастасия Калашникова</div><div class="tc-role">Массажист</div><div class="tc-bio">Внимательный специалист, тонко чувствует состояние клиента</div></div></div>
+    <div class="tc"><img src="../photo/team/Evgeniy-Tarakanov.webp" alt="" loading="lazy" decoding="async"><div class="tc-bd"><div class="tc-name">Евгений Тараканов</div><div class="tc-role">Массажист · Восстановление</div><div class="tc-bio">Спина, шея, поясница, триггерные точки</div></div></div>
+    <div class="tc"><img src="../photo/team/Ia-Darakhvelidze.webp" alt="" loading="lazy" decoding="async"><div class="tc-bd"><div class="tc-name">Ия Дарахвелидзе</div><div class="tc-role">Массажист · Пасс. гимнастика</div><div class="tc-bio">Мягко, с опорой на состояние в моменте</div></div></div>
+    <div class="tc"><img src="../photo/team/Nata-Solnechnaya.webp" alt="" loading="lazy" decoding="async"><div class="tc-bd"><div class="tc-name">Ната Солнечная</div><div class="tc-role">Телесный терапевт</div><div class="tc-bio">Тело, эмоции, внутреннее состояние</div></div></div>
+    <div class="tc"><img src="../photo/team/Nikolai-Dadygin.webp" alt="" loading="lazy" decoding="async"><div class="tc-bd"><div class="tc-name">Николай Дадыгин</div><div class="tc-role">Врач · Мануальный терапевт</div><div class="tc-bio">Диагностика, причины, а не симптомы</div></div></div>
+    <div class="tc"><img src="../photo/team/Ruslan-Jijelava.webp" alt="" loading="lazy" decoding="async"><div class="tc-bd"><div class="tc-name">Руслан Джижелава</div><div class="tc-role">Массажист</div><div class="tc-bio">Индивидуальный подход и доверие</div></div></div>
   </div>
 </section>
 
@@ -2423,7 +2446,7 @@ body{padding-bottom:88px}
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ── BACKGROUND: try multiple sources, JS-driven ── */
-const BGSRCS=['https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@a79f046353fd2872719eba7840b7d8c442b6f360/background/background-small.webp'];
+const BGSRCS=['./assets/hero-bg.webp'];
 (function loadBG(idx){
   if(idx>=BGSRCS.length)return;
   const img=new Image();
@@ -2462,8 +2485,12 @@ function toggleMenu(){
   document.body.style.overflow=m.classList.contains('open')?'hidden':'';
 }
 /* ── REVEAL ── */
-const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on')}),{threshold:.06});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+if (window.matchMedia('(max-width: 960px)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.rv').forEach(el=>el.classList.add('on'));
+} else {
+  const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on')}),{threshold:.06});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+}
 </script>
 
 <script>
