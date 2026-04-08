@@ -1386,22 +1386,6 @@ nav{
 .tc-role{font-size:10px;color:var(--sand);font-weight:600;margin-bottom:3px}
 .tc-bio{font-size:10px;color:var(--w4);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
-/* ── PROGRAMS ── */
-.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
-.pg{padding:40px 34px;border-radius:20px;transition:all .3s;background:var(--g1);backdrop-filter:var(--blurs);-webkit-backdrop-filter:var(--blurs);border:1px solid var(--gbr);display:flex;flex-direction:column}
-.pg:hover{border-color:rgba(123,181,255,.4)!important;background:rgba(23,113,241,.08)!important;transform:translateY(-4px)}
-.pg-tag{display:inline-block;background:rgba(23,113,241,.1);border:1px solid rgba(123,181,255,.2);color:var(--sand);padding:5px 14px;border-radius:100px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px;width:fit-content}
-.pg-h{font-family:var(--tf);font-size:22px;font-weight:630;color:var(--w);margin-bottom:16px;line-height:1.15}
-.pg-p{font-size:14px;font-weight:300;color:var(--w6);line-height:1.75;margin-bottom:20px;flex:1}
-.pg-ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
-.pg-ul li{font-size:13px;color:var(--w6);display:flex;gap:10px;align-items:flex-start;line-height:1.5}
-.pg-ul li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--sand);flex-shrink:0;margin-top:7px}
-.pg-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
-.pg-price{margin-top:20px;padding-top:16px;border-top:1px solid var(--gbr);display:flex;flex-direction:column;gap:3px}
-.pg-price-val{font-family:var(--tf);font-size:15px;font-weight:600;color:var(--w);line-height:1.3}
-.pg-price-note{font-size:11px;font-weight:300;color:var(--w4);letter-spacing:.03em}
-.ppill{font-size:11px;padding:5px 13px;background:rgba(255,255,255,.05);border:1px solid var(--gbr2);color:var(--w6);border-radius:100px}
-
 /* ── BIZ EFFECT ── */
 .biz-intro{font-size:15px;font-weight:300;color:var(--w6);line-height:1.8;max-width:720px;margin-top:18px}
 .biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
@@ -1417,14 +1401,6 @@ nav{
 .bi-ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:auto}
 .bi-ul li{font-size:13px;color:var(--w4);display:flex;gap:10px;line-height:1.55}
 .bi-ul li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--sand);flex-shrink:0;margin-top:8px}
-
-/* ── CLIENTS ── */
-.clients-s{position:relative;z-index:10;padding:80px 48px;text-align:center}
-.clients-lbl{font-family:var(--tf);font-size:14px;font-weight:500;letter-spacing:.28em;color:rgba(255,255,255,.55);text-transform:uppercase;margin-bottom:52px;display:flex;align-items:center;justify-content:center;gap:20px}
-.clients-lbl::before,.clients-lbl::after{content:'';flex:1;max-width:120px;height:1px;background:rgba(255,255,255,.12)}
-.clients-row{display:flex;gap:56px;align-items:center;justify-content:center;flex-wrap:wrap}
-.clog{height:24px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.45;transition:all .3s;display:block}
-.clog:hover{opacity:1;filter:brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(5deg)}
 
 /* ── HOW ── */
 .how-steps{
@@ -1584,7 +1560,7 @@ function toggleMenu(){
 
   /* All 2-col grids → 1-col */
   .hgrid,.ab-grid,.act-hd,.faq-grid,.form-grid,.stay-wrap{grid-template-columns:1fr;gap:28px}
-  .fmt-grid,.imp-grid,.prog-grid,.dates-grid,.offer-grid,.calc-grid{grid-template-columns:1fr}
+  .fmt-grid,.imp-grid,.dates-grid,.offer-grid,.calc-grid{grid-template-columns:1fr}
   .day-card{grid-template-columns:1fr;gap:18px;padding:22px}
   .day-body{padding-left:0;padding-top:18px;border-left:none;border-top:1px solid var(--gbr)}
   .day-date{font-size:32px}
@@ -2261,48 +2237,6 @@ body{padding-bottom:88px}
   </div>
 </section>
 
-<!-- PROGRAMS -->
-<section class="s" id="programs">
-  <div class="rv"><h2 class="BT">Три слоя этого <em>сценария</em></h2></div>
-  <div class="prog-grid rv">
-    <div class="pg">
-      <div class="pg-tag">Днём</div>
-      <div class="pg-h">Природа и движение</div>
-      <p class="pg-p">Хайкинг, off-road, прогулки, воздух и длинный горизонт. Всё, что помогает телу и голове наконец перестроиться из режима “по задачам” в режим “я здесь”.</p>
-      <ul class="pg-ul"><li>Хайкинг и прогулки по окрестностям</li><li>Off-road и небольшие выезды</li><li>Время у бассейна и на солнце</li><li>Много пространства без городской плотности</li></ul>
-      <div class="pg-pills"><span class="ppill">Каньон</span><span class="ppill">Хайкинг</span><span class="ppill">Off-road</span><span class="ppill">Бассейн</span></div>
-      <div class="pg-price"><div class="pg-price-val">Ритм собираем под группу</div><div class="pg-price-note">без гонки за “успеть всё”</div></div>
-    </div>
-    <div class="pg">
-      <div class="pg-tag">Вечером</div>
-      <div class="pg-h">Компания и длинные разговоры</div>
-      <p class="pg-p">Здесь начинается то, ради чего обычно и едут: общий стол, баня, гитара, разговоры до ночи, внутренние шутки и ощущение, что ты снова поймал нужную волну.</p>
-      <ul class="pg-ul"><li>Баня и тёплый бассейн</li><li>Барбекю, ужины и вечерние посиделки</li><li>Пространство для разговоров без суеты</li><li>Можно быть в центре, можно тихо рядом</li></ul>
-      <div class="pg-pills"><span class="ppill">Баня</span><span class="ppill">Бассейн</span><span class="ppill">Барбекю</span><span class="ppill">Гитара</span></div>
-      <div class="pg-price"><div class="pg-price-val">Самая сильная часть — люди</div><div class="pg-price-note">место только помогает</div></div>
-    </div>
-    <div class="pg">
-      <div class="pg-tag">Внутри поездки</div>
-      <div class="pg-h">Мягкое восстановление</div>
-      <p class="pg-p">Массажи уже встроены в эти дни и дают то самое полное расслабление после дороги, активностей и длинных вечеров. Это не дополнительный слой, а важная часть общего ритма поездки.</p>
-      <ul class="pg-ul"><li>Ежедневные массажи на локации</li><li>Полное расслабление после активного дня</li><li>Баня и бассейн усиливают эффект восстановления</li><li>Есть пространство выдохнуть и не спешить</li></ul>
-      <div class="pg-pills"><span class="ppill">Массаж</span><span class="ppill">Тело</span><span class="ppill">Восстановление</span><span class="ppill">Тишина</span></div>
-      <div class="pg-price"><div class="pg-price-val">Расслабление здесь встроено в программу</div><div class="pg-price-note">а не вынесено в факультатив</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- CLIENTS -->
-<div class="clients-s rv">
-  <div class="clients-lbl">Отдыхаем по взрослому</div>
-  <div class="clients-row">
-    <span class="pill-soft">5–10 июня</span>
-    <span class="pill-soft">горы Грузии</span>
-    <span class="pill-soft">живописный каньон</span>
-    <span class="pill-soft">физтехи и друзья</span>
-  </div>
-</div>
-
 <!-- IMPACT -->
 <section class="s" id="impact">
   <div class="rv sec-hd" style="margin-bottom:48px">
@@ -2437,7 +2371,7 @@ body{padding-bottom:88px}
       <a href="https://update-club.com" target="_blank" style="display:inline-block;margin-top:16px;font-size:12px;color:var(--sand);text-decoration:none;border-bottom:1px solid rgba(123,181,255,.35);letter-spacing:.05em;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--sand)'">update-club.com →</a>
     </div>
     <div class="fcol"><h4>Навигация</h4><ul><li><a href="#formats">Сценарий</a></li><li><a href="#activities">Программа</a></li><li><a href="#venues">Проживание</a></li><li><a href="#dates">Чекап</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-    <div class="fcol"><h4>Поездка</h4><ul><li><a href="#programs">Как это будет</a></li><li><a href="#team">Команда</a></li><li><a href="#impact">Что входит</a></li><li><a href="#form">Оставить интерес</a></li></ul></div>
+    <div class="fcol"><h4>Поездка</h4><ul><li><a href="#team">Команда</a></li><li><a href="#impact">Что входит</a></li><li><a href="#form">Оставить интерес</a></li></ul></div>
     <div class="fcol"><h4>Контакты</h4><ul><li><a href="https://t.me/updatestudio" target="_blank">Telegram</a></li><li><a href="https://instagram.com/update.tbilisi" target="_blank">Instagram</a></li><li><a href="/cdn-cgi/l/email-protection#422b2c242d023732262336276f212e37206c212d2f">Email</a></li></ul></div>
   </div>
   <div class="fbot"><span>© 2026 Update Studio · Tbilisi, Georgia</span><span>Phystech Retreat · 5–10 июня</span></div>
