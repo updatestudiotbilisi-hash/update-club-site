@@ -246,6 +246,26 @@ nav{
   gap:12px;
   margin-top:28px;
 }
+.hero-price{
+  margin-top:28px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.hero-price-main{
+  font-family:var(--tf);
+  font-size:clamp(28px,3vw,40px);
+  line-height:1;
+  color:var(--w);
+}
+.hero-price-main .accent{
+  color:var(--sand);
+}
+.hero-price-note{
+  font-size:13px;
+  color:var(--w4);
+  letter-spacing:.04em;
+}
 .hero-meta{
   display:flex;
   flex-direction:column;
@@ -486,12 +506,9 @@ nav{
   .hero-checkup{
     width:100%;
   }
-  .hero-actions{
-    flex-direction:column;
-    align-items:stretch;
-  }
-  .hero-actions .btn{
-    justify-content:center;
+  .hero-actions,
+  .hero-price{
+    align-items:flex-start;
   }
   .hero-summary{
     grid-template-columns:1fr;
@@ -862,6 +879,13 @@ nav{
   display:grid;
   gap:14px;
 }
+.calc-label-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:8px;
+}
 .calc-label{
   display:block;
   font-size:11px;
@@ -869,6 +893,15 @@ nav{
   text-transform:uppercase;
   color:var(--sand2);
   margin-bottom:8px;
+}
+.calc-label-row .calc-label{
+  margin-bottom:0;
+}
+.calc-note{
+  font-size:12px;
+  color:var(--w4);
+  line-height:1.4;
+  white-space:nowrap;
 }
 .calc-select{
   width:100%;
@@ -933,6 +966,41 @@ nav{
   font-family:var(--bf);
   font-weight:500;
   text-align:right;
+}
+.calc-row.price{
+  align-items:flex-start;
+}
+.calc-price-box{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:4px;
+  text-align:right;
+}
+.calc-price-main{
+  display:flex;
+  align-items:baseline;
+  gap:6px;
+  font-family:var(--tf);
+  font-size:clamp(28px,4vw,36px);
+  line-height:1;
+  color:var(--w);
+}
+.calc-price-unit{
+  font-size:12px;
+  letter-spacing:.04em;
+  color:var(--sand2);
+  font-family:var(--bf);
+}
+.calc-price-old{
+  font-size:13px;
+  color:var(--w4);
+  text-decoration:line-through;
+}
+.calc-price-sub{
+  font-size:12px;
+  color:var(--w5);
+  line-height:1.5;
 }
 .calc-row.total{
   margin-top:6px;
@@ -1538,18 +1606,45 @@ textarea.fi2{resize:vertical;min-height:80px}
   opacity:.5;
   pointer-events:none;
 }
-.waterfall-card{
+.waterfall-layout{
+  display:grid;
+  grid-template-columns:minmax(260px, 360px) minmax(0, 1fr);
+  gap:28px;
+  align-items:stretch;
+  max-width:1120px;
+  margin:0 auto;
+}
+.waterfall-copy{
+  display:flex;
+  align-items:center;
+}
+.waterfall-copy .BT{
+  margin-bottom:0;
+}
+.waterfall-media{
   position:relative;
   overflow:hidden;
-  border-radius:30px;
-  border:1px solid var(--gbr);
-  background:rgba(8,17,31,.72);
-}
-.waterfall-card img{
+  min-height:520px;
+  max-width:760px;
   width:100%;
-  aspect-ratio:16/9;
+  justify-self:end;
+  border-radius:32px;
+  border:1px solid var(--gbr);
+}
+.waterfall-media img{
+  width:100%;
+  height:100%;
+  min-height:520px;
   object-fit:cover;
+  object-position:center center;
   display:block;
+  filter:saturate(.94) brightness(.9);
+}
+.waterfall-media::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(5,12,24,.28) 0%, rgba(5,12,24,.06) 46%, rgba(5,12,24,.02) 100%);
 }
 
 /* ── FOOTER ── */
@@ -1618,6 +1713,10 @@ function toggleMenu(){
   .sunrise-card img{min-height:360px}
   .sunrise-copy{left:22px;right:22px;bottom:22px}
   .sunrise-caption{font-size:clamp(28px,9vw,42px)}
+  .waterfall-layout{grid-template-columns:1fr;gap:20px}
+  .waterfall-copy{order:1}
+  .waterfall-media{order:2;min-height:380px;max-width:none;justify-self:stretch}
+  .waterfall-media img{min-height:380px}
 
   /* Section header rows (title + desc side by side) — stack */
   .s>[style*="grid-template-columns:1fr 1fr"]{display:flex!important;flex-direction:column!important;gap:16px!important}
@@ -1867,10 +1966,10 @@ body{padding-bottom:88px}
       <div class="hero-top" style="grid-column:1/-1">
         <div class="hero-copy">
           <h1 class="hh">Выезд в горы Грузии для <span class="accent-blue">физтехов</span> и друзей</h1>
-          <p class="hero-sub">Отдых в бутик-отеле небольшой группой, массажами, баней, оффроудом, хайкингом, бассейном и возможностью добавить чекап.</p>
-          <div class="hero-actions">
-            <a href="#activities" class="btn btn-g">Посмотреть программу</a>
-            <a href="#form" class="btn btn-s">Написать в Telegram</a>
+          <p class="hero-sub">Отдых в бутик-отеле небольшой группой, массажами, баней, хайкингом, бассейном и возможностью добавить чекап и поехать на оффроуд.</p>
+          <div class="hero-price">
+            <div class="hero-price-main">от <span class="accent">1480$</span> за человека</div>
+            <div class="hero-price-note">при бронировании до 4 мая</div>
           </div>
         </div>
         <div class="hero-meta">
@@ -2023,7 +2122,7 @@ body{padding-bottom:88px}
     <div class="program-gallery-title">Внутри этой программы</div>
     <div class="act-scroll">
       <div class="ac"><img class="ac-img" src="./assets/activity-massage.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Массажи на свежем воздухе</div></div></div>
-      <div class="ac"><img class="ac-img" src="./assets/activity-offroad.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Offroad</div></div></div>
+      <div class="ac"><img class="ac-img" src="./assets/activity-offroad.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Offroad, вы за рулем</div></div></div>
       <div class="ac"><img class="ac-img" src="./assets/activity-pool.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Бассейн у края каньона</div></div></div>
       <div class="ac"><img class="ac-img" src="./assets/sauna_1.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Сауна в скале</div></div></div>
       <div class="ac"><img class="ac-img" src="./assets/activity-barbecue.webp" alt="" loading="lazy" decoding="async"><div class="ac-body"><div class="ac-h">Шашлыки</div></div></div>
@@ -2117,7 +2216,7 @@ body{padding-bottom:88px}
         <div class="room-name">Panorama</div>
         <div class="room-meta">2 идентичных номера · отдельное здание · идеально для пары</div>
         <div class="room-note">Эти два номера находятся в отдельном здании, дают лучший вид и внутри имеют свою ванную комнату.</div>
-        <div class="room-price">1900$ за человека</div>
+        <div class="room-price">1765$ за человека при 2 гостях · 2240$ номер целиком на 1</div>
       </div>
     </div>
     <div class="room-card">
@@ -2134,7 +2233,7 @@ body{padding-bottom:88px}
         <div class="room-name">Old money double King</div>
         <div class="room-meta">2 идентичных номера · дом 1936 года · идеально для двух парней или девушек</div>
         <div class="room-note">Двухъярусный номер в старинном доме. У каждого номера полноценный санузел и свой балкон.</div>
-        <div class="room-price">1700$ за человека</div>
+        <div class="room-price">1610$ за место</div>
       </div>
     </div>
     <div class="room-card">
@@ -2151,7 +2250,7 @@ body{padding-bottom:88px}
         <div class="room-name">Old money Twin</div>
         <div class="room-meta">1 номер · дом 1936 года · twin / double on request</div>
         <div class="room-note">Для пары можем совместить две кровати. Для друзей оставляем раздельными. В номере есть полноценный санузел и свой балкон.</div>
-        <div class="room-price">1600$ за человека</div>
+        <div class="room-price">1530$ за человека при 2 гостях · 1770$ номер целиком на 1</div>
       </div>
     </div>
     <div class="room-card">
@@ -2168,7 +2267,7 @@ body{padding-bottom:88px}
         <div class="room-name">Old money King</div>
         <div class="room-meta">1 номер · дом 1936 года · king / twin setup</div>
         <div class="room-note">Для пары можем совместить две кровати. Для друзей оставляем раздельными. Этот номер тоже находится в старинном доме, со своим санузлом и балконом.</div>
-        <div class="room-price">1600$ за человека</div>
+        <div class="room-price">1530$ за человека при 2 гостях · 1770$ номер целиком на 1</div>
       </div>
     </div>
     <div class="room-card compact-single">
@@ -2182,7 +2281,7 @@ body{padding-bottom:88px}
         <div class="room-name">Standart Twin</div>
         <div class="room-meta">1 номер · новый дом · twin / double on request</div>
         <div class="room-note">Номер находится в доме новой постройки рядом с основным. Для пары можем совместить две кровати, для друзей оставляем раздельными. Также со своим санузлом.</div>
-        <div class="room-price">1500$ за человека</div>
+        <div class="room-price">1480$ за человека при 2 гостях · 1670$ номер целиком на 1</div>
       </div>
     </div>
   </div>
@@ -2262,7 +2361,7 @@ body{padding-bottom:88px}
       </div>
       <div class="maker-copy">
         <div class="maker-name">Ушаков Никита</div>
-        <div class="maker-text">ФПФЭ, больше трех лет живу в Грузии, обожаю местную природу и знаю, где найти в Тбилиси хороший сервис. Запускаю IT продукты и не только. Это не только вылилось в партнерство с Update, где мы твердо решили причинить людям счастье в горах.</div>
+        <div class="maker-text">ФПФЭ, больше трех лет живу в Грузии, обожаю местную природу и знаю, где найти в Тбилиси хороший сервис. Запускаю IT продукты и не только. Это "не только" вылилось в партнерство с Update, где мы твердо решили причинить людям счастье в горах.</div>
       </div>
     </div>
     <div class="maker-brand">
@@ -2291,7 +2390,6 @@ body{padding-bottom:88px}
 <section class="s" id="impact">
   <div class="rv sec-hd" style="margin-bottom:48px">
     <div><h2 class="BT">Что входит в <em>программу</em></h2></div>
-    <p style="font-size:15px;font-weight:300;color:var(--w6);line-height:1.8">Финальную калькуляцию по размещению мы ещё докручиваем, но уже сейчас можно собрать логику итоговой суммы и понять, что входит в поездку, а что считается отдельно.</p>
   </div>
   <div class="offer-grid rv">
     <div class="offer-card d1">
@@ -2299,7 +2397,7 @@ body{padding-bottom:88px}
       <ul class="offer-list">
         <li>Трансферы по маршруту Тбилиси — локация — Тбилиси и вся наземная логистика по Грузии.</li>
         <li>Питание на протяжении поездки: общие завтраки, обеды и ужины по собранному сценарию выезда.</li>
-        <li>Собранная программа по дням: off-road, хайкинг, пикники, вечерние активности и общие выезды.</li>
+        <li>Собранная программа по дням: хайкинг, пикники, вечерние активности и общие выезды.</li>
         <li>Массажи на локации, сауна, бассейн и доступ ко всем общим пространствам отеля.</li>
         <li>Сопровождение и организационная часть: мы собираем ритм поездки, а не оставляем вас один на один с логистикой.</li>
       </ul>
@@ -2309,44 +2407,62 @@ body{padding-bottom:88px}
       <ul class="offer-list">
         <li>Перелёт до Тбилиси и личные расходы в городе.</li>
         <li>Страховка на время поездки.</li>
-        <li>Чекап в A-clinic, если хотите встроить его в поездку.</li>
+        <li>Off-road тур с обучением.</li>
+        <li>Чекап в A-clinic.</li>
       </ul>
     </div>
     <div class="offer-card wide d3">
       <div class="offer-title">Калькулятор стоимости</div>
-      <div class="calc-grid">
+        <div class="calc-grid">
         <div class="calc-panel">
           <div>
             <label class="calc-label" for="calcRoom">Категория номера</label>
             <select class="calc-select" id="calcRoom">
               <option value="">Выберите номер</option>
-              <option value="Panorama" data-price="1900">Panorama</option>
-              <option value="Old money double King" data-price="1700">Old money double King</option>
-              <option value="Old money Twin" data-price="1600">Old money Twin</option>
-              <option value="Old money King" data-price="1600">Old money King</option>
-              <option value="Standart Twin" data-price="1500">Standart Twin</option>
+              <option value="Panorama">Panorama</option>
+              <option value="Old money double King">Old money double King</option>
+              <option value="Old money Twin">Old money Twin</option>
+              <option value="Old money King">Old money King</option>
+              <option value="Standart Twin">Standart Twin</option>
             </select>
           </div>
           <div>
-            <label class="calc-label" for="calcGuests">Сколько человек</label>
+            <label class="calc-label" for="calcGuests">Как заселяемся</label>
             <select class="calc-select" id="calcGuests" disabled>
               <option value="">Сначала выберите номер</option>
             </select>
           </div>
-          <label class="calc-check" for="calcCheckup">
-            <div class="calc-check-main">
-              <input type="checkbox" id="calcCheckup">
-              <span>Добавить чекап в A-clinic</span>
+          <div>
+            <div class="calc-label-row">
+              <label class="calc-label" for="calcOffroadCount">Сколько off-road</label>
+              <span class="calc-note">вы точно не пожалеете</span>
             </div>
-            <span class="calc-check-price">+180$</span>
-          </label>
+            <select class="calc-select" id="calcOffroadCount" disabled>
+              <option value="0">Без off-road</option>
+            </select>
+          </div>
+          <div>
+            <label class="calc-label" for="calcCheckupCount">Сколько чекапов</label>
+            <select class="calc-select" id="calcCheckupCount" disabled>
+              <option value="0">Без чекапа</option>
+            </select>
+          </div>
         </div>
         <div class="calc-result">
-          <div class="calc-row"><span>Гостей</span><strong id="calcGuestsValue">—</strong></div>
-          <div class="calc-row"><span>Размещение</span><strong id="calcRoomValue">выберите номер</strong></div>
+          <div class="calc-row"><span>Размещение</span><strong id="calcGuestsValue">—</strong></div>
+          <div class="calc-row price">
+            <span>Цена до 4 мая</span>
+            <div class="calc-price-box">
+              <div class="calc-price-main"><span id="calcRoomValue">выберите номер</span><span class="calc-price-unit" id="calcRoomUnit"></span></div>
+              <div class="calc-price-old" id="calcRoomOldValue"></div>
+              <div class="calc-price-sub" id="calcRoomSubValue"></div>
+            </div>
+          </div>
+          <div class="calc-row"><span>Off-road</span><strong id="calcOffroadValue">0$</strong></div>
           <div class="calc-row"><span>Чекап</span><strong id="calcCheckupValue">0$</strong></div>
           <div class="calc-row total"><span>Итог</span><strong id="calcTotalValue">выберите номер</strong></div>
-          <div class="calc-foot">Размещение считается по выбранному составу. Чекап добавляется отдельно как фиксированная опция +180$.</div>
+          <div class="calc-price-sub" style="margin-top:8px;text-align:right">за 5 ночей и программу под ключ</div>
+          <div class="calc-foot">До 4 мая действует более низкая цена. Off-road считается по 130$ за человека, чекап — по 180$ за человека.</div>
           <a id="calcTelegramBtn" class="btn btn-s calc-action is-disabled" href="https://t.me/Kopperfild" target="_blank" rel="noreferrer">Выберите номер</a>
         </div>
       </div>
@@ -2358,19 +2474,15 @@ body{padding-bottom:88px}
 <section class="s" id="faq">
   <div class="faq-grid">
     <div class="fql rv">
-      <div class="chip">FAQ</div>
       <h2 class="BT" style="margin-bottom:0">Частые<br>вопросы</h2>
-      <p>Если чего-то не хватает, напишите мне в Telegram. Отвечу лично, без робота и без “ваша заявка очень важна для нас”.</p>
       <a href="#form" class="btn btn-s" style="display:inline-flex">Написать в Telegram →</a>
     </div>
     <div class="flist rv d2">
       <div class="fi open"><div class="fq" onclick="tf(this)">Кто может поехать?<span class="farr">+</span></div><div class="fa">Этот заезд собираем для физтехов и друзей. Можно ехать выпускником, студентом, преподавателем, человеком “через своих” или просто близким по духу +1.</div></div>
-      <div class="fi"><div class="fq" onclick="tf(this)">Можно ехать одному?<span class="farr">+</span></div><div class="fa">Да, и это нормальный сценарий. Страница специально написана не как “собери команду из 12 человек”, а как приглашение в уже понятную компанию, куда можно вписаться и одному.</div></div>
-      <div class="fi"><div class="fq" onclick="tf(this)">Где это и как добираться?<span class="farr">+</span></div><div class="fa">Заезд проходит в бутик-отеле в горах Грузии рядом с живописным каньоном. Обычно маршрут такой: прилёт в Тбилиси, дальше трансфер до локации. После сообщения отдельно отправлю понятную логистику.</div></div>
+      <div class="fi"><div class="fq" onclick="tf(this)">Можно ехать одному?<span class="farr">+</span></div><div class="fa">Да, и это нормальный сценарий. Можно взять номер целиком под себя или выбрать вариант проживания с кем-то вместе. Берите друзей!</div></div>
+      <div class="fi"><div class="fq" onclick="tf(this)">Где это и как добираться?<span class="farr">+</span></div><div class="fa">Вы прилетаете в Тбилиси, заселяетесь в отель, а потом всю логистику мы берем на себя.</div></div>
       <div class="fi"><div class="fq" onclick="tf(this)">Что по программе?<span class="farr">+</span></div><div class="fa">Программа насыщенная и собирается заранее. Внутри есть выбор и воздух, но по ощущению это цельный, продуманный заезд с правильным балансом активностей и отдыха.</div></div>
-      <div class="fi"><div class="fq" onclick="tf(this)">Есть ли проживание, баня, бассейн и всё вот это?<span class="farr">+</span></div><div class="fa">Да. Проживание, баня, бассейн, террасы, ресторан и несколько типов номеров уже заложены в структуру страницы. Фото и цены по каждому варианту добавим следующим проходом.</div></div>
-      <div class="fi"><div class="fq" onclick="tf(this)">Когда лучше вписываться?<span class="farr">+</span></div><div class="fa">Чем раньше, тем лучше. Заезд привязан к датам 5–10 июня 2026, поэтому хочется заранее понять состав и спокойно собрать размещение.</div></div>
-      <div class="fi"><div class="fq" onclick="tf(this)">Как оставить интерес и получить детали?<span class="farr">+</span></div><div class="fa">Выбираете номер и при желании чекап, после чего переходите в Telegram с уже собранным сообщением. Дальше я лично присылаю детали по стоимости, логистике и размещению.</div></div>
+      <div class="fi"><div class="fq" onclick="tf(this)">Когда лучше вписываться?<span class="farr">+</span></div><div class="fa">Чем раньше, тем лучше. Заезд привязан к датам 5–10 июня 2026, поэтому хочется заранее понять состав и спокойно собрать размещение. Если берете программу до 4 мая, обойдется дешевле.</div></div>
     </div>
   </div>
 </section>
@@ -2386,7 +2498,7 @@ body{padding-bottom:88px}
     <div class="how-steps-compact rv">
       <div class="hwc rv d1">
         <div class="hwc-num">1</div>
-        <div><div class="hwc-h">Выбираете номер</div><div class="hwc-d">И, если нужно, отмечаете чекап.</div></div>
+        <div><div class="hwc-h">Выбираете номер</div><div class="hwc-d">И, если нужно, добавляете off-road и чекап.</div></div>
       </div>
       <div class="hwc rv d2">
         <div class="hwc-num">2</div>
@@ -2394,12 +2506,12 @@ body{padding-bottom:88px}
       </div>
       <div class="hwc rv d3">
         <div class="hwc-num">3</div>
-        <div><div class="hwc-h">Пишите мне</div><div class="hwc-d">Telegram откроется уже с деталями.</div></div>
+        <div><div class="hwc-h">Пишите нам</div><div class="hwc-d">Telegram откроется уже с деталями.</div></div>
       </div>
     </div>
     <div class="fbox glass rv d2 telegram-card">
       <h3>Telegram</h3>
-      <p class="fs-p" style="margin-top:0;margin-bottom:18px">Кнопка из калькулятора выше уже подставит номер, состав и чекап. Если всё понятно, можно написать сразу.</p>
+      <p class="fs-p" style="margin-top:0;margin-bottom:18px">Кнопка из калькулятора выше уже подставит номер, состав, off-road и чекап. Если всё понятно, можно написать сразу.</p>
       <a class="btn btn-s" href="https://t.me/Kopperfild?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4%20Phystech%20Retreat." target="_blank" rel="noreferrer" style="justify-content:center">Открыть Telegram</a>
       <p class="fn">Telegram: @Kopperfild</p>
     </div>
@@ -2407,11 +2519,13 @@ body{padding-bottom:88px}
 </section>
 
 <section class="s" id="waterfall">
-  <div class="rv sec-hd" style="margin-bottom:28px">
-    <div><h2 class="BT">И такую красоту мы тоже <em>увидим</em></h2></div>
-  </div>
-  <div class="waterfall-card rv d2">
-    <img src="./assets/water_fall.webp" alt="Водопад в горах Грузии" loading="lazy" decoding="async">
+  <div class="waterfall-layout rv">
+    <div class="waterfall-copy">
+      <h2 class="BT">И такую красоту мы тоже <em>увидим</em></h2>
+    </div>
+    <div class="waterfall-media d2">
+      <img src="./assets/water_fall.webp" alt="Водопад в горах Грузии" loading="lazy" decoding="async">
+    </div>
   </div>
 </section>
 
@@ -2481,49 +2595,176 @@ if (window.matchMedia('(max-width: 960px)').matches || window.matchMedia('(prefe
 (function(){
   const room = document.getElementById('calcRoom');
   const guests = document.getElementById('calcGuests');
-  const checkup = document.getElementById('calcCheckup');
+  const offroadCount = document.getElementById('calcOffroadCount');
+  const checkupCount = document.getElementById('calcCheckupCount');
   const guestsValue = document.getElementById('calcGuestsValue');
   const roomValue = document.getElementById('calcRoomValue');
+  const roomUnit = document.getElementById('calcRoomUnit');
+  const roomOldValue = document.getElementById('calcRoomOldValue');
+  const roomSubValue = document.getElementById('calcRoomSubValue');
+  const offroadValue = document.getElementById('calcOffroadValue');
   const checkupValue = document.getElementById('calcCheckupValue');
   const totalValue = document.getElementById('calcTotalValue');
   const telegramBtn = document.getElementById('calcTelegramBtn');
 
-  if(!room || !guests || !checkup || !guestsValue || !roomValue || !checkupValue || !totalValue || !telegramBtn) return;
+  if(!room || !guests || !offroadCount || !checkupCount || !guestsValue || !roomValue || !roomUnit || !roomOldValue || !roomSubValue || !offroadValue || !checkupValue || !totalValue || !telegramBtn) return;
 
   const roomConfigs = {
     'Panorama': {
-      defaultGuests: 2,
       options: [
-        { value: '1', label: '1 человек' },
-        { value: '2', label: '2 человека' }
+        {
+          value: 'pair',
+          label: '2 человека',
+          people: 2,
+          primaryBefore: 1765,
+          primaryAfter: 1950,
+          totalBefore: 3550,
+          totalAfter: 3900,
+          primaryUnit: 'за человека',
+          totalLabel: '3550$ за двоих',
+          default: true
+        },
+        {
+          value: 'single-room',
+          label: 'номер целиком на 1 человека',
+          people: 1,
+          primaryBefore: 2240,
+          primaryAfter: 2460,
+          totalBefore: 2240,
+          totalAfter: 2460,
+          primaryUnit: 'за номер',
+          totalLabel: 'номер целиком на 1 человека'
+        }
       ]
     },
     'Old money double King': {
-      defaultGuests: 2,
       options: [
-        { value: '2', label: '2 человека' },
-        { value: '3', label: 'семья + ребенок' }
+        {
+          value: 'single-seat',
+          label: '1 место',
+          people: 1,
+          primaryBefore: 1610,
+          primaryAfter: 1770,
+          totalBefore: 1610,
+          totalAfter: 1770,
+          primaryUnit: 'за место',
+          totalLabel: 'одно место в номере'
+        },
+        {
+          value: 'two-seats',
+          label: '2 места',
+          people: 2,
+          primaryBefore: 1610,
+          primaryAfter: 1770,
+          totalBefore: 3220,
+          totalAfter: 3540,
+          primaryUnit: 'за человека',
+          totalLabel: '3220$ за двоих',
+          default: true
+        }
       ]
     },
     'Old money Twin': {
-      defaultGuests: 1,
       options: [
-        { value: '1', label: '1 человек' },
-        { value: '2', label: '2 человека' }
+        {
+          value: 'single-person',
+          label: '1 человек',
+          people: 1,
+          primaryBefore: 1530,
+          primaryAfter: 1680,
+          totalBefore: 1530,
+          totalAfter: 1680,
+          primaryUnit: 'за человека',
+          totalLabel: '1 человек в номере'
+        },
+        {
+          value: 'pair',
+          label: '2 человека',
+          people: 2,
+          primaryBefore: 1530,
+          primaryAfter: 1680,
+          totalBefore: 3060,
+          totalAfter: 3360,
+          primaryUnit: 'за человека',
+          totalLabel: '3060$ за двоих',
+          default: true
+        },
+        {
+          value: 'single-room',
+          label: 'номер целиком на 1 человека',
+          people: 1,
+          primaryBefore: 1770,
+          primaryAfter: 1950,
+          totalBefore: 1770,
+          totalAfter: 1950,
+          primaryUnit: 'за номер',
+          totalLabel: 'номер целиком на 1 человека'
+        }
       ]
     },
     'Old money King': {
-      defaultGuests: 2,
       options: [
-        { value: '1', label: '1 человек' },
-        { value: '2', label: '2 человека' }
+        {
+          value: 'pair',
+          label: '2 человека',
+          people: 2,
+          primaryBefore: 1530,
+          primaryAfter: 1680,
+          totalBefore: 3060,
+          totalAfter: 3360,
+          primaryUnit: 'за человека',
+          totalLabel: '3060$ за двоих',
+          default: true
+        },
+        {
+          value: 'single-room',
+          label: 'номер целиком на 1 человека',
+          people: 1,
+          primaryBefore: 1770,
+          primaryAfter: 1950,
+          totalBefore: 1770,
+          totalAfter: 1950,
+          primaryUnit: 'за номер',
+          totalLabel: 'номер целиком на 1 человека'
+        }
       ]
     },
     'Standart Twin': {
-      defaultGuests: 1,
       options: [
-        { value: '1', label: '1 человек' },
-        { value: '2', label: '2 человека' }
+        {
+          value: 'single-person',
+          label: '1 человек',
+          people: 1,
+          primaryBefore: 1480,
+          primaryAfter: 1625,
+          totalBefore: 1480,
+          totalAfter: 1625,
+          primaryUnit: 'за человека',
+          totalLabel: '1 человек в номере'
+        },
+        {
+          value: 'pair',
+          label: '2 человека',
+          people: 2,
+          primaryBefore: 1480,
+          primaryAfter: 1625,
+          totalBefore: 2960,
+          totalAfter: 3250,
+          primaryUnit: 'за человека',
+          totalLabel: '2960$ за двоих',
+          default: true
+        },
+        {
+          value: 'single-room',
+          label: 'номер целиком на 1 человека',
+          people: 1,
+          primaryBefore: 1670,
+          primaryAfter: 1830,
+          totalBefore: 1670,
+          totalAfter: 1830,
+          primaryUnit: 'за номер',
+          totalLabel: 'номер целиком на 1 человека'
+        }
       ]
     }
   };
@@ -2535,6 +2776,10 @@ if (window.matchMedia('(max-width: 960px)').matches || window.matchMedia('(prefe
     if (!config) {
       guests.disabled = true;
       guests.innerHTML = '<option value="">Сначала выберите номер</option>';
+      offroadCount.disabled = true;
+      offroadCount.innerHTML = '<option value="0">Без off-road</option>';
+      checkupCount.disabled = true;
+      checkupCount.innerHTML = '<option value="0">Без чекапа</option>';
       return;
     }
 
@@ -2542,18 +2787,50 @@ if (window.matchMedia('(max-width: 960px)').matches || window.matchMedia('(prefe
       const el = document.createElement('option');
       el.value = option.value;
       el.textContent = option.label;
-      if (Number(option.value) === config.defaultGuests) {
+      el.dataset.people = String(option.people);
+      el.dataset.primaryBefore = String(option.primaryBefore);
+      el.dataset.primaryAfter = String(option.primaryAfter);
+      el.dataset.totalBefore = String(option.totalBefore);
+      el.dataset.totalAfter = String(option.totalAfter);
+      el.dataset.primaryUnit = option.primaryUnit;
+      el.dataset.totalLabel = option.totalLabel;
+      if (option.default) {
         el.selected = true;
       }
       guests.appendChild(el);
     });
 
     guests.disabled = false;
+    setAddonOptions(offroadCount, Number(guests.options[guests.selectedIndex]?.dataset.people || 0), 'off-road');
+    setAddonOptions(checkupCount, Number(guests.options[guests.selectedIndex]?.dataset.people || 0), 'чекап');
+  }
+
+  function setAddonOptions(select, maxCount, noun){
+    select.innerHTML = '';
+
+    if (!maxCount) {
+      select.disabled = true;
+      select.innerHTML = '<option value="0">' + (noun === 'off-road' ? 'Без off-road' : 'Без чекапа') + '</option>';
+      return;
+    }
+
+    for (let i = 0; i <= maxCount; i += 1) {
+      const option = document.createElement('option');
+      option.value = String(i);
+      if (i === 0) {
+        option.textContent = noun === 'off-road' ? 'Без off-road' : 'Без чекапа';
+      } else {
+        option.textContent = i + (i === 1 ? ' человек' : i < 5 ? ' человека' : ' человек');
+      }
+      if (i === 0) option.selected = true;
+      select.appendChild(option);
+    }
+
+    select.disabled = false;
   }
 
   function updateCalc(){
     const selected = room.options[room.selectedIndex];
-    const roomPrice = selected && selected.dataset.price ? Number(selected.dataset.price) : 0;
     const roomName = selected && selected.value ? selected.value : '';
     const currentConfig = roomConfigs[roomName];
 
@@ -2566,36 +2843,55 @@ if (window.matchMedia('(max-width: 960px)').matches || window.matchMedia('(prefe
       setGuestOptions('');
     }
 
-    const guestCount = guests.value ? Number(guests.value) : 0;
-    const roomTotal = roomPrice && guestCount ? roomPrice * guestCount : 0;
-    const checkupPrice = checkup.checked ? 180 : 0;
-    const total = roomTotal + checkupPrice;
+    const guestOption = guests.options[guests.selectedIndex];
+    const guestCount = guestOption && guestOption.dataset.people ? Number(guestOption.dataset.people) : 0;
+    const primaryBefore = guestOption && guestOption.dataset.primaryBefore ? Number(guestOption.dataset.primaryBefore) : 0;
+    const primaryAfter = guestOption && guestOption.dataset.primaryAfter ? Number(guestOption.dataset.primaryAfter) : 0;
+    const roomTotal = guestOption && guestOption.dataset.totalBefore ? Number(guestOption.dataset.totalBefore) : 0;
+    const roomTotalAfter = guestOption && guestOption.dataset.totalAfter ? Number(guestOption.dataset.totalAfter) : 0;
+    const roomPrimaryUnit = guestOption ? guestOption.dataset.primaryUnit : '';
+    const roomTotalLabel = guestOption ? guestOption.dataset.totalLabel : '';
+    const selectedOffroad = offroadCount.value ? Number(offroadCount.value) : 0;
+    const selectedCheckups = checkupCount.value ? Number(checkupCount.value) : 0;
+    const offroadPrice = selectedOffroad * 130;
+    const checkupPrice = selectedCheckups * 180;
+    const total = roomTotal + offroadPrice + checkupPrice;
 
-    guestsValue.textContent = guestCount ? guestCount + (guestCount === 1 ? ' человек' : guestCount < 5 ? ' человека' : ' человек') : '—';
-    roomValue.textContent = roomTotal ? roomTotal + '$' : 'выберите номер';
-    checkupValue.textContent = checkupPrice ? checkupPrice + '$' : '0$';
+    guestsValue.textContent = guestOption ? guestOption.textContent : '—';
+    roomValue.textContent = primaryBefore ? primaryBefore + '$' : 'выберите номер';
+    roomUnit.textContent = roomPrimaryUnit || '';
+    roomOldValue.textContent = primaryAfter ? primaryAfter + '$ после 4 мая' : '';
+    roomSubValue.textContent = roomTotalLabel ? roomTotalLabel + (roomTotalAfter ? ' · после 4 мая ' + roomTotalAfter + '$' : '') : '';
+    offroadValue.textContent = selectedOffroad ? selectedOffroad + ' × 130$ = ' + offroadPrice + '$' : '0$';
+    checkupValue.textContent = selectedCheckups ? selectedCheckups + ' × 180$ = ' + checkupPrice + '$' : '0$';
     totalValue.textContent = total ? total + '$' : 'выберите номер';
 
-    if (!roomName || !roomPrice || !guestCount) {
+    if (!roomName || !roomTotal || !guestCount) {
       telegramBtn.classList.add('is-disabled');
       telegramBtn.textContent = 'Выберите номер';
       telegramBtn.href = 'https://t.me/Kopperfild';
+      roomUnit.textContent = '';
+      roomOldValue.textContent = '';
+      roomSubValue.textContent = '';
+      offroadValue.textContent = '0$';
       return;
     }
 
-    const checkupText = checkup.checked ? 'нужен (+180$)' : 'не нужен';
-    const guestLabel = guests.options[guests.selectedIndex] ? guests.options[guests.selectedIndex].textContent : guestCount + ' человек';
+    const offroadText = selectedOffroad ? selectedOffroad + ' × 130$ = ' + offroadPrice + '$' : 'без off-road';
+    const checkupText = selectedCheckups ? selectedCheckups + (selectedCheckups === 1 ? ' чекап' : selectedCheckups < 5 ? ' чекапа' : ' чекапов') + ' — ' + checkupPrice + '$' : 'без чекапа';
+    const guestLabel = guestOption ? guestOption.textContent : guestCount + ' человек';
     const message = [
       'Привет! Хочу обсудить выезд Phystech Retreat.',
       'Номер: ' + roomName + '.',
       'Состав: ' + guestLabel + '.',
-      'Размещение: ' + roomTotal + '$.',
+      'Размещение до 4 мая: ' + roomTotal + '$.',
+      'Off-road: ' + offroadText + '.',
       'Чекап: ' + checkupText + '.',
       'Итог по калькулятору: ' + total + '$.'
     ].join('\n');
 
     telegramBtn.classList.remove('is-disabled');
-    telegramBtn.textContent = 'Написать Никите в Telegram';
+    telegramBtn.textContent = 'Написать в Telegram';
     telegramBtn.href = 'https://t.me/Kopperfild?text=' + encodeURIComponent(message);
   }
 
@@ -2603,8 +2899,14 @@ if (window.matchMedia('(max-width: 960px)').matches || window.matchMedia('(prefe
     setGuestOptions(room.value);
     updateCalc();
   });
-  guests.addEventListener('change', updateCalc);
-  checkup.addEventListener('change', updateCalc);
+  guests.addEventListener('change', () => {
+    const currentPeople = Number(guests.options[guests.selectedIndex]?.dataset.people || 0);
+    setAddonOptions(offroadCount, currentPeople, 'off-road');
+    setAddonOptions(checkupCount, currentPeople, 'чекап');
+    updateCalc();
+  });
+  offroadCount.addEventListener('change', updateCalc);
+  checkupCount.addEventListener('change', updateCalc);
   setGuestOptions(room.value);
   updateCalc();
 })();
