@@ -125,7 +125,9 @@ h1.hero-h1 em{font-style:italic;color:#E8C080}
 .acont{position:absolute;bottom:0;left:0;right:0;padding:22px 18px}
 .atitle{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;color:#fff;margin-bottom:5px;line-height:1.2;text-shadow:0 1px 8px rgba(0,0,0,.7)}
 .adesc{font-size:11.5px;color:rgba(255,255,255,.58);line-height:1.6;max-height:0;overflow:hidden;opacity:0;transition:max-height .4s,opacity .4s}
-.acard:hover .adesc{max-height:72px;opacity:1}
+.acard:hover .adesc,.acard.is-active .adesc{max-height:96px;opacity:1}
+.acard.is-active .agr{opacity:1}
+.acard.is-active .abg{transform:scale(1.04)}
 
 /* ACCOMMODATION */
 .accom{background:var(--warm);padding:0}
@@ -218,11 +220,15 @@ footer{background:var(--deep);padding:40px 80px}
   .nav-links,.nav-cta{display:none}
   .burger{display:flex}
 
-  .hero-c{grid-template-columns:1fr;padding:0 24px 72px;gap:28px}
+  .hero{align-items:flex-start}
+  .hero-c{grid-template-columns:1fr;padding:108px 24px 108px;gap:28px;align-items:start}
+  .hero-tag{margin-top:12px}
   h1.hero-h1{font-size:clamp(42px,11vw,68px)}
   .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.1);padding:0}
   .hstat{padding:16px 14px;background:rgba(255,255,255,.07);border:none}
   .hstat-n{font-size:28px}
+  .hero-scroll{bottom:18px;color:rgba(255,255,255,.62);font-size:10px;letter-spacing:.26em;z-index:3}
+  .scroll-ln{height:54px;background:linear-gradient(rgba(255,255,255,.8),transparent)}
 
   .section{padding:64px 24px}
   .place-hd,.accom-hd{padding:64px 24px 40px}
@@ -275,6 +281,10 @@ footer{background:var(--deep);padding:40px 80px}
   .ti{grid-template-columns:1fr;gap:2px}
   .ti-time{font-size:10px;color:var(--wine)}
   .hero-stats{grid-template-columns:1fr 1fr}
+  .hero-c{padding:118px 20px 116px}
+  .hero-tag{font-size:10px;letter-spacing:.16em}
+  .hero-hook{margin-top:18px}
+  .hero-scroll{bottom:14px}
 }
 </style>
 </head>
@@ -750,6 +760,32 @@ const bgObserver=new IntersectionObserver(entries=>{
   });
 },{rootMargin:'220px 0px',threshold:.01});
 document.querySelectorAll('.abg[data-bg]').forEach(el=>bgObserver.observe(el));
+const mobileCardQuery=window.matchMedia('(max-width: 960px)');
+let activityObserver;
+function setupActivityCards(){
+  if(activityObserver){
+    document.querySelectorAll('.acard').forEach(card=>activityObserver.unobserve(card));
+    activityObserver.disconnect();
+    activityObserver=null;
+  }
+  const cards=document.querySelectorAll('.acard');
+  if(!mobileCardQuery.matches){
+    cards.forEach(card=>card.classList.remove('is-active'));
+    return;
+  }
+  activityObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      entry.target.classList.toggle('is-active',entry.isIntersecting && entry.intersectionRatio > .55);
+    });
+  },{threshold:[0.55],rootMargin:'-8% 0px -12% 0px'});
+  cards.forEach(card=>activityObserver.observe(card));
+}
+setupActivityCards();
+if(mobileCardQuery.addEventListener){
+  mobileCardQuery.addEventListener('change',setupActivityCards);
+}else if(mobileCardQuery.addListener){
+  mobileCardQuery.addListener(setupActivityCards);
+}
 function toggleMenu(){
   const nl=document.querySelector('.nav-links');
   if(!nl)return;
