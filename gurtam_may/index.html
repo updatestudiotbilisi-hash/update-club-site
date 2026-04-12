@@ -272,7 +272,8 @@ footer{background:var(--deep);padding:40px 80px}
 }
 @media(max-width:580px){
   .act-grid{grid-template-columns:1fr}
-  .acard{height:200px}
+  .act-grid{gap:12px}
+  .acard{height:220px;scroll-margin-top:92px}
   .eff-grid{grid-template-columns:1fr}
   .inc-cats{grid-template-columns:1fr}
   .mosaic{grid-template-columns:1fr}
@@ -762,22 +763,43 @@ const bgObserver=new IntersectionObserver(entries=>{
 document.querySelectorAll('.abg[data-bg]').forEach(el=>bgObserver.observe(el));
 const mobileCardQuery=window.matchMedia('(max-width: 960px)');
 let activityObserver;
+let snapTimeout;
+let lastSnappedCard=null;
 function setupActivityCards(){
   if(activityObserver){
     document.querySelectorAll('.acard').forEach(card=>activityObserver.unobserve(card));
     activityObserver.disconnect();
     activityObserver=null;
   }
+  if(snapTimeout){
+    clearTimeout(snapTimeout);
+    snapTimeout=null;
+  }
   const cards=document.querySelectorAll('.acard');
   if(!mobileCardQuery.matches){
     cards.forEach(card=>card.classList.remove('is-active'));
+    lastSnappedCard=null;
     return;
   }
   activityObserver=new IntersectionObserver(entries=>{
     entries.forEach(entry=>{
-      entry.target.classList.toggle('is-active',entry.isIntersecting && entry.intersectionRatio > .55);
+      const isActive=entry.isIntersecting && entry.intersectionRatio > .55;
+      entry.target.classList.toggle('is-active',isActive);
+      if(!isActive)return;
+      if(window.innerWidth > 580)return;
+      if(lastSnappedCard===entry.target)return;
+      if(snapTimeout)clearTimeout(snapTimeout);
+      snapTimeout=setTimeout(()=>{
+        const rect=entry.target.getBoundingClientRect();
+        const viewportCenter=window.innerHeight * .5;
+        const cardCenter=rect.top + rect.height / 2;
+        if(Math.abs(cardCenter - viewportCenter) < 140){
+          entry.target.scrollIntoView({behavior:'smooth',block:'center'});
+          lastSnappedCard=entry.target;
+        }
+      },120);
     });
-  },{threshold:[0.55],rootMargin:'-8% 0px -12% 0px'});
+  },{threshold:[0.55,0.72],rootMargin:'-10% 0px -14% 0px'});
   cards.forEach(card=>activityObserver.observe(card));
 }
 setupActivityCards();
