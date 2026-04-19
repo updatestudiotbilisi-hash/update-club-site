@@ -449,8 +449,27 @@
      CURATOR
   ────────────────────────────── */
   #curator {
+    position:relative;
+    overflow:hidden;
     padding:clamp(5rem, 9vw, 7rem) clamp(1rem, 3vw, 2rem);
     max-width:1100px; margin:0 auto;
+  }
+  #curator::before {
+    content:'';
+    position:absolute;
+    width:760px;
+    height:520px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(ellipse at center, rgba(201,169,110,.14) 0%, rgba(128,74,26,.08) 40%, transparent 72%);
+    filter:blur(70px);
+    pointer-events:none;
+    z-index:0;
+  }
+  #curator > * {
+    position:relative;
+    z-index:1;
   }
   #curator .section-intro {
     text-align:center;
@@ -1001,7 +1020,7 @@
   .room-card-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:1.06rem;color:#fff;margin-bottom:7px;line-height:1.2}
   .room-card-beds{display:inline-flex;align-items:center;background:rgba(201,169,110,.14);border:1px solid rgba(201,169,110,.28);border-radius:9999px;padding:3px 10px;font-size:.6rem;font-weight:400;letter-spacing:.05em;color:var(--accent-warm)}
   /* Place section */
-  #place{padding:clamp(5rem,9vw,7rem) clamp(1rem,3vw,2rem);max-width:1100px;margin:0 auto}
+  #place{padding:0;max-width:none;width:100%;margin:0}
   .place-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,3.8rem);align-items:start;margin-top:2.6rem}
   @media(max-width:780px){.place-grid{grid-template-columns:1fr}}
   .place-photos{display:grid;grid-template-columns:1fr 1fr;gap:6px;border-radius:20px;overflow:hidden}
@@ -1026,12 +1045,12 @@
       <span class="nav-toggle-lines"></span>
     </button>
     <ul class="nav-ul lg">
+      <li class="nav-hide-sm"><a href="#incl">Что вас ждёт</a></li>
       <li class="nav-hide-sm"><a href="#about">О выезде</a></li>
-      <li class="nav-hide-sm"><a href="#stats">Формат</a></li>
       <li class="nav-hide-sm"><a href="#prog">Программа</a></li>
       <li class="nav-hide-sm"><a href="#curator">Куратор</a></li>
-      <li class="nav-hide-sm"><a href="#incl">В стоимость</a></li>
-      <li class="nav-hide-sm"><a href="#test">F&Q</a></li>
+      <li class="nav-hide-sm"><a href="#place">Площадка</a></li>
+      <li class="nav-hide-sm"><a href="#test">F&amp;Q</a></li>
       <li class="nav-cta"><a href="https://t.me/m/o4hfATTzMTJi" class="cta-a" target="_blank" rel="noopener noreferrer">Записаться</a></li>
     </ul>
   </div>
@@ -1054,7 +1073,7 @@
     </div>
     <div class="hero-badge lg">
       <span class="badge-pill">Выезд в горы</span>
-      <span class="badge-text">15–18 мая · 4 дня · Природа</span>
+      <span class="badge-text">15–18 мая · 4 дня · Только для девушек</span>
     </div>
     <h1 class="hero-h">Вос<span class="hero-dot">·</span>становление</h1>
     <p class="hero-p">
@@ -1080,16 +1099,10 @@
 
 <!-- INCLUDED / ЧТО ВАС ЖДЁТ -->
 <section id="incl" style="padding:clamp(5rem,9vw,7rem) clamp(1rem,3vw,2rem);position:relative;overflow:hidden">
-  <!-- warm ambient glow -->
-  <div style="pointer-events:none;position:absolute;inset:0;z-index:0">
-    <div style="position:absolute;width:1400px;height:900px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(ellipse at center,rgba(210,130,45,.38) 0%,rgba(170,85,22,.22) 35%,transparent 68%);filter:blur(90px);border-radius:50%"></div>
-    <div style="position:absolute;width:700px;height:550px;top:20%;left:10%;background:radial-gradient(ellipse at center,rgba(230,150,55,.28) 0%,transparent 62%);filter:blur(70px);border-radius:50%"></div>
-    <div style="position:absolute;width:600px;height:500px;bottom:10%;right:8%;background:radial-gradient(ellipse at center,rgba(200,110,35,.24) 0%,transparent 62%);filter:blur(75px);border-radius:50%"></div>
-  </div>
   <div class="incl-in" style="position:relative;z-index:1">
     <div class="incl-hdr rv">
       <span class="badge lg">Что вас ждёт</span>
-      <p class="sb" style="margin:0.6rem auto 0;text-align:center">Всё, что нужно для восстановления</p>
+      <h2 class="sh" style="margin:0.6rem auto 0;text-align:center">Всё, что нужно<br>для восстановления</h2>
     </div>
     <div class="v-scroll rv">
       <div class="v-card">
@@ -1104,6 +1117,13 @@
         <div class="v-card-body">
           <div class="v-card-h">Саунд-хилинг</div>
           <div class="v-card-d">Практика глубокого расслабления под звучание чаш и колокольчиков. Успокоение нервной системы.</div>
+        </div>
+      </div>
+      <div class="v-card">
+        <img class="v-card-img" src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/retreat/7d632c6bc1465609870d3ff23510700c88bff4b5/activity/pool.webp" alt="Бассейн" loading="lazy">
+        <div class="v-card-body">
+          <div class="v-card-h">Бассейн</div>
+          <div class="v-card-d">Подогреваемый бассейн с видом на горы и каньон. Пространство для отдыха, тишины и мягкого переключения.</div>
         </div>
       </div>
       <div class="v-card">
@@ -1328,7 +1348,13 @@
 <div class="sb-edge sb-edge-warm"></div>
 
 <!-- CURATOR -->
-<section id="curator">
+<section id="curator" style="position:relative;overflow:hidden">
+  <!-- warm glow -->
+  <div style="pointer-events:none;position:absolute;inset:0;z-index:0">
+    <div style="position:absolute;width:1000px;height:700px;top:50%;left:50%;transform:translate(-50%,-55%);background:radial-gradient(ellipse at center,rgba(201,120,40,.16) 0%,rgba(160,80,20,.09) 40%,transparent 68%);filter:blur(100px);border-radius:50%"></div>
+    <div style="position:absolute;width:500px;height:500px;top:10%;left:5%;background:radial-gradient(ellipse at center,rgba(220,140,50,.10) 0%,transparent 65%);filter:blur(80px);border-radius:50%"></div>
+  </div>
+  <div style="position:relative;z-index:1;padding:clamp(5rem,9vw,7rem) clamp(1rem,3vw,2rem);max-width:1100px;margin:0 auto">
   <div class="section-intro rv">
     <span class="badge lg">Куратор выезда</span>
     <h2 class="sh">Человек, который мягко ведёт<br>процесс восстановления</h2>
@@ -1363,37 +1389,53 @@
       </a>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- ░ blur edge ░ -->
 <div class="sb-edge sb-edge-warm"></div>
 
 <!-- EDIS DACHA PLACE -->
-<section id="place">
-  <div class="section-intro rv">
-    <span class="badge lg">Площадка</span>
-    <h2 class="sh">Edis Dacha —<br>на краю каньона</h2>
-    <div class="div"></div>
-    <p class="sb" style="margin:0 auto">Отреставрированная историческая дача на высоте 1500 м над уровнем моря. Закрытый формат — всё пространство только для нашей группы.</p>
-  </div>
-  <div class="place-grid">
-    <div class="rv from-left">
-      <div class="place-photos">
-        <img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/retreat-exterior-overview-01.webp" alt="Edis Dacha">
-        <img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/pool.webp" alt="Бассейн">
-        <img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/retreat-common-area-bar-01.webp" alt="Бар и терраса">
+<section id="place" style="position:relative;overflow:hidden;min-height:100svh;display:flex;align-items:center">
+  <img class="about-img"
+    src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/retreat/7d632c6bc1465609870d3ff23510700c88bff4b5/Edis_Dacha/retreat-exterior-overview-01.webp"
+    alt="Edis Dacha — вид на территорию"
+    style="object-position:0% center">
+  <div class="about-ov" style="background:linear-gradient(to bottom,rgba(7,11,9,.88) 0%,rgba(7,11,9,.22) 18%,rgba(7,11,9,0) 34%),linear-gradient(to right,rgba(7,11,9,.05) 0%,rgba(7,11,9,.29) 44%,rgba(7,11,9,.52) 68%,rgba(7,11,9,.58) 100%)"></div>
+  <!-- top blur edge -->
+  <div style="position:absolute;top:0;left:0;right:0;height:160px;background:linear-gradient(to bottom,#070b09,transparent);backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px);-webkit-mask:linear-gradient(to bottom,black 0%,transparent 100%);mask:linear-gradient(to bottom,black 0%,transparent 100%);pointer-events:none;z-index:3"></div>
+  <!-- bottom blur edge -->
+  <div style="position:absolute;bottom:0;left:0;right:0;height:160px;background:linear-gradient(to top,#070b09,transparent);backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px);-webkit-mask:linear-gradient(to top,black 0%,transparent 100%);mask:linear-gradient(to top,black 0%,transparent 100%);pointer-events:none;z-index:3"></div>
+  <div class="about-in" style="justify-content:flex-end">
+    <div class="about-content rv">
+      <span class="badge lg">Площадка</span>
+      <h2 class="sh">Edis Dacha —<br>на краю каньона</h2>
+      <div class="div"></div>
+      <p class="sb" style="margin-bottom:1rem">
+        Отреставрированная историческая дача на высоте 1500 м над уровнем моря. Деревянные интерьеры, подогреваемый бассейн с видом на каньон Дашбаши, сауна и уютный бар.
+      </p>
+      <p class="sb" style="margin-bottom:1.6rem">
+        <strong>102 км от Тбилиси.</strong> Вокруг — только горы, каньон и тишина. Дача полностью наша на все дни выезда.
+      </p>
+      <div class="tags-row" style="margin-bottom:2rem">
+        <span class="tag lg">1500 м н.у.м.</span>
+        <span class="tag lg">Каньон Дашбаши</span>
+        <span class="tag lg">Бассейн</span>
+        <span class="tag lg">Сауна</span>
       </div>
-    </div>
-    <div class="rv from-right d1">
-      <p class="curator-bio" style="margin-bottom:1.2rem">Деревянные интерьеры, подогреваемый бассейн с видом на каньон Дашбаши, сауна, уютный бар и ресторан из местных продуктов. <strong>102 км от Тбилиси — около 1.5 часов.</strong></p>
-      <p class="curator-bio" style="margin-bottom:1.6rem">Вокруг — только горы, каньон и тишина. Никаких посторонних — дача полностью наша на все дни выезда.</p>
-
+      <a href="https://t.me/m/o4hfATTzMTJi" class="btn-g lg-s" target="_blank" rel="noopener noreferrer">
+        Записаться на выезд
+        <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
     </div>
   </div>
-  <div style="margin-top:3.4rem" class="rv">
-    <div class="rooms-sub-title">Варианты <em>номеров</em></div>
-    <p style="font-size:.8rem;color:var(--text-muted);margin-top:.3rem">Все номера с отдельным санузлом. Часть — с балконом и видом на горы.</p>
-    <div class="v-scroll">
+</section>
+<!-- ROOMS -->
+<div style="padding:clamp(2.5rem,5vw,4rem) clamp(1rem,3vw,2rem)">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="rooms-sub-title rv">Варианты <em>номеров</em></div>
+    <p style="font-size:.8rem;color:var(--text-muted);margin-top:.3rem" class="rv">Все номера с отдельным санузлом. Часть — с балконом и видом на горы.</p>
+    <div class="v-scroll rv">
       <div class="room-card">
         <img class="room-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/phystech/assets/panorama_1.webp" alt="Panorama" loading="lazy">
         <div class="room-card-body"><div class="room-card-name">Panorama</div><span class="room-card-beds">2 спальных места</span></div>
@@ -1416,8 +1458,7 @@
       </div>
     </div>
   </div>
-</section>
-
+</div>
 <!-- ░ blur edge ░ -->
 <div class="sb-edge sb-edge-warm"></div>
 
