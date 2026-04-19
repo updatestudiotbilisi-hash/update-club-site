@@ -451,7 +451,7 @@
   #curator {
     position:relative;
     overflow:hidden;
-    padding:clamp(5rem, 9vw, 7rem) clamp(1rem, 3vw, 2rem);
+    padding:clamp(3.5rem, 6vw, 4.8rem) clamp(1rem, 3vw, 2rem) clamp(5rem, 8vw, 6rem);
     max-width:1100px; margin:0 auto;
   }
   #curator::before {
@@ -585,7 +585,7 @@
   /* ──────────────────────────────
      PROGRAM DAYS — wide cinematic cards
   ────────────────────────────── */
-  #prog-days { padding:0 clamp(1rem,3vw,2rem) 7rem; max-width:1280px; margin:0 auto; }
+  #prog-days { padding:0 clamp(1rem,3vw,2rem) 4.4rem; max-width:1280px; margin:0 auto; }
   .cr {
     position:relative;
     margin-bottom:4rem;
@@ -937,14 +937,44 @@
       align-items:flex-start;
       min-height:760px;
     }
+    #about .about-img {
+      object-position:62% center;
+    }
     .about-in {
-      padding-top:2.1rem;
-      padding-bottom:8.8rem;
+      padding-top:1.2rem;
+      padding-bottom:10.2rem;
       justify-content:flex-start;
       align-items:flex-start;
     }
     .about-content {
       margin-top:0;
+      max-width:100%;
+    }
+    #about .badge,
+    #about .date-pill,
+    #about .about-days,
+    #about .sh,
+    #about .sb,
+    #about .tag {
+      color:rgba(255,255,255,.9);
+    }
+    #about .sb,
+    #about .date-pill,
+    #about .about-days {
+      text-shadow:0 1px 10px rgba(0,0,0,.24);
+    }
+    #about .about-ov {
+      background:
+        linear-gradient(to bottom,
+          rgba(7,11,9,.62) 0%,
+          rgba(7,11,9,.34) 18%,
+          rgba(7,11,9,.18) 36%,
+          rgba(7,11,9,.38) 100%),
+        linear-gradient(to left,
+          rgba(7,11,9,.72) 0%,
+          rgba(7,11,9,.52) 36%,
+          rgba(7,11,9,.22) 62%,
+          rgba(7,11,9,.06) 82%);
     }
     #place {
       min-height:100svh;
@@ -993,7 +1023,7 @@
     .hp-list { gap:.7rem 1.1rem; }
     .hp-list span { font-size:1rem; }
     .big-num { font-size:4.2rem; }
-    .about-ov {
+    body:not(#about) .about-ov {
       background:linear-gradient(to bottom, rgba(7,11,9,.46) 0%, rgba(7,11,9,.46) 100%);
     }
     .ct, .sh, .cta-h { text-wrap:balance; }
@@ -1029,6 +1059,34 @@
     .fl { width:100%; justify-content:center; flex-wrap:wrap; gap:1rem; }
     .floating-cta { right:12px; bottom:12px; padding:9px 13px; }
     .floating-audio { left:12px; bottom:12px; padding:10px 14px; }
+    #about .about-img {
+      object-position:68% center;
+    }
+    #about .badge {
+      margin-bottom:.75rem;
+    }
+    #about .about-meta {
+      gap:.45rem;
+      margin-bottom:1rem;
+    }
+    #about .date-pill {
+      padding:6px 14px;
+      font-size:.82rem;
+    }
+    #about .about-days {
+      font-size:.88rem;
+    }
+    #about .sh {
+      font-size:clamp(2.55rem, 11.8vw, 3.4rem);
+    }
+    #about .sb {
+      font-size:.98rem;
+      line-height:1.68;
+    }
+    #place .sb {
+      font-size:.94rem;
+      line-height:1.68;
+    }
     .day-copy,
     .cr.rev .day-copy {
       left:auto;
@@ -1691,7 +1749,19 @@
   });
 
   const lazyVideos = document.querySelectorAll('.lazy-video');
+  const programVideos = document.querySelectorAll('#prog-days .lazy-video');
   const isMobileViewport = window.matchMedia('(max-width: 680px)').matches;
+  if (isMobileViewport) {
+    programVideos.forEach(video => {
+      const src = video.dataset.videoSrc;
+      if (src && !video.dataset.loaded) {
+        video.src = src;
+        video.preload = 'metadata';
+        video.load();
+        video.dataset.loaded = 'true';
+      }
+    });
+  }
   const videoObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const video = entry.target;
@@ -1717,8 +1787,8 @@
       }
     });
   }, {
-    rootMargin: isMobileViewport ? '120px 0px' : '300px 0px',
-    threshold: isMobileViewport ? 0.18 : 0.01
+    rootMargin: isMobileViewport ? '260px 0px' : '300px 0px',
+    threshold: isMobileViewport ? 0.08 : 0.01
   });
   lazyVideos.forEach(video => videoObserver.observe(video));
 
