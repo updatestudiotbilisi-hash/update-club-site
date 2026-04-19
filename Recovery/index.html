@@ -736,10 +736,31 @@
      FAQ
   ────────────────────────────── */
   #test {
-    padding:clamp(5rem,9vw,7rem) clamp(1rem,3vw,2rem); max-width:1100px; margin:0 auto;
-    position: relative;
+    position:relative;
+    overflow:hidden;
+    padding:clamp(2.8rem,5vw,4rem) clamp(1rem,3vw,2rem) clamp(5rem,9vw,7rem);
+    max-width:none;
+    margin:0;
+    min-height:clamp(760px,96vh,980px);
   }
-  /* warm ambient glow behind faq */
+  .faq-vid {
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+    z-index:0;
+    opacity:.52;
+  }
+  .faq-ov {
+    position:absolute;
+    inset:0;
+    z-index:1;
+    background:
+      linear-gradient(to bottom, rgba(7,11,9,.74) 0%, rgba(7,11,9,.34) 20%, rgba(7,11,9,.28) 72%, rgba(7,11,9,.78) 100%),
+      linear-gradient(to right, rgba(7,11,9,.18) 0%, rgba(7,11,9,.06) 34%, rgba(7,11,9,.18) 100%);
+  }
   #test::before {
     content: '';
     position: absolute;
@@ -747,9 +768,18 @@
     top: 50%; left: 50%; transform: translate(-50%,-50%);
     background: radial-gradient(ellipse at center, rgba(201,169,110,.07) 0%, transparent 70%);
     filter: blur(60px);
-    pointer-events: none; z-index: 0;
+    pointer-events: none; z-index: 2;
   }
-  #test > * { position: relative; z-index: 1; }
+  .faq-shell {
+    position:relative;
+    z-index:3;
+    max-width:1100px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    min-height:100%;
+  }
   .test-hdr { text-align:center; margin-bottom:3.2rem; }
   .faq-list {
     max-width:920px;
@@ -810,6 +840,15 @@
     color:rgba(255,255,255,.58);
     font-size:.9rem;
     line-height:1.78;
+  }
+  @media (max-width: 680px){
+    #test{
+      padding:1.6rem 1rem 4.2rem;
+      min-height:auto;
+    }
+    .test-hdr{
+      margin-bottom:2rem;
+    }
   }
 
   /* ──────────────────────────────
@@ -1524,16 +1563,15 @@
   </div>
 </section>
 
-<!-- ░ blur edge ░ -->
-<div class="sb-edge sb-edge-warm"></div>
-
 <!-- FAQ -->
-<section id="test" style="position:relative;overflow:hidden;padding:clamp(2.2rem,5vw,3.6rem) clamp(1rem,3vw,2rem) clamp(5rem,9vw,7rem);max-width:none;margin:0">
-  <video class="incl-vid lazy-video" loop muted playsinline preload="none"
+<section id="test">
+  <video class="faq-vid lazy-video" loop muted playsinline preload="none"
     data-video-src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4">
   </video>
-  <div class="incl-vid-ov"></div>
-  <div style="position:relative;z-index:3;max-width:1100px;margin:0 auto">
+  <div class="faq-ov"></div>
+  <div class="fade-t"></div>
+  <div class="fade-b"></div>
+  <div class="faq-shell">
     <div class="test-hdr rv">
       <span class="badge lg">F&Q</span>
       <h2 class="sh">Частые вопросы<br>о выезде</h2>
