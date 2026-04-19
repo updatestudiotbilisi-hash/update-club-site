@@ -449,8 +449,27 @@
      CURATOR
   ────────────────────────────── */
   #curator {
+    position:relative;
+    overflow:hidden;
     padding:clamp(5rem, 9vw, 7rem) clamp(1rem, 3vw, 2rem);
     max-width:1100px; margin:0 auto;
+  }
+  #curator::before {
+    content:'';
+    position:absolute;
+    width:760px;
+    height:520px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(ellipse at center, rgba(201,169,110,.14) 0%, rgba(128,74,26,.08) 40%, transparent 72%);
+    filter:blur(70px);
+    pointer-events:none;
+    z-index:0;
+  }
+  #curator > * {
+    position:relative;
+    z-index:1;
   }
   #curator .section-intro {
     text-align:center;
@@ -914,6 +933,48 @@
       line-height:.92;
       letter-spacing:-.015em;
     }
+    #about {
+      align-items:flex-start;
+      min-height:760px;
+    }
+    .about-in {
+      padding-top:2.1rem;
+      padding-bottom:8.8rem;
+      justify-content:flex-start;
+      align-items:flex-start;
+    }
+    .about-content {
+      margin-top:0;
+    }
+    #place {
+      min-height:100svh;
+      align-items:flex-start;
+    }
+    #place .about-in {
+      padding-top:4.4rem;
+      padding-bottom:6.2rem;
+      justify-content:flex-end;
+    }
+    #place .about-content {
+      max-width:100%;
+    }
+    #place .about-ov {
+      background:linear-gradient(to bottom,rgba(7,11,9,.72) 0%,rgba(7,11,9,.34) 18%,rgba(7,11,9,.18) 36%,rgba(7,11,9,.34) 100%),linear-gradient(to right,rgba(7,11,9,.22) 0%,rgba(7,11,9,.48) 42%,rgba(7,11,9,.72) 68%,rgba(7,11,9,.82) 100%) !important;
+    }
+    #place .badge,
+    #place .tag,
+    #place .about-days {
+      color:rgba(255,255,255,.82);
+    }
+    #place .sh,
+    #place .sb,
+    #place strong,
+    #place .btn-g {
+      color:rgba(255,255,255,.96);
+    }
+    #place .sb {
+      text-shadow:0 1px 10px rgba(0,0,0,.28);
+    }
     .hero-p { font-size:.84rem; }
     .scroll-ind {
       display:flex;
@@ -978,185 +1039,41 @@
     }
   }
 
-  /* ──────────────────────────────
-     HORIZONTAL SCROLL CARDS (v-card / room-card)
-  ────────────────────────────── */
-  .v-scroll {
-    display: flex;
-    gap: 14px;
-    overflow-x: auto;
-    padding-bottom: 16px;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    margin-top: 2.4rem;
-  }
-  .v-scroll::-webkit-scrollbar { height: 3px; }
-  .v-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,.06); border-radius: 2px; }
-  .v-scroll::-webkit-scrollbar-thumb { background: rgba(201,169,110,.4); border-radius: 2px; }
-
-  .v-card {
-    flex: 0 0 240px;
-    border-radius: 18px;
-    overflow: hidden;
-    position: relative;
-    aspect-ratio: 3/4;
-    scroll-snap-align: start;
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.09);
-    transition: all .3s;
-  }
-  .v-card:hover { border-color: rgba(201,169,110,.35); transform: translateY(-3px); }
-  .v-card-img {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%; object-fit: cover;
-    filter: saturate(.8) brightness(.65);
-    transition: transform .5s, filter .4s;
-    display: block;
-  }
-  .v-card:hover .v-card-img { transform: scale(1.05); filter: saturate(.95) brightness(.72); }
-  .v-card::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(7,11,9,.94) 0%, rgba(7,11,9,.12) 55%, transparent 100%);
-  }
-  .v-card-body {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    padding: 18px; z-index: 2;
-  }
-  .v-card-h {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 1.12rem;
-    color: #fff;
-    margin-bottom: 5px;
-    line-height: 1.2;
-  }
-  .v-card-d {
-    font-size: .74rem;
-    font-weight: 300;
-    color: rgba(255,255,255,.58);
-    line-height: 1.55;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
+  /* ── HORIZONTAL SCROLL CARDS ── */
+  .v-scroll{display:flex;gap:14px;overflow-x:auto;padding-bottom:16px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;margin-top:2.4rem}
+  .v-scroll::-webkit-scrollbar{height:3px}
+  .v-scroll::-webkit-scrollbar-track{background:rgba(255,255,255,.06);border-radius:2px}
+  .v-scroll::-webkit-scrollbar-thumb{background:rgba(201,169,110,.4);border-radius:2px}
+  .v-card{flex:0 0 240px;border-radius:18px;overflow:hidden;position:relative;aspect-ratio:3/4;scroll-snap-align:start;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);transition:all .3s}
+  .v-card:hover{border-color:rgba(201,169,110,.35);transform:translateY(-3px)}
+  .v-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.8) brightness(.65);transition:transform .5s,filter .4s;display:block}
+  .v-card:hover .v-card-img{transform:scale(1.05);filter:saturate(.95) brightness(.72)}
+  .v-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(7,11,9,.94) 0%,rgba(7,11,9,.12) 55%,transparent 100%)}
+  .v-card-body{position:absolute;bottom:0;left:0;right:0;padding:18px;z-index:2}
+  .v-card-h{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:1.12rem;color:#fff;margin-bottom:5px;line-height:1.2}
+  .v-card-d{font-size:.74rem;font-weight:300;color:rgba(255,255,255,.58);line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   /* Room cards */
-  .room-card {
-    flex: 0 0 210px;
-    border-radius: 18px;
-    overflow: hidden;
-    position: relative;
-    aspect-ratio: 3/4;
-    scroll-snap-align: start;
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.09);
-    transition: all .3s;
-  }
-  .room-card:hover { border-color: rgba(201,169,110,.35); transform: translateY(-3px); }
-  .room-card-img {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%; object-fit: cover;
-    filter: saturate(.82) brightness(.68);
-    transition: transform .5s, filter .4s;
-    display: block;
-  }
-  .room-card:hover .room-card-img { transform: scale(1.05); filter: saturate(.96) brightness(.75); }
-  .room-card::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(7,11,9,.92) 0%, rgba(7,11,9,.1) 52%, transparent 100%);
-  }
-  .room-card-body {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    padding: 16px; z-index: 2;
-  }
-  .room-card-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 1.06rem;
-    color: #fff;
-    margin-bottom: 7px;
-    line-height: 1.2;
-  }
-  .room-card-beds {
-    display: inline-flex; align-items: center;
-    background: rgba(201,169,110,.14);
-    border: 1px solid rgba(201,169,110,.28);
-    border-radius: 9999px;
-    padding: 3px 10px;
-    font-size: .6rem;
-    font-weight: 400;
-    letter-spacing: .05em;
-    color: var(--accent-warm);
-  }
-
+  .room-card{flex:0 0 210px;border-radius:18px;overflow:hidden;position:relative;aspect-ratio:3/4;scroll-snap-align:start;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);transition:all .3s}
+  .room-card:hover{border-color:rgba(201,169,110,.35);transform:translateY(-3px)}
+  .room-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.82) brightness(.68);transition:transform .5s,filter .4s;display:block}
+  .room-card:hover .room-card-img{transform:scale(1.05);filter:saturate(.96) brightness(.75)}
+  .room-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(7,11,9,.92) 0%,rgba(7,11,9,.1) 52%,transparent 100%)}
+  .room-card-body{position:absolute;bottom:0;left:0;right:0;padding:16px;z-index:2}
+  .room-card-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:1.06rem;color:#fff;margin-bottom:7px;line-height:1.2}
+  .room-card-beds{display:inline-flex;align-items:center;background:rgba(201,169,110,.14);border:1px solid rgba(201,169,110,.28);border-radius:9999px;padding:3px 10px;font-size:.6rem;font-weight:400;letter-spacing:.05em;color:var(--accent-warm)}
   /* Place section */
-  #place {
-    padding: clamp(5rem,9vw,7rem) clamp(1rem,3vw,2rem);
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .place-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(2rem,5vw,3.8rem);
-    align-items: start;
-    margin-top: 2.6rem;
-  }
-  @media (max-width: 780px) { .place-grid { grid-template-columns: 1fr; } }
-  .place-photos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-    border-radius: 20px;
-    overflow: hidden;
-  }
-  .place-photos img {
-    width: 100%; height: 190px;
-    object-fit: cover;
-    filter: saturate(.85) brightness(.85);
-    transition: filter .3s;
-    display: block;
-  }
-  .place-photos img:hover { filter: saturate(1) brightness(.9); }
-  .place-photos img:first-child { grid-column: 1 / -1; height: 250px; }
-  .place-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-    margin-top: 1.4rem;
-  }
-  .pf {
-    display: inline-flex; align-items: center;
-    background: rgba(255,255,255,.05);
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 9999px;
-    padding: 5px 13px;
-    font-size: .66rem;
-    font-weight: 400;
-    letter-spacing: .04em;
-    color: rgba(255,255,255,.58);
-  }
-  .pf-warm {
-    background: rgba(201,169,110,.1);
-    border-color: rgba(201,169,110,.24);
-    color: var(--accent-warm);
-  }
-  .rooms-sub-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: clamp(1.7rem,3vw,2.3rem);
-    color: #fff;
-    line-height: 1;
-    margin-bottom: .4rem;
-    letter-spacing: -.01em;
-  }
-  .rooms-sub-title em { font-style: italic; color: var(--accent-warm); }
+  #place{padding:0;max-width:none;width:100%;margin:0}
+  .place-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,3.8rem);align-items:start;margin-top:2.6rem}
+  @media(max-width:780px){.place-grid{grid-template-columns:1fr}}
+  .place-photos{display:grid;grid-template-columns:1fr 1fr;gap:6px;border-radius:20px;overflow:hidden}
+  .place-photos img{width:100%;height:190px;object-fit:cover;filter:saturate(.85) brightness(.85);transition:filter .3s;display:block}
+  .place-photos img:hover{filter:saturate(1) brightness(.9)}
+  .place-photos img:first-child{grid-column:1/-1;height:250px}
+  .place-features{display:flex;flex-wrap:wrap;gap:7px;margin-top:1.4rem}
+  .pf{display:inline-flex;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:9999px;padding:5px 13px;font-size:.66rem;font-weight:400;letter-spacing:.04em;color:rgba(255,255,255,.58)}
+  .pf-warm{background:rgba(201,169,110,.1);border-color:rgba(201,169,110,.24);color:var(--accent-warm)}
+  .rooms-sub-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:clamp(1.7rem,3vw,2.3rem);color:#fff;line-height:1;margin-bottom:.4rem;letter-spacing:-.01em}
+  .rooms-sub-title em{font-style:italic;color:var(--accent-warm)}
 
 </style>
 </head>
@@ -1170,12 +1087,12 @@
       <span class="nav-toggle-lines"></span>
     </button>
     <ul class="nav-ul lg">
+      <li class="nav-hide-sm"><a href="#incl">Что вас ждёт</a></li>
       <li class="nav-hide-sm"><a href="#about">О выезде</a></li>
-      <li class="nav-hide-sm"><a href="#stats">Формат</a></li>
       <li class="nav-hide-sm"><a href="#prog">Программа</a></li>
       <li class="nav-hide-sm"><a href="#curator">Куратор</a></li>
-      <li class="nav-hide-sm"><a href="#incl">В стоимость</a></li>
-      <li class="nav-hide-sm"><a href="#test">F&Q</a></li>
+      <li class="nav-hide-sm"><a href="#place">Площадка</a></li>
+      <li class="nav-hide-sm"><a href="#test">F&amp;Q</a></li>
       <li class="nav-cta"><a href="https://t.me/m/o4hfATTzMTJi" class="cta-a" target="_blank" rel="noopener noreferrer">Записаться</a></li>
     </ul>
   </div>
@@ -1198,7 +1115,7 @@
     </div>
     <div class="hero-badge lg">
       <span class="badge-pill">Выезд в горы</span>
-      <span class="badge-text">15–18 мая · 4 дня · Природа</span>
+      <span class="badge-text">15–18 мая · 4 дня · Только для девушек</span>
     </div>
     <h1 class="hero-h">Вос<span class="hero-dot">·</span>становление</h1>
     <p class="hero-p">
@@ -1219,26 +1136,92 @@
   </div>
   <div class="hero-blur-edge"></div>
 </section>
-
 <!-- ░ blur edge ░ -->
-<div class="sb-edge"></div>
+<div class="sb-edge sb-edge-warm"></div>
 
-<!-- STATS -->
-<section id="stats">
-  <div class="s-orb"></div>
-  <div class="fade-t"></div>
-  <div class="fade-b"></div>
-  <div class="s-in">
-    <div class="s-card lg rv">
-      <div class="s-g">
-        <div><div class="sv">4</div><div class="sl">Дня полного погружения</div></div>
-        <div><div class="sv">90'</div><div class="sl">Массаж для каждой</div></div>
-        <div><div class="sv">3</div><div class="sl">Практики на природе</div></div>
-        <div><div class="sv">1</div><div class="sl">Выезд в горы</div></div>
+<!-- INCLUDED / ЧТО ВАС ЖДЁТ -->
+<section id="incl" style="padding:clamp(5rem,9vw,7rem) clamp(1rem,3vw,2rem);position:relative;overflow:hidden">
+  <div class="incl-in" style="position:relative;z-index:1">
+    <div class="incl-hdr rv">
+      <span class="badge lg">Что вас ждёт</span>
+      <h2 class="sh" style="margin:0.6rem auto 0;text-align:center">Всё, что нужно<br>для восстановления</h2>
+    </div>
+    <div class="v-scroll rv">
+      <div class="v-card">
+        <img class="v-card-img" src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/update-club-site/9e7219c92a905d8d584aed6b9d2797edd10fa14e/photo/activity/bath-ritual.webp" alt="Банный ритуал" loading="lazy">
+        <div class="v-card-body">
+          <div class="v-card-h">Банный ритуал</div>
+          <div class="v-card-d">С ароматическими травами, соляными элементами и бассейном. Глубокое расслабление с первого вечера.</div>
+        </div>
+      </div>
+      <div class="v-card">
+        <img class="v-card-img" src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/update-club-site/9e7219c92a905d8d584aed6b9d2797edd10fa14e/photo/activity/sound-healing.webp" alt="Саунд-хилинг" loading="lazy">
+        <div class="v-card-body">
+          <div class="v-card-h">Саунд-хилинг</div>
+          <div class="v-card-d">Практика глубокого расслабления под звучание чаш и колокольчиков. Успокоение нервной системы.</div>
+        </div>
+      </div>
+      <div class="v-card">
+        <img class="v-card-img" src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/retreat/7d632c6bc1465609870d3ff23510700c88bff4b5/activity/pool.webp" alt="Бассейн" loading="lazy">
+        <div class="v-card-body">
+          <div class="v-card-h">Бассейн</div>
+          <div class="v-card-d">Подогреваемый бассейн с видом на горы и каньон. Пространство для отдыха, тишины и мягкого переключения.</div>
+        </div>
+      </div>
+      <div class="v-card">
+        <img class="v-card-img" src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/update-club-site/9e7219c92a905d8d584aed6b9d2797edd10fa14e/photo/activity/offroad-jeep.jpg" alt="Офф-роуд" loading="lazy">
+        <div class="v-card-body">
+          <div class="v-card-h">Офф-роуд</div>
+          <div class="v-card-d">Поездка по красивым горным маршрутам с остановками. Свобода, воздух, простор и живые пейзажи.</div>
+        </div>
+      </div>
+      <div class="v-card">
+        <img class="v-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-outdoor-massage.webp" alt="Массаж" loading="lazy">
+        <div class="v-card-body">
+          <div class="v-card-h">Массаж 90 минут</div>
+          <div class="v-card-d">Индивидуальная массажная сессия для каждой участницы. Телесная забота и глубокое расслабление.</div>
+        </div>
+      </div>
+      <div class="v-card">
+        <img class="v-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-hiking.webp" alt="Хайкинг" loading="lazy">
+        <div class="v-card-body">
+          <div class="v-card-h">Хайкинг по каньону</div>
+          <div class="v-card-d">С практиками на чувствование и контакт с природой. Звуки, фактуры, вода, тишина.</div>
+        </div>
+      </div>
+      <div class="v-card">
+        <img class="v-card-img" src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/update-club-site/d5e09941126746cbea30a4e572eee9f8872909e6/photo/activity/aromatherapy.webp" alt="Ароматерапия" loading="lazy">
+        <div class="v-card-body">
+          <div class="v-card-h">Ароматерапия</div>
+          <div class="v-card-d">Создание масла-якоря — ароматической композиции как напоминания о состоянии выезда.</div>
+        </div>
+      </div>
+      <div class="v-card">
+        <img class="v-card-img" src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/retreat/7d632c6bc1465609870d3ff23510700c88bff4b5/activity/fireplace.webp" alt="Киновечер" loading="lazy">
+        <div class="v-card-body">
+          <div class="v-card-h">Киновечер</div>
+          <div class="v-card-d">Фильм об отношениях с собой, миром и другими. Пространство для живого обсуждения.</div>
+        </div>
+      </div>
+      <div class="v-card">
+        <img class="v-card-img" src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/update-club-site/065994f005b271507608af3fc5c31c5939f3a2c1/photo/activity/signature-teas.webp" alt="Авторские чаи" loading="lazy">
+        <div class="v-card-body">
+          <div class="v-card-h">Авторские чаи</div>
+          <div class="v-card-d">Авторские фито-сборы и горные чаи — тепло, аромат и пространство для тихого разговора.</div>
+        </div>
+      </div>
+      <div class="v-card">
+        <img class="v-card-img" src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/retreat/7d632c6bc1465609870d3ff23510700c88bff4b5/activity/workout.webp" alt="Зарядки" loading="lazy">
+        <div class="v-card-body">
+          <div class="v-card-h">Зарядки</div>
+          <div class="v-card-d">Мягкие утренние практики и разминки на свежем воздухе. Движение как способ проснуться и почувствовать тело.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+
 
 <!-- ░ blur edge ░ -->
 <div class="sb-edge sb-edge-warm"></div>
@@ -1407,7 +1390,13 @@
 <div class="sb-edge sb-edge-warm"></div>
 
 <!-- CURATOR -->
-<section id="curator">
+<section id="curator" style="position:relative;overflow:hidden">
+  <!-- warm glow -->
+  <div style="pointer-events:none;position:absolute;inset:0;z-index:0">
+    <div style="position:absolute;width:1000px;height:700px;top:50%;left:50%;transform:translate(-50%,-55%);background:radial-gradient(ellipse at center,rgba(201,120,40,.16) 0%,rgba(160,80,20,.09) 40%,transparent 68%);filter:blur(100px);border-radius:50%"></div>
+    <div style="position:absolute;width:500px;height:500px;top:10%;left:5%;background:radial-gradient(ellipse at center,rgba(220,140,50,.10) 0%,transparent 65%);filter:blur(80px);border-radius:50%"></div>
+  </div>
+  <div style="position:relative;z-index:1;padding:clamp(5rem,9vw,7rem) clamp(1rem,3vw,2rem);max-width:1100px;margin:0 auto">
   <div class="section-intro rv">
     <span class="badge lg">Куратор выезда</span>
     <h2 class="sh">Человек, который мягко ведёт<br>процесс восстановления</h2>
@@ -1442,92 +1431,80 @@
       </a>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- ░ blur edge ░ -->
 <div class="sb-edge sb-edge-warm"></div>
 
 <!-- EDIS DACHA PLACE -->
-<section id="place">
-  <div class="section-intro rv">
-    <span class="badge lg">Площадка</span>
-    <h2 class="sh">Edis Dacha —<br>на краю каньона</h2>
-    <div class="div"></div>
-    <p class="sb" style="margin:0 auto">Отреставрированная историческая дача на высоте 1500 м над уровнем моря. Закрытый формат — всё пространство только для нашей группы.</p>
-  </div>
-
-  <div class="place-grid">
-    <div class="rv from-left">
-      <div class="place-photos">
-        <img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/retreat-exterior-overview-01.webp" alt="Edis Dacha — вид на территорию">
-        <img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/pool.webp" alt="Открытый бассейн">
-        <img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/retreat-common-area-bar-01.webp" alt="Бар и терраса">
+<section id="place" style="position:relative;overflow:hidden;min-height:100svh;display:flex;align-items:center">
+  <img class="about-img"
+    src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/retreat/7d632c6bc1465609870d3ff23510700c88bff4b5/Edis_Dacha/retreat-exterior-overview-01.webp"
+    alt="Edis Dacha — вид на территорию"
+    style="object-position:0% center">
+  <div class="about-ov" style="background:linear-gradient(to bottom,rgba(7,11,9,.88) 0%,rgba(7,11,9,.22) 18%,rgba(7,11,9,0) 34%),linear-gradient(to right,rgba(7,11,9,.05) 0%,rgba(7,11,9,.29) 44%,rgba(7,11,9,.52) 68%,rgba(7,11,9,.58) 100%)"></div>
+  <!-- top blur edge -->
+  <div style="position:absolute;top:0;left:0;right:0;height:160px;background:linear-gradient(to bottom,#070b09,transparent);backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px);-webkit-mask:linear-gradient(to bottom,black 0%,transparent 100%);mask:linear-gradient(to bottom,black 0%,transparent 100%);pointer-events:none;z-index:3"></div>
+  <!-- bottom blur edge -->
+  <div style="position:absolute;bottom:0;left:0;right:0;height:160px;background:linear-gradient(to top,#070b09,transparent);backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px);-webkit-mask:linear-gradient(to top,black 0%,transparent 100%);mask:linear-gradient(to top,black 0%,transparent 100%);pointer-events:none;z-index:3"></div>
+  <div class="about-in" style="justify-content:flex-end">
+    <div class="about-content rv">
+      <span class="badge lg">Площадка</span>
+      <h2 class="sh">Edis Dacha —<br>на краю каньона</h2>
+      <div class="div"></div>
+      <p class="sb" style="margin-bottom:1rem">
+        Отреставрированная историческая дача на высоте 1500 м над уровнем моря. Деревянные интерьеры, подогреваемый бассейн с видом на каньон Дашбаши, сауна и уютный бар.
+      </p>
+      <p class="sb" style="margin-bottom:1.6rem">
+        <strong>102 км от Тбилиси.</strong> Вокруг — только горы, каньон и тишина. Дача полностью наша на все дни выезда.
+      </p>
+      <div class="tags-row" style="margin-bottom:2rem">
+        <span class="tag lg">1500 м н.у.м.</span>
+        <span class="tag lg">Каньон Дашбаши</span>
+        <span class="tag lg">Бассейн</span>
+        <span class="tag lg">Сауна</span>
       </div>
-    </div>
-    <div class="rv from-right d1">
-      <p class="curator-bio" style="margin-bottom:1.2rem">Деревянные интерьеры, подогреваемый бассейн с видом на каньон Дашбаши, сауна, уютный бар и ресторан из местных продуктов. <strong>102 км от Тбилиси — около 1.5 часов.</strong></p>
-      <p class="curator-bio" style="margin-bottom:1.6rem">Вокруг — только горы, каньон и тишина. Никаких посторонних — дача полностью наша на все дни выезда.</p>
-      <div class="place-features">
-        <span class="pf pf-warm">9.8 Booking</span>
-        <span class="pf">1500 м н.у.м.</span>
-        <span class="pf">Каньон Дашбаши</span>
-        <span class="pf">102 км от Тбилиси</span>
-        <span class="pf">Открытый бассейн</span>
-        <span class="pf">Сауна</span>
-        <span class="pf">Ресторан и бар</span>
-        <span class="pf">Только наша группа</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ROOMS -->
-  <div style="margin-top:3.4rem" class="rv">
-    <div class="rooms-sub-title">Варианты <em>номеров</em></div>
-    <p style="font-size:.8rem;color:var(--text-muted);margin-top:.3rem">Все номера с отдельным санузлом. Часть — с балконом и видом на горы.</p>
-    <div class="v-scroll">
-      <div class="room-card">
-        <img class="room-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/phystech/assets/panorama_1.webp" alt="Panorama" loading="lazy">
-        <div class="room-card-body">
-          <div class="room-card-name">Panorama</div>
-          <span class="room-card-beds">2 спальных места</span>
-        </div>
-      </div>
-      <div class="room-card">
-        <img class="room-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/phystech/assets/old_money_double_king_1.webp" alt="Old Money Double King" loading="lazy">
-        <div class="room-card-body">
-          <div class="room-card-name">Old Money Double King</div>
-          <span class="room-card-beds">2 спальных места</span>
-        </div>
-      </div>
-      <div class="room-card">
-        <img class="room-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/phystech/assets/old_money_twin.webp" alt="Old Money Twin" loading="lazy">
-        <div class="room-card-body">
-          <div class="room-card-name">Old Money Twin</div>
-          <span class="room-card-beds">2 спальных места</span>
-        </div>
-      </div>
-      <div class="room-card">
-        <img class="room-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/phystech/assets/old_money_king_1.webp" alt="Old Money King" loading="lazy">
-        <div class="room-card-body">
-          <div class="room-card-name">Old Money King</div>
-          <span class="room-card-beds">2 спальных места</span>
-        </div>
-      </div>
-      <div class="room-card">
-        <img class="room-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/phystech/assets/standart.webp" alt="Standard Twin" loading="lazy">
-        <div class="room-card-body">
-          <div class="room-card-name">Standard Twin</div>
-          <span class="room-card-beds">2 спальных места</span>
-        </div>
-      </div>
+      <a href="https://t.me/m/o4hfATTzMTJi" class="btn-g lg-s" target="_blank" rel="noopener noreferrer">
+        Записаться на выезд
+        <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
     </div>
   </div>
 </section>
-
+<!-- ROOMS -->
+<div style="padding:clamp(2.5rem,5vw,4rem) clamp(1rem,3vw,2rem)">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="rooms-sub-title rv">Варианты <em>номеров</em></div>
+    <p style="font-size:.8rem;color:var(--text-muted);margin-top:.3rem" class="rv">Все номера с отдельным санузлом. Часть — с балконом и видом на горы.</p>
+    <div class="v-scroll rv">
+      <div class="room-card">
+        <img class="room-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/phystech/assets/panorama_1.webp" alt="Panorama" loading="lazy">
+        <div class="room-card-body"><div class="room-card-name">Panorama</div><span class="room-card-beds">2 спальных места</span></div>
+      </div>
+      <div class="room-card">
+        <img class="room-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/phystech/assets/old_money_double_king_1.webp" alt="Old Money Double King" loading="lazy">
+        <div class="room-card-body"><div class="room-card-name">Old Money Double King</div><span class="room-card-beds">2 спальных места</span></div>
+      </div>
+      <div class="room-card">
+        <img class="room-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/phystech/assets/old_money_twin.webp" alt="Old Money Twin" loading="lazy">
+        <div class="room-card-body"><div class="room-card-name">Old Money Twin</div><span class="room-card-beds">2 спальных места</span></div>
+      </div>
+      <div class="room-card">
+        <img class="room-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/phystech/assets/old_money_king_1.webp" alt="Old Money King" loading="lazy">
+        <div class="room-card-body"><div class="room-card-name">Old Money King</div><span class="room-card-beds">2 спальных места</span></div>
+      </div>
+      <div class="room-card">
+        <img class="room-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/phystech/assets/standart.webp" alt="Standard Twin" loading="lazy">
+        <div class="room-card-body"><div class="room-card-name">Standard Twin</div><span class="room-card-beds">2 спальных места</span></div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- ░ blur edge ░ -->
 <div class="sb-edge sb-edge-warm"></div>
 
-<!-- FAQ -->
+<!-- FAQ 
 <section id="test" style="position:relative;overflow:hidden;padding:clamp(5rem,9vw,7rem) clamp(1rem,3vw,2rem);max-width:none;margin:0">
   <video class="incl-vid lazy-video" loop muted playsinline preload="none"
     data-video-src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4">
@@ -1537,158 +1514,76 @@
   <div class="fade-t"></div>
   <div class="fade-b"></div>
   <div style="position:relative;z-index:3;max-width:1100px;margin:0 auto">
-    <div class="test-hdr rv">
-      <span class="badge lg">F&Q</span>
-      <h2 class="sh">Частые вопросы<br>о выезде</h2>
+  <div class="test-hdr rv">
+    <span class="badge lg">F&Q</span>
+    <h2 class="sh">Частые вопросы<br>о выезде</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item lg rv is-open">
+      <button class="faq-question" type="button" aria-expanded="true">
+        <div>
+          <div class="faq-qtext">Нужна ли специальная подготовка?</div>
+        </div>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" style="max-height: 220px;">
+        <div class="faq-answer-inner">Нет, программа подходит для обычного уровня активности. Всё выстроено мягко, без перегруза, с возможностью адаптировать темп под своё состояние и самочувствие.</div>
+      </div>
     </div>
-    <div class="faq-list">
-      <div class="faq-item lg rv is-open">
-        <button class="faq-question" type="button" aria-expanded="true">
-          <div>
-            <div class="faq-qtext">Нужна ли специальная подготовка?</div>
-          </div>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer" style="max-height: 220px;">
-          <div class="faq-answer-inner">Нет, программа подходит для обычного уровня активности. Всё выстроено мягко, без перегруза, с возможностью адаптировать темп под своё состояние и самочувствие.</div>
-        </div>
-      </div>
 
-      <div class="faq-item lg rv d1">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <div>
-            <div class="faq-qtext">Что взять с собой?</div>
-          </div>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Возьмите удобную одежду для практик и прогулок, купальник, тёплую вещь на вечер и всё личное, что помогает вам чувствовать себя спокойно и комфортно в поездке.</div>
+    <div class="faq-item lg rv d1">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <div>
+          <div class="faq-qtext">Что взять с собой?</div>
         </div>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Возьмите удобную одежду для практик и прогулок, купальник, тёплую вещь на вечер и всё личное, что помогает вам чувствовать себя спокойно и комфортно в поездке.</div>
       </div>
+    </div>
 
-      <div class="faq-item lg rv d2">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <div>
-            <div class="faq-qtext">Подойдёт ли выезд, если я давно не отдыхала и чувствую усталость?</div>
-          </div>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Да, именно для этого и собирается программа. Ретрит задуман как мягкое восстановление: без гонки, с заботой о теле, нервной системе и внутреннем ресурсе.</div>
+    <div class="faq-item lg rv d2">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <div>
+          <div class="faq-qtext">Подойдёт ли выезд, если я давно не отдыхала и чувствую усталость?</div>
         </div>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Да, именно для этого и собирается программа. Ретрит задуман как мягкое восстановление: без гонки, с заботой о теле, нервной системе и внутреннем ресурсе.</div>
       </div>
+    </div>
 
-      <div class="faq-item lg rv">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <div>
-            <div class="faq-qtext">Есть ли свободное время для себя?</div>
-          </div>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Да, в программе есть пространство не только для активностей, но и для тишины, отдыха, прогулок, разговоров, бассейна и просто спокойного времени наедине с собой.</div>
+    <div class="faq-item lg rv">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <div>
+          <div class="faq-qtext">Есть ли свободное время для себя?</div>
         </div>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Да, в программе есть пространство не только для активностей, но и для тишины, отдыха, прогулок, разговоров, бассейна и просто спокойного времени наедине с собой.</div>
       </div>
+    </div>
 
-      <div class="faq-item lg rv d1">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <div>
-            <div class="faq-qtext">Как записаться и задать организационные вопросы?</div>
-          </div>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Нажмите кнопку записи в Telegram, напишите пару слов о себе, и вам ответят по датам, свободным местам, стоимости и всем организационным деталям.</div>
+    <div class="faq-item lg rv d1">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <div>
+          <div class="faq-qtext">Как записаться и задать организационные вопросы?</div>
         </div>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Нажмите кнопку записи в Telegram, напишите пару слов о себе, и вам ответят по датам, свободным местам, стоимости и всем организационным деталям.</div>
       </div>
     </div>
   </div>
-</section>
+
+  </div></section>
 
 <!-- ░ blur edge ░ -->
 <div class="sb-edge"></div>
-
-<!-- INCLUDED -->
-<section id="incl">
-  <video class="incl-vid lazy-video" loop muted playsinline preload="none"
-    data-video-src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4">
-  </video>
-  <div class="incl-vid-ov"></div>
-  <div class="incl-bg"></div>
-  <div class="fade-t"></div>
-  <div class="fade-b"></div>
-  <div class="incl-in">
-    <div class="incl-hdr rv">
-      <span class="badge lg">В стоимость входит</span>
-      <h2 class="sh">Всё, что нужно<br>для восстановления</h2>
-    </div>
-    <div class="v-scroll rv">
-      <div class="v-card">
-        <img class="v-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/sauna.webp" alt="Банный ритуал" loading="lazy">
-        <div class="v-card-body">
-          <div class="v-card-h">Банный ритуал</div>
-          <div class="v-card-d">С ароматическими травами, соляными элементами и бассейном. Глубокое расслабление с первого вечера.</div>
-        </div>
-      </div>
-      <div class="v-card">
-        <img class="v-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/fireplace.webp" alt="Саунд-хилинг" loading="lazy">
-        <div class="v-card-body">
-          <div class="v-card-h">Саунд-хилинг</div>
-          <div class="v-card-d">Практика глубокого расслабления под звучание чаш и колокольчиков. Успокоение нервной системы.</div>
-        </div>
-      </div>
-      <div class="v-card">
-        <img class="v-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-offroad-jeeps.webp" alt="Офф-роуд" loading="lazy">
-        <div class="v-card-body">
-          <div class="v-card-h">Офф-роуд</div>
-          <div class="v-card-d">Поездка по красивым горным маршрутам с остановками. Свобода, воздух, простор и живые пейзажи.</div>
-        </div>
-      </div>
-      <div class="v-card">
-        <img class="v-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-outdoor-massage.webp" alt="Массаж" loading="lazy">
-        <div class="v-card-body">
-          <div class="v-card-h">Массаж 90 минут</div>
-          <div class="v-card-d">Индивидуальная массажная сессия для каждой участницы. Телесная забота и глубокое расслабление.</div>
-        </div>
-      </div>
-      <div class="v-card">
-        <img class="v-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-hiking.webp" alt="Хайкинг" loading="lazy">
-        <div class="v-card-body">
-          <div class="v-card-h">Хайкинг по каньону</div>
-          <div class="v-card-d">С практиками на чувствование и контакт с природой. Звуки, фактуры, вода, тишина.</div>
-        </div>
-      </div>
-      <div class="v-card">
-        <img class="v-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/masterclass.webp" alt="Ароматерапия" loading="lazy">
-        <div class="v-card-body">
-          <div class="v-card-h">Ароматерапия</div>
-          <div class="v-card-d">Создание масла-якоря — ароматической композиции как напоминания о состоянии выезда.</div>
-        </div>
-      </div>
-      <div class="v-card">
-        <img class="v-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/movie.webp" alt="Киновечер" loading="lazy">
-        <div class="v-card-body">
-          <div class="v-card-h">Киновечер</div>
-          <div class="v-card-d">Фильм об отношениях с собой, миром и другими. Пространство для живого обсуждения.</div>
-        </div>
-      </div>
-      <div class="v-card">
-        <img class="v-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/activity/activity-barbecue.webp" alt="Вечер с вином" loading="lazy">
-        <div class="v-card-body">
-          <div class="v-card-h">Вечер с вином</div>
-          <div class="v-card-d">Тёплая атмосфера, живая близость, смех и разговоры. Никуда не нужно торопиться.</div>
-        </div>
-      </div>
-      <div class="v-card">
-        <img class="v-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Edis_Dacha/retreat-common-area-bar-01.webp" alt="Питание" loading="lazy">
-        <div class="v-card-body">
-          <div class="v-card-h">Питание</div>
-          <div class="v-card-d">Вкусные завтраки, обеды и ужины включены в программу. Еда как часть заботы о себе.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- CTA FOOTER — video already as background -->
 <section id="cta">
