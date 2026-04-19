@@ -277,6 +277,12 @@
     font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:400;
     font-size:clamp(3.8rem, 12vw, 9.5rem);
     line-height:.88; letter-spacing:-.02em; color:#fff; margin-bottom:1.1rem;
+    display:block;
+    width:fit-content;
+    max-width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    padding-inline:.08em .14em;
     opacity:0; transform:translateY(38px); filter:blur(10px);
     animation: wordIn .85s .15s forwards;
   }
@@ -456,7 +462,7 @@
   #curator {
     position:relative;
     overflow:hidden;
-    padding:clamp(3.5rem, 6vw, 4.8rem) clamp(1rem, 3vw, 2rem) clamp(5rem, 8vw, 6rem);
+    padding:clamp(5rem, 9vw, 7rem) clamp(1rem, 3vw, 2rem);
     max-width:1100px; margin:0 auto;
   }
   #curator::before {
@@ -590,7 +596,7 @@
   /* ──────────────────────────────
      PROGRAM DAYS — wide cinematic cards
   ────────────────────────────── */
-  #prog-days { padding:0 clamp(1rem,3vw,2rem) 4.4rem; max-width:1280px; margin:0 auto; }
+  #prog-days { padding:0 clamp(1rem,3vw,2rem) 7rem; max-width:1280px; margin:0 auto; }
   .cr {
     position:relative;
     margin-bottom:4rem;
