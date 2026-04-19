@@ -235,8 +235,13 @@
   }
   .hero-body {
     position:relative; z-index:2; text-align:center;
-    padding:clamp(-1.8rem, -0.2vw, -0.4rem) 1.5rem 0;
+    padding:0 1.5rem;
     max-width:860px; width:100%;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
   }
   .hero-badge {
     display:inline-flex; align-items:center; gap:8px;
@@ -926,8 +931,8 @@
     .s-card { padding:2.2rem 1.4rem; }
   }
   @media (max-width: 680px) {
-    #hero { min-height:720px; height:106svh; justify-content:flex-start; }
-    .hero-body { padding-top:1.2rem; }
+    #hero { min-height:720px; height:106svh; justify-content:center; }
+    .hero-body { min-height:106svh; padding:0 1.25rem; }
     .hero-h {
       font-size:clamp(2.75rem, 14vw, 4rem);
       line-height:.92;
