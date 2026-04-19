@@ -183,8 +183,8 @@
   .hero-ov {
     position:absolute; inset:0; z-index:1;
     background: linear-gradient(to bottom,
-      rgba(7,11,9,.4) 0%, rgba(7,11,9,.06) 38%,
-      rgba(7,11,9,.5) 70%, #070b09 100%);
+      rgba(7,11,9,.2) 0%, rgba(7,11,9,.03) 38%,
+      rgba(7,11,9,.32) 70%, rgba(7,11,9,.86) 100%);
   }
   .hero-body {
     position:relative; z-index:2; text-align:center;
@@ -257,17 +257,17 @@
   .btn-w:hover{opacity:.85}
   .scroll-ind {
     position:absolute; bottom:5rem; left:50%; transform:translateX(-50%);
-    z-index:2; display:flex; flex-direction:column; align-items:center; gap:5px;
-    opacity:.32;
+    z-index:4; display:flex; flex-direction:column; align-items:center; gap:6px;
+    opacity:.88;
   }
   .scroll-line {
-    width:1px; height:38px;
-    background:linear-gradient(to bottom,rgba(255,255,255,.7),transparent);
+    width:1px; height:42px;
+    background:linear-gradient(to bottom,rgba(255,255,255,.98),transparent);
     animation: lineScroll 2.2s ease-in-out infinite;
   }
   .scroll-txt {
-    font-size:.54rem; letter-spacing:.2em;
-    text-transform:uppercase; color:rgba(255,255,255,.45); font-weight:400;
+    font-size:.58rem; letter-spacing:.22em;
+    text-transform:uppercase; color:rgba(255,255,255,.92); font-weight:500;
   }
   .hero-partners {
     position:absolute; bottom:0; left:0; right:0; z-index:2;
@@ -385,6 +385,14 @@
     padding:clamp(5rem, 9vw, 7rem) clamp(1rem, 3vw, 2rem);
     max-width:1100px; margin:0 auto;
   }
+  #curator .section-intro {
+    text-align:left;
+    max-width:540px;
+    margin:0 0 3rem;
+  }
+  #curator .section-intro .div {
+    margin:1.1rem 0;
+  }
   .curator-g {
     display:grid;
     grid-template-columns:340px 1fr;
@@ -442,6 +450,14 @@
     width:44px; height:1px; margin:1.2rem 0;
     background:linear-gradient(to right,transparent,rgba(201,169,110,.44),transparent);
   }
+  .section-intro {
+    text-align:center;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .section-intro .div {
+    margin:1.1rem auto;
+  }
 
   .badge {
     display:inline-flex; align-items:center; border-radius:9999px;
@@ -468,22 +484,17 @@
      PROGRAM HEADER
   ────────────────────────────── */
   #prog {
-    text-align:center;
     padding:clamp(4rem, 7vw, 7rem) clamp(1rem, 3vw, 2rem) clamp(3rem, 5vw, 5rem);
-    max-width:860px; margin:0 auto;
-    position: relative;
+    max-width:1100px; margin:0 auto;
   }
-  /* warm ambient glow */
-  #prog::before {
-    content: '';
-    position: absolute;
-    width: 500px; height: 300px;
-    top: 50%; left: 50%; transform: translate(-50%,-50%);
-    background: radial-gradient(ellipse at center, rgba(201,169,110,.08) 0%, transparent 70%);
-    filter: blur(50px);
-    pointer-events: none; z-index: 0;
+  #prog .section-intro {
+    text-align:left;
+    max-width:540px;
+    margin:0;
   }
-  #prog > * { position: relative; z-index: 1; }
+  #prog .section-intro .div {
+    margin:1.1rem 0;
+  }
 
   /* ──────────────────────────────
      PROGRAM DAYS — wide cinematic cards
@@ -628,10 +639,6 @@
     border-radius:16px; padding:1.5rem 1.3rem; transition:transform .25s; height:100%;
   }
   .ic:hover{transform:translateY(-3px)}
-  .ic-dot {
-    width:6px; height:6px; border-radius:50%;
-    background:var(--accent-warm); opacity:.5; margin-bottom:.9rem;
-  }
   .ic-t {
     font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:400;
     font-size:1.18rem; color:#fff; margin-bottom:.4rem;
@@ -659,13 +666,13 @@
   .sl { font-size:.76rem; color:rgba(255,255,255,.44); font-weight:300; letter-spacing:.02em; line-height:1.5; }
 
   /* ──────────────────────────────
-     TESTIMONIALS
+     FAQ
   ────────────────────────────── */
   #test {
     padding:clamp(5rem,9vw,7rem) clamp(1rem,3vw,2rem); max-width:1100px; margin:0 auto;
     position: relative;
   }
-  /* warm ambient glow behind testimonials */
+  /* warm ambient glow behind faq */
   #test::before {
     content: '';
     position: absolute;
@@ -677,13 +684,66 @@
   }
   #test > * { position: relative; z-index: 1; }
   .test-hdr { text-align:center; margin-bottom:3.2rem; }
-  .test-g { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.2rem; }
-  @media(max-width:900px){.test-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
-  @media(max-width:620px){.test-g{grid-template-columns:1fr}}
-  .tc { border-radius:18px; padding:1.8rem; display:flex; flex-direction:column; gap:1.2rem; min-height:100%; }
-  .tq { font-size:.88rem; color:rgba(255,255,255,.7); font-weight:300; font-style:italic; line-height:1.86; flex:1; }
-  .tn { font-size:.76rem; color:#fff; font-weight:500; letter-spacing:.02em; }
-  .tr { font-size:.66rem; color:rgba(255,255,255,.3); font-weight:300; margin-top:2px; }
+  .faq-list {
+    max-width:920px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+  }
+  .faq-item {
+    border-radius:20px;
+    overflow:hidden;
+  }
+  .faq-question {
+    width:100%;
+    border:none;
+    background:transparent;
+    color:#fff;
+    padding:1.35rem 1.4rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    text-align:left;
+    cursor:pointer;
+    font:inherit;
+  }
+  .faq-qtext {
+    font-size:1.02rem;
+    color:#fff;
+    font-weight:300;
+    line-height:1.5;
+    letter-spacing:.01em;
+  }
+  .faq-icon {
+    flex-shrink:0;
+    width:38px;
+    height:38px;
+    border-radius:9999px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.3rem;
+    color:rgba(255,255,255,.74);
+    transition:transform .25s ease, color .25s ease, background .25s ease;
+  }
+  .faq-item.is-open .faq-icon {
+    transform:rotate(45deg);
+    color:#fff;
+    background:rgba(255,255,255,.06);
+  }
+  .faq-answer {
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .32s ease;
+  }
+  .faq-answer-inner {
+    padding:0 1.4rem 1.35rem;
+    color:rgba(255,255,255,.58);
+    font-size:.9rem;
+    line-height:1.78;
+  }
 
   /* ──────────────────────────────
      CTA — video already as background
@@ -710,7 +770,7 @@
     max-width:480px; margin:0 auto 2.1rem; line-height:1.84;
   }
   .cta-btns { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
-  .audio-toggle {
+  .floating-cta {
     position:fixed;
     right:16px;
     bottom:16px;
@@ -728,21 +788,8 @@
     align-items:center;
     gap:.65rem;
     cursor:pointer;
+    text-decoration:none;
   }
-  .audio-toggle-dot {
-    width:8px;
-    height:8px;
-    border-radius:9999px;
-    background:rgba(255,255,255,.34);
-    transition:transform .2s ease, background .2s ease;
-  }
-  .audio-toggle-label-on { display:none; }
-  .audio-toggle.is-playing .audio-toggle-dot {
-    background:var(--accent-warm);
-    transform:scale(1.15);
-  }
-  .audio-toggle.is-playing .audio-toggle-label-on { display:inline; }
-  .audio-toggle.is-playing .audio-toggle-label-off { display:none; }
   .foot {
     position:relative; z-index:2; max-width:1100px; margin:5rem auto 0;
     padding:1.6rem 0; border-top:1px solid rgba(255,255,255,.06);
@@ -798,7 +845,7 @@
     .sl { font-size:.74rem; }
     .tc { padding:1.4rem; }
     .fl { width:100%; justify-content:center; flex-wrap:wrap; gap:1rem; }
-    .audio-toggle { right:12px; bottom:12px; padding:10px 14px; }
+    .floating-cta { right:12px; bottom:12px; padding:10px 14px; }
   }
 </style>
 </head>
@@ -810,8 +857,11 @@
     <a href="#" class="nav-logo">Вос<span>·</span>становление</a>
     <ul class="nav-ul lg">
       <li class="nav-hide-sm"><a href="#about">О выезде</a></li>
+      <li class="nav-hide-sm"><a href="#stats">Формат</a></li>
       <li class="nav-hide-sm"><a href="#prog">Программа</a></li>
+      <li class="nav-hide-sm"><a href="#curator">Куратор</a></li>
       <li class="nav-hide-sm"><a href="#incl">В стоимость</a></li>
+      <li class="nav-hide-sm"><a href="#test">F&Q</a></li>
       <li><a href="https://t.me/m/o4hfATTzMTJi" class="cta-a" target="_blank" rel="noopener noreferrer">Записаться</a></li>
     </ul>
   </div>
@@ -919,9 +969,12 @@
 
 <!-- PROGRAM HEADER -->
 <div id="prog" class="rv">
-  <span class="badge lg">Программа</span>
-  <h2 class="sh">Четыре дня<br>восстановления</h2>
-  <p class="sb" style="margin:0 auto">Каждый день выстроен так, чтобы не переутомить — а насытить.</p>
+  <div class="section-intro">
+    <span class="badge lg">Программа</span>
+    <h2 class="sh">Четыре дня<br>восстановления</h2>
+    <div class="div"></div>
+    <p class="sb" style="margin:0 auto">Каждый день выстроен так, чтобы не переутомить — а насытить.</p>
+  </div>
 </div>
 
 <!-- ░ blur edge ░ -->
@@ -1040,6 +1093,11 @@
 
 <!-- CURATOR -->
 <section id="curator">
+  <div class="section-intro rv">
+    <span class="badge lg">Куратор выезда</span>
+    <h2 class="sh">Человек, который мягко<br>ведёт процесс восстановления</h2>
+    <div class="div"></div>
+  </div>
   <div class="curator-g">
     <div class="rv from-left">
       <div class="curator-img-wrap">
@@ -1050,7 +1108,6 @@
     </div>
 
     <div class="curator-copy rv from-right d1">
-      <p class="curator-eyebrow">Куратор выезда</p>
       <h2 class="curator-name">Ната Солнечная</h2>
       <p class="curator-role">Телесный терапевт Update · Сопровождает процесс восстановления</p>
 
@@ -1090,37 +1147,84 @@
       <h2 class="sh">Всё, что нужно<br>для восстановления</h2>
     </div>
     <div class="incl-g">
-      <div class="ic lg rv">      <div class="ic-dot"></div><div class="ic-t">Банный ритуал</div><p class="ic-d">С ароматическими травами, соляными элементами и бассейном. Глубокое расслабление с первого вечера.</p></div>
-      <div class="ic lg rv d1"><div class="ic-dot"></div><div class="ic-t">Саунд-хилинг</div><p class="ic-d">Практика глубокого расслабления под звучание чаш и колокольчиков. Успокоение нервной системы.</p></div>
-      <div class="ic lg rv d2"><div class="ic-dot"></div><div class="ic-t">Офф-роуд</div><p class="ic-d">Поездка по красивым горным маршрутам с остановками. Свобода, воздух, простор и живые пейзажи.</p></div>
-      <div class="ic lg rv">      <div class="ic-dot"></div><div class="ic-t">Массаж 90 минут</div><p class="ic-d">Индивидуальная массажная сессия для каждой участницы. Телесная забота и глубокое расслабление.</p></div>
-      <div class="ic lg rv d1"><div class="ic-dot"></div><div class="ic-t">Хайкинг по каньону</div><p class="ic-d">С практиками на чувствование и контакт с природой. Звуки, фактуры, вода, тишина.</p></div>
-      <div class="ic lg rv d2"><div class="ic-dot"></div><div class="ic-t">Ароматерапия</div><p class="ic-d">Создание масла-якоря — ароматической композиции как напоминания о состоянии выезда.</p></div>
-      <div class="ic lg rv">      <div class="ic-dot"></div><div class="ic-t">Киновечер</div><p class="ic-d">Фильм об отношениях с собой, миром и другими. Пространство для живого обсуждения.</p></div>
-      <div class="ic lg rv d1"><div class="ic-dot"></div><div class="ic-t">Вечер с вином</div><p class="ic-d">Тёплая атмосфера, живая близость, смех и разговоры. Никуда не нужно торопиться.</p></div>
-      <div class="ic lg rv d2"><div class="ic-dot"></div><div class="ic-t">Питание</div><p class="ic-d">Вкусные завтраки, обеды и ужины включены в программу. Еда как часть заботы о себе.</p></div>
+      <div class="ic lg rv"><div class="ic-t">Банный ритуал</div><p class="ic-d">С ароматическими травами, соляными элементами и бассейном. Глубокое расслабление с первого вечера.</p></div>
+      <div class="ic lg rv d1"><div class="ic-t">Саунд-хилинг</div><p class="ic-d">Практика глубокого расслабления под звучание чаш и колокольчиков. Успокоение нервной системы.</p></div>
+      <div class="ic lg rv d2"><div class="ic-t">Офф-роуд</div><p class="ic-d">Поездка по красивым горным маршрутам с остановками. Свобода, воздух, простор и живые пейзажи.</p></div>
+      <div class="ic lg rv"><div class="ic-t">Массаж 90 минут</div><p class="ic-d">Индивидуальная массажная сессия для каждой участницы. Телесная забота и глубокое расслабление.</p></div>
+      <div class="ic lg rv d1"><div class="ic-t">Хайкинг по каньону</div><p class="ic-d">С практиками на чувствование и контакт с природой. Звуки, фактуры, вода, тишина.</p></div>
+      <div class="ic lg rv d2"><div class="ic-t">Ароматерапия</div><p class="ic-d">Создание масла-якоря — ароматической композиции как напоминания о состоянии выезда.</p></div>
+      <div class="ic lg rv"><div class="ic-t">Киновечер</div><p class="ic-d">Фильм об отношениях с собой, миром и другими. Пространство для живого обсуждения.</p></div>
+      <div class="ic lg rv d1"><div class="ic-t">Вечер с вином</div><p class="ic-d">Тёплая атмосфера, живая близость, смех и разговоры. Никуда не нужно торопиться.</p></div>
+      <div class="ic lg rv d2"><div class="ic-t">Питание</div><p class="ic-d">Вкусные завтраки, обеды и ужины включены в программу. Еда как часть заботы о себе.</p></div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- FAQ -->
 <section id="test">
   <div class="test-hdr rv">
-    <span class="badge lg">Отзывы</span>
-    <h2 class="sh">Они уже были<br>с нами</h2>
+    <span class="badge lg">F&Q</span>
+    <h2 class="sh">Частые вопросы<br>о выезде</h2>
   </div>
-  <div class="test-g">
-    <div class="tc lg rv">
-      <p class="tq">«Я приехала с ощущением, что уже не помню, как это — не спешить. После первого вечера в бане поняла, что можно по-другому. Это был настоящий подарок себе.»</p>
-      <div><div class="tn">Анна К.</div><div class="tr">Предыдущий выезд</div></div>
+  <div class="faq-list">
+    <div class="faq-item lg rv is-open">
+      <button class="faq-question" type="button" aria-expanded="true">
+        <div>
+          <div class="faq-qtext">Нужна ли специальная подготовка?</div>
+        </div>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" style="max-height: 220px;">
+        <div class="faq-answer-inner">Нет, программа подходит для обычного уровня активности. Всё выстроено мягко, без перегруза, с возможностью адаптировать темп под своё состояние и самочувствие.</div>
+      </div>
     </div>
-    <div class="tc lg rv d1">
-      <p class="tq">«Хайкинг по каньону — это что-то, что сложно передать словами. Просто идёшь, слушаешь воду, чувствуешь камни под ногами. Голова перестаёт шуметь. Это работает.»</p>
-      <div><div class="tn">Мария Т.</div><div class="tr">Предыдущий выезд</div></div>
+
+    <div class="faq-item lg rv d1">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <div>
+          <div class="faq-qtext">Что взять с собой?</div>
+        </div>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Возьмите удобную одежду для практик и прогулок, купальник, тёплую вещь на вечер и всё личное, что помогает вам чувствовать себя спокойно и комфортно в поездке.</div>
+      </div>
     </div>
-    <div class="tc lg rv d2">
-      <p class="tq">«Саунд-хилинг в последний вечер — я просто расплакалась. Не от грусти, а от того, как глубоко можно расслабиться. Привезла домой масло-якорь и возвращаюсь к нему каждый день.»</p>
-      <div><div class="tn">Елена В.</div><div class="tr">Предыдущий выезд</div></div>
+
+    <div class="faq-item lg rv d2">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <div>
+          <div class="faq-qtext">Подойдёт ли выезд, если я давно не отдыхала и чувствую усталость?</div>
+        </div>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Да, именно для этого и собирается программа. Ретрит задуман как мягкое восстановление: без гонки, с заботой о теле, нервной системе и внутреннем ресурсе.</div>
+      </div>
+    </div>
+
+    <div class="faq-item lg rv">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <div>
+          <div class="faq-qtext">Есть ли свободное время для себя?</div>
+        </div>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Да, в программе есть пространство не только для активностей, но и для тишины, отдыха, прогулок, разговоров, бассейна и просто спокойного времени наедине с собой.</div>
+      </div>
+    </div>
+
+    <div class="faq-item lg rv d1">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <div>
+          <div class="faq-qtext">Как записаться и задать организационные вопросы?</div>
+        </div>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Нажмите кнопку записи в Telegram, напишите пару слов о себе, и вам ответят по датам, свободным местам, стоимости и всем организационным деталям.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1153,6 +1257,7 @@
     <div class="foot">
       <span class="fc">© 2025 Восстановление. Все права защищены.</span>
       <div class="fl">
+        <a href="https://update-club.com" target="_blank" rel="noopener noreferrer">Update Club</a>
         <a href="#">Политика</a>
         <a href="#">Контакты</a>
         <a href="#">Instagram</a>
@@ -1161,12 +1266,8 @@
   </div>
 </section>
 
-<audio id="site-audio" loop preload="none" src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/update-club-site/e3b91f0022b968dc890176a443d8129795e4e120/audio/updateaudio.MP3"></audio>
-<button type="button" class="audio-toggle lg" id="audio-toggle" aria-pressed="false">
-  <span class="audio-toggle-dot"></span>
-  <span class="audio-toggle-label-off">Включить музыку</span>
-  <span class="audio-toggle-label-on">Музыка играет</span>
-</button>
+<a href="https://t.me/m/o4hfATTzMTJi" class="floating-cta lg" target="_blank" rel="noopener noreferrer">Записаться</a>
+<audio id="site-audio" loop preload="auto" src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/update-club-site/acd40b4ec12868f213b0ae45e3ba6f2e1bb6ef55/audio/0419.MP3"></audio>
 
 <script>
   // Scroll reveal
@@ -1193,23 +1294,47 @@
     }
   }, { passive: true });
 
-  const audio = document.getElementById('site-audio');
-  const audioToggle = document.getElementById('audio-toggle');
-  audioToggle?.addEventListener('click', async () => {
-    if (!audio) return;
-    if (audio.paused) {
-      try {
-        await audio.play();
-        audioToggle.classList.add('is-playing');
-        audioToggle.setAttribute('aria-pressed', 'true');
-      } catch (error) {
-        console.error('Audio playback blocked', error);
-      }
-    } else {
-      audio.pause();
-      audioToggle.classList.remove('is-playing');
-      audioToggle.setAttribute('aria-pressed', 'false');
+  const siteAudio = document.getElementById('site-audio');
+  let audioStarted = false;
+  const startAudioOnFirstInteraction = async () => {
+    if (audioStarted || !siteAudio) return;
+    audioStarted = true;
+    try {
+      siteAudio.volume = 1;
+      await siteAudio.play();
+    } catch (error) {
+      audioStarted = false;
+      console.error('Audio autoplay blocked on first interaction', error);
     }
+  };
+
+  ['pointerdown', 'touchstart', 'keydown', 'wheel'].forEach(eventName => {
+    window.addEventListener(eventName, startAudioOnFirstInteraction, { passive: true, once: true });
+  });
+
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const button = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    if (!button || !answer) return;
+
+    button.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+
+      faqItems.forEach(other => {
+        const otherButton = other.querySelector('.faq-question');
+        const otherAnswer = other.querySelector('.faq-answer');
+        other.classList.remove('is-open');
+        if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
+        if (otherAnswer) otherAnswer.style.maxHeight = '0px';
+      });
+
+      if (!isOpen) {
+        item.classList.add('is-open');
+        button.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
   });
 </script>
 </body>
