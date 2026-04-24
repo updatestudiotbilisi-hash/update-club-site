@@ -2550,13 +2550,13 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
 <section class="s" id="how">
   <div class="rv sh">
     <h2 class="sh-title">Четыре шага до <em>выезда</em></h2>
-    <p class="sh-desc">Всё просто. Оставляете контакт — мы берём на себя логистику и организацию.</p>
+    <p class="sh-desc">Всё просто. Отправляете заявку в Telegram — мы берём на себя логистику и организацию.</p>
   </div>
   <div class="how-form-wrap">
     <div class="how-steps-compact rv">
       <div class="hwc rv d1">
         <div class="hwc-num">1</div>
-        <div><div class="hwc-h">Оставляете заявку</div><div class="hwc-d">Пишете имя, Telegram и пару слов о своей семье или компании.</div></div>
+        <div><div class="hwc-h">Отправляете заявку</div><div class="hwc-d">Нажимаете на кнопку и сразу переходите в Telegram.</div></div>
       </div>
       <div class="hwc rv d2">
         <div class="hwc-num">2</div>
@@ -2572,56 +2572,12 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
       </div>
     </div>
     <div id="form">
-      <form class="fbox glass rv d2" id="retreatLeadForm">
-        <h3>Забронировать место</h3>
-        <div class="fg"><label class="fl" for="lead_name">Имя</label><input id="lead_name" name="name" type="text" class="fi2" placeholder="Как к вам обращаться" required></div>
-        <div class="fg"><label class="fl" for="lead_contact">Telegram или Email</label><input id="lead_contact" name="contact" type="text" class="fi2" placeholder="@username или email@..." required></div>
-        <div class="fg"><label class="fl" for="lead_group_size">Состав</label>
-          <select id="lead_group_size" name="group_size" class="fi2" required>
-            <option value="">Выберите...</option>
-            <option>Едем вдвоём (пара)</option>
-            <option>1 родитель с детьми</option>
-            <option>Семья с 1 ребёнком</option>
-            <option>Семья с 2+ детьми</option>
-            <option>Две семьи вместе</option>
-            <option>Компания друзей (без детей)</option>
-          </select>
-        </div>
-        <div class="fg"><label class="fl" for="lead_format">Что важно сейчас</label>
-          <select id="lead_format" name="format" class="fi2" required>
-            <option value="">Выберите...</option>
-            <option>Хочу поехать в один из ближайших заездов</option>
-            <option>Хочу сначала понять стоимость</option>
-            <option>Нужна логистика и бытовые детали</option>
-            <option>Интересно, если будет следующий заезд</option>
-            <option>Хочу просто задать вопрос</option>
-          </select>
-        </div>
-        <div class="fg"><label class="fl" for="lead_location">Даты</label><select id="lead_location" name="location" class="fi2"><option>22–26 мая</option><option>5–9 июня</option><option>Предзапись на июль</option><option>Предзапись на август</option></select></div>
-        <div class="fg"><label class="fl" for="lead_room">Какой номер интересует</label>
-          <select id="lead_room" name="room" class="fi2">
-            <option value="">Выберите...</option>
-            <option>Panorama — 3 300 $ за номер / 1 650 $ с человека</option>
-            <option>HOUSE 1936 Double King — 4 080 $ за номер / 1 360 $ с человека</option>
-            <option>HOUSE 1936 Twin — 2 840 $ за номер / 1 420 $ с человека</option>
-            <option>HOUSE 1936 King — 2 840 $ за номер / 1 420 $ с человека</option>
-            <option>Standard Twin — 2 760 $ за номер / 1 380 $ с человека</option>
-            <option>Ещё не определился(лась)</option>
-          </select>
-        </div>
-        <div class="fg"><label class="fl" for="lead_adult_massage">Массаж для взрослых и детей</label>
-          <select id="lead_adult_massage" name="adult_massage" class="fi2">
-            <option value="">Выберите...</option>
-            <option>Нужен массаж для взрослых</option>
-            <option>Нужен массаж для взрослых и детей</option>
-            <option>Массаж не нужен</option>
-            <option>Обсудим на консультации</option>
-          </select>
-        </div>
-        <div class="fg"><label class="fl" for="lead_comment">Комментарий</label><textarea id="lead_comment" name="comment" class="fi2" placeholder="Возраст детей, пожелания по номеру, вопросы..."></textarea></div>
-        <button type="submit" class="fsub" id="leadSubmitBtn">Отправить заявку →</button>
-        <p class="fn" id="leadFormStatus">Напишем лично и пришлём все детали по стоимости и логистике.</p>
-      </form>
+      <div class="fbox glass rv d2">
+        <h3>Отправить заявку</h3>
+        <p class="fs-p" style="margin-top:0;margin-bottom:18px">Нажмите на кнопку ниже, чтобы перейти в Telegram и отправить заявку по семейному выезду.</p>
+        <a class="fsub" id="familyCampLeadBtn" href="https://t.me/m/cU5k8l2pMTVi" target="_blank" rel="noreferrer" style="width:100%">Отправить заявку →</a>
+        <p class="fn">Напишем лично и пришлём все детали по стоимости и логистике.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -2636,7 +2592,7 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
     </div>
     <div class="fcol"><h4>Навигация</h4><ul><li><a href="#activities">Как проходит заезд</a></li><li><a href="#venues">Отель и номера</a></li><li><a href="#programs">Программа отдыха</a></li><li><a href="#dates">Чекап в A-clinic</a></li><li><a href="#faq">Частые вопросы</a></li></ul></div>
     <div class="fcol"><h4>О поездке</h4><ul><li><a href="#team">Команда</a></li><li><a href="#impact">Что входит в программу</a></li><li><a href="#form">Оставить заявку</a></li></ul></div>
-    <div class="fcol"><h4>Контакты</h4><ul><li><a href="https://t.me/updatestudio" target="_blank">Telegram</a></li><li><a href="https://instagram.com/update.tbilisi" target="_blank">Instagram</a></li></ul></div>
+    <div class="fcol"><h4>Контакты</h4><ul><li><a href="https://t.me/m/cU5k8l2pMTVi" target="_blank">Telegram</a></li><li><a href="https://instagram.com/update.tbilisi" target="_blank">Instagram</a></li></ul></div>
   </div>
   <div class="fbot"><span>© 2026 Update Studio · Tbilisi, Georgia</span><span>Edis Dacha Retreat · сезон 2026</span></div>
 </footer>
@@ -2715,53 +2671,12 @@ function scrollSection(id, dir) {
 const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on')}),{threshold:.06});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
-/* ── FORM ── */
-const FORM_ENDPOINT="https://script.google.com/macros/s/AKfycbwfyP5wu-CzIUWmLBNSqiF3yXqWpqpNuOGrFCZtSPxg5ikTYbvyoybl2bSbvLS7KkjbeA/exec";
+/* ── TELEGRAM CTA ── */
 (function(){
-  const form=document.getElementById("retreatLeadForm");
-  const submitBtn=document.getElementById("leadSubmitBtn");
-  const statusBox=document.getElementById("leadFormStatus");
-  if(!form||!submitBtn||!statusBox)return;
-  form.addEventListener("submit",async function(event){
-    event.preventDefault();
-    const formData=new FormData(form);
-    const payload=new URLSearchParams();
-    payload.append("date",new Date().toLocaleString("ru-RU"));
-    payload.append("name",formData.get("name")||"");
-    payload.append("company",formData.get("company")||"");
-    payload.append("contact",formData.get("contact")||"");
-    payload.append("group_size",formData.get("group_size")||"");
-    payload.append("format",formData.get("format")||"");
-    payload.append("location",formData.get("location")||"");
-    payload.append("room",formData.get("room")||"");
-    payload.append("kids_massage",formData.get("kids_massage")||"");
-    payload.append("adult_massage",formData.get("adult_massage")||"");
-    payload.append("comment",formData.get("comment")||"");
-    payload.append("page",window.location.href);
-    payload.append("source","FAMILY RETREAT");
-    payload.append("submitted_at",new Date().toISOString());
-    submitBtn.disabled=true;
-    submitBtn.textContent="Отправляем...";
-    statusBox.textContent="Отправляем заявку...";
-    statusBox.style.color="rgba(255,255,255,.72)";
-    try{
-      const response=await fetch(FORM_ENDPOINT,{
-        method:"POST",
-        headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},
-        body:payload.toString()
-      });
-      const text=await response.text();
-      if(!response.ok)throw new Error(text||"Ошибка отправки");
-      if(typeof fbq==="function")fbq('track','Lead');
-      statusBox.textContent="Спасибо! Заявка отправлена. Свяжемся с вами в ближайшее время.";
-      statusBox.style.color="#7bb5ff";
-      form.reset();
-    }catch(error){
-      statusBox.textContent="Не удалось отправить. Попробуйте ещё раз или напишите нам в Telegram.";
-      statusBox.style.color="rgba(255,100,100,.9)";
-      submitBtn.disabled=false;
-      submitBtn.textContent="Попробовать снова →";
-    }
+  const telegramLeadBtn=document.getElementById("familyCampLeadBtn");
+  if(!telegramLeadBtn)return;
+  telegramLeadBtn.addEventListener("click",function(){
+    if(typeof fbq==="function")fbq('track','Lead');
   });
 })();
 </script>
