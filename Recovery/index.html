@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Восстановление — выезд 15–18 мая</title>
+<title>Восстановление — выезд 23–26 мая и 5–8 июня</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -758,6 +758,45 @@
     padding:clamp(5rem,9vw,7rem) clamp(1rem,3vw,2rem); max-width:1100px; margin:0 auto;
     position: relative;
   }
+  #test .incl-vid {
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+    z-index:0;
+    opacity:.62;
+  }
+  #test .incl-vid-ov {
+    position:absolute;
+    inset:0;
+    z-index:1;
+    background:
+      linear-gradient(to bottom, rgba(7,11,9,.72) 0%, rgba(7,11,9,.34) 24%, rgba(7,11,9,.34) 72%, rgba(7,11,9,.82) 100%),
+      linear-gradient(to right, rgba(7,11,9,.5) 0%, rgba(7,11,9,.18) 50%, rgba(7,11,9,.5) 100%);
+  }
+  #test .incl-bg {
+    position:absolute;
+    inset:0;
+    z-index:1;
+    background:radial-gradient(ellipse 72% 55% at 50% 48%, rgba(44,22,5,.18) 0%, transparent 70%);
+  }
+  #test .fade-t,
+  #test .fade-b {
+    position:absolute;
+    left:0;
+    right:0;
+    height:120px;
+    pointer-events:none;
+    z-index:2;
+  }
+  #test .fade-t {
+    top:0;
+  }
+  #test .fade-b {
+    bottom:0;
+  }
   /* warm ambient glow behind faq */
   #test::before {
     content: '';
@@ -766,9 +805,9 @@
     top: 50%; left: 50%; transform: translate(-50%,-50%);
     background: radial-gradient(ellipse at center, rgba(201,169,110,.07) 0%, transparent 70%);
     filter: blur(60px);
-    pointer-events: none; z-index: 0;
+    pointer-events: none; z-index: 2;
   }
-  #test > * { position: relative; z-index: 1; }
+  #test > * { position: relative; z-index: 3; }
   .test-hdr { text-align:center; margin-bottom:3.2rem; }
   .faq-list {
     max-width:920px;
@@ -1075,6 +1114,54 @@
   .rooms-sub-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:clamp(1.7rem,3vw,2.3rem);color:#fff;line-height:1;margin-bottom:.4rem;letter-spacing:-.01em}
   .rooms-sub-title em{font-style:italic;color:var(--accent-warm)}
 
+  /* ROOMS GRID */
+  .rooms-grid{display:grid;grid-template-columns:1fr;gap:clamp(3rem,5vw,4rem);margin-top:2.4rem}
+  @media(min-width:920px){.rooms-grid{grid-template-columns:repeat(2,1fr)}}
+  .room-item{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);border-radius:20px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column;height:100%}
+  .room-item:hover{border-color:rgba(201,169,110,.25);background:rgba(255,255,255,.03)}
+  .room-images{display:grid;grid-template-columns:1fr 1fr;gap:8px;height:240px;margin-bottom:0;flex-shrink:0}
+  .room-images img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) brightness(.8);transition:filter .3s;display:block}
+  .room-item:hover .room-images img{filter:saturate(.96) brightness(.88)}
+  .room-content{padding:clamp(1.8rem,3vw,2.4rem);display:flex;flex-direction:column;flex:1;justify-content:space-between}
+  .room-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:clamp(1.3rem,2.5vw,1.7rem);color:#fff;line-height:1.1;margin-bottom:0.8rem;letter-spacing:-.01em;flex-shrink:0}
+  .room-desc{font-size:.8rem;color:rgba(255,255,255,.58);line-height:1.6;margin-bottom:1.2rem;display:grid;gap:.4rem;flex-shrink:0}
+  .room-features{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.4rem;flex-shrink:0}
+  .room-feature{background:rgba(201,169,110,.12);border:1px solid rgba(201,169,110,.24);border-radius:9999px;padding:4px 11px;font-size:.65rem;color:var(--accent-warm);font-weight:400;letter-spacing:.03em}
+  .room-pricing{display:grid;gap:.6rem;border-top:1px solid rgba(255,255,255,.06);padding-top:1.4rem;margin-top:auto;flex-shrink:0}
+  .room-price{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+  .room-price-amount{font-size:1.35rem;color:var(--accent-warm);font-weight:500;font-family:'Cormorant Garamond',serif}
+  .room-price-label{font-size:.7rem;color:rgba(255,255,255,.48);white-space:nowrap}
+  .room-price-additional{font-size:.75rem;color:rgba(255,255,255,.58);padding-top:.8rem;border-top:1px solid rgba(255,255,255,.04);font-weight:500}
+  .room-availability{font-size:.68rem;color:rgba(255,255,255,.42);font-style:italic;margin-top:.8rem;padding-top:.8rem;border-top:1px solid rgba(255,255,255,.04)}
+  @media(max-width:680px){
+    .rooms-grid{gap:2rem}
+    .room-item{overflow:visible}
+    .room-images{
+      height:auto;
+      min-height:0;
+      aspect-ratio:1.55/1;
+      margin-bottom:0;
+      border-radius:20px 20px 0 0;
+      overflow:hidden;
+    }
+    .room-images img{min-width:0}
+    .room-content{
+      position:relative;
+      z-index:2;
+      padding:1.45rem 1.35rem 1.55rem;
+      background:rgba(7,11,9,.96);
+      border-radius:0 0 20px 20px;
+    }
+    .room-name{
+      position:relative;
+      z-index:3;
+      font-size:1.55rem;
+      margin-bottom:.9rem;
+    }
+    .room-price{align-items:flex-start;flex-direction:column;gap:.35rem}
+    .room-price-amount{font-size:1.5rem}
+  }
+
 </style>
 </head>
 <body>
@@ -1092,6 +1179,7 @@
       <li class="nav-hide-sm"><a href="#prog">Программа</a></li>
       <li class="nav-hide-sm"><a href="#curator">Куратор</a></li>
       <li class="nav-hide-sm"><a href="#place">Площадка</a></li>
+      <li class="nav-hide-sm"><a href="#rooms">Стоимость</a></li>
       <li class="nav-hide-sm"><a href="#test">F&amp;Q</a></li>
       <li class="nav-cta"><a href="https://t.me/m/o4hfATTzMTJi" class="cta-a" target="_blank" rel="noopener noreferrer">Записаться</a></li>
     </ul>
@@ -1115,7 +1203,7 @@
     </div>
     <div class="hero-badge lg">
       <span class="badge-pill">Выезд в горы</span>
-      <span class="badge-text">15–18 мая · 4 дня · Только для девушек</span>
+      <span class="badge-text">23–26 мая или 5–8 июня · 4 дня · Только для девушек</span>
     </div>
     <h1 class="hero-h">Вос<span class="hero-dot">·</span>становление</h1>
     <p class="hero-p">
@@ -1237,7 +1325,7 @@
       <span class="badge lg">О выезде</span>
 
       <div class="about-meta">
-        <div class="date-pill lg">15–18 мая</div>
+        <div class="date-pill lg">23–26 мая или 5–8 июня</div>
         <span class="about-days">· 4 дня</span>
       </div>
 
@@ -1473,38 +1561,161 @@
   </div>
 </section>
 <!-- ROOMS -->
-<div style="padding:clamp(2.5rem,5vw,4rem) clamp(1rem,3vw,2rem)">
-  <div style="max-width:1100px;margin:0 auto">
-    <div class="rooms-sub-title rv">Варианты <em>номеров</em></div>
-    <p style="font-size:.8rem;color:var(--text-muted);margin-top:.3rem" class="rv">Все номера с отдельным санузлом. Часть — с балконом и видом на горы.</p>
-    <div class="v-scroll rv">
-      <div class="room-card">
-        <img class="room-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/phystech/assets/panorama_1.webp" alt="Panorama" loading="lazy">
-        <div class="room-card-body"><div class="room-card-name">Panorama</div><span class="room-card-beds">2 спальных места</span></div>
+<div id="rooms" style="padding:clamp(3rem,6vw,5rem) clamp(1rem,3vw,2rem);position:relative;overflow:hidden">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="rooms-sub-title rv">Стоимость <em>выезда</em></div>
+    <p style="font-size:.8rem;color:var(--text-muted);margin-top:.3rem;line-height:1.7" class="rv">
+      <strong style="color:rgba(255,255,255,.7)">В стоимость входит:</strong><br>
+      • Проживание<br>
+      • Питание<br>
+      • Вся программа полностью<br>
+      • 1 массаж<br>
+      • Набор для хайкинга (рюкзачок, вода, снеки)<br>
+      • Трансфер Тбилиси — База — Тбилиси<br><br>
+      <em>Отличие цены идет только от вида размещения</em>
+    </p>
+    
+    <div class="rooms-grid rv">
+      
+      <!-- PANORAMA -->
+      <div class="room-item lg">
+        <div class="room-images">
+          <img src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/retreat/72bdbad6e345a95417f8b9ca3838b72999ce8225/Edis_Dacha/room_bath_bed.webp" alt="Panorama спальня" loading="lazy">
+          <img src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/retreat/72bdbad6e345a95417f8b9ca3838b72999ce8225/Edis_Dacha/room_bath_view.webp" alt="Panorama вид" loading="lazy">
+        </div>
+        <div class="room-content">
+          <div>
+            <div class="room-name">Panorama</div>
+            <div class="room-desc">
+              <span>1 кровать king size</span>
+              <span>Душевая и ванна</span>
+              <span>Панорамный вид на каньон</span>
+            </div>
+            <div class="room-features">
+              <span class="room-feature">Балкон</span>
+              <span class="room-feature">Ванна</span>
+              <span class="room-feature">Вид</span>
+            </div>
+          </div>
+          <div class="room-pricing">
+            <div class="room-price">
+              <span class="room-price-label">За весь номер</span>
+              <span class="room-price-amount">₾ 5 000 / € 1 790</span>
+            </div>
+            <div class="room-price-additional">
+              <strong>+ ₾ 3 400 / € 1 215</strong> за дополнительного человека
+            </div>
+            <div class="room-availability">2 номера доступны</div>
+          </div>
+        </div>
       </div>
-      <div class="room-card">
-        <img class="room-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/phystech/assets/old_money_double_king_1.webp" alt="Old Money Double King" loading="lazy">
-        <div class="room-card-body"><div class="room-card-name">Old Money Double King</div><span class="room-card-beds">2 спальных места</span></div>
+
+      <!-- HOUSE 1936 DOUBLE KING -->
+      <div class="room-item lg">
+        <div class="room-images">
+          <img src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/retreat/72bdbad6e345a95417f8b9ca3838b72999ce8225/Edis_Dacha/retreat-room-loft-bright-01.webp" alt="HOUSE 1936 Double King лофт" loading="lazy">
+          <img src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/retreat/72bdbad6e345a95417f8b9ca3838b72999ce8225/Edis_Dacha/room_mezzanine_bed.webp" alt="HOUSE 1936 Double King кровать" loading="lazy">
+        </div>
+        <div class="room-content">
+          <div>
+            <div class="room-name">HOUSE 1936<br>Double King</div>
+            <div class="room-desc">
+              <span>Двухярусный номер</span>
+              <span>2 кровати king size</span>
+              <span>Идеально для подруг</span>
+            </div>
+            <div class="room-features">
+              <span class="room-feature">Двухуровневый</span>
+              <span class="room-feature">Лофт</span>
+              <span class="room-feature">2 спальни</span>
+            </div>
+          </div>
+          <div class="room-pricing">
+            <div class="room-price">
+              <span class="room-price-label">За одно место</span>
+              <span class="room-price-amount">₾ 4 000 / € 1 430</span>
+            </div>
+            <div class="room-price-additional" style="visibility:hidden;">
+              <strong>+ ₾ 0 / € 0</strong> скрытый элемент
+            </div>
+            <div class="room-availability">2 номера × 2 места = 4 места</div>
+          </div>
+        </div>
       </div>
-      <div class="room-card">
-        <img class="room-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/phystech/assets/old_money_twin.webp" alt="Old Money Twin" loading="lazy">
-        <div class="room-card-body"><div class="room-card-name">Old Money Twin</div><span class="room-card-beds">2 спальных места</span></div>
+
+      <!-- HOUSE 1936 TWIN -->
+      <div class="room-item lg">
+        <div class="room-images">
+          <img src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/retreat/72bdbad6e345a95417f8b9ca3838b72999ce8225/Edis_Dacha/retreat-bedroom-single-bed-01.webp" alt="HOUSE 1936 Twin кровати" loading="lazy">
+          <img src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/retreat/687a1789245de2a064013c0f2cf5c3debf55175f/Edis_Dacha/retreat-bathroom-stone-shower-01.webp" alt="HOUSE 1936 Twin ванная" loading="lazy">
+        </div>
+        <div class="room-content">
+          <div>
+            <div class="room-name">HOUSE 1936<br>Twin</div>
+            <div class="room-desc">
+              <span>Двухместный номер</span>
+              <span>2 односпальные кровати</span>
+              <span>Хорошо подходит для подруг</span>
+            </div>
+            <div class="room-features">
+              <span class="room-feature">2 кровати</span>
+              <span class="room-feature">Душевая</span>
+              <span class="room-feature">Уют</span>
+            </div>
+          </div>
+          <div class="room-pricing">
+            <div class="room-price">
+              <span class="room-price-label">За одно место</span>
+              <span class="room-price-amount">₾ 3 700 / € 1 320</span>
+            </div>
+            <div class="room-price-additional" style="visibility:hidden;">
+              <strong>+ ₾ 0 / € 0</strong> скрытый элемент
+            </div>
+            <div class="room-availability">1 номер × 2 места</div>
+          </div>
+        </div>
       </div>
-      <div class="room-card">
-        <img class="room-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/phystech/assets/old_money_king_1.webp" alt="Old Money King" loading="lazy">
-        <div class="room-card-body"><div class="room-card-name">Old Money King</div><span class="room-card-beds">2 спальных места</span></div>
+
+      <!-- HOUSE 1936 KING -->
+      <div class="room-item lg">
+        <div class="room-images">
+          <img src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/retreat/72bdbad6e345a95417f8b9ca3838b72999ce8225/Edis_Dacha/room_stone_wall_bed.webp" alt="HOUSE 1936 King спальня" loading="lazy">
+          <img src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/retreat/72bdbad6e345a95417f8b9ca3838b72999ce8225/Edis_Dacha/retreat-bathroom-stone-shower-01.webp" alt="HOUSE 1936 King ванная" loading="lazy">
+        </div>
+        <div class="room-content">
+          <div>
+            <div class="room-name">HOUSE 1936<br>King</div>
+            <div class="room-desc">
+              <span>1 кровать king size</span>
+              <span>Уютный и просторный</span>
+              <span>Можно добавить подругу</span>
+            </div>
+            <div class="room-features">
+              <span class="room-feature">King size</span>
+              <span class="room-feature">Камень</span>
+              <span class="room-feature">Стиль</span>
+            </div>
+          </div>
+          <div class="room-pricing">
+            <div class="room-price">
+              <span class="room-price-label">За весь номер</span>
+              <span class="room-price-amount">₾ 4 200 / € 1 500</span>
+            </div>
+            <div class="room-price-additional">
+              <strong>+ ₾ 3 400 / € 1 215</strong> за дополнительного человека
+            </div>
+            <div class="room-availability">1 номер доступен</div>
+          </div>
+        </div>
       </div>
-      <div class="room-card">
-        <img class="room-card-img" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/update-club-site@main/phystech/assets/standart.webp" alt="Standard Twin" loading="lazy">
-        <div class="room-card-body"><div class="room-card-name">Standard Twin</div><span class="room-card-beds">2 спальных места</span></div>
-      </div>
+
     </div>
   </div>
 </div>
 <!-- ░ blur edge ░ -->
 <div class="sb-edge sb-edge-warm"></div>
 
-<!-- FAQ 
+<!-- FAQ -->
 <section id="test" style="position:relative;overflow:hidden;padding:clamp(5rem,9vw,7rem) clamp(1rem,3vw,2rem);max-width:none;margin:0">
   <video class="incl-vid lazy-video" loop muted playsinline preload="none"
     data-video-src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4">
@@ -1515,19 +1726,19 @@
   <div class="fade-b"></div>
   <div style="position:relative;z-index:3;max-width:1100px;margin:0 auto">
   <div class="test-hdr rv">
-    <span class="badge lg">F&Q</span>
+    <span class="badge lg">Вопросы</span>
     <h2 class="sh">Частые вопросы<br>о выезде</h2>
   </div>
   <div class="faq-list">
     <div class="faq-item lg rv is-open">
       <button class="faq-question" type="button" aria-expanded="true">
         <div>
-          <div class="faq-qtext">Нужна ли специальная подготовка?</div>
+          <div class="faq-qtext">Что входит в стоимость?</div>
         </div>
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer" style="max-height: 220px;">
-        <div class="faq-answer-inner">Нет, программа подходит для обычного уровня активности. Всё выстроено мягко, без перегруза, с возможностью адаптировать темп под своё состояние и самочувствие.</div>
+      <div class="faq-answer" style="max-height: 360px;">
+        <div class="faq-answer-inner">В стоимость входит проживание, трёхразовое питание и вся программа полностью: офф-роуд, хайкинг и всё необходимое для него, сауна, телесные практики, зарядки, саунд-хилинг, ароматерапия и создание своего аромата. Также включены один массаж, набор для хайкинга и трансфер из Тбилиси на базу и обратно. Стоимость различается только по категории номера.</div>
       </div>
     </div>
 
@@ -1539,23 +1750,11 @@
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <div class="faq-answer-inner">Возьмите удобную одежду для практик и прогулок, купальник, тёплую вещь на вечер и всё личное, что помогает вам чувствовать себя спокойно и комфортно в поездке.</div>
+        <div class="faq-answer-inner">Возьмите удобную одежду для практик и прогулок, купальник, тёплую вещь на вечер и всё личное, что помогает вам чувствовать себя спокойно и комфортно в поездке. Всё необходимое для хайкинга мы подготовим.</div>
       </div>
     </div>
 
     <div class="faq-item lg rv d2">
-      <button class="faq-question" type="button" aria-expanded="false">
-        <div>
-          <div class="faq-qtext">Подойдёт ли выезд, если я давно не отдыхала и чувствую усталость?</div>
-        </div>
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">Да, именно для этого и собирается программа. Ретрит задуман как мягкое восстановление: без гонки, с заботой о теле, нервной системе и внутреннем ресурсе.</div>
-      </div>
-    </div>
-
-    <div class="faq-item lg rv">
       <button class="faq-question" type="button" aria-expanded="false">
         <div>
           <div class="faq-qtext">Есть ли свободное время для себя?</div>
@@ -1567,7 +1766,7 @@
       </div>
     </div>
 
-    <div class="faq-item lg rv d1">
+    <div class="faq-item lg rv">
       <button class="faq-question" type="button" aria-expanded="false">
         <div>
           <div class="faq-qtext">Как записаться и задать организационные вопросы?</div>
@@ -1575,7 +1774,43 @@
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <div class="faq-answer-inner">Нажмите кнопку записи в Telegram, напишите пару слов о себе, и вам ответят по датам, свободным местам, стоимости и всем организационным деталям.</div>
+        <div class="faq-answer-inner">Нажмите кнопку записи в Telegram, напишите пару слов о себе, и вам ответят по датам, свободным местам, стоимости, номерам и всем организационным деталям.</div>
+      </div>
+    </div>
+
+    <div class="faq-item lg rv d1">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <div>
+          <div class="faq-qtext">Можно ли оплатить частями?</div>
+        </div>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Да. Для бронирования места нужно внести 30% предоплату, а оставшиеся 70% оплатить за неделю до выезда.</div>
+      </div>
+    </div>
+
+    <div class="faq-item lg rv d2">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <div>
+          <div class="faq-qtext">Если мы едем компанией, будет ли скидка?</div>
+        </div>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Да, если вы планируете приехать компанией, напишите нам в Telegram. Мы рассчитаем предложение под вас: при покупке сразу на несколько человек стоимость может быть ниже.</div>
+      </div>
+    </div>
+
+    <div class="faq-item lg rv">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <div>
+          <div class="faq-qtext">Можно ли добавить второго человека в номер?</div>
+        </div>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Да, такая опция есть в номерах Panorama и HOUSE 1936 King. Второй человек оплачивает только программу, а стоимость номера вы делите между собой. В этом варианте вы размещаетесь вместе на кровати king size.</div>
       </div>
     </div>
   </div>
