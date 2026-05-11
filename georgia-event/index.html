@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Корпоративный выезд в Кахетию — Update Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FAF7F2;
+  --warm: #FFFCF8;
+  --sand: #E8DFD0;
+  --stone: #C4B49A;
+  --earth: #8B7355;
+  --deep: #2A2018;
+  --wine: #6B2D3E;
+  --wine-l: #8B3D52;
+  --gold: #C9A84C;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--deep);font-family:'Jost',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+img{display:block;width:100%;height:auto}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:0 48px;height:64px;background:rgba(26,18,10,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-logos{display:flex;align-items:center;gap:14px}
+.nav-logo-u{height:32px;width:auto}
+.nav-logo-g{height:28px;width:auto}
+.nav-sep{color:rgba(255,255,255,0.22);font-size:20px;font-weight:200;line-height:1}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{text-decoration:none;color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;transition:color .25s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--wine);color:#fff;border:none;cursor:pointer;padding:8px 22px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-family:'Jost',sans-serif;font-weight:500;transition:background .25s}
+.nav-cta:hover{background:var(--wine-l)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.burger span{display:block;width:22px;height:1.5px;background:#fff;transition:.3s}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:url('https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@9c55f617bdf983fc65b6ca01eb7d5eaf20f62dcc/Hotel_Qvevrebi/outside.webp');background-size:cover;background-position:center 30%;transform:scale(1.06);animation:hzoom 14s ease-out forwards}
+@keyframes hzoom{to{transform:scale(1)}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(18,10,4,.18) 0%,rgba(18,10,4,.12) 35%,rgba(18,10,4,.72) 72%,rgba(18,10,4,.93) 100%)}
+.hero-c{position:relative;z-index:2;width:100%;padding:0 80px 88px;display:grid;grid-template-columns:1fr 400px;gap:56px;align-items:end}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#fff;background:rgba(201,168,76,0.18);border:1px solid rgba(201,168,76,0.45);padding:8px 14px 8px 10px;margin-bottom:26px;animation:fup 1s .3s both}
+.hero-tag::before{content:'';width:20px;height:1px;background:var(--gold)}
+h1.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7.5vw,100px);font-weight:300;line-height:1.0;color:#fff;animation:fup 1s .5s both}
+h1.hero-h1 em{font-style:italic;color:#E8C080}
+.hero-hook{font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,.68);margin-top:26px;max-width:520px;line-height:1.78;animation:fup 1s .7s both}
+.hero-hook strong{color:#fff;font-weight:400}
+.hero-r{animation:fup 1s .9s both}
+.hero-stats{background:rgba(255,255,255,.07);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);padding:28px}
+.hstat{padding:15px 0;border-bottom:1px solid rgba(255,255,255,.09)}
+.hstat:last-child{border:none;padding-bottom:0}
+.hstat-n{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:#fff;line-height:1}
+.hstat-l{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:3px}
+.hero-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.3);font-size:9px;letter-spacing:.22em;text-transform:uppercase;animation:fi 2s 1.5s both}
+.scroll-ln{width:1px;height:44px;background:linear-gradient(rgba(255,255,255,.45),transparent);animation:sln 2.2s 2s infinite}
+@keyframes sln{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes fup{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+
+/* SHARED */
+.section{padding:100px 80px}
+.s-label{display:inline-flex;align-items:center;gap:12px;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--wine);margin-bottom:16px}
+.s-label::after{content:'';width:34px;height:1px;background:var(--wine)}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,56px);font-weight:300;line-height:1.1;color:var(--deep);margin-bottom:16px}
+.s-sub{font-size:15px;color:var(--earth);max-width:600px;line-height:1.8}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* PLACE */
+.place{background:var(--warm);padding:0}
+.place-hd{padding:80px 80px 56px}
+.mosaic{display:grid;grid-template-columns:2.2fr 1fr 1fr;grid-template-rows:260px 260px;gap:3px}
+.mosaic-item{overflow:hidden;position:relative}
+.mosaic-item:first-child{grid-row:1/3}
+.mosaic-item img{height:100%;object-fit:cover;transition:transform .7s ease}
+.mosaic-item:hover img{transform:scale(1.06)}
+.mcap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(20,12,4,.68));color:#fff;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:18px 12px 10px;opacity:0;transition:opacity .3s}
+.mosaic-item:hover .mcap{opacity:1}
+
+/* PROGRAM */
+.prog-section{background:var(--cream)}
+.prog-tabs{display:flex;margin-top:48px;border-bottom:2px solid var(--sand);overflow-x:auto}
+.ptab{flex:1;min-width:150px;padding:18px 22px;cursor:pointer;background:none;border:none;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);transition:color .25s;position:relative;text-align:left}
+.ptab::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:var(--wine);transform:scaleX(0);transition:transform .25s}
+.ptab.on{color:var(--wine)}
+.ptab.on::after{transform:scaleX(1)}
+.ptab-dt{display:block;font-size:10px;color:inherit;margin-bottom:4px;opacity:.7;letter-spacing:.1em}
+.prog-body{}
+.pday{display:none}
+.pday.on{display:block}
+.day-grid{display:grid;grid-template-columns:260px 1fr;background:var(--sand);gap:3px}
+.day-aside{background:var(--deep);color:#fff;padding:48px 38px}
+.d-num{font-family:'Cormorant Garamond',serif;font-size:90px;font-weight:300;color:rgba(255,255,255,.06);line-height:1;margin-bottom:-16px}
+.d-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#fff;line-height:1.25;margin-bottom:20px}
+.d-meta{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38)}
+.d-desc{font-size:13px;color:rgba(255,255,255,.52);line-height:1.7;margin-top:18px}
+.timeline{background:var(--warm);padding:40px 48px;display:flex;flex-direction:column}
+.ti{display:grid;grid-template-columns:96px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--sand)}
+.ti:last-child{border:none}
+.ti-time{font-size:11px;letter-spacing:.07em;color:var(--stone);padding-top:2px;font-weight:400;line-height:1.4}
+.ti-name{font-size:14px;font-weight:500;color:var(--deep);margin-bottom:3px}
+.ti-desc{font-size:13px;color:var(--earth);line-height:1.65}
+.ti-key{background:var(--cream);margin:0 -48px;padding:18px 48px}
+.ti-key .ti-name{color:var(--wine)}
+
+/* ACTIVITIES */
+.act-section{background:var(--deep);padding:100px 80px}
+.act-section .s-label{color:var(--gold)}
+.act-section .s-label::after{background:var(--gold)}
+.act-section .s-title{color:#fff}
+.act-section .s-sub{color:var(--stone)}
+.act-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-top:52px}
+.acard{position:relative;height:300px;overflow:hidden}
+.abg{position:absolute;inset:0;background-color:rgba(255,255,255,.05);background-size:cover;background-position:center;transition:transform .65s ease}
+.abg[data-bg]{background-image:none}
+.abg.is-ready{background-image:var(--bg-image)}
+.acard:hover .abg{transform:scale(1.08)}
+.agr{position:absolute;inset:0;background:linear-gradient(to top,rgba(14,7,2,.82) 30%,rgba(14,7,2,.12) 100%);opacity:0;transition:opacity .4s}
+.acard:hover .agr{opacity:1}
+.acont{position:absolute;bottom:0;left:0;right:0;padding:22px 18px}
+.atitle{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;color:#fff;margin-bottom:5px;line-height:1.2;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+.adesc{font-size:11.5px;color:rgba(255,255,255,.58);line-height:1.6;max-height:0;overflow:hidden;opacity:0;transition:max-height .4s,opacity .4s}
+.acard:hover .adesc,.acard.is-active .adesc{max-height:96px;opacity:1}
+.acard.is-active .agr{opacity:1}
+.acard.is-active .abg{transform:scale(1.04)}
+
+/* ACCOMMODATION */
+.accom{background:var(--warm);padding:0}
+.accom-hd{padding:80px 80px 52px}
+.accom-body{display:grid;grid-template-columns:1fr 1.6fr;gap:3px;background:var(--sand);align-items:start}
+.accom-info{background:var(--warm);padding:52px 52px;display:flex;flex-direction:column;justify-content:flex-start}
+.room-types{display:flex;flex-direction:column;gap:28px;margin-top:32px}
+.rtype{border-left:2px solid var(--sand);padding-left:18px;transition:border-color .3s}
+.rtype:hover{border-color:var(--wine)}
+.rtype-cnt{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--wine);margin-bottom:3px}
+.rtype-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--deep);margin-bottom:5px}
+.rtype-desc{font-size:13px;color:var(--earth);line-height:1.6}
+.room-grid{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:220px 220px;gap:3px}
+.rphoto{overflow:hidden;position:relative}
+.rphoto img{height:100%;object-fit:cover;transition:transform .6s}
+.rphoto:hover img{transform:scale(1.06)}
+.rphoto-lbl{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(24,14,6,.68));color:rgba(255,255,255,.9);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:14px 10px 8px;opacity:0;transition:opacity .3s}
+.rphoto:hover .rphoto-lbl{opacity:1}
+.ti-list{display:flex;flex-direction:column;gap:4px;margin-top:8px}
+.ti-li{display:flex;gap:8px;font-size:12.5px;color:var(--earth);line-height:1.55}
+.ti-li::before{content:'—';color:var(--wine);flex-shrink:0;font-family:'Cormorant Garamond',serif;font-size:14px}
+.ti-sub{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--wine);margin-top:14px;margin-bottom:6px;font-weight:500}
+.ti-note{font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.7;margin-top:10px;padding:12px 16px;background:var(--deep);border-left:2px solid var(--wine)}
+
+/* EFFECTS */
+.eff-section{background:var(--deep);padding:100px 80px}
+.eff-section .s-label{color:var(--gold)}
+.eff-section .s-label::after{background:var(--gold)}
+.eff-section .s-title{color:#fff}
+.eff-section .s-sub{color:var(--stone)}
+.eff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:52px;background:rgba(255,255,255,.07)}
+.ecard{background:var(--deep);padding:40px 36px;border-top:1px solid rgba(255,255,255,.07);position:relative;overflow:hidden;transition:background .35s}
+.ecard::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--wine),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+.ecard:hover{background:rgba(255,255,255,.04)}
+.ecard:hover::before{transform:scaleX(1)}
+.enum{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:300;color:rgba(255,255,255,.07);line-height:1;margin-bottom:-18px;transition:color .35s}
+.ecard:hover .enum{color:rgba(201,168,76,.2)}
+.etitle{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:rgba(255,255,255,.9);margin-bottom:12px}
+.etext{font-size:13px;color:rgba(255,255,255,.45);line-height:1.75}
+
+/* INCLUDED */
+.inc-section{background:var(--cream);padding:100px 80px}
+.inc-body{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:52px;background:var(--sand)}
+.inc-cats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--sand)}
+.ig{background:#fff;padding:34px 30px}
+.ig-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--deep);padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid var(--sand)}
+.il{display:flex;flex-direction:column;gap:9px}
+.ir{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--earth);line-height:1.5}
+.idot{width:5px;height:5px;border-radius:50%;background:var(--wine);flex-shrink:0;margin-top:5px}
+.inc-photo{overflow:hidden;min-height:300px}
+.inc-photo img{height:100%;object-fit:cover;transition:transform .8s}
+.inc-photo:hover img{transform:scale(1.04)}
+
+/* ORGANIZERS */
+.org-section{background:var(--deep);padding:80px}
+.org-inner{display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start}
+.org-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.5vw,46px);font-weight:300;color:#fff;line-height:1.15;margin-top:12px}
+.org-right{display:flex;flex-direction:column;gap:32px}
+.org-item{display:grid;grid-template-columns:28px 1fr;gap:18px;align-items:start;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.07)}
+.org-item:last-child{border:none;padding-bottom:0}
+.org-icon{font-size:16px;color:var(--gold);line-height:1;padding-top:3px}
+.org-item-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:8px;line-height:1.2}
+.org-item-desc{font-size:13.5px;color:rgba(255,255,255,.5);line-height:1.75}
+
+/* FOOTER */
+footer{background:var(--deep);padding:40px 80px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.footer-brand{color:rgba(255,255,255,.32);font-size:12px;letter-spacing:.08em}
+.footer-brand strong{color:rgba(255,255,255,.6)}
+
+/* MOBILE */
+@media(max-width:960px){
+  nav{padding:0 20px}
+  .nav-links,.nav-cta{display:none}
+  .burger{display:flex}
+
+  .hero{align-items:flex-start}
+  .hero-c{grid-template-columns:1fr;padding:108px 24px 108px;gap:28px;align-items:start}
+  .hero-tag{margin-top:12px}
+  h1.hero-h1{font-size:clamp(42px,11vw,68px)}
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.1);padding:0}
+  .hstat{padding:16px 14px;background:rgba(255,255,255,.07);border:none}
+  .hstat-n{font-size:28px}
+  .hero-scroll{bottom:18px;color:rgba(255,255,255,.62);font-size:10px;letter-spacing:.26em;z-index:3}
+  .scroll-ln{height:54px;background:linear-gradient(rgba(255,255,255,.8),transparent)}
+
+  .section{padding:64px 24px}
+  .place-hd,.accom-hd{padding:64px 24px 40px}
+  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .mosaic-item:first-child{grid-column:span 2;grid-row:auto;height:220px}
+  .mosaic-item{height:160px}
+
+  .prog-section.section{padding:64px 24px}
+  .ptab{padding:16px 16px;min-width:130px}
+  .day-grid{grid-template-columns:1fr}
+  .day-aside{padding:32px 24px}
+  .d-num{font-size:60px}
+  .timeline{padding:28px 24px}
+  .ti{grid-template-columns:80px 1fr;gap:10px}
+  .ti-key{margin:0 -24px;padding:18px 24px}
+
+  .act-grid{grid-template-columns:1fr 1fr}
+  .acard{height:220px}
+  .act-section{padding:64px 24px}
+
+  .accom-body{grid-template-columns:1fr}
+  .accom-info{padding:40px 24px}
+  .room-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .rphoto{height:150px}
+  .rphoto-tall{grid-row:auto;height:150px}
+
+  .eff-section{padding:64px 24px}
+  .eff-grid{grid-template-columns:1fr 1fr}
+
+  .inc-section{padding:64px 24px}
+  .inc-body{grid-template-columns:1fr}
+  .inc-photo{min-height:200px}
+
+  .org-section{padding:64px 24px}
+  .org-inner{grid-template-columns:1fr;gap:40px}
+  footer{padding:28px 24px}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:20px}
+}
+@media(max-width:580px){
+  .act-grid{grid-template-columns:1fr}
+  .act-grid{gap:12px}
+  .acard{height:220px;scroll-margin-top:92px}
+  .eff-grid{grid-template-columns:1fr}
+  .inc-cats{grid-template-columns:1fr}
+  .mosaic{grid-template-columns:1fr}
+  .mosaic-item:first-child{grid-column:auto;height:240px}
+  .mosaic-item{height:200px}
+  .ti{grid-template-columns:1fr;gap:2px}
+  .ti-time{font-size:10px;color:var(--wine)}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .hero-c{padding:118px 20px 116px}
+  .hero-tag{font-size:10px;letter-spacing:.16em}
+  .hero-hook{margin-top:18px}
+  .hero-scroll{bottom:14px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logos">
+    <img class="nav-logo-u" src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@d05c630d03c86d503ab0e3ec0de75f6006cc9fa0/8_%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9%20%D0%BB%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%20%D0%B1%D0%B5%D0%B7%20%D0%B4%D0%B5%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D1%80%D0%B0%20%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9%20PNG%20(RGB).png" alt="Update Studio" decoding="async">
+  </div>
+  <ul class="nav-links">
+    <li><a href="#place">Место</a></li>
+    <li><a href="#program">Программа</a></li>
+    <li><a href="#activities">Активности</a></li>
+    <li><a href="#accommodation">Проживание</a></li>
+    <li><a href="#value">Ценность</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('program').scrollIntoView({behavior:'smooth'})">Программа →</button>
+  <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <div>
+      <div class="hero-tag">Update Studio · корпоративный выезд в Кахетию</div>
+      <h1 class="hero-h1">Три дня,<br><em>которые</em><br>не забудутся</h1>
+      <p class="hero-hook">
+        Корпоративный выезд в Кахетию — это не «мероприятие». Это <strong>настоящая перезагрузка</strong>: off-road по Алазанской долине, массажи на свежем воздухе, вечер у костра с вином и игровая программа с ведущим.<br>Три дня — и участники возвращаются другими.
+      </p>
+    </div>
+    <div class="hero-r">
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-n">20–60</div><div class="hstat-l">участников</div></div>
+        <div class="hstat"><div class="hstat-n">3</div><div class="hstat-l">дня · 2 ночи</div></div>
+        <div class="hstat"><div class="hstat-n">Даты</div><div class="hstat-l">по согласованию</div></div>
+        <div class="hstat"><div class="hstat-n">Кахетия</div><div class="hstat-l">Алазанская долина</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>листать</span><div class="scroll-ln"></div></div>
+</section>
+
+<!-- PLACE -->
+<div class="place" id="place">
+  <div class="place-hd reveal">
+    <div class="s-label">Место</div>
+    <h2 class="s-title">Отель Qvevrebi, Кахетия</h2>
+    <p class="s-sub">Мы выбрали место максимально вдали от городского шума — с прекрасным видом на Алазанскую долину. Здесь есть всё нужное: бассейн, сауна, открытые пространства для массажей на свежем воздухе, зарядок и практик.</p>
+  </div>
+  <div class="mosaic reveal">
+    <div class="mosaic-item">
+      <img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@9c55f617bdf983fc65b6ca01eb7d5eaf20f62dcc/Hotel_Qvevrebi/outside.webp" alt="Территория" loading="lazy" decoding="async">
+      <div class="mcap">Территория</div>
+    </div>
+    <div class="mosaic-item">
+      <img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@d05c630d03c86d503ab0e3ec0de75f6006cc9fa0/Hotel_Qvevrebi/retreat-vineyard-harvest-view.webp" alt="Виноградник" loading="lazy" decoding="async">
+      <div class="mcap">Виноградник</div>
+    </div>
+    <div class="mosaic-item">
+      <img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Hotel_Qvevrebi/retreat-pool-mountain-view.webp" alt="Бассейн" loading="lazy" decoding="async">
+      <div class="mcap">Бассейн</div>
+    </div>
+    <div class="mosaic-item">
+      <img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@d05c630d03c86d503ab0e3ec0de75f6006cc9fa0/Hotel_Qvevrebi/sauna_2.webp" alt="Джакузи" loading="lazy" decoding="async">
+      <div class="mcap">Джакузи</div>
+    </div>
+    <div class="mosaic-item">
+      <img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@main/Hotel_Qvevrebi/retreat-sauna-with-pool-view.webp" alt="Сауна" loading="lazy" decoding="async">
+      <div class="mcap">Сауна</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAM -->
+<section class="prog-section section" id="program">
+  <div class="reveal">
+    <div class="s-label">Программа</div>
+    <h2 class="s-title">Три дня в своём ритме</h2>
+    <p class="s-sub">Программа составлена для корпоративного формата — без перегруженного расписания, с балансом активности, восстановления и свободного времени. На протяжении всего выезда рядом находится ведущий-«вожатый».</p>
+  </div>
+  <div class="prog-tabs reveal">
+    <button class="ptab on" onclick="showDay(0)">
+      <span class="ptab-dt">День 1</span>Заезд и мягкий старт
+    </button>
+    <button class="ptab" onclick="showDay(1)">
+      <span class="ptab-dt">День 2</span>Основной день
+    </button>
+    <button class="ptab" onclick="showDay(2)">
+      <span class="ptab-dt">День 3</span>Спокойное завершение
+    </button>
+  </div>
+  <div class="prog-body">
+    <!-- DAY 1 -->
+    <div class="pday on">
+      <div class="day-grid">
+        <div class="day-aside">
+          <div class="d-num">01</div>
+          <div class="d-title">Заезд и мягкий старт</div>
+          <div class="d-meta">День первый</div>
+          <div class="d-desc">Смысл первого дня — мягко перейти из рабочего состояния в атмосферу отдыха, общения и красивого совместного времени. Без перегруза, без задач — просто начать.</div>
+        </div>
+        <div class="timeline">
+
+          <div class="ti ti-key">
+            <div class="ti-time">16:00</div>
+            <div>
+              <div class="ti-name">Встреча в аэропорту</div>
+              <div class="ti-desc">Участников встречают в аэропорту и сопровождают до комфортабельного автобуса. Ведущий уже в дороге помогает задать тон выезду.</div>
+              <div class="ti-list">
+                <div class="ti-li">Вода и лёгкие закуски на борту</div>
+                <div class="ti-li">Время в пути — около 3 часов</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ti">
+            <div class="ti-time">19:00–19:30</div>
+            <div>
+              <div class="ti-name">Прибытие в отель Qvevrebi и заселение</div>
+              <div class="ti-desc">Размещение по номерам, первое знакомство с территорией и видами на Алазанскую долину</div>
+              <div class="ti-list">
+                <div class="ti-li">7 twin-номеров в корпусе гостиницы — две раздельные кровати, терраса, вид на долину</div>
+                <div class="ti-li">5 twin-номеров в форме квеври — две раздельные кровати, собственная небольшая терраса</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ti ti-key">
+            <div class="ti-time">20:00</div>
+            <div>
+              <div class="ti-name">Welcome-ужин</div>
+              <div class="ti-desc">Первый общий стол — разнообразное меню и вино от собственной винодельни отеля</div>
+            </div>
+          </div>
+
+          <div class="ti ti-key">
+            <div class="ti-time">После ужина</div>
+            <div>
+              <div class="ti-name">Вечер у костра</div>
+              <div class="ti-desc">Свободное неформальное общение у живого огня, тёплая атмосфера, песни под гитару</div>
+              <div class="ti-note">Никакой программы и тайминга. Просто хороший вечер вместе — возможность спокойно познакомиться с местом и настроиться на общий ритм выезда.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="pday">
+      <div class="day-grid">
+        <div class="day-aside">
+          <div class="d-num">02</div>
+          <div class="d-title">Основной день: впечатления, восстановление и живое взаимодействие</div>
+          <div class="d-meta">День второй</div>
+          <div class="d-desc">Смысл второго дня — совместить яркие впечатления, качественное восстановление, общение и вовлекающие активности. Обе группы получают и адреналин, и отдых.</div>
+        </div>
+        <div class="timeline">
+
+          <div class="ti">
+            <div class="ti-time">09:00–10:00</div>
+            <div>
+              <div class="ti-name">Завтрак</div>
+              <div class="ti-desc">Неспешное начало дня, общий завтрак</div>
+            </div>
+          </div>
+
+          <div class="ti ti-key">
+            <div class="ti-time">11:00</div>
+            <div>
+              <div class="ti-name">Старт дневной программы — деление на группы</div>
+
+              <div class="ti-sub">Группа 1 → Off-road по Алазанской долине</div>
+              <div class="ti-desc">Живописный маршрут по горным дорогам Кахетии — продолжительность 2,5–3 часа</div>
+              <div class="ti-list">
+                <div class="ti-li">Остановки в самых красивых видовых точках</div>
+                <div class="ti-li">Возможность посидеть за рулём под присмотром профессионального водителя</div>
+                <div class="ti-li">Возможность полетать на квадрокоптере над долиной</div>
+                <div class="ti-li">Заранее продуманный безопасный маршрут</div>
+              </div>
+
+              <div class="ti-sub">Группа 2 → Массажи и свободное время в отеле</div>
+              <div class="ti-desc">Массажи проходят на открытом воздухе в комфортных шатрах. Количество слотов и мастеров адаптируется под размер группы, запись на массажи формируется заранее.</div>
+              <div class="ti-list">
+                <div class="ti-li">Пока ждёт своего слота или уже прошёл — бассейн, загар, сауна, прогулки по территории</div>
+                <div class="ti-li">Если кто-то не планирует массаж — слоты можно увеличить по длительности для желающих</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ti">
+            <div class="ti-time">14:00–15:00</div>
+            <div>
+              <div class="ti-name">Общий обед</div>
+              <div class="ti-desc">Все снова вместе — разнообразное меню, час–полтора на еду и общение</div>
+            </div>
+          </div>
+
+          <div class="ti ti-key">
+            <div class="ti-time">После обеда</div>
+            <div>
+              <div class="ti-name">Группы меняются местами</div>
+
+              <div class="ti-sub">Группа 2 → Off-road</div>
+              <div class="ti-desc">Тот же маршрут — видовые точки, квадрокоптер, возможность за рулём</div>
+
+              <div class="ti-sub">Группа 1 → Массажи, бассейн, сауна</div>
+              <div class="ti-desc">Свободный ритм восстановления: массаж в шатре, бассейн с видом на горы, сауна, прогулки — каждый выбирает сам</div>
+            </div>
+          </div>
+
+          <div class="ti">
+            <div class="ti-time">19:00</div>
+            <div>
+              <div class="ti-name">Общий ужин</div>
+              <div class="ti-desc">Разнообразное меню, согласованное заранее. Вино от собственной винодельни отеля. Неспешный вечер после насыщенного дня</div>
+            </div>
+          </div>
+
+          <div class="ti ti-key">
+            <div class="ti-time">После ужина</div>
+            <div>
+              <div class="ti-name">Вечерняя игровая программа с ведущим</div>
+              <div class="ti-desc">Формат продумывается и прописывается заранее вместе с ведущим — с учётом состава участников, формата компании и общего настроения выезда:</div>
+              <div class="ti-list">
+                <div class="ti-li">Тематический квиз</div>
+                <div class="ti-li">Мафия</div>
+                <div class="ti-li">Покер</div>
+                <div class="ti-li">Бильярд</div>
+                <div class="ti-li">Другие игровые форматы в группах</div>
+              </div>
+              <div class="ti-note">По желанию — механика с набором баллов и финальными призами: от организаторов, включая абонементы на массаж и сертификаты на услуги Update. После игровой части — совместный просмотр кино на проекторе как спокойное и атмосферное завершение вечера.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="pday">
+      <div class="day-grid">
+        <div class="day-aside">
+          <div class="d-num">03</div>
+          <div class="d-title">Спокойное завершение выезда</div>
+          <div class="d-meta">День третий</div>
+          <div class="d-desc">Последний день — без спешки и обязательной программы. Свободное утро, прогулки, бассейн. Завершающий общий обед — и выезд домой в хорошем состоянии.</div>
+        </div>
+        <div class="timeline">
+
+          <div class="ti">
+            <div class="ti-time">10:00</div>
+            <div>
+              <div class="ti-name">Подъём и завтрак</div>
+              <div class="ti-desc">Последнее утро в отеле — неспешно, без дедлайнов и будильников</div>
+            </div>
+          </div>
+
+          <div class="ti">
+            <div class="ti-time">До 12:00</div>
+            <div>
+              <div class="ti-name">Свободное время</div>
+              <div class="ti-desc">Каждый проводит время так, как хочется:</div>
+              <div class="ti-list">
+                <div class="ti-li">Отдых и прогулки по территории</div>
+                <div class="ti-li">Бассейн, сауна</div>
+                <div class="ti-li">Спокойное завершение выезда в своём ритме</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ti">
+            <div class="ti-time">12:00</div>
+            <div>
+              <div class="ti-name">Выселение из номеров</div>
+              <div class="ti-desc">Сдача ключей</div>
+              <div class="ti-note">После выселения участники могут оставаться на территории, отдыхать, гулять и спокойно завершать выезд без спешки — вплоть до обеда.</div>
+            </div>
+          </div>
+
+          <div class="ti ti-key">
+            <div class="ti-time">14:00</div>
+            <div>
+              <div class="ti-name">Общий обед</div>
+              <div class="ti-desc">Финальный общий стол — с хорошим настроением, воспоминаниями о выезде и лёгким ощущением, что было здорово</div>
+            </div>
+          </div>
+
+          <div class="ti">
+            <div class="ti-time">После обеда</div>
+            <div>
+              <div class="ti-name">Трансфер до аэропорта</div>
+              <div class="ti-desc">Организованный трансфер до аэропорта — с общими впечатлениями, восстановленным ресурсом и зарядом на следующий рабочий период</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section class="act-section" id="activities">
+  <div class="reveal">
+    <div class="s-label">Активности</div>
+    <h2 class="s-title">Что ждёт участников</h2>
+    <p class="s-sub">Каждый элемент программы продуман — от адреналина до глубокого восстановления.</p>
+  </div>
+  <div class="act-grid reveal">
+    <div class="acard"><div class="abg" data-bg="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@e92dd2f58b053ab70df24c2196288f5c2c614677/activity/Off-road.webp"></div><div class="agr"></div><div class="acont"><div class="atitle">Off-road маршрут</div><p class="adesc">Группы формируются под количество участников. Живописные пейзажи Кахетии, адреналин и яркие впечатления, которые объединяют.</p></div></div>
+    <div class="acard"><div class="abg" data-bg="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@e92dd2f58b053ab70df24c2196288f5c2c614677/activity/activity-outdoor-massage.webp"></div><div class="agr"></div><div class="acont"><div class="atitle">Массажи на воздухе</div><p class="adesc">Слоты и количество мастеров адаптируются под группу — каждый получает личное время на восстановление.</p></div></div>
+    <div class="acard"><div class="abg" data-bg="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@e92dd2f58b053ab70df24c2196288f5c2c614677/activity/fireplace.webp"></div><div class="agr"></div><div class="acont"><div class="atitle">Вечер у костра</div><p class="adesc">Вино от собственной винодельни, живое неформальное общение под открытым небом.</p></div></div>
+    <div class="acard"><div class="abg" data-bg="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@e92dd2f58b053ab70df24c2196288f5c2c614677/activity/poker.webp"></div><div class="agr"></div><div class="acont"><div class="atitle">Игровая программа</div><p class="adesc">Квиз, мафия, покер, групповые форматы с ведущим. С системой баллов и финальными призами.</p></div></div>
+    <div class="acard"><div class="abg" data-bg="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@e92dd2f58b053ab70df24c2196288f5c2c614677/activity/sauna.webp"></div><div class="agr"></div><div class="acont"><div class="atitle">Бассейн и сауна</div><p class="adesc">Открытый бассейн с видом на горы и сауна — доступны весь выезд, в своём ритме.</p></div></div>
+    <div class="acard"><div class="abg" data-bg="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@9c55f617bdf983fc65b6ca01eb7d5eaf20f62dcc/Hotel_Qvevrebi/diner.webp"></div><div class="agr"></div><div class="acont"><div class="atitle">Ужины с вином</div><p class="adesc">Два общих ужина с вином от собственной винодельни — неторопливо, вкусно, в хорошей компании.</p></div></div>
+    <div class="acard"><div class="abg" data-bg="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@e92dd2f58b053ab70df24c2196288f5c2c614677/activity/activity-group-workout.webp"></div><div class="agr"></div><div class="acont"><div class="atitle">Свободное время</div><p class="adesc">Прогулки, вид на Алазанскую долину, тишина и возможность просто отдышаться.</p></div></div>
+    <div class="acard"><div class="abg" data-bg="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@027376dd4f7d333ee93f1f40e7796331b0685099/activity/vedushiy.webp"></div><div class="agr"></div><div class="acont"><div class="atitle">Ведущий-вожатый</div><p class="adesc">Рядом весь выезд — создаёт атмосферу и помогает каждому комфортно включиться.</p></div></div>
+  </div>
+</section>
+
+<!-- ACCOMMODATION -->
+<div class="accom" id="accommodation">
+  <div class="accom-hd reveal">
+    <div class="s-label">Проживание</div>
+    <h2 class="s-title">Проживание для 20–60 участников</h2>
+    <p class="s-sub">Размещение на 2 ночи в twin-номерах с видом на Алазанскую долину. При бронировании отеля целиком площадка становится полностью закрытой под ваш выезд.</p>
+  </div>
+  <div class="accom-body reveal">
+    <div class="accom-info">
+      <div class="room-types">
+        <div class="rtype">
+          <div class="rtype-cnt">7 номеров</div>
+          <div class="rtype-name">Twin · главный корпус</div>
+          <div class="rtype-desc">Две раздельные кровати, вид на Алазанскую долину, терраса</div>
+        </div>
+        <div class="rtype">
+          <div class="rtype-cnt">5 номеров</div>
+          <div class="rtype-name">Twin · квеври</div>
+          <div class="rtype-desc">Две раздельные кровати, вид на Алазанскую долину, собственная небольшая терраса</div>
+        </div>
+      </div>
+    </div>
+    <div class="room-grid">
+      <div class="rphoto"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@05bbc9b5a319a860f38563c0012bb4fbb3f97484/Hotel_Qvevrebi/osnovnoy_korpus.webp" alt="Главный корпус" loading="lazy" decoding="async"><div class="rphoto-lbl">Главный корпус</div></div>
+      <div class="rphoto"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@d05c630d03c86d503ab0e3ec0de75f6006cc9fa0/Hotel_Qvevrebi/twin_2.webp" alt="Twin корпус" loading="lazy" decoding="async"><div class="rphoto-lbl">Twin · корпус</div></div>
+      <div class="rphoto"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@87f5b7dc54e9c8bfc490b069e13d521dd4fe8366/Hotel_Qvevrebi/bathroom.webp" alt="Ванная" loading="lazy" decoding="async"><div class="rphoto-lbl">Ванная комната</div></div>
+      <div class="rphoto"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@87f5b7dc54e9c8bfc490b069e13d521dd4fe8366/Hotel_Qvevrebi/twin_1.webp" alt="Twin квеври" loading="lazy" decoding="async"><div class="rphoto-lbl">Twin · квеври</div></div>
+      <div class="rphoto"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@87f5b7dc54e9c8bfc490b069e13d521dd4fe8366/Hotel_Qvevrebi/retreat-bathroom-round-mirror-shower.webp" alt="Душ квеври" loading="lazy" decoding="async"><div class="rphoto-lbl">Ванная в квеври</div></div>
+      <div class="rphoto"><img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@05bbc9b5a319a860f38563c0012bb4fbb3f97484/Hotel_Qvevrebi/kvevri.webp" alt="Квеври снаружи" loading="lazy" decoding="async"><div class="rphoto-lbl">Квеври снаружи</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- EFFECTS -->
+<section class="eff-section section reveal" id="value">
+  <div class="s-label">Ценность</div>
+  <h2 class="s-title">Что даёт этот выезд</h2>
+  <p class="s-sub">Инвестиция в людей, которая возвращается через вовлечённость, качество взаимодействия и лояльность.</p>
+  <div class="eff-grid reveal">
+    <div class="ecard"><div class="enum">01</div><div class="etitle">Рост лояльности</div><p class="etext">Такой формат усиливает у сотрудников ощущение, что компания действительно заботится о людях и вкладывается не только в результат, но и в их состояние.</p></div>
+    <div class="ecard"><div class="enum">02</div><div class="etitle">Снижение накопленной перегрузки</div><p class="etext">Смена обстановки, отдых и восстановление помогают снизить усталость и вернуть более спокойное, собранное состояние перед следующим рабочим периодом.</p></div>
+    <div class="ecard"><div class="enum">03</div><div class="etitle">Усиление внутренних связей</div><p class="etext">Неформальное общение и общий опыт усиливают доверие, теплоту и качество взаимодействия между коллегами — это остаётся и в рабочем процессе.</p></div>
+    <div class="ecard"><div class="enum">04</div><div class="etitle">Переключение и перезагрузка</div><p class="etext">Участники выходят из привычного рабочего контекста, меняют обстановку и получают эмоциональную разгрузку — дорога, природа, офф-роуд, ужины и неформальное общение.</p></div>
+    <div class="ecard"><div class="enum">05</div><div class="etitle">Поддержка продуктивности</div><p class="etext">Выезд становится точкой перезагрузки перед следующим рабочим периодом: помогает восстановить ресурс, снизить внутреннее напряжение и вернуть фокус.</p></div>
+    <div class="ecard"><div class="enum">06</div><div class="etitle">Укрепление HR-бренда</div><p class="etext">Подобные форматы усиливают образ современного работодателя, который умеет сочетать эффективность, человеческий подход и внимание к людям.</p></div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="inc-section" id="included">
+  <div class="reveal">
+    <div class="s-label">В программу включено</div>
+    <h2 class="s-title">Всё продумано</h2>
+    <p class="s-sub">Полная программа «под ключ» — от трансфера до призов, без скрытых доплат.</p>
+  </div>
+  <div class="inc-body reveal">
+    <div class="inc-cats">
+      <div class="ig"><div class="ig-title">Проживание и питание</div><div class="il"><div class="ir"><span class="idot"></span>20–60 участников · 2 ночи · при бронировании отеля целиком</div><div class="ir"><span class="idot"></span>2 завтрака, 2 обеда, 2 ужина</div><div class="ir"><span class="idot"></span>Вино от собственной винодельни отеля</div><div class="ir"><span class="idot"></span>Вода и закуски в дороге</div></div></div>
+      <div class="ig"><div class="ig-title">Активности</div><div class="il"><div class="ir"><span class="idot"></span>Off-road заезды с делением на группы</div><div class="ir"><span class="idot"></span>Квадрокоптер на маршруте</div><div class="ir"><span class="idot"></span>Бассейн и сауна — весь выезд</div><div class="ir"><span class="idot"></span>Вечерняя игровая программа с ведущим</div></div></div>
+      <div class="ig"><div class="ig-title">Восстановление</div><div class="il"><div class="ir"><span class="idot"></span>Массажные слоты под количество участников</div><div class="ir"><span class="idot"></span>Несколько мастеров массажа параллельно</div><div class="ir"><span class="idot"></span>Массажи в шатрах на открытом воздухе</div><div class="ir"><span class="idot"></span>Welcome-вечер у костра с гитарой</div></div></div>
+      <div class="ig"><div class="ig-title">Организация и призы</div><div class="il"><div class="ir"><span class="idot"></span>Ведущий-вожатый весь выезд</div><div class="ir"><span class="idot"></span>Встреча и трансферы до аэропорта</div><div class="ir"><span class="idot"></span>Призы от Update Studio</div><div class="ir"><span class="idot"></span>Полная организация Update Studio</div></div></div>
+    </div>
+    <div class="inc-photo">
+      <img src="https://cdn.jsdelivr.net/gh/updatestudiotbilisi-hash/retreat@87f5b7dc54e9c8bfc490b069e13d521dd4fe8366/Hotel_Qvevrebi/retreat-pool-main-area-wide.webp" alt="Бассейн" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<!-- ORGANIZERS -->
+<div class="org-section">
+  <div class="org-inner reveal">
+    <div class="org-left">
+      <div class="s-label" style="color:var(--gold)">Организация</div>
+      <h2 class="org-title">На площадке — организаторы Update Studio</h2>
+    </div>
+    <div class="org-right">
+      <div class="org-item">
+        <div class="org-icon">◎</div>
+        <div>
+          <div class="org-item-title">Подготовка до выезда</div>
+          <div class="org-item-desc">Кураторы продумывают и готовят всё заранее — логистику, питание, тайминг, массажи, игровую программу, маршрут офф-роуд и все детали. Участники просто приезжают.</div>
+        </div>
+      </div>
+      <div class="org-item">
+        <div class="org-icon">◎</div>
+        <div>
+          <div class="org-item-title">Контроль во время выезда</div>
+          <div class="org-item-desc">Организаторы находятся на площадке все три дня — следят за тем, чтобы всё шло по плану, оперативно решают любые вопросы и делают так, чтобы каждый участник чувствовал себя комфортно.</div>
+        </div>
+      </div>
+      <div class="org-item">
+        <div class="org-icon">◎</div>
+        <div>
+          <div class="org-item-title">Задача одна — чтобы всё прошло легко</div>
+          <div class="org-item-desc">Всё, что происходит на выезде, проходит через внимание организаторов. Операционку мы берём на себя полностью.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><strong>Update Studio</strong> · MASSAGE & WELLNESS · TBILISI</div>
+  </div>
+</footer>
+
+<script>
+function showDay(i){
+  document.querySelectorAll('.pday').forEach((p,j)=>p.classList.toggle('on',i===j));
+  document.querySelectorAll('.ptab').forEach((t,j)=>t.classList.toggle('on',i===j));
+}
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const bgObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting)return;
+    const el=entry.target;
+    const bg=el.dataset.bg;
+    if(bg){
+      el.style.setProperty('--bg-image',`url("${bg}")`);
+      el.classList.add('is-ready');
+      el.removeAttribute('data-bg');
+    }
+    bgObserver.unobserve(el);
+  });
+},{rootMargin:'220px 0px',threshold:.01});
+document.querySelectorAll('.abg[data-bg]').forEach(el=>bgObserver.observe(el));
+const mobileCardQuery=window.matchMedia('(max-width: 960px)');
+let activityObserver;
+let snapTimeout;
+let lastSnappedCard=null;
+function setupActivityCards(){
+  if(activityObserver){
+    document.querySelectorAll('.acard').forEach(card=>activityObserver.unobserve(card));
+    activityObserver.disconnect();
+    activityObserver=null;
+  }
+  if(snapTimeout){
+    clearTimeout(snapTimeout);
+    snapTimeout=null;
+  }
+  const cards=document.querySelectorAll('.acard');
+  if(!mobileCardQuery.matches){
+    cards.forEach(card=>card.classList.remove('is-active'));
+    lastSnappedCard=null;
+    return;
+  }
+  activityObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      const isActive=entry.isIntersecting && entry.intersectionRatio > .55;
+      entry.target.classList.toggle('is-active',isActive);
+      if(!isActive)return;
+      if(window.innerWidth > 580)return;
+      if(lastSnappedCard===entry.target)return;
+      if(snapTimeout)clearTimeout(snapTimeout);
+      snapTimeout=setTimeout(()=>{
+        const rect=entry.target.getBoundingClientRect();
+        const viewportCenter=window.innerHeight * .5;
+        const cardCenter=rect.top + rect.height / 2;
+        if(Math.abs(cardCenter - viewportCenter) < 140){
+          entry.target.scrollIntoView({behavior:'smooth',block:'center'});
+          lastSnappedCard=entry.target;
+        }
+      },120);
+    });
+  },{threshold:[0.55,0.72],rootMargin:'-10% 0px -14% 0px'});
+  cards.forEach(card=>activityObserver.observe(card));
+}
+setupActivityCards();
+if(mobileCardQuery.addEventListener){
+  mobileCardQuery.addEventListener('change',setupActivityCards);
+}else if(mobileCardQuery.addListener){
+  mobileCardQuery.addListener(setupActivityCards);
+}
+function toggleMenu(){
+  const nl=document.querySelector('.nav-links');
+  if(!nl)return;
+  const open=nl.style.display==='flex';
+  nl.style.cssText=open?'':'display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:rgba(26,18,10,.97);padding:20px 24px;gap:20px;border-bottom:1px solid rgba(255,255,255,.08)';
+}
+</script>
+</body>
+</html>
