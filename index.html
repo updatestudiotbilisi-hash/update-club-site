@@ -569,7 +569,7 @@
   /* Expandable desc */
   .team-desc-wrap { position: relative; margin-bottom: 4px; }
   .team-desc { font-family: 'Circe', sans-serif; font-weight: 200; font-size: 0.88rem; color: var(--text-muted); line-height: 1.58; max-height: 4.5em; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); }
-  .team-desc.open { max-height: 300px; }
+  .team-desc.open { max-height: 1200px; }
   .team-desc-fade { position: absolute; bottom: 0; left: 0; right: 0; height: 2.5em; background: linear-gradient(to bottom, transparent, #111110); pointer-events: none; transition: opacity 0.3s; }
   .team-desc.open ~ .team-desc-fade { opacity: 0; }
   .team-expand { background: none; border: none; cursor: pointer; font-family: var(--font-body); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); padding: 6px 0 10px; display: block; transition: color 0.2s; }
@@ -1156,235 +1156,92 @@
       <div class="team-track" id="team-track">
 
         <!-- 1. Николай Дадыгин -->
-        <div class="team-card">
-          <div class="team-photo-wrap">
-            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Nikolai-Dadygin.webp" alt="Николай Дадыгин" loading="eager" fetchpriority="high">
-          </div>
-          <div class="team-card-body">
-            <div class="team-role"><span data-lang="ru" class="active">Мануальный терапевт</span><span data-lang="en">Manual Therapist</span><span data-lang="ka">მანუალური თერაპევტი</span></div>
-            <div class="team-name">Николай Дадыгин</div>
-            <div class="team-desc-wrap">
-              <div class="team-desc">
-                <span data-lang="ru" class="active">Специалист с высшим медицинским образованием, специализация — мануальная терапия. Помогает при болях и ограничениях подвижности, нарушениях осанки, мышечном напряжении и восстановлении после травм. Также часто обращаются с головными болями и мигренями.</span>
-                <span data-lang="en">Specialist with higher medical education, specializing in manual therapy. Helps with pain and limited mobility, postural disorders, muscle tension and post-trauma recovery. Also frequently consulted for headaches and migraines.</span>
-                <span data-lang="ka">სპეციალისტი უმაღლესი სამედიცინო განათლებით, სპეციალიზაცია — მანუალური თერაპია. ტკივილი, პოზის დარღვევა, კუნთოვანი დაძაბულობა, ტრავმის შემდგომ.</span>
-              </div>
-              <div class="team-desc-fade"></div>
-            </div>
-            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
-            <a href="https://n1418011.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Николаю</span><span data-lang="en">Book with Nikolai</span><span data-lang="ka">ჩაეწერეთ ნიკოლაისთან</span></a>
-          </div>
-        </div>
+        <div class="team-card"><div class="team-photo-wrap"><img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Nikolai-Dadygin.webp" alt="Николай Дадыгин" loading="eager" fetchpriority="high"></div><div class="team-card-body">
+          <div class="team-role"><span data-lang="ru" class="active">Врач · мануальный терапевт</span><span data-lang="en">Physician · Manual Therapist</span><span data-lang="ka">ექიმი · მანუალური თერაპევტი</span></div>
+          <div class="team-name"><span data-lang="ru" class="active">Николай Дадыгин</span><span data-lang="en">Nikolai Dadygin</span><span data-lang="ka">ნიკოლაი დადიგინი</span></div>
+          <div class="team-desc-wrap"><div class="team-desc"><span data-lang="ru" class="active">Высшее медицинское образование — врач-педиатр. С 2008 года занимается медицинским массажем, с 2014 года ведёт врачебную практику, с 2018 года специализируется на мануальной терапии. К Николаю обращаются при болях опорно-двигательного аппарата, дегенеративно-дистрофических заболеваниях суставов, вертеброгенных заболеваниях внутренних органов, ограничениях подвижности, после травм, при головных и мышечных болях, мигренях, нарушениях осанки, сколиозе, усталости и стрессе.</span><span data-lang="en">A physician with higher medical education in pediatrics. He has practiced medical massage since 2008, worked as a physician since 2014, and specialized in manual therapy since 2018. Clients come to Nikolai with musculoskeletal pain, degenerative joint conditions, vertebrogenic disorders of internal organs, limited joint mobility, post-trauma rehabilitation, headaches and migraines, muscle pain and tension, posture disorders, scoliosis, fatigue and stress.</span><span data-lang="ka">უმაღლესი სამედიცინო განათლება — პედიატრი. სამედიცინო მასაჟს 2008 წლიდან აკეთებს, საექიმო პრაქტიკას 2014 წლიდან ეწევა, ხოლო 2018 წლიდან მანუალურ თერაპიაზე სპეციალიზდება. ნიკოლაის მიმართავენ საყრდენ-მამოძრავებელი სისტემის ტკივილის, სახსრების დეგენერაციულ-დისტროფიული დაავადებების, შინაგანი ორგანოების ვერტებროგენული დარღვევების, სახსრების შეზღუდული მოძრაობის, ტრავმის შემდგომი რეაბილიტაციის, თავისა და კუნთების ტკივილის, შაკიკის, დაძაბულობის, პოზის დარღვევის, სქოლიოზის, დაღლილობისა და სტრესის დროს.</span></div><div class="team-desc-fade"></div></div>
+          <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button><a href="https://n1418011.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Николаю</span><span data-lang="en">Book with Nikolai</span><span data-lang="ka">ჩაეწერეთ ნიკოლაისთან</span></a>
+        </div></div>
 
         <!-- 2. Ната Солнечная -->
-        <div class="team-card">
-          <div class="team-photo-wrap">
-            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Nata-Solnechnaya.webp" alt="Ната Солнечная" loading="lazy">
-          </div>
-          <div class="team-card-body">
-            <div class="team-role"><span data-lang="ru" class="active">Телесный терапевт</span><span data-lang="en">Body Therapist</span><span data-lang="ka">სხეულის თერაპევტი</span></div>
-            <div class="team-name">Ната Солнечная</div>
-            <div class="team-desc-wrap">
-              <div class="team-desc">
-                <span data-lang="ru" class="active">Телесный терапевт, более 6 лет практики. Основное направление — соматика и работа с телесными блоками: помогает снять хроническое напряжение, последствия стресса, асимметрии, головные боли и усталость. В процессе обучает лучше чувствовать тело и поддерживать результат простыми техниками (дыхание, антистресс-практики, осознанность).</span>
-                <span data-lang="en">Body therapist with over 6 years of practice. Main focus — somatics and body blocks: helps relieve chronic tension, stress effects, asymmetries, headaches and fatigue. Teaches clients to better feel their body and maintain results with simple techniques.</span>
-                <span data-lang="ka">სხეულის თერაპევტი, 6 წელზე მეტი პრაქტიკა. სომატიკა და სხეულის ბლოკები: ქრონიკული დაძაბულობა, სტრესის შედეგები. სწავლობს სხეულის შეგრძნებებს.</span>
-              </div>
-              <div class="team-desc-fade"></div>
-            </div>
-            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
-            <a href="https://n1418013.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Нате</span><span data-lang="en">Book with Nata</span><span data-lang="ka">ჩაეწერეთ ნატასთან</span></a>
-          </div>
-        </div>
+        <div class="team-card"><div class="team-photo-wrap"><img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Nata-Solnechnaya.webp" alt="Ната Солнечная" loading="lazy"></div><div class="team-card-body">
+          <div class="team-role"><span data-lang="ru" class="active">Телесный терапевт</span><span data-lang="en">Body Therapist</span><span data-lang="ka">სხეულის თერაპევტი</span></div>
+          <div class="team-name"><span data-lang="ru" class="active">Ната Солнечная</span><span data-lang="en">Nata Solnechnaya</span><span data-lang="ka">ნატა სოლნეჩნაია</span></div>
+          <div class="team-desc-wrap"><div class="team-desc"><span data-lang="ru" class="active">Более 6 лет профессионально работает телесным терапевтом. Основное направление — соматика и работа с телесными блоками. Подготовка включает работу с мышечными зажимами и асимметриями, мягкие мануальные техники коррекции тела, соматические, дыхательные и антистрессовые практики. Ната помогает уменьшить блоки, перекосы, головные боли и последствия стресса, восстановить лёгкость и внутреннее равновесие.</span><span data-lang="en">A professional body therapist for over six years, specializing in somatics and releasing body blocks. Her training includes work with muscle tension and asymmetry, gentle manual body correction, somatic, breathing and anti-stress practices. Nata helps reduce blocks, postural imbalances, headaches and the physical effects of stress, restoring ease and inner balance.</span><span data-lang="ka">ექვს წელზე მეტია პროფესიონალურად მუშაობს სხეულის თერაპევტად. მთავარი მიმართულებაა სომატიკა და სხეულის ბლოკებთან მუშაობა. მომზადება მოიცავს კუნთოვან დაჭიმულობასა და ასიმეტრიებთან მუშაობას, სხეულის რბილ მანუალურ კორექციას, სომატურ, სუნთქვით და ანტისტრესულ პრაქტიკებს. ნატა ამცირებს ბლოკებს, დისბალანსს, თავის ტკივილსა და სტრესის შედეგებს და ეხმარება სიმსუბუქისა და შინაგანი წონასწორობის აღდგენაში.</span></div><div class="team-desc-fade"></div></div>
+          <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button><a href="https://n1418013.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Нате</span><span data-lang="en">Book with Nata</span><span data-lang="ka">ჩაეწერეთ ნატასთან</span></a>
+        </div></div>
 
-        <!-- 3. Кети Хупеня -->
-        <div class="team-card">
-          <div class="team-photo-wrap">
-            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Keti-Khupenya.webp" alt="Кети Хупеня" loading="lazy">
-          </div>
-          <div class="team-card-body">
-            <div class="team-role"><span data-lang="ru" class="active">Мастер по детскому и взрослому массажу</span><span data-lang="en">Children & Adult Massage Specialist</span><span data-lang="ka">ბავშვთა და ზრდასრულთა მასაჟის სპეციალისტი</span></div>
-            <div class="team-name">Кети Хупеня</div>
-            <div class="team-desc-wrap">
-              <div class="team-desc">
-                <span data-lang="ru" class="active">Медицинская сестра-массажист с 29-летним опытом. Специализируется на детском, лечебном и восстановительном массаже — бережно подбирает методику под возраст, особенности организма и рекомендации врача. Частые запросы: нарушения осанки, мышечное напряжение, восстановление после травм, поддержка при бронхитах/пневмонии и улучшение дыхания (массаж грудной клетки). Работает мягко и деликатно, после сеанса даёт родителям понятные рекомендации по упражнениям и домашнему уходу.</span>
-                <span data-lang="en">Medical massage nurse with 29 years of experience. Specializes in children's, therapeutic and restorative massage — carefully selects techniques based on age, individual physiology and doctor's recommendations. Common requests: posture disorders, muscle tension, post-trauma recovery, support for bronchitis/pneumonia and breathing improvement (chest massage). Works gently and delicately, gives parents clear exercise and home care recommendations after each session.</span>
-                <span data-lang="ka">სამედიცინო მასაჟისტი 29-წლიანი გამოცდილებით. სპეციალიზდება ბავშვთა, სამკურნალო და აღმდგენ მასაჟზე — ავრჩევს მეთოდიკას ასაკის, ორგანიზმის თავისებურებებისა და ექიმის რეკომენდაციების მიხედვით.</span>
-              </div>
-              <div class="team-desc-fade"></div>
-            </div>
-            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
-            <a href="https://n1418070.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Кети</span><span data-lang="en">Book with Keti</span><span data-lang="ka">ჩაეწერეთ ქეთისთან</span></a>
-          </div>
-        </div>
+        <!-- 3. Андрей Кулеба -->
+        <div class="team-card"><div class="team-photo-wrap"><img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Andrey-Kuleba.webp" alt="Андрей Кулеба" loading="lazy"></div><div class="team-card-body">
+          <div class="team-role"><span data-lang="ru" class="active">Физиотерапевт · массажист</span><span data-lang="en">Physiotherapist · Massage Therapist</span><span data-lang="ka">ფიზიოთერაპევტი · მასაჟისტი</span></div>
+          <div class="team-name"><span data-lang="ru" class="active">Андрей Кулеба</span><span data-lang="en">Andrey Kuleba</span><span data-lang="ka">ანდრეი კულება</span></div>
+          <div class="team-desc-wrap"><div class="team-desc"><span data-lang="ru" class="active">Высшее медицинское образование по направлению «Реабилитация. Физиотерапия». Работает с классическим, лечебным, спортивным и лимфодренажным массажем, применяет пассивную гимнастику. Сочетает восстановительный и оздоровительный подходы. К Андрею обращаются при напряжении и скованности, для восстановления после физических нагрузок, улучшения подвижности и состояния тканей. Техники дают глубокую, сильную, но мягкую проработку напряжённых зон.</span><span data-lang="en">Higher medical education in Rehabilitation and Physiotherapy. He practices classic, therapeutic, sports and lymphatic drainage massage and passive exercise. Andrey combines rehabilitation and wellness approaches to relieve tension and stiffness, support recovery after physical activity, and improve mobility and tissue condition. His work is deep and strong yet gentle.</span><span data-lang="ka">უმაღლესი სამედიცინო განათლება რეაბილიტაციისა და ფიზიოთერაპიის მიმართულებით. მუშაობს კლასიკური, სამკურნალო, სპორტული და ლიმფოდრენაჟული მასაჟით და იყენებს პასიურ ვარჯიშს. აერთიანებს აღმდგენ და გამაჯანსაღებელ მიდგომებს. ანდრეის მიმართავენ დაძაბულობისა და შებოჭილობის, ფიზიკური დატვირთვის შემდგომი აღდგენის, მოძრაობისა და ქსოვილების მდგომარეობის გასაუმჯობესებლად. ტექნიკა ღრმა და ძლიერია, თუმცა რბილი.</span></div><div class="team-desc-fade"></div></div>
+          <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button><a href="https://w821969.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Онлайн-запись</span><span data-lang="en">Book online</span><span data-lang="ka">ონლაინ ჩაწერა</span></a>
+        </div></div>
 
-        <!-- 3. Амалия Газарян -->
-        <div class="team-card">
-          <div class="team-photo-wrap">
-            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Amalia-Ghazaryan.webp" alt="Амалия Газарян" loading="lazy">
-          </div>
-          <div class="team-card-body">
-            <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Specialist</span><span data-lang="ka">მასაჟის სპეციალისტი</span></div>
-            <div class="team-name">Амалия Газарян</div>
-            <div class="team-desc-wrap">
-              <div class="team-desc">
-                <span data-lang="ru" class="active">Массажист с медицинским образованием. Комбинирует техники под запрос: оздоровительный/спортивный, лимфодренажный, миофасциальный, антицеллюлитный, массаж лица. Частые запросы — снять напряжение и отёчность, улучшить сон и общее самочувствие.</span>
-                <span data-lang="en">Massage therapist with medical education. Combines techniques by request: wellness/sports, lymphatic drainage, myofascial, anti-cellulite, facial massage. Common requests — relieve tension and swelling, improve sleep and overall wellbeing.</span>
-                <span data-lang="ka">მასაჟისტი სამედიცინო განათლებით. კომბინირებს ტექნიკებს: ჯანდაცვის/სპორტული, ლიმფური დრენაჟი, მიოფასციური, ანტიცელულიტური, სახის მასაჟი.</span>
-              </div>
-              <div class="team-desc-fade"></div>
-            </div>
-            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
-            <a href="https://n1418017.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Амалии</span><span data-lang="en">Book with Amalia</span><span data-lang="ka">ჩაეწერეთ ამალიასთან</span></a>
-          </div>
-        </div>
+        <!-- 4. Иа Дарахвелидзе -->
+        <div class="team-card"><div class="team-photo-wrap"><img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Ia-Darakhvelidze.webp" alt="Иа Дарахвелидзе" loading="lazy"></div><div class="team-card-body">
+          <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Therapist</span><span data-lang="ka">მასაჟისტი</span></div>
+          <div class="team-name"><span data-lang="ru" class="active">Иа Дарахвелидзе</span><span data-lang="en">Ia Darakhvelidze</span><span data-lang="ka">ია დარახველიძე</span></div>
+          <div class="team-desc-wrap"><div class="team-desc"><span data-lang="ru" class="active">Профессиональное образование по классическому, расслабляющему, лимфодренажному, спортивному и лечебному массажу. Иа индивидуально подбирает работу, внимательно отслеживает реакцию тканей и добавляет пассивную гимнастику. К ней обращаются при боли в шее, спине и пояснице, триггерных точках, напряжении, скованности и усталости, а также для улучшения подвижности, кровообращения и состояния тканей.</span><span data-lang="en">Professionally trained in classic, relaxation, lymphatic drainage, sports and therapeutic massage. Ia takes an individual approach, closely monitors tissue response and incorporates passive exercise. Clients come with neck, back and lower-back pain, trigger points, tension, stiffness and fatigue, and to improve mobility, circulation and tissue condition.</span><span data-lang="ka">პროფესიული განათლება კლასიკურ, სარელაქსაციო, ლიმფოდრენაჟულ, სპორტულ და სამკურნალო მასაჟში. ია ინდივიდუალურად მუშაობს, ყურადღებით აკვირდება ქსოვილების რეაქციას და ამატებს პასიურ ვარჯიშს. მას მიმართავენ კისრის, ზურგისა და წელის ტკივილის, ტრიგერული წერტილების, დაძაბულობის, შებოჭილობისა და დაღლილობის დროს, ასევე მოძრაობის, სისხლის მიმოქცევისა და ქსოვილების მდგომარეობის გასაუმჯობესებლად.</span></div><div class="team-desc-fade"></div></div>
+          <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button><a href="https://n1404737.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Иа</span><span data-lang="en">Book with Ia</span><span data-lang="ka">ჩაეწერეთ იასთან</span></a>
+        </div></div>
 
-        <!-- 4. Руслан Джиджелава -->
-        <div class="team-card">
-          <div class="team-photo-wrap">
-            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Ruslan-Jijelava.webp" alt="Руслан Джиджелава" loading="lazy">
-          </div>
-          <div class="team-card-body">
-            <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Specialist</span><span data-lang="ka">მასაჟის სპეციალისტი</span></div>
-            <div class="team-name">Руслан Джиджелава</div>
-            <div class="team-desc-wrap">
-              <div class="team-desc">
-                <span data-lang="ru" class="active">Массажист с опытом более 15 лет. Сочетает классические, спортивные, лимфодренажные и шиацу-техники для глубокой и целостной проработки тела. Подходит для снятия напряжения после нагрузок, подготовки к тренировке и проработки проблемных зон (в том числе стоп).</span>
-                <span data-lang="en">Massage therapist with over 15 years of experience. Combines classic, sports, lymphatic drainage and shiatsu techniques for deep, holistic body work. Great for post-workout recovery, pre-training and targeting problem areas including feet.</span>
-                <span data-lang="ka">მასაჟისტი 15 წელზე მეტი გამოცდილებით. კლასიკური, სპორტული, ლიმფური დრენაჟი და შიაცუ ტექნიკების კომბინაცია. ვარჯიშის შემდეგ, პრობლემური ზონები.</span>
-              </div>
-              <div class="team-desc-fade"></div>
-            </div>
-            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
-            <a href="https://n1418019.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Руслану</span><span data-lang="en">Book with Ruslan</span><span data-lang="ka">ჩაეწერეთ რუსლანთან</span></a>
-          </div>
-        </div>
+        <!-- 5. Антон Бакуров -->
+        <div class="team-card"><div class="team-photo-wrap"><img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Anton-Bakurov.webp" alt="Антон Бакуров" loading="lazy"></div><div class="team-card-body">
+          <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Therapist</span><span data-lang="ka">მასაჟისტი</span></div>
+          <div class="team-name"><span data-lang="ru" class="active">Антон Бакуров</span><span data-lang="en">Anton Bakurov</span><span data-lang="ka">ანტონ ბაკუროვი</span></div>
+          <div class="team-desc-wrap"><div class="team-desc"><span data-lang="ru" class="active">Профессиональное образование по классическому, спортивному, расслабляющему, лимфодренажному и лечебному массажу. Антон работает бережно и внимательно, индивидуально выбирает силу и темп, мягко прорабатывает всё тело и зоны дискомфорта. К нему обращаются, чтобы снять напряжение и стресс, расслабить мышцы после нагрузок, улучшить самочувствие, проработать проблемные зоны и полностью «перезагрузиться». Техники мягкие, обволакивающие и расслабляющие.</span><span data-lang="en">Professionally trained in classic, sports, relaxation, lymphatic drainage and therapeutic massage. Anton works carefully and attentively, tailoring pressure and pace while gently treating the whole body and areas of discomfort. Clients come to relieve tension and stress, relax muscles after exertion, improve overall wellbeing, address problem areas and fully reset. His techniques are soft, enveloping and deeply relaxing.</span><span data-lang="ka">პროფესიული განათლება კლასიკურ, სპორტულ, სარელაქსაციო, ლიმფოდრენაჟულ და სამკურნალო მასაჟში. ანტონი ფრთხილად და ყურადღებით მუშაობს, ინდივიდუალურად არჩევს ძალასა და ტემპს და რბილად ამუშავებს მთელ სხეულსა და დისკომფორტის ზონებს. მას მიმართავენ დაძაბულობისა და სტრესის მოსახსნელად, დატვირთვის შემდეგ კუნთების დასასვენებლად, ზოგადი მდგომარეობის გასაუმჯობესებლად და სრული „გადატვირთვისთვის“. ტექნიკა რბილი, მომცველი და დამამშვიდებელია.</span></div><div class="team-desc-fade"></div></div>
+          <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button><a href="https://w821969.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Онлайн-запись</span><span data-lang="en">Book online</span><span data-lang="ka">ონლაინ ჩაწერა</span></a>
+        </div></div>
 
-        <!-- 5. Иа Дарахвелидзе -->
-        <div class="team-card">
-          <div class="team-photo-wrap">
-            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Ia-Darakhvelidze.webp" alt="Иа Дарахвелидзе" loading="lazy">
-          </div>
-          <div class="team-card-body">
-            <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Specialist</span><span data-lang="ka">მასაჟის სპეციალისტი</span></div>
-            <div class="team-name">Иа Дарахвелидзе</div>
-            <div class="team-desc-wrap">
-              <div class="team-desc">
-                <span data-lang="ru" class="active">Индивидуальный подход: внимательно отслеживает реакцию тканей и добавляет элементы пассивной гимнастики для усиления эффекта. Часто обращаются с болью и дискомфортом в шее/спине/пояснице, триггерными точками и усталостью. Помогает снять скованность и улучшить подвижность.</span>
-                <span data-lang="en">Individual approach: carefully monitors tissue response and adds passive gymnastics elements to enhance results. Clients often come with neck/back pain, trigger points and fatigue. Helps relieve stiffness and improve mobility.</span>
-                <span data-lang="ka">ინდივიდუალური მიდგომა: ყურადღებით ადევნებს თვალყურს ქსოვილების რეაქციას. კისრის/ზურგის ტკივილი, ტრიგერული წერტილები, სიმტკიცე.</span>
-              </div>
-              <div class="team-desc-fade"></div>
-            </div>
-            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
-            <a href="https://n1404737.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Иа</span><span data-lang="en">Book with Ia</span><span data-lang="ka">ჩაეწერეთ იასთან</span></a>
-          </div>
-        </div>
+        <!-- 6. Амалия Газарян -->
+        <div class="team-card"><div class="team-photo-wrap"><img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Amalia-Ghazaryan.webp" alt="Амалия Газарян" loading="lazy"></div><div class="team-card-body">
+          <div class="team-role"><span data-lang="ru" class="active">Медицинская сестра · массажист</span><span data-lang="en">Nurse · Massage Therapist</span><span data-lang="ka">მედდა · მასაჟისტი</span></div>
+          <div class="team-name"><span data-lang="ru" class="active">Амалия Газарян</span><span data-lang="en">Amalia Gazaryan</span><span data-lang="ka">ამალია გაზარიანი</span></div>
+          <div class="team-desc-wrap"><div class="team-desc"><span data-lang="ru" class="active">Медицинское образование по специальности «Сестринское дело». Обучалась классическому оздоровительному, спортивному, антицеллюлитному, лимфодренажному, миофасциальному массажу и массажу лица. Комбинирует техники под запрос и жалобы клиента. Помогает уменьшить головные боли, напряжение и отёчность, улучшить сон и качество жизни, мягко восстановить подвижность суставов и гармонизировать психоэмоциональное состояние.</span><span data-lang="en">Medical education in Nursing. Trained in classic wellness, sports, anti-cellulite, lymphatic drainage, myofascial and facial massage. She combines techniques according to each client's needs and concerns. Amalia helps reduce headaches, tension and swelling, improve sleep and quality of life, gently restore joint mobility and balance emotional wellbeing.</span><span data-lang="ka">სამედიცინო განათლება საექთნო საქმეში. შესწავლილი აქვს კლასიკური გამაჯანსაღებელი, სპორტული, ანტიცელულიტური, ლიმფოდრენაჟული, მიოფასციალური და სახის მასაჟი. ტექნიკებს კლიენტის მოთხოვნისა და ჩივილების მიხედვით აერთიანებს. ეხმარება თავის ტკივილის, დაძაბულობისა და შეშუპების შემცირებაში, ძილისა და ცხოვრების ხარისხის გაუმჯობესებაში, სახსრების მოძრაობის რბილად აღდგენასა და ფსიქოემოციური მდგომარეობის დაბალანსებაში.</span></div><div class="team-desc-fade"></div></div>
+          <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button><a href="https://n1418017.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Амалии</span><span data-lang="en">Book with Amalia</span><span data-lang="ka">ჩაეწერეთ ამალიასთან</span></a>
+        </div></div>
 
-        <!-- 7. Влада Пустоварова -->
-        <div class="team-card">
-          <div class="team-photo-wrap">
-            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Vlada-Pustovarova.webp" alt="Влада Пустоварова" loading="lazy">
-          </div>
-          <div class="team-card-body">
-            <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Specialist</span><span data-lang="ka">მასაჟის სპეციალისტი</span></div>
-            <div class="team-name">Влада Пустоварова</div>
-            <div class="team-desc-wrap">
-              <div class="team-desc">
-                <span data-lang="ru" class="active">Массажист с медицинским образованием, работает с 2019 года. Мягко настраивает силу и темп под запрос: помогает при мышечных спазмах, болях в шее и спине, головных болях и мигренях. Отличный выбор, если нужно «выключить голову» и глубоко расслабиться.</span>
-                <span data-lang="en">Massage therapist with medical education, working since 2019. Gently adjusts pressure and pace to your needs: helps with muscle spasms, neck and back pain, headaches and migraines. Great choice for deeply switching off and relaxing.</span>
-                <span data-lang="ka">მასაჟისტი სამედიცინო განათლებით, 2019 წლიდან. კუნთოვანი სპაზმები, კისრისა და ზურგის ტკივილი, თავის ტკივილი. ღრმა დასვენება.</span>
-              </div>
-              <div class="team-desc-fade"></div>
-            </div>
-            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
-            <a href="https://n1418022.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Владе</span><span data-lang="en">Book with Vlada</span><span data-lang="ka">ჩაეწერეთ ვლადასთან</span></a>
-          </div>
-        </div>
+        <!-- 7. Руслан Джиджелава -->
+        <div class="team-card"><div class="team-photo-wrap"><img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Ruslan-Jijelava.webp" alt="Руслан Джиджелава" loading="lazy"></div><div class="team-card-body">
+          <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Therapist</span><span data-lang="ka">მასაჟისტი</span></div>
+          <div class="team-name"><span data-lang="ru" class="active">Руслан Джиджелава</span><span data-lang="en">Ruslan Dzhidzhelava</span><span data-lang="ka">რუსლან ჯიჯელავა</span></div>
+          <div class="team-desc-wrap"><div class="team-desc"><span data-lang="ru" class="active">Профессионально занимается массажем более 15 лет. Обучался классическому, спортивному, лимфодренажному, расслабляющему массажу и шиацу. Сочетает техники для глубокой и целостной проработки тела. Помогает снять напряжение после нагрузок, подготовить тело к тренировке, улучшить кровообращение и тонус, проработать проблемные зоны, включая стопы, и уменьшить отёки. Техники сильные и плавные, с широким охватом и глубокой проработкой.</span><span data-lang="en">A professional massage therapist for over 15 years, trained in classic, sports, lymphatic drainage, relaxation massage and shiatsu. He combines techniques for deep, holistic bodywork. Ruslan helps relieve post-exercise tension, prepare the body for training, improve circulation and muscle tone, treat problem areas including the feet, and reduce swelling. His techniques are strong and fluid, with broad contact and deep muscle work.</span><span data-lang="ka">15 წელზე მეტია პროფესიონალურად მუშაობს მასაჟისტად. შესწავლილი აქვს კლასიკური, სპორტული, ლიმფოდრენაჟული, სარელაქსაციო მასაჟი და შიაცუ. ტექნიკებს სხეულის ღრმა და მთლიანოვანი დამუშავებისთვის აერთიანებს. ეხმარება დატვირთვის შემდგომი დაძაბულობის მოხსნაში, ვარჯიშისთვის მომზადებაში, სისხლის მიმოქცევისა და კუნთოვანი ტონუსის გაუმჯობესებაში, პრობლემური ზონებისა და ტერფების დამუშავებასა და შეშუპების შემცირებაში. ტექნიკა ძლიერი და თანაბარია, ფართო კონტაქტითა და ღრმა დამუშავებით.</span></div><div class="team-desc-fade"></div></div>
+          <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button><a href="https://n1418019.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Руслану</span><span data-lang="en">Book with Ruslan</span><span data-lang="ka">ჩაეწერეთ რუსლანთან</span></a>
+        </div></div>
 
         <!-- 8. Анастасия Калашникова -->
-        <div class="team-card">
-          <div class="team-photo-wrap">
-            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Anastasia-Kalashnikova.webp" alt="Анастасия Калашникова" loading="lazy">
-          </div>
-          <div class="team-card-body">
-            <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Specialist</span><span data-lang="ka">მასაჟის სპეციალისტი</span></div>
-            <div class="team-name">Анастасия Калашникова</div>
-            <div class="team-desc-wrap">
-              <div class="team-desc">
-                <span data-lang="ru" class="active">Работает мягко и внимательно, подбирая технику под состояние, настроение и запрос клиента. Подходит тем, кто хочет расслабиться, снизить стресс и комфортно проработать проблемные зоны без боли. Техники — мягкие, но глубокие, с ощущением заботы и полного расслабления.</span>
-                <span data-lang="en">Works gently and attentively, selecting technique by the client's condition, mood and request. Ideal for those who want to relax, reduce stress and address problem areas without pain. Soft but deep techniques with a feeling of complete care.</span>
-                <span data-lang="ka">მუშაობს მსუბუქად და ყურადღებით. შესაფერისია მათთვის, ვისაც სურს დასვენება, სტრესის შემცირება, პრობლემური ზონების გადამუშავება ტკივილის გარეშე.</span>
-              </div>
-              <div class="team-desc-fade"></div>
-            </div>
-            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
-            <a href="https://n1374725.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Анастасии</span><span data-lang="en">Book with Anastasia</span><span data-lang="ka">ჩაეწერეთ ანასტასიასთან</span></a>
-          </div>
-        </div>
+        <div class="team-card"><div class="team-photo-wrap"><img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Anastasia-Kalashnikova.webp" alt="Анастасия Калашникова" loading="lazy"></div><div class="team-card-body">
+          <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Therapist</span><span data-lang="ka">მასაჟისტი</span></div>
+          <div class="team-name"><span data-lang="ru" class="active">Анастасия Калашникова</span><span data-lang="en">Anastasia Kalashnikova</span><span data-lang="ka">ანასტასია კალაშნიკოვა</span></div>
+          <div class="team-desc-wrap"><div class="team-desc"><span data-lang="ru" class="active">Обучалась классическому, расслабляющему, лимфодренажному, антицеллюлитному, спортивному массажу и классическому массажу лица. Индивидуально сочетает доказательные подходы с вниманием к состоянию, настроению и запросу клиента. К Анастасии обращаются, чтобы расслабиться, снять стресс, улучшить состояние нервной системы и без боли проработать проблемные зоны. Техники мягкие, глубокие и комфортные.</span><span data-lang="en">Trained in classic, relaxation, lymphatic drainage, anti-cellulite, sports and classic facial massage. She combines evidence-based approaches with close attention to each client's condition, mood and needs. Clients come to Anastasia to relax, reduce stress, support the nervous system and address problem areas without pain. Her techniques are soft, deep and comfortable.</span><span data-lang="ka">შესწავლილი აქვს კლასიკური, სარელაქსაციო, ლიმფოდრენაჟული, ანტიცელულიტური, სპორტული და სახის კლასიკური მასაჟი. ინდივიდუალურად აერთიანებს მტკიცებულებაზე დაფუძნებულ მიდგომებს კლიენტის მდგომარეობის, განწყობისა და მოთხოვნისადმი ყურადღებასთან. მას მიმართავენ დასასვენებლად, სტრესის შესამცირებლად, ნერვული სისტემის მდგომარეობის გასაუმჯობესებლად და პრობლემური ზონების უმტკივნეულოდ დასამუშავებლად. ტექნიკა რბილი, ღრმა და კომფორტულია.</span></div><div class="team-desc-fade"></div></div>
+          <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button><a href="https://n1374725.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Анастасии</span><span data-lang="en">Book with Anastasia</span><span data-lang="ka">ჩაეწერეთ ანასტასიასთან</span></a>
+        </div></div>
 
-        <!-- 9. Татьяна Хакимова -->
-        <div class="team-card">
-          <div class="team-photo-wrap">
-            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Tatyana-Khakimova.webp" alt="Татьяна Хакимова" loading="lazy">
-          </div>
-          <div class="team-card-body">
-            <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Specialist</span><span data-lang="ka">მასაჟის სპეციალისტი</span></div>
-            <div class="team-name">Татьяна Хакимова</div>
-            <div class="team-desc-wrap">
-              <div class="team-desc">
-                <span data-lang="ru" class="active">Массажист с 15-летним опытом. Работает комплексно и подбирает индивидуальную программу: релакс, миофасциальные техники, лимфодренаж и коррекция фигуры. Отдельное направление — массаж лица (скульптурно-буккальный, моделирование, ручная пластика).</span>
-                <span data-lang="en">Massage therapist with 15 years of experience. Works comprehensively with individual programs: relaxation, myofascial techniques, lymphatic drainage and body contouring. Specialty — facial massage: sculptural-buccal, modelling, manual plastic.</span>
-                <span data-lang="ka">მასაჟისტი 15 წლის გამოცდილებით. კომპლექსური ინდივიდუალური პროგრამა: რელაქსი, მიოფასციური, ლიმფური დრენაჟი. სახის მასაჟი — სკულპტურული-ბუკალური.</span>
-              </div>
-              <div class="team-desc-fade"></div>
-            </div>
-            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
-            <a href="https://n1418025.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Татьяне</span><span data-lang="en">Book with Tatyana</span><span data-lang="ka">ჩაეწერეთ ტატიანასთან</span></a>
-          </div>
-        </div>
+        <!-- 9. Ирина Третьякова -->
+        <div class="team-card"><div class="team-photo-wrap"><img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Irina-Tretyakova.webp" alt="Ирина Третьякова" loading="lazy"></div><div class="team-card-body">
+          <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Therapist</span><span data-lang="ka">მასაჟისტი</span></div>
+          <div class="team-name"><span data-lang="ru" class="active">Ирина Третьякова</span><span data-lang="en">Irina Tretyakova</span><span data-lang="ka">ირინა ტრეტიაკოვა</span></div>
+          <div class="team-desc-wrap"><div class="team-desc"><span data-lang="ru" class="active">Профессионально работает массажистом с 2020 года. Обучалась классическому массажу, хиромассажу тела, лимфодренажу, массажу стоп, а также гуаша, скульптурно-буккальному и миофасциальному массажу лица. Использует авторскую смешанную технику, добавляя к классическому массажу подходы под запрос и состояние тела. Помогает уменьшить отёчность, снять напряжение с шейно-воротниковой зоны и поясницы и глубоко расслабиться. Техники мягкие, успокаивающие и деликатно глубокие.</span><span data-lang="en">A professional massage therapist since 2020. Trained in classic massage, body chiromassage, lymphatic drainage, foot massage, gua sha, sculptural-buccal and myofascial facial massage. She uses an original mixed method, adding techniques to classic massage according to the client's needs and body condition. Irina helps reduce swelling, release neck, shoulder and lower-back tension, and deeply relax. Her work is soft, calming and delicately deep.</span><span data-lang="ka">2020 წლიდან პროფესიონალურად მუშაობს მასაჟისტად. შესწავლილი აქვს კლასიკური მასაჟი, სხეულის ქირომასაჟი, ლიმფოდრენაჟი, ტერფის მასაჟი, ასევე გუაშა, სკულპტურულ-ბუკალური და მიოფასციალური სახის მასაჟი. იყენებს ავტორულ შერეულ ტექნიკას და კლასიკურ მასაჟს კლიენტის მოთხოვნისა და სხეულის მდგომარეობის მიხედვით ავსებს. ეხმარება შეშუპების შემცირებაში, კისერ-ბეჭებისა და წელის დაძაბულობის მოხსნასა და ღრმა მოდუნებაში. ტექნიკა რბილი, დამამშვიდებელი და დელიკატურად ღრმაა.</span></div><div class="team-desc-fade"></div></div>
+          <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button><a href="https://n1418030.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Ирине</span><span data-lang="en">Book with Irina</span><span data-lang="ka">ჩაეწერეთ ირინასთან</span></a>
+        </div></div>
 
-        <!-- 10. Евгений Тараканов -->
-        <div class="team-card">
-          <div class="team-photo-wrap">
-            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Evgeniy-Tarakanov.webp" alt="Евгений Тараканов" loading="lazy">
-          </div>
-          <div class="team-card-body">
-            <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Specialist</span><span data-lang="ka">მასაჟის სპეციალისტი</span></div>
-            <div class="team-name">Евгений Тараканов</div>
-            <div class="team-desc-wrap">
-              <div class="team-desc">
-                <span data-lang="ru" class="active">Массажист с медицинским образованием, работает с 2019 года. Специализация — медицинский и спортивный массаж: помогает снять боли в спине при сидячем образе жизни и восстановиться после тренировок. Техники силовые, с глубокой проработкой зажимов.</span>
-                <span data-lang="en">Massage therapist with medical education, working since 2019. Specializes in medical and sports massage: helps relieve back pain from sedentary lifestyle and recovery after training. Strong techniques with deep tension work.</span>
-                <span data-lang="ka">მასაჟისტი სამედიცინო განათლებით, 2019 წლიდან. სამედიცინო და სპორტული მასაჟი. ზურგის ტკივილი სედენტური ცხოვრებისას, ვარჯიშის შემდეგ აღდგენა.</span>
-              </div>
-              <div class="team-desc-fade"></div>
-            </div>
-            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
-            <a href="https://n1418029.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Евгению</span><span data-lang="en">Book with Evgeny</span><span data-lang="ka">ჩაეწერეთ ევგენისთან</span></a>
-          </div>
-        </div>
+        <!-- 10. Кети Хупеня -->
+        <div class="team-card"><div class="team-photo-wrap"><img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Keti-Khupenya.webp" alt="Кети Хупеня" loading="lazy"></div><div class="team-card-body">
+          <div class="team-role"><span data-lang="ru" class="active">Медицинская сестра · массажист</span><span data-lang="en">Medical Nurse · Massage Therapist</span><span data-lang="ka">მედდა · მასაჟისტი</span></div>
+          <div class="team-name"><span data-lang="ru" class="active">Кети Хупеня</span><span data-lang="en">Keti Khupenya</span><span data-lang="ka">ქეთი ხუფენია</span></div>
+          <div class="team-desc-wrap"><div class="team-desc"><span data-lang="ru" class="active">Медицинская сестра-массажист с 29-летним опытом. Специализируется на медицинском, лечебном, детском и восстановительном массаже при травмах, массаже при бронхитах, пневмонии и сезонных заболеваниях, а также массаже грудной клетки для улучшения дыхания. К Кети обращаются при мышечном напряжении, нарушениях осанки и сколиозе, после травм, для поддержки дыхательной системы, профилактического и общеукрепляющего массажа.</span><span data-lang="en">A medical massage nurse with 29 years of experience. She specializes in medical, therapeutic and children's massage, post-injury recovery, massage support for bronchitis, pneumonia and seasonal illnesses, and chest massage to improve breathing. Clients come to Keti with muscle tension, posture disorders and scoliosis, for recovery after injuries, respiratory support, preventive care and general strengthening.</span><span data-lang="ka">მედდა-მასაჟისტი 29-წლიანი გამოცდილებით. სპეციალიზდება სამედიცინო, სამკურნალო, ბავშვთა და ტრავმის შემდგომ აღმდგენ მასაჟზე, ბრონქიტის, პნევმონიისა და სეზონური დაავადებების დროს დამხმარე მასაჟზე და სუნთქვის გასაუმჯობესებელ გულმკერდის მასაჟზე. ქეთის მიმართავენ კუნთოვანი დაძაბულობის, პოზის დარღვევისა და სქოლიოზის დროს, ტრავმის შემდეგ, სასუნთქი სისტემის მხარდასაჭერად, პროფილაქტიკური და ზოგადგამაჯანსაღებელი მასაჟისთვის.</span></div><div class="team-desc-fade"></div></div>
+          <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button><a href="https://n1418070.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Кети</span><span data-lang="en">Book with Keti</span><span data-lang="ka">ჩაეწერეთ ქეთისთან</span></a>
+        </div></div>
 
-        <!-- 11. Ирина Третьякова -->
-        <div class="team-card">
-          <div class="team-photo-wrap">
-            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Irina-Tretyakova.webp" alt="Ирина Третьякова" loading="lazy">
-          </div>
-          <div class="team-card-body">
-            <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Specialist</span><span data-lang="ka">მასაჟის სპეციალისტი</span></div>
-            <div class="team-name">Ирина Третьякова</div>
-            <div class="team-desc-wrap">
-              <div class="team-desc">
-                <span data-lang="ru" class="active">Массажист, работает с 2020 года. Предпочитает авторскую смешанную технику — сочетает разные подходы под состояние и запрос клиента. Мягкая, успокаивающая работа с деликатной, но глубокой проработкой проблемных зон.</span>
-                <span data-lang="en">Massage therapist since 2020. Prefers an original mixed technique combining different approaches to match the client's condition and request. Soft, calming work with delicate but deep treatment of problem areas.</span>
-                <span data-lang="ka">მასაჟისტი 2020 წლიდან. ავტორული შერეული ტექნიკა. მსუბუქი, დამამშვიდებელი მუშაობა პრობლემური ზონების ღრმა გადამუშავებით.</span>
-              </div>
-              <div class="team-desc-fade"></div>
-            </div>
-            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
-            <a href="https://n1418030.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Ирине</span><span data-lang="en">Book with Irina</span><span data-lang="ka">ჩაეწერეთ ირინასთან</span></a>
-          </div>
-        </div>
+        <!-- 11. Евгений Тараканов -->
+        <div class="team-card"><div class="team-photo-wrap"><img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-club-site/photo/team/Evgeniy-Tarakanov.webp" alt="Евгений Тараканов" loading="lazy"></div><div class="team-card-body">
+          <div class="team-role"><span data-lang="ru" class="active">Медицинский · спортивный массаж</span><span data-lang="en">Medical · Sports Massage</span><span data-lang="ka">სამედიცინო · სპორტული მასაჟი</span></div>
+          <div class="team-name"><span data-lang="ru" class="active">Евгений Тараканов</span><span data-lang="en">Evgeniy Tarakanov</span><span data-lang="ka">ევგენი ტარაკანოვი</span></div>
+          <div class="team-desc-wrap"><div class="team-desc"><span data-lang="ru" class="active">Медицинское образование по специальности «Лечебное дело». Профессионально работает массажистом с 2019 года. Повышал квалификацию и работал с медицинским, спортивным, классическим, лимфодренажным и антицеллюлитным массажем. Основные направления — медицинский и спортивный массаж. К Евгению обращаются при болях в спине из-за сидячего образа жизни и для восстановления после интенсивных спортивных нагрузок. Техники силовые, с глубокой проработкой зажимов.</span><span data-lang="en">Medical education in General Medicine. A professional massage therapist since 2019, with advanced training and experience in medical, sports, classic, lymphatic drainage and anti-cellulite massage. His main focus is medical and sports massage. Clients come to Evgeniy for back pain related to a sedentary lifestyle and recovery after intensive training. His techniques are strong and work deeply with tension.</span><span data-lang="ka">სამედიცინო განათლება „სამკურნალო საქმის“ სპეციალობით. 2019 წლიდან პროფესიონალურად მუშაობს მასაჟისტად. კვალიფიკაცია და გამოცდილება აქვს სამედიცინო, სპორტულ, კლასიკურ, ლიმფოდრენაჟულ და ანტიცელულიტურ მასაჟში. მთავარი მიმართულებებია სამედიცინო და სპორტული მასაჟი. ევგენის მიმართავენ მჯდომარე ცხოვრების წესთან დაკავშირებული ზურგის ტკივილისა და ინტენსიური სპორტული დატვირთვის შემდეგ აღდგენისთვის. ტექნიკა ძლიერია და დაჭიმულ ზონებს ღრმად ამუშავებს.</span></div><div class="team-desc-fade"></div></div>
+          <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button><a href="https://n1418029.alteg.io" target="_blank" onclick="ym(107243705,'reachGoal','book_click'); fbq('track','InitiateCheckout');" class="team-book"><span data-lang="ru" class="active">Записаться к Евгению</span><span data-lang="en">Book with Evgeniy</span><span data-lang="ka">ჩაეწერეთ ევგენისთან</span></a>
+        </div></div>
 
 
       </div><!-- /track -->
