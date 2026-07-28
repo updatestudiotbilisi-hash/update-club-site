@@ -634,11 +634,15 @@
     .team-card { flex: 0 0 82vw; max-width: 300px; }
     .team-arrow-side { margin-top: calc(min(82vw, 300px) * 16 / 9 / 2 - 22px); }
     .team-modal { padding: 14px; align-items: flex-end; }
-    .team-modal-dialog { grid-template-columns: 1fr; max-height: 92vh; overflow-y: auto; }
-    .team-modal-photo-wrap { height: min(46vh, 430px); }
-    .team-modal-photo { object-position: center center; }
-    .team-modal-content { overflow: visible; padding: 34px 24px 28px; }
-    .team-modal-name { margin-bottom: 20px; }
+    .team-modal-dialog { display: block; max-height: 92vh; overflow-y: auto; }
+    .team-modal-photo-wrap { width: 100%; height: auto; aspect-ratio: 9 / 16; background: #111; }
+    .team-modal-photo { object-fit: contain; object-position: center center; }
+    .team-modal-content {
+      overflow: visible; margin-top: -190px; padding: 70px 24px 28px;
+      background: linear-gradient(to bottom, transparent 0, rgba(17,17,16,0.82) 42%, var(--bg-primary) 190px);
+    }
+    .team-modal-name { margin-bottom: 36px; color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,0.55); }
+    .team-modal-role { text-shadow: 0 2px 12px rgba(0,0,0,0.7); }
     .team-modal-close { position: fixed; top: 24px; right: 24px; background: rgba(17,17,16,0.84); color: #fff; }
     .step { grid-template-columns: 44px 1fr; gap: 16px; }
     .step-n { font-size: 2.6rem; }
