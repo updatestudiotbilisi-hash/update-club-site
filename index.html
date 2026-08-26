@@ -611,6 +611,18 @@
   .team-modal-role { font-size: 0.64rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; padding-right: 42px; }
   .team-modal-name { font-family: var(--font-h); font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1.06; margin-bottom: 28px; color: var(--text-main); }
   .team-modal-desc { font-family: 'Circe', sans-serif; font-weight: 200; font-size: 1rem; line-height: 1.66; color: var(--text-muted); white-space: normal; }
+  .team-profile-copy { display: none; }
+  .team-profile-copy.active { display: block; }
+  .team-profile-lead { font-size: 1.05rem; line-height: 1.62; color: var(--text-main); margin-bottom: 24px; }
+  .team-profile-section { margin-top: 24px; }
+  .team-profile-heading {
+    font-family: var(--font-body); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em;
+    line-height: 1.4; text-transform: uppercase; color: var(--orange); margin-bottom: 12px;
+  }
+  .team-profile-list { list-style: none; display: grid; gap: 8px; margin: 0; padding: 0; }
+  .team-profile-list li { position: relative; padding-left: 18px; line-height: 1.55; }
+  .team-profile-list li::before { content: ''; position: absolute; left: 0; top: 0.7em; width: 5px; height: 5px; border-radius: 50%; background: var(--orange); }
+  .team-profile-note { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border); line-height: 1.62; }
   .team-modal-book { margin-top: 30px; }
   body.team-modal-open { overflow: hidden; }
   /* Dots */
@@ -661,6 +673,9 @@
     .team-modal-lang { color: #fff; border-color: rgba(255,255,255,0.42); background: rgba(17,17,16,0.42); }
     .team-modal-name { margin-bottom: 36px; color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,0.55); }
     .team-modal-role { text-shadow: 0 2px 12px rgba(0,0,0,0.7); }
+    .team-profile-lead { font-size: 1rem; }
+    .team-profile-section { margin-top: 22px; }
+    .team-profile-heading { font-size: 0.66rem; }
     .team-modal-close { position: fixed; top: 24px; right: 24px; background: rgba(17,17,16,0.84); color: #fff; }
     .step { grid-template-columns: 44px 1fr; gap: 16px; }
     .step-n { font-size: 2.6rem; }
@@ -2241,6 +2256,86 @@ function togglePa(id) {
 document.getElementById('pa-massage').classList.add('open');
 
 // TEAM SPECIALIST POPUP
+const teamProfileLabels = {
+  ru: { directions: 'Опыт и профессиональные направления', requests: 'С какими запросами обращаются', techniques: 'Подход и техники' },
+  en: { directions: 'Experience and professional focus', requests: 'Common client needs', techniques: 'Approach and techniques' },
+  ka: { directions: 'გამოცდილება და პროფესიული მიმართულებები', requests: 'რა მოთხოვნებით მიმართავენ', techniques: 'მიდგომა და ტექნიკები' }
+};
+
+function splitProfileSentences(text) {
+  return (text.match(/[^.!?]+(?:[.!?]+|$)/g) || [text])
+    .map(sentence => sentence.trim())
+    .filter(Boolean);
+}
+
+function splitProfileItems(text) {
+  const clean = text.replace(/[.!?]+$/, '').trim();
+  if (clean.length < 145 || !clean.includes(',')) return [clean];
+  const parts = clean.split(/,\s+(?=[^,]{5,})/).map(part => part.trim()).filter(Boolean);
+  return parts.length > 1 ? parts : [clean];
+}
+
+function isTechniqueSentence(text) {
+  return /^(техник|проработка|работает сильно|his style|her style|his techniques|her techniques|the approach|ტექნიკ|დამუშავება)/i.test(text.trim());
+}
+
+function appendProfileSection(root, title, items) {
+  if (!items.length) return;
+  const section = document.createElement('section');
+  section.className = 'team-profile-section';
+  const heading = document.createElement('h3');
+  heading.className = 'team-profile-heading';
+  heading.textContent = title;
+  const list = document.createElement('ul');
+  list.className = 'team-profile-list';
+  items.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    list.appendChild(li);
+  });
+  section.append(heading, list);
+  root.appendChild(section);
+}
+
+function buildStructuredTeamDescription(card) {
+  const fragment = document.createDocumentFragment();
+  const currentLang = document.documentElement.lang || 'ru';
+
+  card.querySelectorAll('.team-desc > [data-lang]').forEach(source => {
+    const lang = source.dataset.lang;
+    const labels = teamProfileLabels[lang];
+    const sentences = splitProfileSentences(source.textContent.trim());
+    const root = document.createElement('div');
+    root.className = `team-profile-copy${lang === currentLang ? ' active' : ''}`;
+    root.dataset.lang = lang;
+
+    const lead = document.createElement('p');
+    lead.className = 'team-profile-lead';
+    lead.textContent = sentences.shift() || '';
+    root.appendChild(lead);
+
+    const directions = sentences.length ? splitProfileItems(sentences.shift()) : [];
+    appendProfileSection(root, labels.directions, directions);
+
+    let technique = '';
+    if (sentences.length && isTechniqueSentence(sentences[sentences.length - 1])) technique = sentences.pop();
+    const requests = sentences.flatMap(splitProfileItems);
+    appendProfileSection(root, labels.requests, requests);
+
+    if (technique) {
+      const note = document.createElement('p');
+      note.className = 'team-profile-note';
+      const strong = document.createElement('strong');
+      strong.textContent = `${labels.techniques}: `;
+      note.append(strong, technique);
+      root.appendChild(note);
+    }
+
+    fragment.appendChild(root);
+  });
+  return fragment;
+}
+
 function toggleDesc(btn, updateUrl = true) {
   const card = btn.closest('.team-card');
   const modal = document.getElementById('team-modal');
@@ -2251,7 +2346,7 @@ function toggleDesc(btn, updateUrl = true) {
   document.getElementById('team-modal-photo').alt = sourcePhoto.alt;
   document.getElementById('team-modal-role').innerHTML = card.querySelector('.team-role').innerHTML;
   document.getElementById('team-modal-name').innerHTML = card.querySelector('.team-name').innerHTML;
-  document.getElementById('team-modal-desc').innerHTML = card.querySelector('.team-desc').innerHTML;
+  document.getElementById('team-modal-desc').replaceChildren(buildStructuredTeamDescription(card));
 
   const modalBook = sourceBook.cloneNode(true);
   modalBook.classList.add('team-modal-book-link');
