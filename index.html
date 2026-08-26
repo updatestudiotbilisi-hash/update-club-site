@@ -2173,6 +2173,29 @@ document.addEventListener('click', e => {
 });
 
 // LANGUAGE
+const bookingWidgetSources = {
+  ru: 'https://w821969.alteg.io/widgetJS',
+  en: 'https://w1358778.alteg.io/widgetJS',
+  ka: 'https://w1462181.alteg.io/widgetJS'
+};
+
+function ensureBookingWidget(lang) {
+  const widgetLang = bookingWidgetSources[lang] ? lang : 'ru';
+  const existing = document.getElementById('altegio-widget-script');
+  if (existing) {
+    if (existing.dataset.lang === widgetLang) return;
+    window.location.reload();
+    return;
+  }
+
+  const script = document.createElement('script');
+  script.id = 'altegio-widget-script';
+  script.dataset.lang = widgetLang;
+  script.src = bookingWidgetSources[widgetLang];
+  script.charset = 'UTF-8';
+  document.body.appendChild(script);
+}
+
 function setLang(lang) {
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
   const navLangButton = document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`);
@@ -2188,10 +2211,9 @@ function setLang(lang) {
   });
   document.documentElement.lang = lang;
   const url = new URL(window.location.href);
-  if (url.searchParams.has('specialist')) {
-    url.searchParams.set('lang', lang);
-    history.replaceState(null, '', url);
-  }
+  url.searchParams.set('lang', lang);
+  history.replaceState(null, '', url);
+  ensureBookingWidget(lang);
 }
 
 // SCROLL REVEAL
@@ -2356,6 +2378,8 @@ document.addEventListener('keydown', e => {
   if (button) toggleDesc(button, false);
 })();
 
+ensureBookingWidget(document.documentElement.lang);
+
 // ===== TEAM CAROUSEL =====
 (function() {
   const track = document.getElementById('team-track');
@@ -2466,7 +2490,6 @@ window.addEventListener('scroll', () => {
 });
 
 </script>
-  <script type="text/javascript" src="https://w821969.alteg.io/widgetJS" charset="UTF-8"></script>
 </body>
 
 </html>
