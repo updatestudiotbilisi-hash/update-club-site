@@ -1,0 +1,7 @@
+1:"$Sreact.fragment"
+2:I[5507,["946","static/chunks/946-feeef1ba4f79d3f5.js","521","static/chunks/app/vacancies/sales-manager/page-184a8752fa21e41d.js"],"default"]
+3:I[484,[],"OutletBoundary"]
+4:"$Sreact.suspense"
+:HL["/_next/static/css/f7bbf243bf7876a3.css","style"]
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"slug":"sales-manager"}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f7bbf243bf7876a3.css","precedence":"next"}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"tGsxP71GzZo85Yrgy1zJz"}
+5:null
