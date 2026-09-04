@@ -1,0 +1,4 @@
+:HL["/_next/static/css/b86b764b626f0b8c.css","style"]
+:HL["/_next/static/css/98d966d0e7cf8b81.css","style"]
+:HL["/_next/static/css/ad09ea7f7a55b7b6.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"vacancies","param":null,"prefetchHints":0,"slots":{"children":{"name":"administrator","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"I8o9_LyqB4LRG4mqZPgfN"}
