@@ -1,6 +1,9 @@
 1:"$Sreact.fragment"
-2:I[484,[],"OutletBoundary"]
-3:"$Sreact.suspense"
-:HL["/images/update-logo-beige.png","image"]
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"vacancies-page","children":[["$","header",null,{"className":"vacancies-header","children":[["$","a",null,{"href":"/","aria-label":"UPDATE — главная","children":["$","img",null,{"src":"/images/update-logo-beige.png","alt":"UPDATE"}]}],["$","a",null,{"href":"/","children":"На главную ↗"}]]}],["$","section",null,{"className":"vacancies-content","children":[["$","p",null,{"className":"kicker","children":"Команда UPDATE"}],["$","h1",null,{"children":"Вакансии"}],["$","p",null,{"className":"vacancies-intro","children":"Присоединяйтесь к нашей команде. Выберите вакансию, чтобы узнать подробности и откликнуться."}],["$","div",null,{"className":"vacancies-list","children":[["$","a",null,{"href":"/vacancies/lfk-trainer/","children":[["$","span",null,{"className":"index","children":"01"}],["$","h2",null,{"children":"Тренер ЛФК"}],["$","span",null,{"className":"vacancy-more","children":"Подробнее ↗"}]]}],["$","a",null,{"href":"/vacancies/sales-manager/","children":[["$","span",null,{"className":"index","children":"02"}],["$","h2",null,{"children":"Менеджер по продажам"}],["$","span",null,{"className":"vacancy-more","children":"Подробнее ↗"}]]}]]}]]}],["$","footer",null,{"className":"vacancies-footer","children":["©2026 UPDATE ",["$","a",null,{"href":"/","children":"Массаж и телесная терапия в Тбилиси ↗"}]]}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"UblSUHedahXG6IS7Ooy6S"}
-4:null
+2:I[1304,[],"ClientPageRoot"]
+3:I[2113,["356","static/chunks/app/vacancies/page-ee38726fb9d2714d.js"],"default"]
+6:I[484,[],"OutletBoundary"]
+7:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],null,["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"WIw7rD57Br9Eb2Ghlgmi2"}
+4:{}
+5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
+8:null
