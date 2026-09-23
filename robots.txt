@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://update-club.com
+Sitemap: https://update-club.com/sitemap.xml
