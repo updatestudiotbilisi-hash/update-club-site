@@ -1,0 +1,4 @@
+:HL["/_next/static/chunks/04_n2a97z6v2f.css","style"]
+:HL["/_next/static/chunks/0i-rjmt92ndai.css","style"]
+:HL["/images/Ia-Darakhvelidze.webp","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"lang","param":{"type":"d","key":"ru","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"specialists","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"ia-darakhvelidze","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"DVT5SBiR5gJ1majeIObKF"}
