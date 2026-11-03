@@ -1,0 +1,4 @@
+:HL["/_next/static/chunks/0k7ht6k0wanio.css","style"]
+:HL["/_next/static/chunks/0.lhuzh1wqfi1.css","style"]
+:HL["/images/Kateryna-Hudkova.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"lang","param":{"type":"d","key":"ka","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"specialists","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"kateryna-hudkova","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"ODua0OmTHCRu0s5VWLTcD"}
