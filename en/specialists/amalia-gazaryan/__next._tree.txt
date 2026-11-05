@@ -1,4 +1,4 @@
 :HL["/_next/static/chunks/10l-hg7t9l1hq.css","style"]
 :HL["/_next/static/chunks/0.lhuzh1wqfi1.css","style"]
 :HL["/images/Amalia-Ghazaryan.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"lang","param":{"type":"d","key":"en","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"specialists","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"amalia-gazaryan","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"P6RxDwAsoJB8EcPbwQEVu"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"lang","param":{"type":"d","key":"en","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"specialists","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"amalia-gazaryan","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"c7G9BphxPdNsOZc9MW3vO"}
