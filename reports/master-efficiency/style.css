@@ -3,3 +3,6 @@
 .bar-fill{position:absolute;top:0}.bar-fill.negative{background:#c86b50!important}.bar-zero{position:absolute;top:-2px;bottom:-2px;width:1px;background:#17181355;z-index:1}
 
 .access-list{margin-top:25px}.access-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;border-top:1px solid var(--line);padding:18px 0;font-size:14px}.access-row strong{font-weight:400}.access-row a{text-decoration:underline}.access-row summary{cursor:pointer}.access-row code{display:block;margin-top:10px;user-select:all;font-size:14px}@media(max-width:650px){.access-row{grid-template-columns:1fr;gap:10px}}
+
+/* Preserve the full portrait at its native vertical proportion. */
+.card{align-self:start}.card img{width:100%;height:auto;aspect-ratio:9/16;object-fit:contain;object-position:center;background:#e5e5df}.detail-head img{height:auto;aspect-ratio:9/16;object-fit:contain;object-position:center;background:#e5e5df}
