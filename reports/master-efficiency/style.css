@@ -6,3 +6,5 @@
 
 /* Preserve the full portrait at its native vertical proportion. */
 .card{align-self:start}.card img{width:100%;height:auto;aspect-ratio:9/16;object-fit:contain;object-position:center;background:#e5e5df}.detail-head img{height:auto;aspect-ratio:9/16;object-fit:contain;object-position:center;background:#e5e5df}
+
+.loss-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:25px}.loss-grid>div{padding:18px;border:1px solid var(--line)}.loss-grid span{font-size:13px}.loss-grid b{display:block;font-size:34px;font-weight:400;margin:12px 0}.loss-grid small{font-size:12px}.loss-red{color:#b33125!important}.loss-grid .loss-red{background:#b331250b;border-color:#b3312544}.explanation{border-top:1px solid var(--line);padding:16px 0;font-size:14px}.explanation summary{font-size:17px;cursor:pointer}.explanation p{line-height:1.7}#metric-explanation,#client-losses{margin-bottom:28px}@media(max-width:650px){.loss-grid{grid-template-columns:1fr 1fr}}
