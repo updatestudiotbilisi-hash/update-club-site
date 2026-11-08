@@ -23,3 +23,5 @@
 @media(max-width:1000px){.manager-sticky .filters>div:nth-child(3),.manager-sticky .filters>div:nth-of-type(4){grid-column:auto}.manager-sticky .filters .range-presets{grid-column:1/-1}}
 .flow-table td:first-child{position:static}.flow-table td:nth-child(2){font-weight:400;background:transparent}.flow-expanded td:first-child{background:#e4e8d9!important;color:var(--ink)!important}
 @media(max-width:1000px){.flow-table td:first-child{background:#e0e5d4!important;color:var(--ink)!important}.flow-table td:first-child button{color:var(--ink)}.flow-table td:first-child small{color:#505749}}
+
+.flow-table th{position:sticky;top:var(--manager-sticky-height,220px);z-index:6;background:var(--paper)}.flow-table th:first-child{z-index:7}
