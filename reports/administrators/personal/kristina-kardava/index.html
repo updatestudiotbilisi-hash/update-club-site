@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>UPDATE — личный кабинет</title>
+  <link rel="stylesheet" href="../../../master-efficiency/style.css">
+  <link rel="stylesheet" href="../../admin-kpi.css?v=1">
+</head>
+<body>
+  <section id="lock">
+    <div class="lock-photo"></div>
+    <div class="lock-panel">
+      <a class="brand" href="/">UPDATE<span>STUDIO · ANALYTICS</span></a>
+      <div>
+        <h1>Личный кабинет</h1>
+        <p id="personal-name" class="intro"></p>
+        <form id="personal-login">
+          <label for="personal-password">Личный пароль</label>
+          <div class="password-field"><input id="personal-password" type="password" required autocomplete="current-password"></div>
+          <button class="primary" type="submit">Открыть кабинет ↗</button>
+          <p id="personal-error" role="status"></p>
+        </form>
+      </div>
+      <small>Доступ к индивидуальным данным</small>
+    </div>
+  </section>
+  <main class="admin-personal" id="personal-report" hidden>
+    <button class="outline" id="personal-logout" type="button">Выйти</button>
+    <section id="motivation" class="admin-motivation"></section>
+  </main>
+  <script src="../../admin-kpi.js?v=1"></script>
+</body>
+</html>

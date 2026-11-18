@@ -1,0 +1,28 @@
+.admin-motivation { margin: 24px 0; padding: clamp(16px, 3vw, 36px); border: 1px solid #d0d2c5; }
+.admin-personal { width: min(1020px, 94%); margin: 24px auto; }
+.admin-motivation .kpi-heading, .kpi-person header { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+.admin-motivation h2 { font-size: clamp(25px, 4vw, 42px); margin: 0 0 12px; }
+.admin-motivation h3 { margin: 0; font-size: 22px; }
+.admin-motivation label, .admin-motivation small, .kpi-stats span { display: block; }
+.admin-motivation select { font: inherit; padding: .5em; }
+.kpi-progress { background: #1d221d; color: #f6f6eb; padding: 18px; display: grid; gap: 16px; grid-template-columns: 1fr 1fr; margin-top: 12px; }
+.kpi-progress > div > strong { display: block; font-size: 44px; color: #d6ff43; }
+.kpi-progress ul, .kpi-products { list-style: none; margin: 0; padding: 0; }
+.kpi-progress li { display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 6px; }
+.kpi-progress li.current { background: #d6ff43; color: #161b15; }
+.kpi-note { font-size: .9rem; margin: 12px 0; }
+.kpi-people { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 14px; }
+.kpi-person { border: 1px solid #d0d2c5; padding: 16px; }
+.admin-motivation .kpi-person header { position: static; padding: 0; background: transparent; color: inherit; border: 0; }
+.kpi-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(115px, 1fr)); gap: 10px; margin: 14px 0; }
+.kpi-stats div, .kpi-pay { background: #e7eadc; color: #20251e; padding: 10px; }
+.kpi-stats strong, .kpi-pay strong { display: block; font-size: 1.3rem; }
+.kpi-products li { display: grid; grid-template-columns: 1fr 1fr auto; gap: 8px; align-items: baseline; padding: 7px 0; border-bottom: 1px solid #d0d2c5; }
+.kpi-pay { margin-top: 14px; }
+.kpi-method { margin-top: 18px; }
+.kpi-cabinet { text-decoration: underline; }
+@media (max-width: 600px) {
+  .kpi-progress { grid-template-columns: 1fr; }
+  .kpi-products li { grid-template-columns: 1fr auto; }
+  .kpi-products li small { grid-column: 1 / -1; }
+}
