@@ -41,6 +41,80 @@ const AdminKPI = (() => {
       '<div class="kpi-pay"><span>Расчётная премия</span><strong>' + bonus + '</strong><small>' + detail + '</small></div>' +
       (row.pending ? '<p class="kpi-note">Услуг на сверке оплаты: ' + fmt(row.pending) + '.</p>' : '') + '</article>';
   }
+  function renderAccess(root, access) {
+    if (!Array.isArray(access) || !access.length) return;
+    const panel = document.createElement('details');
+    panel.id = 'administrator-access';
+    panel.className = 'kpi-method kpi-access';
+    const summary = document.createElement('summary');
+    summary.textContent = 'Доступы к личным кабинетам';
+    const intro = document.createElement('p');
+    intro.textContent = 'Именная ссылка открывает нужный кабинет. Для входа введите личный пароль.';
+    const status = document.createElement('p');
+    status.setAttribute('role', 'status');
+    const list = document.createElement('div');
+    list.className = 'kpi-people';
+    for (const { name, slug, password } of access) {
+      if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) continue;
+      const card = document.createElement('article');
+      card.className = 'kpi-person';
+      const title = document.createElement('h3');
+      title.textContent = name;
+      const link = document.createElement('a');
+      link.href = 'personal/' + slug + '/';
+      link.className = 'kpi-cabinet';
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.textContent = 'Открыть кабинет ↗';
+      const label = document.createElement('label');
+      label.textContent = 'Личный пароль';
+      const field = document.createElement('input');
+      field.type = 'password';
+      field.readOnly = true;
+      field.autocomplete = 'off';
+      field.value = password;
+      label.append(field);
+      const buttons = document.createElement('div');
+      buttons.className = 'kpi-access-actions';
+      const button = (caption, action) => {
+        const element = document.createElement('button');
+        element.type = 'button';
+        element.className = 'outline';
+        element.textContent = caption;
+        element.onclick = action;
+        buttons.append(element);
+        return element;
+      };
+      const copy = async (value, label) => {
+        try {
+          await navigator.clipboard.writeText(value);
+          status.textContent = label + ' скопирован.';
+        } catch {
+          status.textContent = 'Скопируйте данные вручную.';
+        }
+      };
+      const reveal = button('Показать пароль', () => {
+        const show = field.type === 'password';
+        field.type = show ? 'text' : 'password';
+        reveal.textContent = show ? 'Скрыть пароль' : 'Показать пароль';
+      });
+      button('Копировать пароль', () => copy(password, 'Пароль'));
+      button('Копировать ссылку', () => copy(link.href, 'Адрес кабинета'));
+      card.append(title, link, label, buttons);
+      list.append(card);
+    }
+    panel.append(summary, intro, status, list);
+    panel.addEventListener('toggle', () => {
+      if (!panel.open) {
+        for (const field of list.querySelectorAll('input')) {
+          field.type = 'password';
+          field.closest('article').querySelector('button').textContent = 'Показать пароль';
+        }
+        status.textContent = '';
+      }
+    });
+    root.append(panel);
+  }
   function render(root, data, management) {
     const draw = month => {
       const entry = data.months.find(item => item.month === month) || data.months[0];
@@ -64,10 +138,16 @@ const AdminKPI = (() => {
         '<p>Комиссия считается по оплаченным товарам, абонементам, депозитам и сертификатам у продавца, указанного в Altegio, за вычетом возвратов. Визит относится к месяцу посещения, продажа — к месяцу оплаты.</p></details>';
     };
     root.innerHTML = '<div class="kpi-heading"><div><p class="eyebrow">МОТИВАЦИЯ</p><h2>Записи, продажи и премия</h2></div>' +
+      (management && data.access?.length ? '<a id="kpi-access-link" class="kpi-cabinet" href="#administrator-access">Доступы ↘</a>' : '') +
       '<div><label for="kpi-month">Месяц</label><select id="kpi-month"></select></div></div><div id="kpi-detail"></div>';
     for (const entry of data.months) $('kpi-month').add(new Option(monthName(entry.month), entry.month));
     $('kpi-month').onchange = event => draw(event.target.value);
     draw(data.months[0]?.month);
+    if (management) {
+      renderAccess(root, data.access);
+      const shortcut = $('kpi-access-link');
+      if (shortcut) shortcut.onclick = () => { $('administrator-access').open = true; };
+    }
   }
   if ($('personal-login')) {
     const slug = location.pathname.split('/').filter(Boolean).at(-1);

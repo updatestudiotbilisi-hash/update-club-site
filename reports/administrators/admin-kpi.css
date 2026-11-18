@@ -21,6 +21,11 @@
 .kpi-pay { margin-top: 14px; }
 .kpi-method { margin-top: 18px; }
 .kpi-cabinet { text-decoration: underline; }
+.kpi-access summary { cursor: pointer; font-weight: bold; }
+.kpi-access label { margin-top: 14px; }
+.kpi-access input { display: block; box-sizing: border-box; width: 100%; margin-top: 4px; padding: .5em; font: inherit; }
+.kpi-access-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.kpi-access-actions .outline { padding: .45em .6em; }
 @media (max-width: 600px) {
   .kpi-progress { grid-template-columns: 1fr; }
   .kpi-products li { grid-template-columns: 1fr auto; }
