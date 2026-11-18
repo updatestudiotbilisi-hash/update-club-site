@@ -144,7 +144,10 @@ const AdminKPI = (() => {
     $('kpi-month').onchange = event => draw(event.target.value);
     draw(data.months[0]?.month);
     if (management) {
-      renderAccess(root, data.access);
+      const accessSection = $('administrator-access-section');
+      accessSection.replaceChildren();
+      renderAccess(accessSection, data.access);
+      accessSection.hidden = !accessSection.hasChildNodes();
       const shortcut = $('kpi-access-link');
       if (shortcut) shortcut.onclick = () => { $('administrator-access').open = true; };
     }
