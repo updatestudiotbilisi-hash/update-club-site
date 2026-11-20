@@ -72,7 +72,7 @@
 }
 
 /* Keep the cover full bleed and align content to consistent page gutters. */
-main.wrap{width:100%;--page-gutter:clamp(1.25rem,2.5vw,3rem)}
+main.wrap{width:100%;--page-gutter:clamp(1.5rem,3.4vw,4rem)}
 main > [data-panel]:not(#overview),#overview > .section,#overview > .closing{
   width:calc(100% - var(--page-gutter) * 2);
   margin-inline:auto
@@ -90,8 +90,8 @@ main > [data-panel]:not(#overview),#overview > .section,#overview > .closing{
   .hero-content h1{font-size:clamp(3rem,9.5vw,5.4rem)}
 }
 @media(max-width:680px){
-  main > [data-panel]:not(#overview),#overview > .section,#overview > .closing,.hero-content{width:calc(100% - 1.5rem)}
-  .hero-content h1{font-size:clamp(2.35rem,11.4vw,4.5rem)}
+  main > [data-panel]:not(#overview),#overview > .section,#overview > .closing,.hero-content{width:calc(100% - 2rem)}
+  .hero-content h1{font-size:clamp(2.125rem,10.8vw,4.5rem)}
   .update-hero{min-height:clamp(470px,76svh,620px)}
 }
 
@@ -107,4 +107,30 @@ main > [data-panel]:not(#overview),#overview > .section,#overview > .closing{
   #program h2{font-size:clamp(1.85rem,8.2vw,3.5rem)}
   #program .timeline summary{grid-template-columns:minmax(0,1fr) 1.3rem}
   #program .event-copy{padding-inline-start:.55rem}
+}
+
+/* Consistent type sizes and room for long labels across the presentation. */
+.hero-content h1{line-height:.98;letter-spacing:-.065em}
+.hero-aside>p:first-child{font-size:clamp(1.05rem,1.55vw,1.35rem)}
+#concept{grid-template-columns:minmax(0,.9fr) minmax(0,1fr);column-gap:clamp(1.5rem,5vw,5rem)}
+#concept h2,.stations h2,.music h2,.evening h2,.venue h2{
+  font-size:clamp(2rem,4.65vw,4.8rem);
+  line-height:1.04;letter-spacing:-.055em;max-width:none;
+  overflow-wrap:normal;text-wrap:balance
+}
+#concept p,.stations .support,.music p,.evening>p,.venue .narrow>p:not(.kicker),.venue-zone-copy,
+.activity-description{font-size:clamp(1.0625rem,1.25vw,1.2rem);line-height:1.55}
+.station-trigger span{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  gap:.55rem;align-items:start;font-size:clamp(1rem,1.45vw,1.3rem);
+  line-height:1.23;overflow-wrap:anywhere
+}
+.station-trigger span::after{line-height:1}
+.evening-list h3{font-size:clamp(1.15rem,1.6vw,1.45rem);line-height:1.25}
+.activity-modal-copy h2{overflow-wrap:anywhere}
+@media(max-width:760px){#concept{display:block}#concept p+p{margin-top:.85rem}}
+@media(max-width:680px){
+  .station-trigger span{padding:.7rem .6rem;gap:.35rem}
+  .station-trigger span::after{font-size:1rem}
+  .hero-content h1{letter-spacing:-.055em}
 }
