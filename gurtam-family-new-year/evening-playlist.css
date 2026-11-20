@@ -16,7 +16,7 @@
 }
 .music .narrow{
   grid-area:1/2;margin:0;max-width:none;
-  padding:clamp(1.2rem,4vw,3.5rem);align-self:center
+  padding:clamp(1.2rem,4vw,3.5rem);align-self:start
 }
 .music h2{font-size:clamp(2rem,4.5vw,5rem)}
 .evening-list{
@@ -118,7 +118,7 @@ main > [data-panel]:not(#overview),#overview > .section,#overview > .closing{
   line-height:1.04;letter-spacing:-.055em;max-width:none;
   overflow-wrap:normal;text-wrap:balance
 }
-#concept p,.stations .support,.music p,.evening>p,.venue .narrow>p:not(.kicker),.venue-zone-copy,
+#concept p,#overview > .closing p,.stations .support,.music p,.evening>p,.venue .narrow>p:not(.kicker),.venue-zone-copy,
 .activity-description{font-size:clamp(1.0625rem,1.25vw,1.2rem);line-height:1.55}
 .station-trigger span{
   display:grid;grid-template-columns:minmax(0,1fr) auto;
