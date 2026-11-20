@@ -1,32 +1,20 @@
 const coverClip = document.querySelector('.hero-clip');
-const coverButton = document.querySelector('.hero-motion');
 const musicClip = document.querySelector('.music-clip');
 const overviewPanel = document.getElementById('overview');
 const activitiesPanel = document.getElementById('activities');
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
-const mobileCover = matchMedia('(max-width: 680px)');
-if (mobileCover.matches) coverClip.src = 'videos/hero-center-mobile.mp4';
-
-let coverWanted = !reduceMotion.matches;
+const isCompact = matchMedia('(max-width: 680px)').matches;
 
 function syncCover() {
-  if (coverWanted && !overviewPanel.hidden) {
-    coverClip.play().catch(() => {});
-  } else {
+  if (reduceMotion.matches || overviewPanel.hidden) {
     coverClip.pause();
+    return;
   }
+  if (!coverClip.hasAttribute('src')) {
+    coverClip.src = isCompact ? 'videos/hero-center-mobile.mp4' : 'videos/hero-center.mp4?v=2';
+  }
+  coverClip.play().catch(() => {});
 }
-function updateCoverButton() {
-  const label = coverClip.paused ? 'Воспроизвести видео' : 'Пауза';
-  coverButton.textContent = label;
-  coverButton.setAttribute('aria-label', label + ' на обложке');
-}
-coverButton.addEventListener('click', () => {
-  coverWanted = coverClip.paused;
-  syncCover();
-});
-coverClip.addEventListener('play', updateCoverButton);
-coverClip.addEventListener('pause', updateCoverButton);
 
 const panelObserver = new MutationObserver(() => {
   syncCover();
@@ -34,11 +22,8 @@ const panelObserver = new MutationObserver(() => {
 });
 panelObserver.observe(overviewPanel, {attributeFilter: ['hidden']});
 panelObserver.observe(activitiesPanel, {attributeFilter: ['hidden']});
-reduceMotion.addEventListener('change', event => {
-  coverWanted = !event.matches;
-  syncCover();
-});
-syncCover();
+reduceMotion.addEventListener('change', syncCover);
+requestAnimationFrame(() => requestAnimationFrame(syncCover));
 
 let musicStarted = false;
 const musicObserver = new IntersectionObserver(entries => {

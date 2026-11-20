@@ -70,3 +70,27 @@
 @media(prefers-reduced-motion:no-preference){
   .evening-revealed .evening-list article:nth-child(5){animation-delay:.28s}
 }
+
+/* A viewport-width cover with an independent, bounded content column. */
+main.wrap{width:100%}
+main > [data-panel]:not(#overview),#overview > .section,#overview > .closing{
+  width:min(1240px,calc(100% - 4rem));
+  margin-inline:auto
+}
+.update-hero{margin-inline:0}
+.hero-content{
+  width:min(1240px,calc(100% - 4rem));
+  grid-template-columns:minmax(0,1fr) minmax(0,2.3fr) minmax(0,1fr);
+  gap:clamp(1rem,2.6vw,2.5rem)
+}
+.hero-content h1{font-size:clamp(3rem,6.35vw,6.7rem);min-width:0;text-wrap:initial}
+#overview:not([hidden]){animation:none}
+@media(max-width:920px){
+  .hero-content{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-content h1{font-size:clamp(3rem,9.5vw,5.4rem)}
+}
+@media(max-width:680px){
+  main > [data-panel]:not(#overview),#overview > .section,#overview > .closing,.hero-content{width:calc(100% - 1.5rem)}
+  .hero-content h1{font-size:clamp(2.35rem,11.4vw,4.5rem)}
+  .update-hero{min-height:clamp(470px,76svh,620px)}
+}
