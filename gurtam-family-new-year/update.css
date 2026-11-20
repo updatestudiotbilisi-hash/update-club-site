@@ -80,7 +80,7 @@ footer{align-items:center}
 .activity-modal{width:min(1040px,calc(100% - 1.5rem));max-height:calc(100dvh - 1.5rem);color:var(--ink);background:var(--paper)}
 .activity-modal-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.2rem;align-items:start;padding:clamp(.75rem,3vw,2rem)}
 .activity-close{grid-column:1/-1;justify-self:end;background:var(--lime);color:var(--ink);border:1px solid var(--ink);padding:.45rem .85rem}
-.activity-full-photo{width:100%;height:min(68dvh,720px);object-fit:contain;background:#242422}
+.activity-full-photo{width:auto;height:auto;max-width:100%;max-height:min(68dvh,720px);justify-self:center}
 .activity-modal-copy{padding:.3rem 0}
 .activity-modal-copy h2{font-size:clamp(1.65rem,4vw,3.25rem);font-weight:450;line-height:1;letter-spacing:-.055em;margin-bottom:1rem}
 .activity-description p+p{margin-top:.75rem}
