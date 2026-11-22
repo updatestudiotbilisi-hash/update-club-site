@@ -1,0 +1,136 @@
+.hero-photos{grid-template-columns:minmax(0,1fr)}
+.update-hero{border-bottom:0}
+.update-hero::after{display:none}
+.hero-content h1,.hero-meta,.hero-aside>p{text-shadow:0 1px 5px #000,0 2px 12px #0009}
+
+.music{
+  position:relative;isolation:isolate;display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  min-height:0;align-content:stretch;align-items:stretch;
+  gap:0;overflow:hidden;padding:0
+}
+.music::before{display:none}
+.music .music-clip{
+  position:static;grid-area:1/1;width:100%;height:100%;min-height:0;
+  max-height:none;aspect-ratio:auto;object-fit:cover;object-position:center 46%
+}
+.music .narrow{
+  grid-area:1/2;margin:0;max-width:none;
+  padding:clamp(1.2rem,4vw,3.5rem);align-self:start
+}
+.music h2{font-size:clamp(2rem,4.5vw,5rem)}
+.evening-list{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-flow:row;
+  gap:clamp(.7rem,2vw,1.5rem);overflow:visible;padding-bottom:0
+}
+.evening-list article{
+  display:flex;flex-direction:column;align-items:flex-start;gap:.7rem;
+  padding:0 0 .85rem;overflow:hidden;border:1px solid var(--line)
+}
+.evening-list img{
+  width:100%;height:auto;aspect-ratio:1;object-fit:contain;
+  float:none;margin:0
+}
+.evening-list h3,.evening-details,.evening-copy{margin-inline:.75rem}
+.evening-details{
+  margin-top:auto;padding:.38rem .65rem;border:1px solid var(--ink);
+  background:transparent;color:var(--ink)
+}
+.evening-details:hover{background:var(--lime)}
+@media(min-width:1050px){.evening-list{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:680px){
+  .music{grid-template-columns:minmax(0,1fr)}
+  .music .music-clip{grid-area:1/1;height:clamp(240px,75vw,420px)}
+  .music .narrow{grid-area:2/1}
+}
+@keyframes evening-card-in{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
+@media(prefers-reduced-motion:no-preference){
+  .evening-list article{transition:transform .24s,box-shadow .24s}
+  .evening-revealed .evening-list article{animation:evening-card-in .42s ease-out both}
+  .evening-revealed .evening-list article:nth-child(2){animation-delay:.07s}
+  .evening-revealed .evening-list article:nth-child(3){animation-delay:.14s}
+  .evening-revealed .evening-list article:nth-child(4){animation-delay:.21s}
+  .evening-list article:hover,.evening-list article:focus-within{transform:translateY(-3px);box-shadow:0 9px 22px #19191120}
+}
+
+.evening-controls{display:flex;justify-content:flex-end;gap:.5rem;margin-top:1rem}
+.evening-controls button{padding:.45rem .75rem;border:1px solid var(--ink);background:transparent;color:var(--ink)}
+.evening-controls button:hover:not(:disabled){background:var(--lime);color:var(--paper)}
+.evening-controls button:disabled{opacity:.45;cursor:default}
+.evening-list{
+  --evening-gap:clamp(.7rem,2vw,1.5rem);
+  grid-template-columns:none;grid-auto-flow:column;
+  grid-auto-columns:calc((100% - var(--evening-gap)*2)/3);
+  gap:var(--evening-gap);overflow-x:auto;scroll-snap-type:x mandatory;
+  overscroll-behavior-inline:contain;padding-bottom:.9rem;position:relative
+}
+.evening-list article{scroll-snap-align:start}
+@media(max-width:900px){.evening-list{grid-auto-columns:calc((100% - var(--evening-gap))/2)}}
+@media(max-width:560px){.evening-list{grid-auto-columns:100%}}
+@media(prefers-reduced-motion:no-preference){
+  .evening-revealed .evening-list article:nth-child(5){animation-delay:.28s}
+}
+
+/* Keep the cover full bleed and align content to consistent page gutters. */
+main.wrap{width:100%;--page-gutter:clamp(1.5rem,3.4vw,4rem)}
+main > [data-panel]:not(#overview),#overview > .section,#overview > .closing{
+  width:calc(100% - var(--page-gutter) * 2);
+  margin-inline:auto
+}
+.update-hero{margin-inline:0}
+.hero-content{
+  width:calc(100% - var(--page-gutter) * 2);
+  grid-template-columns:minmax(0,1fr) minmax(0,2.3fr) minmax(0,1fr);
+  gap:clamp(1rem,2.6vw,2.5rem)
+}
+.hero-content h1{font-size:clamp(3rem,6.35vw,6.7rem);min-width:0;text-wrap:initial}
+#overview:not([hidden]){animation:none}
+@media(max-width:920px){
+  .hero-content{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-content h1{font-size:clamp(3rem,9.5vw,5.4rem)}
+}
+@media(max-width:680px){
+  main > [data-panel]:not(#overview),#overview > .section,#overview > .closing,.hero-content{width:calc(100% - 2rem)}
+  .hero-content h1{font-size:clamp(2.125rem,10.8vw,4.5rem)}
+  .update-hero{min-height:clamp(470px,76svh,620px)}
+}
+
+#program h2{max-width:26ch;text-wrap:balance}
+#concept p,#program .support,#program .event-copy{
+  font-size:clamp(1rem,1.25vw,1.25rem)
+}
+#program .timeline summary span{font-size:clamp(1rem,1.35vw,1.25rem)}
+#program .timeline summary time{font-size:clamp(.96rem,1.15vw,1.125rem)}
+#program .timeline summary{grid-template-columns:minmax(8.8rem,10rem) minmax(0,1fr) 1.4rem}
+#program .event-copy{padding-inline-start:10.75rem}
+@media(max-width:680px){
+  #program h2{font-size:clamp(1.85rem,8.2vw,3.5rem)}
+  #program .timeline summary{grid-template-columns:minmax(0,1fr) 1.3rem}
+  #program .event-copy{padding-inline-start:.55rem}
+}
+
+/* Consistent type sizes and room for long labels across the presentation. */
+.hero-content h1{line-height:.98;letter-spacing:-.065em}
+.hero-aside>p:first-child{font-size:clamp(1.05rem,1.55vw,1.35rem)}
+#concept{grid-template-columns:minmax(0,.9fr) minmax(0,1fr);column-gap:clamp(1.5rem,5vw,5rem)}
+#concept h2,.stations h2,.music h2,.evening h2,.venue h2{
+  font-size:clamp(2rem,4.65vw,4.8rem);
+  line-height:1.04;letter-spacing:-.055em;max-width:none;
+  overflow-wrap:normal;text-wrap:balance
+}
+#concept p,#overview > .closing p,.stations .support,.music p,.evening>p,.venue .narrow>p:not(.kicker),.venue-zone-copy,
+.activity-description{font-size:clamp(1.0625rem,1.25vw,1.2rem);line-height:1.55}
+.station-trigger span{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  gap:.55rem;align-items:start;font-size:clamp(1rem,1.45vw,1.3rem);
+  line-height:1.23;overflow-wrap:anywhere
+}
+.station-trigger span::after{line-height:1}
+.evening-list h3{font-size:clamp(1.15rem,1.6vw,1.45rem);line-height:1.25}
+.activity-modal-copy h2{overflow-wrap:anywhere}
+@media(max-width:760px){#concept{display:block}#concept p+p{margin-top:.85rem}}
+@media(max-width:680px){
+  .station-trigger span{padding:.7rem .6rem;gap:.35rem}
+  .station-trigger span::after{font-size:1rem}
+  .hero-content h1{letter-spacing:-.055em}
+}
