@@ -1,5 +1,6 @@
 User-Agent: *
 Allow: /
+Disallow: /team-profiles/
 
 Host: https://update-club.com
 Sitemap: https://update-club.com/sitemap.xml
